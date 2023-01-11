@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="资源, ZRong&#39;s Blog">
-    <meta name="description" content="There is no royal road to learning.">
+    <meta name="keywords" content="矩阵的伪逆, ZRong&#39;s Blog">
+    <meta name="description" content="
+
+满秩&amp;#x2F;列满秩&amp;#x2F;行满秩设A是n阶矩阵, 若r（A） &amp;#x3D; n, 则称A为满秩矩阵。但满秩不局限于n阶矩阵。
+若矩阵秩等于行数，称为行满秩；若矩阵秩等于列数，称为列满秩。既是行满秩又是列满秩则为n阶矩阵即n阶方阵">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>资源 | ZRong&#39;s Blog</title>
+    <title>矩阵的伪逆 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -226,12 +229,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">资源</h1>
+                    <h1 class="description center-align post-title">矩阵的伪逆</h1>
                 </div>
             </div>
         </div>
@@ -253,12 +256,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                                <span class="chip bg-color">矩阵</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BC%AA%E9%80%86/">
+                                <span class="chip bg-color">伪逆</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Learn/" class="post-category">
+                                Learn
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -276,7 +296,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    528
                 </div>
                 
 
@@ -301,7 +321,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <meta name="referrer" content="no-referrer" />
+
+<h2 id="满秩-x2F-列满秩-x2F-行满秩"><a href="#满秩-x2F-列满秩-x2F-行满秩" class="headerlink" title="满秩&#x2F;列满秩&#x2F;行满秩"></a>满秩&#x2F;列满秩&#x2F;行满秩</h2><p>设A是n阶矩阵, 若r（A） &#x3D; n, 则称A为满秩矩阵。但满秩不局限于n阶矩阵。</p>
+<p>若矩阵秩等于行数，称为行满秩；若矩阵秩等于列数，称为列满秩。既是行满秩又是列满秩则为n阶矩阵即n阶方阵。行满秩矩阵就是行向量线性无关，列满秩矩阵就是列向量线性无关；所以如果是方阵,行满秩矩阵与列满秩矩阵是等价的。</p>
+<h3 id="左逆与右逆"><a href="#左逆与右逆" class="headerlink" title="左逆与右逆"></a>左逆与右逆</h3><h4 id="左逆（Left-inverse）"><a href="#左逆（Left-inverse）" class="headerlink" title="左逆（Left inverse）"></a>左逆（Left inverse）</h4><p>　　如果<strong>A</strong>是一个m×n的列满秩矩阵，意味着<strong>A</strong>的各列线性无关，<strong>A</strong>的秩和列数相等，r &#x3D; n，但<strong>A</strong>可能存在更多的行，m ≥ n，此时<strong>A</strong>的零空间只有零向量，并且<strong>Ax</strong> &#x3D; <strong>b</strong>有唯一解（m &#x3D; n时）或无解（m &gt; n时）。</p>
+<p>　　对于列满秩矩阵来说，对称矩阵<strong>ATA</strong>是一个n×n的满秩方阵，因此<strong>ATA</strong>可逆，此时：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1203675/201912/1203675-20191219212030618-546806398.png"></p>
+<p>　　</p>
+<p>　　我们称<strong>A</strong>-1left为<strong>A</strong>的左逆，是一个n×m的矩阵，左逆也是讨论最小二乘问题的核心。</p>
+<h4 id="右逆（Right-inverse）"><a href="#右逆（Right-inverse）" class="headerlink" title="右逆（Right inverse）"></a>右逆（Right inverse）</h4><p>　　如果<strong>A</strong>是一个m×n的行满秩矩阵，意味着<strong>A</strong>的各行线性无关，<strong>A</strong>的秩和行数相等，r &#x3D; m，但<strong>A</strong>可能存在更多的列，m ≤ n。<strong>A</strong>的左零空间只有零向量，<strong>A</strong>的零空间是n - r维，因此有n – r个自由变量，当n &gt; m时，<strong>Ax</strong> &#x3D; <strong>b</strong>有无数解。</p>
+<p>　　对于行满秩矩阵来说，对称矩阵<strong>AAT</strong>是一个m×m的满秩方阵，因此<strong>AAT</strong>可逆，此时：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1203675/201912/1203675-20191219212047065-958765262.png"></p>
+<p>　　通常来说，右乘左逆得不到单位矩阵，仅在m &#x3D; n时才有<strong>AA</strong>-1left &#x3D; <strong>I</strong>。对于列满秩的m×n矩阵来说，<strong>AA</strong>-1left &#x3D; <strong>A</strong>(<strong>A</strong>T<strong>A</strong>)-1<strong>A</strong>T &#x3D; <strong>P</strong>，<strong>P</strong>是<strong>A</strong>的列空间的投影矩阵。同理，左乘右逆也得不到单位矩阵，<strong>A</strong>-1right<strong>A</strong>是<strong>A</strong>的行空间的投影矩阵。</p>
+<p>From Wikipedia:</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230107165213444.png"></p>
+<p>列满秩对应有左逆。行满秩对应右逆。</p>
+<h3 id="Question-为何列满秩，Atranspose-A一定可逆？"><a href="#Question-为何列满秩，Atranspose-A一定可逆？" class="headerlink" title="Question:为何列满秩，Atranspose A一定可逆？"></a>Question:为何列满秩，Atranspose A一定可逆？</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230107171325994.png"></p>
+<h2 id="伪逆性质"><a href="#伪逆性质" class="headerlink" title="伪逆性质"></a>伪逆性质</h2><p><img src="https://img2018.cnblogs.com/blog/1203675/201912/1203675-20191219212655293-2111508311.png"></p>
+<h2 id="伪逆与SVD"><a href="#伪逆与SVD" class="headerlink" title="伪逆与SVD"></a>伪逆与SVD</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230107175536979.png"></p>
+
                 
             </div>
             <hr/>
@@ -314,7 +353,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                                    <span class="chip bg-color">矩阵</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BC%AA%E9%80%86/">
+                                    <span class="chip bg-color">伪逆</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -380,18 +427,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/resources/index.html">
+                <a href="/2023/01/11/%E5%9B%9B%E5%85%83%E6%95%B0%E4%B8%8E%E6%AC%A7%E6%8B%89%E8%A7%92%E4%B8%8E%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="资源">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="四元数与欧拉角与旋转矩阵">
                         
-                        <span class="card-title">资源</span>
+                        <span class="card-title">四元数与欧拉角与旋转矩阵</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -401,18 +447,41 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gzr
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/">
+                        <span class="chip bg-color">坐标变换</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9B%E5%85%83%E6%95%B0/">
+                        <span class="chip bg-color">四元数</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%AC%A7%E6%8B%89%E8%A7%92/">
+                        <span class="chip bg-color">欧拉角</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">旋转矩阵</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -423,13 +492,13 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/resources/index.html">
+                <a href="/2023/01/11/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="资源">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="矩阵的伪逆">
                         
-                        <span class="card-title">资源</span>
+                        <span class="card-title">矩阵的伪逆</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -444,13 +513,29 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gzr
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">矩阵</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BC%AA%E9%80%86/">
+                        <span class="chip bg-color">伪逆</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
