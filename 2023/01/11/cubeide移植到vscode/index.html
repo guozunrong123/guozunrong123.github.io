@@ -326,9 +326,9 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h2 id="1、首先用vscode打开工程文件夹"><a href="#1、首先用vscode打开工程文件夹" class="headerlink" title="1、首先用vscode打开工程文件夹"></a>1、首先用vscode打开工程文件夹</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106104756153.png" alt="image-20230106104756153"></p>
-<h2 id="2、按ctrl-P，输入-gt-c-x2F-c-，选择第一个，Edit-Configurations-UI"><a href="#2、按ctrl-P，输入-gt-c-x2F-c-，选择第一个，Edit-Configurations-UI" class="headerlink" title="2、按ctrl+P，输入&gt;c&#x2F;c++，选择第一个，Edit Configurations(UI)"></a>2、按ctrl+P，输入&gt;c&#x2F;c++，选择第一个，Edit Configurations(UI)</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106105124576.png" alt="image-20230106105124576"></p>
-<h2 id="3、打开左边json文件"><a href="#3、打开左边json文件" class="headerlink" title="3、打开左边json文件"></a>3、打开左边json文件</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106110828297.png" alt="image-20230106110828297"></p>
+<h2 id="1、首先用vscode打开工程文件夹"><a href="#1、首先用vscode打开工程文件夹" class="headerlink" title="1、首先用vscode打开工程文件夹"></a>1、首先用vscode打开工程文件夹</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106104756153.png"></p>
+<h2 id="2、按ctrl-P，输入-gt-c-x2F-c-，选择第一个，Edit-Configurations-UI"><a href="#2、按ctrl-P，输入-gt-c-x2F-c-，选择第一个，Edit-Configurations-UI" class="headerlink" title="2、按ctrl+P，输入&gt;c&#x2F;c++，选择第一个，Edit Configurations(UI)"></a>2、按ctrl+P，输入&gt;c&#x2F;c++，选择第一个，Edit Configurations(UI)</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106105124576.png"></p>
+<h2 id="3、打开左边json文件"><a href="#3、打开左边json文件" class="headerlink" title="3、打开左边json文件"></a>3、打开左边json文件</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106110828297.png"></p>
 <h2 id="4、配置代码如下"><a href="#4、配置代码如下" class="headerlink" title="4、配置代码如下"></a>4、配置代码如下</h2><pre class="line-numbers language-none"><code class="language-none">&#123;
     &quot;configurations&quot;: [
         &#123;
@@ -366,10 +366,10 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>注意修改几个地方，如下所示</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106142814849.png" alt="image-20230106142814849"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106142814849.png"></p>
 <h3 id="此处踩坑！坑如下"><a href="#此处踩坑！坑如下" class="headerlink" title="此处踩坑！坑如下"></a>此处踩坑！坑如下</h3><h4 id="1、uint32-t"><a href="#1、uint32-t" class="headerlink" title="1、uint32_t"></a>1、uint32_t</h4><p>解决方案：添加_CC_ARM如图</p>
 <h4 id="2、LL库报错"><a href="#2、LL库报错" class="headerlink" title="2、LL库报错"></a>2、LL库报错</h4><p>理由是添加了USE_FULL_LL_DRIVER</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106142951618.png" alt="image-20230106142951618"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106142951618.png"></p>
 <p>注意，不能加！</p>
 <h4 id="3、没有stdint-h-stddef-h文件"><a href="#3、没有stdint-h-stddef-h文件" class="headerlink" title="3、没有stdint.h   stddef.h文件"></a>3、没有stdint.h   stddef.h文件</h4><p>问题原因：这个是ide本身的文件，Workspace里没有，要手动添加</p>
 <p>解决方案：找到电脑中文件的位置，添加路径</p>
