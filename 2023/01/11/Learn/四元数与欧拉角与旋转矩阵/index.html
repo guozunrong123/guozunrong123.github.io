@@ -4,14 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="cubeide移植到vscode, ZRong&#39;s Blog">
+    <meta name="keywords" content="四元数与欧拉角与旋转矩阵, ZRong&#39;s Blog">
     <meta name="description" content="
 
-1、首先用vscode打开工程文件夹
-2、按ctrl+P，输入&amp;gt;c&amp;#x2F;c++，选择第一个，Edit Configurations(UI)
-3、打开左边json文件
-4、配置代码如下&amp;#123;
-    &amp;quot;conf">
+四元数与欧拉角（RPY角）的相互转换 - XXX已失联 - 博客园 (cnblogs.com)
+关于四元数旋转矩阵的推导：
+(66条消息) 【机器人学】绕空间任意轴的旋转矩阵推导_whu木小易的博客-CSDN博客_绕任意轴旋转的旋转矩阵">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>cubeide移植到vscode | ZRong&#39;s Blog</title>
+    <title>四元数与欧拉角与旋转矩阵 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -254,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">cubeide移植到vscode</h1>
+                    <h1 class="description center-align post-title">四元数与欧拉角与旋转矩阵</h1>
                 </div>
             </div>
         </div>
@@ -283,12 +281,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/cubeide/">
-                                <span class="chip bg-color">cubeide</span>
+                            <a href="/tags/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/">
+                                <span class="chip bg-color">坐标变换</span>
                             </a>
                         
-                            <a href="/tags/vscode/">
-                                <span class="chip bg-color">vscode</span>
+                            <a href="/tags/%E5%9B%9B%E5%85%83%E6%95%B0/">
+                                <span class="chip bg-color">四元数</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%AC%A7%E6%8B%89%E8%A7%92/">
+                                <span class="chip bg-color">欧拉角</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                                <span class="chip bg-color">旋转矩阵</span>
                             </a>
                         
                     </div>
@@ -321,7 +327,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    580
+                    131
                 </div>
                 
 
@@ -348,55 +354,15 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h2 id="1、首先用vscode打开工程文件夹"><a href="#1、首先用vscode打开工程文件夹" class="headerlink" title="1、首先用vscode打开工程文件夹"></a>1、首先用vscode打开工程文件夹</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106104756153.png"></p>
-<h2 id="2、按ctrl-P，输入-gt-c-x2F-c-，选择第一个，Edit-Configurations-UI"><a href="#2、按ctrl-P，输入-gt-c-x2F-c-，选择第一个，Edit-Configurations-UI" class="headerlink" title="2、按ctrl+P，输入&gt;c&#x2F;c++，选择第一个，Edit Configurations(UI)"></a>2、按ctrl+P，输入&gt;c&#x2F;c++，选择第一个，Edit Configurations(UI)</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106105124576.png"></p>
-<h2 id="3、打开左边json文件"><a href="#3、打开左边json文件" class="headerlink" title="3、打开左边json文件"></a>3、打开左边json文件</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106110828297.png"></p>
-<h2 id="4、配置代码如下"><a href="#4、配置代码如下" class="headerlink" title="4、配置代码如下"></a>4、配置代码如下</h2><pre class="line-numbers language-none"><code class="language-none">&#123;
-    &quot;configurations&quot;: [
-        &#123;
-            &quot;name&quot;: &quot;STM32&quot;,
-            &quot;includePath&quot;: [
-                &quot;$&#123;workspaceFolder&#125;&#x2F;**&quot;,     
-                &quot;$&#123;workspaceFolder&#125;&#x2F;Drivers&#x2F;STM32F7xx_HAL_Driver&#x2F;Inc&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;Drivers&#x2F;STM32F7xx_HAL_Driver&#x2F;Inc&#x2F;Legacy&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;Drivers&#x2F;CMSIS&#x2F;Device&#x2F;ST&#x2F;STM32F7xx&#x2F;Include&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;Drivers&#x2F;CMSIS&#x2F;Include&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;USER&#x2F;drivers&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;Core&#x2F;Inc&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;Middlewares&#x2F;Third_Party&#x2F;FreeRTOS&#x2F;Source&#x2F;include&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;Middlewares&#x2F;Third_Party&#x2F;FreeRTOS&#x2F;Source&#x2F;CMSIS_RTOS_V2&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;Middlewares&#x2F;Third_Party&#x2F;FreeRTOS&#x2F;Source&#x2F;portable&#x2F;GCC&#x2F;ARM_CM7&#x2F;r0p1&#x2F;&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;USER&#x2F;drivers&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;USER&#x2F;modules&quot;,
-                &quot;$&#123;workspaceFolder&#125;&#x2F;eigen3&#x2F;Eigen&quot;,
-                &quot;D:&#x2F;ST&#x2F;STM32CubeIDE_1.5.0&#x2F;STM32CubeIDE&#x2F;plugins&#x2F;com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.5.0.202011040924&#x2F;tools&#x2F;arm-none-eabi&#x2F;include&#x2F;**&quot;,
-                &quot;D:&#x2F;ST&#x2F;STM32CubeIDE_1.5.0&#x2F;STM32CubeIDE&#x2F;plugins&#x2F;com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.5.0.202011040924&#x2F;tools&#x2F;lib&#x2F;gcc&#x2F;arm-none-eabi&#x2F;7.3.1&#x2F;include&#x2F;**&quot;
-            ],
-            &quot;defines&quot;: [
-                &quot;__CC_ARM&quot;,
-                &quot;USE_HAL_DRIVER&quot;,
-                &quot;STM32F767xx&quot;,
-            ],
-            &quot;compilerPath&quot;: &quot;D:\\ST\\STM32CubeIDE_1.5.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.5.0.202011040924\\tools\\arm-none-eabi\\include\\machine\\_default_types.h&quot;,
-            &quot;cStandard&quot;: &quot;c99&quot;,
-            &quot;cppStandard&quot;: &quot;c++11&quot;,
-            &quot;intelliSenseMode&quot;: &quot;$&#123;default&#125;&quot;
-        &#125;
-    ],
-    &quot;version&quot;: 4
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/21207-iHome/p/6894128.html">四元数与欧拉角（RPY角）的相互转换 - XXX已失联 - 博客园 (cnblogs.com)</a></p>
+<p>关于四元数旋转矩阵的推导：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014265928/article/details/117170481">(66条消息) 【机器人学】绕空间任意轴的旋转矩阵推导_whu木小易的博客-CSDN博客_绕任意轴旋转的旋转矩阵</a></p>
+<p>四元数与旋转矩阵的转换：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014265928/article/details/117161701">(66条消息) 【机器人学】四元数与旋转矩阵的相互转换_whu木小易的博客-CSDN博客_四元数与旋转矩阵转换</a></p>
+<p>结论：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230111230403340.png" alt="旋转矩阵"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230107160428256.png" alt="四元数解欧拉角"></p>
 
-<p>注意修改几个地方，如下所示</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106142814849.png"></p>
-<h3 id="此处踩坑！坑如下"><a href="#此处踩坑！坑如下" class="headerlink" title="此处踩坑！坑如下"></a>此处踩坑！坑如下</h3><h4 id="1、uint32-t"><a href="#1、uint32-t" class="headerlink" title="1、uint32_t"></a>1、uint32_t</h4><p>解决方案：添加_CC_ARM如图</p>
-<h4 id="2、LL库报错"><a href="#2、LL库报错" class="headerlink" title="2、LL库报错"></a>2、LL库报错</h4><p>理由是添加了USE_FULL_LL_DRIVER</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230106142951618.png"></p>
-<p>注意，不能加！</p>
-<h4 id="3、没有stdint-h-stddef-h文件"><a href="#3、没有stdint-h-stddef-h文件" class="headerlink" title="3、没有stdint.h   stddef.h文件"></a>3、没有stdint.h   stddef.h文件</h4><p>问题原因：这个是ide本身的文件，Workspace里没有，要手动添加</p>
-<p>解决方案：找到电脑中文件的位置，添加路径</p>
-<p>“D:&#x2F;ST&#x2F;STM32CubeIDE_1.5.0&#x2F;STM32CubeIDE&#x2F;plugins&#x2F;com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.5.0.202011040924&#x2F;tools&#x2F;arm-none-eabi&#x2F;include&#x2F;“,<br> “D:&#x2F;ST&#x2F;STM32CubeIDE_1.5.0&#x2F;STM32CubeIDE&#x2F;plugins&#x2F;com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.5.0.202011040924&#x2F;tools&#x2F;lib&#x2F;gcc&#x2F;arm-none-eabi&#x2F;7.3.1&#x2F;include&#x2F;“</p>
-<h2 id="正常移植到此完美结束"><a href="#正常移植到此完美结束" class="headerlink" title="正常移植到此完美结束"></a>正常移植到此完美结束</h2>
                 
             </div>
             <hr/>
@@ -410,12 +376,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/cubeide/">
-                                    <span class="chip bg-color">cubeide</span>
+                                <a href="/tags/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/">
+                                    <span class="chip bg-color">坐标变换</span>
                                 </a>
                             
-                                <a href="/tags/vscode/">
-                                    <span class="chip bg-color">vscode</span>
+                                <a href="/tags/%E5%9B%9B%E5%85%83%E6%95%B0/">
+                                    <span class="chip bg-color">四元数</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%AC%A7%E6%8B%89%E8%A7%92/">
+                                    <span class="chip bg-color">欧拉角</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                                    <span class="chip bg-color">旋转矩阵</span>
                                 </a>
                             
                         </div>
@@ -484,13 +458,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/11/Kalman%20Filter/">
+                <a href="/2023/01/11/Learn/%E7%A3%81%E5%8A%9B%E8%AE%A1&%E5%9C%B0%E7%A3%81%E5%9C%BA/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Kalman Filter">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="磁力计与地磁场">
                         
-                        <span class="card-title">Kalman Filter</span>
+                        <span class="card-title">磁力计与地磁场</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -518,8 +492,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kalman-Filter/">
-                        <span class="chip bg-color">Kalman Filter</span>
+                    <a href="/tags/%E7%A3%81%E5%8A%9B%E8%AE%A1/">
+                        <span class="chip bg-color">磁力计</span>
                     </a>
                     
                 </div>
@@ -533,13 +507,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/11/%E5%A4%9A%E6%97%8B%E7%BF%BC%E9%A3%9E%E8%A1%8C%E5%99%A8%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%AE%BE%E8%AE%A1/">
+                <a href="/2023/01/11/Learn/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="多旋翼飞行器控制与设计">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="矩阵的伪逆">
                         
-                        <span class="card-title">多旋翼飞行器控制与设计</span>
+                        <span class="card-title">矩阵的伪逆</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -567,8 +541,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/UAV/">
-                        <span class="chip bg-color">UAV</span>
+                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">矩阵</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BC%AA%E9%80%86/">
+                        <span class="chip bg-color">伪逆</span>
                     </a>
                     
                 </div>
