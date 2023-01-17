@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-01-15T17:05:39.062Z</updated>
+  <updated>2023-01-17T15:53:39.218Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -17,9 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2023.1.17 note</title>
+    <link href="https://guozunrong123.github.io/2023/01/17/Life/2023.1.17%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/01/17/Life/2023.1.17%E8%AE%B0/</id>
+    <published>2023-01-17T15:48:10.000Z</published>
+    <updated>2023-01-17T15:53:39.218Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;p&gt;太过摆烂了啊。&lt;/p&gt;
+&lt;p&gt;其他事情也有点多。&lt;/p&gt;
+&lt;p&gt;但还是自己太摆了，天天刷手机-</summary>
+        
+      
+    
+    
+    
+    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
+    
+    
+    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2023.1.15 note</title>
-    <link href="https://guozunrong123.github.io/2023/01/15/Life/2023-01-15%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/01/15/Life/2023-01-15%E8%AE%B0/</id>
+    <link href="https://guozunrong123.github.io/2023/01/15/Life/2023.1.15%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/01/15/Life/2023.1.15%E8%AE%B0/</id>
     <published>2023-01-15T13:29:20.000Z</published>
     <updated>2023-01-15T17:05:39.062Z</updated>
     
@@ -205,9 +234,9 @@
     <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
     
     
-    <category term="UAV" scheme="https://guozunrong123.github.io/tags/UAV/"/>
-    
     <category term="建模" scheme="https://guozunrong123.github.io/tags/%E5%BB%BA%E6%A8%A1/"/>
+    
+    <category term="UAV" scheme="https://guozunrong123.github.io/tags/UAV/"/>
     
   </entry>
   
