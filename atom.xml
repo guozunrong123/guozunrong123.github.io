@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-01-25T07:01:35.099Z</updated>
+  <updated>2023-01-28T09:40:36.317Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chapter3 操作臂运动学</title>
+    <link href="https://guozunrong123.github.io/2023/01/28/Learn/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
+    <id>https://guozunrong123.github.io/2023/01/28/Learn/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/</id>
+    <published>2023-01-28T09:40:50.000Z</published>
+    <updated>2023-01-28T09:40:36.317Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Chapter3-操作臂运动学&quot;&gt;&lt;a href=&quot;#Chapter3-操作臂运动学&quot; class=&quot;headerlink&quot; title=&quot;Chapter3</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
+    
+    <category term="正运动学" scheme="https://guozunrong123.github.io/tags/%E6%AD%A3%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>2023.1.25 note</title>
@@ -131,7 +160,7 @@
     <link href="https://guozunrong123.github.io/2023/01/12/Learn/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/"/>
     <id>https://guozunrong123.github.io/2023/01/12/Learn/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/</id>
     <published>2023-01-12T04:07:20.000Z</published>
-    <updated>2023-01-15T13:29:35.055Z</updated>
+    <updated>2023-01-28T09:40:00.154Z</updated>
     
     
       
@@ -261,9 +290,9 @@
     <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
     
     
-    <category term="建模" scheme="https://guozunrong123.github.io/tags/%E5%BB%BA%E6%A8%A1/"/>
-    
     <category term="UAV" scheme="https://guozunrong123.github.io/tags/UAV/"/>
+    
+    <category term="建模" scheme="https://guozunrong123.github.io/tags/%E5%BB%BA%E6%A8%A1/"/>
     
   </entry>
   
