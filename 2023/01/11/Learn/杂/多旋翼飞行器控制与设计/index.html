@@ -4,10 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="磁力计与地磁场, ZRong&#39;s Blog">
+    <meta name="keywords" content="多旋翼飞行器控制与设计, ZRong&#39;s Blog">
     <meta name="description" content="
 
-1、地球磁场分布图： 地球磁场：地球的磁场象一个条形磁体一样由磁南极指向磁北极。在磁极点处磁场和当地的水平面垂直，在赤道磁场和当地的水平面平行，所以在北半球磁场方向倾斜指向地面。用来衡量磁感应强度大小的单位是Tesla或者Gauss（1">
+动态模型和参数测量
+刚体运动学模型运动学与质量和受力无关，只研究位置、速度、姿态和角速度等变量。
+输入为速度和角速度，输出为位置和姿态。
+欧拉角模型旋转矩阵模型四元数模型刚体动力学模型动力学既涉及运动又涉及受力情况，与物体的质量和转动惯">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>磁力计与地磁场 | ZRong&#39;s Blog</title>
+    <title>多旋翼飞行器控制与设计 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -250,12 +253,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">磁力计与地磁场</h1>
+                    <h1 class="description center-align post-title">多旋翼飞行器控制与设计</h1>
                 </div>
             </div>
         </div>
@@ -279,8 +282,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%A3%81%E5%8A%9B%E8%AE%A1/">
-                                <span class="chip bg-color">磁力计</span>
+                            <a href="/tags/UAV/">
+                                <span class="chip bg-color">UAV</span>
                             </a>
                         
                     </div>
@@ -313,7 +316,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    716
+                    1.5k
                 </div>
                 
 
@@ -340,21 +343,106 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h3 id="1、地球磁场分布图："><a href="#1、地球磁场分布图：" class="headerlink" title="1、地球磁场分布图："></a>1、地球磁场分布图：</h3><p> 地球磁场：地球的磁场象一个条形磁体一样由磁南极指向磁北极。在磁极点处磁场和当地的水平面垂直，在赤道磁场和当地的水平面平行，所以在北半球磁场方向倾斜指向地面。用来衡量磁感应强度大小的单位是Tesla或者Gauss（1Tesla&#x3D;10000Gauss）。随着地理位置的不同，通常地磁场的强度是0.4-0.6Gauss。需要注意的是，磁北极和地理上的北极并不重合，通常他们之间有11.5度左右的夹角。</p>
-<p>单位：</p>
-<p>1Tesla&#x3D;10000Gauss</p>
-<p>1高斯 &#x3D;100000 nT</p>
-<p>1高斯 &#x3D;1000 mGauss</p>
-<p>1mGauss&#x3D;100nT<br><img src="https://img-blog.csdnimg.cn/2020042015072466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="2、-地磁要素图："><a href="#2、-地磁要素图：" class="headerlink" title="2、 地磁要素图："></a><strong>2、 地磁要素图：</strong></h3><p>设观测点在O处，并以O点为原点建立地理坐标系OXYZ，X轴指向北，Y轴指向东，Z轴垂直指向地。</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200420150740771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"><img src="https://img-blog.csdnimg.cn/20200420150740771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"></a></p>
-<p>   地磁场强度T在X轴上的投影Bn称为地磁场的北向分量；T在Y轴上的投影Be称为东向分量；T在Z轴上的投影Bz称为地磁场的垂向分量。T在水平面O-XY的投影Bh称为地磁场的水平分量。地磁水平分量Bh和垂向分量Bz所在平面称为磁子午面，磁子午面和地理子午面O-XZ平面的夹角称为磁偏角，用D表示，并规定其东偏为正，西偏为负。地磁场强度T与水平面O-XY的夹角称为磁倾角，用I表示。上述，T、Bh、Bn、Be、Bz、D、I统称为地磁场七要素，可作为定位定向的参考量。七要素只要知道三个独立的要素，就可以求其余的要素，常用的是磁倾角、磁偏角和水平分量。七要素间有如下关系：<br><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200420152053240.png"><img src="https://img-blog.csdnimg.cn/20200420152053240.png"></a></p>
-<p>3、中国地磁要素变化：<br>    中国的地磁要素大致分布情况：国境内地磁强度总量范围0.41~0.60Gauss(1 Gauss &#x3D; 10^-4T)；水平分量Bh由南至北从0.4降至0.21；垂直分量Bz由南至北从-0.1增至0.56；磁倾角I由南至北从-10°增至70°；磁偏角D由东向西从-11°增至5°，零偏线在中国中部偏西处，由北向南经过甘肃的安西以及西藏的得宋。</p>
-<p>4、地磁场的一级近似：<br>对地磁场的一种近似，如下图所示：<br><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200420153133439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"><img src="https://img-blog.csdnimg.cn/20200420153133439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"></a></p>
-<p>不考虑地磁轴与地球自转轴的偏离问题，地磁强度分量可用以下解析式来描述：</p>
-<p><img src="https://img-blog.csdnimg.cn/2020042015332184.png"></p>
-<p>其中，东向地磁分量为0；在实际运算中，将磁力计在水平面X、Y轴的测量值，全部投影到北向，并将东向置零。</p>
-<h1 id="二、计算"><a href="#二、计算" class="headerlink" title="二、计算"></a>二、计算</h1><p>[<a target="_blank" rel="noopener" href="https://zinghd.gitee.io/knowledge-point-1/">知识点]基于加速度计与磁力计的姿态解算方法(加计补偿偏航) | 曾同学的思考 (gitee.io)</a></p>
+<h2 id="动态模型和参数测量"><a href="#动态模型和参数测量" class="headerlink" title="动态模型和参数测量"></a>动态模型和参数测量</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221019163939091.png"></p>
+<h3 id="刚体运动学模型"><a href="#刚体运动学模型" class="headerlink" title="刚体运动学模型"></a>刚体运动学模型</h3><p>运动学与质量和受力无关，只研究位置、速度、姿态和角速度等变量。</p>
+<p>输入为速度和角速度，输出为位置和姿态。</p>
+<h4 id="欧拉角模型"><a href="#欧拉角模型" class="headerlink" title="欧拉角模型"></a>欧拉角模型</h4><h4 id="旋转矩阵模型"><a href="#旋转矩阵模型" class="headerlink" title="旋转矩阵模型"></a>旋转矩阵模型</h4><h4 id="四元数模型"><a href="#四元数模型" class="headerlink" title="四元数模型"></a>四元数模型</h4><h3 id="刚体动力学模型"><a href="#刚体动力学模型" class="headerlink" title="刚体动力学模型"></a>刚体动力学模型</h3><p>动力学既涉及运动又涉及受力情况，与物体的质量和转动惯量有关。</p>
+<p>输入为拉力和力矩（俯仰力矩、滚转力矩和偏航力矩），输出为速度和角速度。</p>
+<h4 id="位置运动学模型"><a href="#位置运动学模型" class="headerlink" title="位置运动学模型"></a>位置运动学模型</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021152223230.png"></p>
+<p>进一步，可以得到</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021152245888.png"></p>
+<p>f表示螺旋桨拉力总大小，g为重力加速度</p>
+<h4 id="姿态动力学模型"><a href="#姿态动力学模型" class="headerlink" title="姿态动力学模型"></a>姿态动力学模型</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021152307960.png"></p>
+<p>Ga表示陀螺力矩，t表示螺旋桨在机体轴上产生的力矩。</p>
+<h3 id="多旋翼飞行控制刚体模型"><a href="#多旋翼飞行控制刚体模型" class="headerlink" title="多旋翼飞行控制刚体模型"></a>多旋翼飞行控制刚体模型</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021152006578.png"></p>
+<h3 id="控制效率模型"><a href="#控制效率模型" class="headerlink" title="控制效率模型"></a>控制效率模型</h3><p>输入是螺旋桨转速，输出是拉力和力矩。</p>
+<p>控制效率模型的逆过程成为控制分配模型，即当通过控制器设计得到期望的拉力和力矩时，可以通过控制分配模型解出所需的螺旋桨转速。</p>
+<h4 id="单个螺旋桨拉力和反扭距模型"><a href="#单个螺旋桨拉力和反扭距模型" class="headerlink" title="单个螺旋桨拉力和反扭距模型"></a>单个螺旋桨拉力和反扭距模型</h4><p>当多旋翼在无风情况下悬停时，其螺旋桨拉力表示为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021152934201.png"></p>
+<p>其中，<img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021152954025.png">。</p>
+<p>反扭矩大小静态模型表示为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021153023683.png"></p>
+<p>其中，<img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021153102833.png">。</p>
+<p>反扭距大小动态模型：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021153218027.png"></p>
+<h4 id="拉力和力矩模型"><a href="#拉力和力矩模型" class="headerlink" title="拉力和力矩模型"></a>拉力和力矩模型</h4><p>作用在四旋翼上的总拉力：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021153323008.png"></p>
+<p>对于**<u>十字形四旋翼</u>**，螺旋桨产生的力矩为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021153350931.png"></p>
+<p>于是，联立以上两式有：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021153419530.png"></p>
+<p>对于**<u>X字形四旋翼</u>**，螺旋桨产生的力矩为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021153842065.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021153854395.png"></p>
+<p>对于**<u>多旋翼</u>**：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221021172735390.png"></p>
+<h3 id="动力单元模型"><a href="#动力单元模型" class="headerlink" title="动力单元模型"></a>动力单元模型</h3><p>动力单元是以无刷直流电机、电调和螺旋桨为一组的整个动力机构。</p>
+<p>输入是油门指令，输出是螺旋桨拉力的模型。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221022101946961.png"></p>
+<p>完整的动力单元模型如下：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221022102209331.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221022103551683.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221022103609861.png" alt="image-20221022103609861"></p>
+<blockquote>
+<p>一阶低通滤波：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42935576">一阶低通滤波（LPF）的原理及应用（以APM&#x2F;PX4飞控为例） - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<h3 id="桨叶挥舞"><a href="#桨叶挥舞" class="headerlink" title="桨叶挥舞"></a>桨叶挥舞</h3><p>桨叶挥舞是旋转桨叶的上下运动。如图所示，逆风飞行的前行桨叶会获得更大的相对速度，而速度增加将产生更大的拉力，同时产生向上挥舞速度。向上挥舞速度会减小迎角，进而减小拉力。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221023093815547.png"></p>
+<h2 id="传感器"><a href="#传感器" class="headerlink" title="传感器"></a>传感器</h2><h3 id="三轴加速度计"><a href="#三轴加速度计" class="headerlink" title="三轴加速度计"></a>三轴加速度计</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221012155505721.png"></p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>当加速度计保持静止时，加速度计能够感知重力加速度，而整体加速度为零</li>
+<li>在自由落体运动中，整体加速度就是重力加速度，但加速度计内部处于失重状态，而此时三轴加速度计输出为零</li>
+<li>在自由落体运动中，三轴加速度计的输出并不是它的真实加速度，而是它的加速度去掉重力后的整体加速度。因此，三轴加速度计可以测量物体的比力。</li>
+</ul>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221012160117959.png"></p>
+<p>加速度计能够精确的测量俯仰角和滚转角，且没有累计误差。</p>
+<h4 id="MEMS三轴加速度计"><a href="#MEMS三轴加速度计" class="headerlink" title="MEMS三轴加速度计"></a>MEMS三轴加速度计</h4><p>采用压阻式、压电式和电容式工作原理，产生的比力分别正比于电阻、电压和电容的变化。</p>
+<p>这种变化可以通过相应<strong>放大</strong>和<strong>滤波</strong>电路进行采集。</p>
+<ul>
+<li>缺点：受振动影响较大。</li>
+<li>优点：可以做到很小</li>
+</ul>
+<h4 id="校正"><a href="#校正" class="headerlink" title="校正"></a>校正</h4><p>（1）校正</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221012162158405.png"></p>
+<p>（2）自动校正</p>
+<p>一般校正：需要外部标定设备，麻烦但精确</p>
+<p>自动校正：不需要外部标定设备，简单 ，精度略微差</p>
+<h5 id="误差模型"><a href="#误差模型" class="headerlink" title="误差模型"></a>误差模型</h5><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221012211946087.png"></p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221012215248194.png"></p>
+<h5 id="测量模型"><a href="#测量模型" class="headerlink" title="测量模型"></a>测量模型</h5><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221012220347761.png"></p>
+<blockquote>
+<p>何为高斯白噪声？</p>
+<p>百度百科上解释为“<strong>高斯白噪声，幅度分布服从高斯分布，功率谱密度服从均匀分布</strong>”。</p>
+<p>白噪声，如同白光一样，是所有颜色的光叠加而成，不同颜色的光本质区别是的它们的频率各不相同（如红色光波长长而频率低，相应的，紫色光波长短而频率高）。白噪声在功率谱上（若以频率为横轴，信号幅度的平方为功率）趋近为常值，即噪声频率丰富，在整个频谱上都有成分，即从低频到高频，<strong>低频指的是信号不变或缓慢变化，高频指的是信号突变</strong>。</p>
+<p>白噪声信号是“随机”的。</p>
+<p>那么，回到文章开头的解释：<strong>高斯白噪声，幅度分布服从高斯分布，功率谱密度服从均匀分布。</strong>它的意义就很明确了，上半句是从空域(幅值)角度描述“高斯噪声”，而下半句是从频域角度描述“白噪声”。</p>
+</blockquote>
+<blockquote>
+<p>为什么产生漂移？</p>
+<p>大部分MEMS均是以半导体材料为基础加工的，半导体对温度敏感，再加上安装、电路设计等因素的影响。</p>
+</blockquote>
+<h3 id="三轴陀螺仪"><a href="#三轴陀螺仪" class="headerlink" title="三轴陀螺仪"></a>三轴陀螺仪</h3><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>MEMS三轴陀螺仪用到的一个基本的物理原理：科里奥利力</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221013155545058.png"></p>
+<p>在陀螺仪中，两个质量块运动的速度方向相反，大小相同，如图所示。</p>
+<p>从而产生的科里奥利力方向相反，压迫两块对应的电容板移动，产生电容差分变化，电容的变化正比于旋转的角速度。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221013160705853.png"></p>
+<ul>
+<li>电容的变化正比于旋转角速度</li>
+<li>纯加速度并不能使陀螺仪产生读数</li>
+</ul>
+<h4 id="校正-1"><a href="#校正-1" class="headerlink" title="校正"></a>校正</h4><h5 id="误差模型-1"><a href="#误差模型-1" class="headerlink" title="误差模型"></a>误差模型</h5><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221013161722841.png"></p>
+<h5 id="校正方法"><a href="#校正方法" class="headerlink" title="校正方法"></a>校正方法</h5><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221013163003155.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221013164814176.png"></p>
+<blockquote>
+<p>龙格库塔法</p>
+</blockquote>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221014155923500.png"></p>
+<h5 id="测量模型-1"><a href="#测量模型-1" class="headerlink" title="测量模型"></a>测量模型</h5><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221014155641676.png"></p>
+<h3 id="三轴磁力计"><a href="#三轴磁力计" class="headerlink" title="三轴磁力计"></a>三轴磁力计</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221014164233288.png"></p>
+<h3 id="超声波测距仪"><a href="#超声波测距仪" class="headerlink" title="超声波测距仪"></a>超声波测距仪</h3><p>超声波是一种频率超出人耳听觉频率的声波，大于20kHz。具有良好的方向性和强大的穿透性。</p>
+<h3 id="气压计"><a href="#气压计" class="headerlink" title="气压计"></a>气压计</h3><p>如果多旋翼悬停高度距离地面过大，超声波测距仪就会失效，这时应当使用气压计。</p>
+<h2 id="可观性和卡尔曼滤波器"><a href="#可观性和卡尔曼滤波器" class="headerlink" title="可观性和卡尔曼滤波器"></a>可观性和卡尔曼滤波器</h2><p>略</p>
 
                 
             </div>
@@ -369,8 +457,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%A3%81%E5%8A%9B%E8%AE%A1/">
-                                    <span class="chip bg-color">磁力计</span>
+                                <a href="/tags/UAV/">
+                                    <span class="chip bg-color">UAV</span>
                                 </a>
                             
                         </div>
@@ -439,13 +527,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/11/Learn/%E5%8A%A8%E6%89%8B%E5%AD%A6ROS2/">
+                <a href="/2023/01/11/Learn/%E6%9D%82/cubeide%E7%A7%BB%E6%A4%8D%E5%88%B0vscode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="动手学ROS2">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="cubeide移植到vscode">
                         
-                        <span class="card-title">动手学ROS2</span>
+                        <span class="card-title">cubeide移植到vscode</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -473,8 +561,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ROS/">
-                        <span class="chip bg-color">ROS</span>
+                    <a href="/tags/cubeide/">
+                        <span class="chip bg-color">cubeide</span>
+                    </a>
+                    
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">vscode</span>
                     </a>
                     
                 </div>
@@ -488,13 +580,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/11/Learn/%E5%9B%9B%E5%85%83%E6%95%B0%E4%B8%8E%E6%AC%A7%E6%8B%89%E8%A7%92%E4%B8%8E%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                <a href="/2023/01/11/Learn/%E6%9D%82/%E6%B6%B5%E9%81%93%EF%BC%9A%E6%B6%B5%E9%81%93%E6%97%A0%E4%BA%BA%E6%9C%BA%E5%BB%BA%E6%A8%A1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="四元数与欧拉角与旋转矩阵">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="涵道无人机建模">
                         
-                        <span class="card-title">四元数与欧拉角与旋转矩阵</span>
+                        <span class="card-title">涵道无人机建模</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -522,20 +614,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/">
-                        <span class="chip bg-color">坐标变换</span>
+                    <a href="/tags/UAV/">
+                        <span class="chip bg-color">UAV</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%9B%E5%85%83%E6%95%B0/">
-                        <span class="chip bg-color">四元数</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%AC%A7%E6%8B%89%E8%A7%92/">
-                        <span class="chip bg-color">欧拉角</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
-                        <span class="chip bg-color">旋转矩阵</span>
+                    <a href="/tags/%E5%BB%BA%E6%A8%A1/">
+                        <span class="chip bg-color">建模</span>
                     </a>
                     
                 </div>
@@ -679,7 +763,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">11.7k</span>
+                        class="white-color">12k</span>
             
             
             

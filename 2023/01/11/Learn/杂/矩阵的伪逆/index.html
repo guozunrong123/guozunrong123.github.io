@@ -4,12 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chapter3 操作臂运动学, ZRong&#39;s Blog">
+    <meta name="keywords" content="矩阵的伪逆, ZRong&#39;s Blog">
     <meta name="description" content="
 
-Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通过关节连接成运动链的刚体。我们将这些刚体称为连杆。当两个刚体之间的相对运动是两个平面相互之间的相对滑动时，连接相邻两个刚体的运动副称为低副。
-
-为了确定末端执行器在三维空间">
+满秩&amp;#x2F;列满秩&amp;#x2F;行满秩设A是n阶矩阵, 若r（A） &amp;#x3D; n, 则称A为满秩矩阵。但满秩不局限于n阶矩阵。
+若矩阵秩等于行数，称为行满秩；若矩阵秩等于列数，称为列满秩。既是行满秩又是列满秩则为n阶矩阵即n阶方阵">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +20,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chapter3 操作臂运动学 | ZRong&#39;s Blog</title>
+    <title>矩阵的伪逆 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -252,12 +251,12 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chapter3 操作臂运动学</h1>
+                    <h1 class="description center-align post-title">矩阵的伪逆</h1>
                 </div>
             </div>
         </div>
@@ -281,12 +280,12 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                                <span class="chip bg-color">机器人学导论</span>
+                            <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                                <span class="chip bg-color">矩阵</span>
                             </a>
                         
-                            <a href="/tags/%E6%AD%A3%E8%BF%90%E5%8A%A8%E5%AD%A6/">
-                                <span class="chip bg-color">正运动学</span>
+                            <a href="/tags/%E4%BC%AA%E9%80%86/">
+                                <span class="chip bg-color">伪逆</span>
                             </a>
                         
                     </div>
@@ -310,7 +309,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-28
+                    2023-01-11
                 </div>
                 
 
@@ -319,7 +318,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    493
+                    528
                 </div>
                 
 
@@ -346,22 +345,23 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="Chapter3-操作臂运动学"><a href="#Chapter3-操作臂运动学" class="headerlink" title="Chapter3 操作臂运动学"></a>Chapter3 操作臂运动学</h1><h2 id="连杆的描述"><a href="#连杆的描述" class="headerlink" title="连杆的描述"></a>连杆的描述</h2><p>操作臂可以看成由一系列通过关节连接成运动链的刚体。我们将这些刚体称为连杆。当两个刚体之间的相对运动是两个平面相互之间的相对滑动时，连接相邻两个刚体的运动副称为低副。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230112172810077.png" alt="6种常见的低副关节"></p>
-<p>为了确定末端执行器在三维空间的位置和姿态，操作臂至少需要6个关节。</p>
-<p>三维空间中的任意两个轴之间的距离是固定的，即为两轴之间公垂线的长度。</p>
-<p>如图，关节轴i-1和关节轴i之间公垂线的长度为a<del>i-1</del>，a<del>i-1</del>即为连杆长度。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230116220205755.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230116220623404.png"></p>
-<h2 id="连杆连接的描述"><a href="#连杆连接的描述" class="headerlink" title="连杆连接的描述"></a>连杆连接的描述</h2><p>在研究机器人运动学时，仅需要考虑两个参数，这两个参数完全确定了所有连杆时如何连接的。</p>
-<p>沿两个相邻连杆公共轴线方向的距离可以用一个参数描述，该参数称为连杆偏距，在关节轴i上的连杆偏距记为d<del>i</del> 。用另一个参数描述两相邻连杆绕公共轴线旋转的夹角，该参数称为关节角，记为Θ<del>i</del>。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230126114600090.png"></p>
-<h2 id="连杆参数"><a href="#连杆参数" class="headerlink" title="连杆参数"></a>连杆参数</h2><p>因此，机器人的每个连杆都可以用4个运动学参数来描述，其中两个参数用于描述连杆本身，另两个参数用于描述连杆之间的连接关系。通常，对于转动关节，Θ<del>i</del>为关节变量，其他三个连杆参数是固定不变的；对于移动关节，d<del>i</del>为关节变量，其他三个连杆参数是固定不变的。这种用连杆参数描述机构运动关系的规则称为DH法。</p>
-<h2 id="连杆坐标系的定义"><a href="#连杆坐标系的定义" class="headerlink" title="连杆坐标系的定义"></a>连杆坐标系的定义</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128144122352.png"></p>
-<h3 id="连杆参数在连杆坐标系中的表示方法"><a href="#连杆参数在连杆坐标系中的表示方法" class="headerlink" title="连杆参数在连杆坐标系中的表示方法"></a>连杆参数在连杆坐标系中的表示方法</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128144235355.png"></p>
-<h3 id="建立连杆坐标系的步骤"><a href="#建立连杆坐标系的步骤" class="headerlink" title="建立连杆坐标系的步骤"></a>建立连杆坐标系的步骤</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128150718420.png"></p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128155509861.png"></p>
-<h2 id="操作臂运动学"><a href="#操作臂运动学" class="headerlink" title="操作臂运动学"></a>操作臂运动学</h2><h3 id="连杆变换的推导"><a href="#连杆变换的推导" class="headerlink" title="连杆变换的推导"></a>连杆变换的推导</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128165201317.png"></p>
+<h2 id="满秩-x2F-列满秩-x2F-行满秩"><a href="#满秩-x2F-列满秩-x2F-行满秩" class="headerlink" title="满秩&#x2F;列满秩&#x2F;行满秩"></a>满秩&#x2F;列满秩&#x2F;行满秩</h2><p>设A是n阶矩阵, 若r（A） &#x3D; n, 则称A为满秩矩阵。但满秩不局限于n阶矩阵。</p>
+<p>若矩阵秩等于行数，称为行满秩；若矩阵秩等于列数，称为列满秩。既是行满秩又是列满秩则为n阶矩阵即n阶方阵。行满秩矩阵就是行向量线性无关，列满秩矩阵就是列向量线性无关；所以如果是方阵,行满秩矩阵与列满秩矩阵是等价的。</p>
+<h3 id="左逆与右逆"><a href="#左逆与右逆" class="headerlink" title="左逆与右逆"></a>左逆与右逆</h3><h4 id="左逆（Left-inverse）"><a href="#左逆（Left-inverse）" class="headerlink" title="左逆（Left inverse）"></a>左逆（Left inverse）</h4><p>　　如果<strong>A</strong>是一个m×n的列满秩矩阵，意味着<strong>A</strong>的各列线性无关，<strong>A</strong>的秩和列数相等，r &#x3D; n，但<strong>A</strong>可能存在更多的行，m ≥ n，此时<strong>A</strong>的零空间只有零向量，并且<strong>Ax</strong> &#x3D; <strong>b</strong>有唯一解（m &#x3D; n时）或无解（m &gt; n时）。</p>
+<p>　　对于列满秩矩阵来说，对称矩阵<strong>ATA</strong>是一个n×n的满秩方阵，因此<strong>ATA</strong>可逆，此时：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1203675/201912/1203675-20191219212030618-546806398.png"></p>
+<p>　　</p>
+<p>　　我们称<strong>A</strong>-1left为<strong>A</strong>的左逆，是一个n×m的矩阵，左逆也是讨论最小二乘问题的核心。</p>
+<h4 id="右逆（Right-inverse）"><a href="#右逆（Right-inverse）" class="headerlink" title="右逆（Right inverse）"></a>右逆（Right inverse）</h4><p>　　如果<strong>A</strong>是一个m×n的行满秩矩阵，意味着<strong>A</strong>的各行线性无关，<strong>A</strong>的秩和行数相等，r &#x3D; m，但<strong>A</strong>可能存在更多的列，m ≤ n。<strong>A</strong>的左零空间只有零向量，<strong>A</strong>的零空间是n - r维，因此有n – r个自由变量，当n &gt; m时，<strong>Ax</strong> &#x3D; <strong>b</strong>有无数解。</p>
+<p>　　对于行满秩矩阵来说，对称矩阵<strong>AAT</strong>是一个m×m的满秩方阵，因此<strong>AAT</strong>可逆，此时：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1203675/201912/1203675-20191219212047065-958765262.png"></p>
+<p>　　通常来说，右乘左逆得不到单位矩阵，仅在m &#x3D; n时才有<strong>AA</strong>-1left &#x3D; <strong>I</strong>。对于列满秩的m×n矩阵来说，<strong>AA</strong>-1left &#x3D; <strong>A</strong>(<strong>A</strong>T<strong>A</strong>)-1<strong>A</strong>T &#x3D; <strong>P</strong>，<strong>P</strong>是<strong>A</strong>的列空间的投影矩阵。同理，左乘右逆也得不到单位矩阵，<strong>A</strong>-1right<strong>A</strong>是<strong>A</strong>的行空间的投影矩阵。</p>
+<p>From Wikipedia:</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230107165213444.png"></p>
+<p>列满秩对应有左逆。行满秩对应右逆。</p>
+<h3 id="Question-为何列满秩，Atranspose-A一定可逆？"><a href="#Question-为何列满秩，Atranspose-A一定可逆？" class="headerlink" title="Question:为何列满秩，Atranspose A一定可逆？"></a>Question:为何列满秩，Atranspose A一定可逆？</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230107171325994.png"></p>
+<h2 id="伪逆性质"><a href="#伪逆性质" class="headerlink" title="伪逆性质"></a>伪逆性质</h2><p><img src="https://img2018.cnblogs.com/blog/1203675/201912/1203675-20191219212655293-2111508311.png"></p>
+<h2 id="伪逆与SVD"><a href="#伪逆与SVD" class="headerlink" title="伪逆与SVD"></a>伪逆与SVD</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230107175536979.png"></p>
 
                 
             </div>
@@ -376,12 +376,12 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                                    <span class="chip bg-color">机器人学导论</span>
+                                <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                                    <span class="chip bg-color">矩阵</span>
                                 </a>
                             
-                                <a href="/tags/%E6%AD%A3%E8%BF%90%E5%8A%A8%E5%AD%A6/">
-                                    <span class="chip bg-color">正运动学</span>
+                                <a href="/tags/%E4%BC%AA%E9%80%86/">
+                                    <span class="chip bg-color">伪逆</span>
                                 </a>
                             
                         </div>
@@ -446,18 +446,78 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/28/Learn/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/">
+                <a href="/2023/01/11/Learn/%E6%9D%82/%E5%9B%9B%E5%85%83%E6%95%B0%E4%B8%8E%E6%AC%A7%E6%8B%89%E8%A7%92%E4%B8%8E%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Chapter3 操作臂运动学">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="四元数与欧拉角与旋转矩阵">
                         
-                        <span class="card-title">Chapter3 操作臂运动学</span>
+                        <span class="card-title">四元数与欧拉角与旋转矩阵</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/">
+                        <span class="chip bg-color">坐标变换</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9B%E5%85%83%E6%95%B0/">
+                        <span class="chip bg-color">四元数</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%AC%A7%E6%8B%89%E8%A7%92/">
+                        <span class="chip bg-color">欧拉角</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">旋转矩阵</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/01/11/Learn/%E6%9D%82/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="矩阵的伪逆">
+                        
+                        <span class="card-title">矩阵的伪逆</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -468,7 +528,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
                             </span>
                         <span class="publish-author">
                             
@@ -486,61 +546,12 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                        <span class="chip bg-color">机器人学导论</span>
+                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">矩阵</span>
                     </a>
                     
-                    <a href="/tags/%E6%AD%A3%E8%BF%90%E5%8A%A8%E5%AD%A6/">
-                        <span class="chip bg-color">正运动学</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/01/25/Life/2023.1.25%E8%AE%B0/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="2023.1.25 note">
-                        
-                        <span class="card-title">2023.1.25 note</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Life/" class="post-category">
-                                    Life
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E4%BC%AA%E9%80%86/">
+                        <span class="chip bg-color">伪逆</span>
                     </a>
                     
                 </div>
@@ -684,7 +695,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">11.7k</span>
+                        class="white-color">12k</span>
             
             
             

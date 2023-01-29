@@ -4,18 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="涵道无人机建模, ZRong&#39;s Blog">
+    <meta name="keywords" content="Chapter3 操作臂运动学, ZRong&#39;s Blog">
     <meta name="description" content="
 
-无人机建模及运动方程坐标系定义及运动方程坐标系定义
+Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通过关节连接成运动链的刚体。我们将这些刚体称为连杆。当两个刚体之间的相对运动是两个平面相互之间的相对滑动时，连接相邻两个刚体的运动副称为低副。
 
-坐标如图所示：
-
-运动学方程六自由度刚体的运动学方程：
-
-旋转矩阵的导数：
-
-动力学方程动量定理和角动量定理只有在惯性系(NED系)中才成立，因此在非惯性系(机体系)中表示的动力学方">
+为了确定末端执行器在三维空间">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -27,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>涵道无人机建模 | ZRong&#39;s Blog</title>
+    <title>Chapter3 操作臂运动学 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -258,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">涵道无人机建模</h1>
+                    <h1 class="description center-align post-title">Chapter3 操作臂运动学</h1>
                 </div>
             </div>
         </div>
@@ -287,12 +281,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/UAV/">
-                                <span class="chip bg-color">UAV</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                                <span class="chip bg-color">机器人学导论</span>
                             </a>
                         
-                            <a href="/tags/%E5%BB%BA%E6%A8%A1/">
-                                <span class="chip bg-color">建模</span>
+                            <a href="/tags/%E6%AD%A3%E8%BF%90%E5%8A%A8%E5%AD%A6/">
+                                <span class="chip bg-color">正运动学</span>
                             </a>
                         
                     </div>
@@ -316,7 +310,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-11
+                    2023-01-28
                 </div>
                 
 
@@ -325,7 +319,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    493
                 </div>
                 
 
@@ -352,76 +346,22 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h2 id="无人机建模及运动方程"><a href="#无人机建模及运动方程" class="headerlink" title="无人机建模及运动方程"></a>无人机建模及运动方程</h2><h3 id="坐标系定义及运动方程"><a href="#坐标系定义及运动方程" class="headerlink" title="坐标系定义及运动方程"></a>坐标系定义及运动方程</h3><h4 id="坐标系定义"><a href="#坐标系定义" class="headerlink" title="坐标系定义"></a>坐标系定义</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108103216237.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108103159942.png" alt="-"></p>
-<p>坐标如图所示：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108103712962.png"></p>
-<h4 id="运动学方程"><a href="#运动学方程" class="headerlink" title="运动学方程"></a>运动学方程</h4><p>六自由度刚体的运动学方程：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108102927616.png"></p>
-<p>旋转矩阵的导数：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108103007669.png"></p>
-<h4 id="动力学方程"><a href="#动力学方程" class="headerlink" title="动力学方程"></a>动力学方程</h4><p>动量定理和角动量定理只有在惯性系(NED系)中才成立，因此在非惯性系(机体系)中表示的动力学方程需要通过旋转变换得到。</p>
-<p>在NED系中由动量定理，有</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108105110754.png"></p>
-<p>其实，G&#x3D;mg为无人机所受重力，F为除重力外其他力的矢量和。</p>
-<p>在非惯性系下表示该方程：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108105210913.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108105220625.png"></p>
-<p>代入NED系动量定理，可得</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108105227121.png"></p>
-<p>欧拉动力学方程：</p>
-<p>惯性张量在NED中的表示是一个变量，而在机体系中的表示是一个常量，因此旋转动力学方程一般在机体系中表示。</p>
-<p>推导见论文P24</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108112255632.png"></p>
-<p>整理合并，得涵道无人机得非线性模型：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108113242454.png"></p>
-<h2 id="单涵道动力学分析"><a href="#单涵道动力学分析" class="headerlink" title="单涵道动力学分析"></a>单涵道动力学分析</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108114441049.png"></p>
-<h3 id="空气阻力"><a href="#空气阻力" class="headerlink" title="空气阻力"></a>空气阻力</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108114623458.png"></p>
-<blockquote>
-<p>飞机的升力公式详解<br>Y&#x3D;1&#x2F;2ρCSv²<br>式中：<br>Y是总升力，（单位是：牛顿，即N，1千克力约等于10牛顿）</p>
-<p>C是升力系数，是个不名数，没有单位，是通过风洞实验测出的系数，但一般可按1进行粗略计算，升力系数和机翼的翼型（就是机翼断面的形状，一般前圆后尖、上曲下平、较厚的，例如达到弦长的15%的翼型具有较大的升力系数）、迎角（就是翼弦与气流的夹角，升力系数与迎角正相关，较厚的机翼允许迎角较大，例如10～12°，较薄的机翼不允许大迎角，只能6～8°，太大就会因升力系数迅速减小而失速）、展弦比（展弦比越大，升力系数越大）、机翼表面的光滑程度（越光滑升力系数越大）有关。</p>
-<p>展弦比：翼长的平方除以翼的面积</p>
-<p>S是机翼的面积（单位是：平方米，即m2）。</p>
-<p>v是飞机的速度（单位是：米&#x2F;秒，即m&#x2F;s，如果的公里&#x2F;小时就要除以3.6，换算成米&#x2F;秒；如果是顶风，就要用飞机的速度加风速，如果是顺风，就要用飞机的速度减风速，单位都用米&#x2F;秒）。注意，公式里是平方。速度大三倍，升力大九倍。</p>
-<p>ρ是大气密度（和当地海拔高度、气温、湿度有关，海拔500米之下可按1.2计算，单位是：千克&#x2F;立方米，即Kg&#x2F;m3）。</p>
-</blockquote>
-<h3 id="涵道内部风扇"><a href="#涵道内部风扇" class="headerlink" title="涵道内部风扇"></a>涵道内部风扇</h3><p>假设流动为管流，建立涵道风扇轴流状态的管流模型。气体在无穷远处速度为Vc，经过风扇桨盘时加速至Vc+Vi，最终以Vc+V2形成尾迹。如图所示。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108161630475.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108163843366.png"></p>
-<blockquote>
-<p>涵道体上产生的拉力？</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108163946929.png"></p>
-</blockquote>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108164543358.png"></p>
-<blockquote>
-<p>理想正压流体在有势体积力作用下作定常运动时，运动方程(即欧拉方程)沿流线积分而得到的表达运动流体机械能守恒的方程。因著名的瑞士科学家D.伯努利于1738年提出而得名。对于重力场中的不可压缩均质流体 ，方程为p+ρgh+(1&#x2F;2)*ρv^2&#x3D;c　式中p、ρ、v分别为流体的压强、密度和速度；h为铅垂高度；g为重力加速度ρgh和动能(1&#x2F;2)*ρv ^2，在沿流线运动过程中，总和保持不变，即总能量守恒。但各流线之间总能量（即上式中的常量值）可能不同。对于气体，可忽略重力，方程简化为p+(1&#x2F;2)*ρv ^2&#x3D;常量(p0)，各项分别称为静压 、动压和总压。</p>
-</blockquote>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108164621695.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108170557006.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108170706121.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108170838419.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230108170936059.png"></p>
-<h3 id="涵道动力学"><a href="#涵道动力学" class="headerlink" title="涵道动力学"></a>涵道动力学</h3><p> 略</p>
-<h3 id="涵道底部控制舵"><a href="#涵道底部控制舵" class="headerlink" title="涵道底部控制舵"></a>涵道底部控制舵</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230109213745427.png"></p>
-<p>每个操纵面上产生的升力可表示为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230109221947035.png"></p>
-<p>其中，k为操纵面气动升力系数，和攻角有关。Vi+Vc为涵道出口气流流速。</p>
-<blockquote>
-<p>攻角，指的是飞机机翼弦线与相对风的夹角。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230109222150764.png"></p>
-</blockquote>
-<p>由操纵面产生的作用于机体的力和力矩可分别表示为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230109223101909.png"></p>
-<p>其中，Mc为驱动力矩，Tx、Ty、Tz为驱动力矩在机体系坐标轴上的投影。</p>
-<h3 id="固定气动面动力学和陀螺力矩"><a href="#固定气动面动力学和陀螺力矩" class="headerlink" title="固定气动面动力学和陀螺力矩"></a>固定气动面动力学和陀螺力矩</h3><p>单涵道无人机内部设计固定气动面以平衡悬停状态下风扇反扭距的影响。</p>
-<p>固定气动面对涵道轴得到力矩可近似为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230109224911130.png"></p>
-<p>如图所示：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230109224921143.png"></p>
-<p>在悬停点附近，涵道风扇转速几乎恒定，只有在剧烈的机动飞行中，转速变化才会比较明显了。为简单起见，假设风扇转速的变换可以忽略不计。因此，由风扇的旋转产生陀螺力矩可表示为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230109225201109.png"></p>
-<p>其中，Ib为风扇转动惯量，Lr为风扇角动量。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1]基于自抗扰控制的涵道无人机控制分配_蒙超恒</p>
+<h1 id="Chapter3-操作臂运动学"><a href="#Chapter3-操作臂运动学" class="headerlink" title="Chapter3 操作臂运动学"></a>Chapter3 操作臂运动学</h1><h2 id="连杆的描述"><a href="#连杆的描述" class="headerlink" title="连杆的描述"></a>连杆的描述</h2><p>操作臂可以看成由一系列通过关节连接成运动链的刚体。我们将这些刚体称为连杆。当两个刚体之间的相对运动是两个平面相互之间的相对滑动时，连接相邻两个刚体的运动副称为低副。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230112172810077.png" alt="6种常见的低副关节"></p>
+<p>为了确定末端执行器在三维空间的位置和姿态，操作臂至少需要6个关节。</p>
+<p>三维空间中的任意两个轴之间的距离是固定的，即为两轴之间公垂线的长度。</p>
+<p>如图，关节轴i-1和关节轴i之间公垂线的长度为a<del>i-1</del>，a<del>i-1</del>即为连杆长度。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230116220205755.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230116220623404.png"></p>
+<h2 id="连杆连接的描述"><a href="#连杆连接的描述" class="headerlink" title="连杆连接的描述"></a>连杆连接的描述</h2><p>在研究机器人运动学时，仅需要考虑两个参数，这两个参数完全确定了所有连杆时如何连接的。</p>
+<p>沿两个相邻连杆公共轴线方向的距离可以用一个参数描述，该参数称为连杆偏距，在关节轴i上的连杆偏距记为d<del>i</del> 。用另一个参数描述两相邻连杆绕公共轴线旋转的夹角，该参数称为关节角，记为Θ<del>i</del>。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230126114600090.png"></p>
+<h2 id="连杆参数"><a href="#连杆参数" class="headerlink" title="连杆参数"></a>连杆参数</h2><p>因此，机器人的每个连杆都可以用4个运动学参数来描述，其中两个参数用于描述连杆本身，另两个参数用于描述连杆之间的连接关系。通常，对于转动关节，Θ<del>i</del>为关节变量，其他三个连杆参数是固定不变的；对于移动关节，d<del>i</del>为关节变量，其他三个连杆参数是固定不变的。这种用连杆参数描述机构运动关系的规则称为DH法。</p>
+<h2 id="连杆坐标系的定义"><a href="#连杆坐标系的定义" class="headerlink" title="连杆坐标系的定义"></a>连杆坐标系的定义</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128144122352.png"></p>
+<h3 id="连杆参数在连杆坐标系中的表示方法"><a href="#连杆参数在连杆坐标系中的表示方法" class="headerlink" title="连杆参数在连杆坐标系中的表示方法"></a>连杆参数在连杆坐标系中的表示方法</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128144235355.png"></p>
+<h3 id="建立连杆坐标系的步骤"><a href="#建立连杆坐标系的步骤" class="headerlink" title="建立连杆坐标系的步骤"></a>建立连杆坐标系的步骤</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128150718420.png"></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128155509861.png"></p>
+<h2 id="操作臂运动学"><a href="#操作臂运动学" class="headerlink" title="操作臂运动学"></a>操作臂运动学</h2><h3 id="连杆变换的推导"><a href="#连杆变换的推导" class="headerlink" title="连杆变换的推导"></a>连杆变换的推导</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128165201317.png"></p>
 
                 
             </div>
@@ -436,12 +376,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/UAV/">
-                                    <span class="chip bg-color">UAV</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                                    <span class="chip bg-color">机器人学导论</span>
                                 </a>
                             
-                                <a href="/tags/%E5%BB%BA%E6%A8%A1/">
-                                    <span class="chip bg-color">建模</span>
+                                <a href="/tags/%E6%AD%A3%E8%BF%90%E5%8A%A8%E5%AD%A6/">
+                                    <span class="chip bg-color">正运动学</span>
                                 </a>
                             
                         </div>
@@ -510,13 +450,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/11/Learn/%E5%A4%9A%E6%97%8B%E7%BF%BC%E9%A3%9E%E8%A1%8C%E5%99%A8%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%AE%BE%E8%AE%A1/">
+                <a href="/2023/01/29/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter4%20%E6%93%8D%E4%BD%9C%E8%87%82%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="多旋翼飞行器控制与设计">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Chapter 4 操作臂逆运动学">
                         
-                        <span class="card-title">多旋翼飞行器控制与设计</span>
+                        <span class="card-title">Chapter 4 操作臂逆运动学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -527,7 +467,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
                         </span>
                         <span class="publish-author">
                             
@@ -544,8 +484,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/UAV/">
-                        <span class="chip bg-color">UAV</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                        <span class="chip bg-color">机器人学导论</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/">
+                        <span class="chip bg-color">逆运动学</span>
                     </a>
                     
                 </div>
@@ -559,13 +503,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/11/Learn/%E5%8A%A8%E6%89%8B%E5%AD%A6ROS2/">
+                <a href="/2023/01/25/Life/2023.1.25%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="动手学ROS2">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="2023.1.25 note">
                         
-                        <span class="card-title">动手学ROS2</span>
+                        <span class="card-title">2023.1.25 note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -576,14 +520,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Learn/" class="post-category">
-                                    Learn
+                            <a href="/categories/Life/" class="post-category">
+                                    Life
                                 </a>
                             
                             
@@ -593,8 +537,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ROS/">
-                        <span class="chip bg-color">ROS</span>
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
@@ -738,7 +682,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">11.7k</span>
+                        class="white-color">12k</span>
             
             
             
