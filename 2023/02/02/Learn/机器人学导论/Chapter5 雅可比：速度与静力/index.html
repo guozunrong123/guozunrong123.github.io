@@ -319,7 +319,7 @@ Chapter5 雅可比：速度与静力时变位置和姿态的符号表示位置�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    810
+                    1k
                 </div>
                 
 
@@ -391,7 +391,16 @@ Chapter5 雅可比：速度与静力时变位置和姿态的符号表示位置�
 <p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230204231223370.png"></p>
 <p>大多数操作臂都有使得雅可比矩阵奇异的Θ值。这些位置就称为机构的奇异位形或简称奇异性。</p>
 <p>当操作臂处于奇异位形时，它会失去一个或多个自由度。这也就是说，在笛卡尔空间的某个方向上，无论选择什么样的关节速度，都不能使机器人手臂运动。</p>
-<h2 id="操作臂的静力"><a href="#操作臂的静力" class="headerlink" title="操作臂的静力"></a>操作臂的静力</h2>
+<h2 id="操作臂的静力"><a href="#操作臂的静力" class="headerlink" title="操作臂的静力"></a>操作臂的静力</h2><p>我们为相邻杆件所施加的力和力矩定义以下特殊的符号：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205155041240.png"></p>
+<p>连杆之间的静力传递表达式</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205155009359.png"></p>
+<p>为了平衡施加在连杆上的力和力矩，需要施加在关节上的力矩有多大？除了绕关节轴的力矩之外，力和力矩矢量的所有分量都可以由操作臂机构本身来平衡。因此，为求出保持系统静平衡的关节力矩，应计算关节轴矢量和施加在连杆上的力矩矢量的点乘：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205160612487.png"></p>
+<h2 id="力域中的雅可比"><a href="#力域中的雅可比" class="headerlink" title="力域中的雅可比"></a>力域中的雅可比</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205161632020.png" alt="image-20230205161632020"></p>
+<p>F是一个作用在末端执行器上的6×1维笛卡尔力-力矩矢量，t是6×1维关节力矩矢量。</p>
+<p>上式说明：雅可比矩阵的转置将作用在手臂上的笛卡尔力映射成了等效关节力矩。</p>
+
                 
             </div>
             <hr/>
@@ -479,13 +488,13 @@ Chapter5 雅可比：速度与静力时变位置和姿态的符号表示位置�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/02/05/Life/2023.2.5%E8%AE%B0/">
+                <a href="/2023/02/04/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter6%20%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="2023.2.5 note">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Chapter6 操作臂动力学">
                         
-                        <span class="card-title">2023.2.5 note</span>
+                        <span class="card-title">Chapter6 操作臂动力学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -496,14 +505,14 @@ Chapter5 雅可比：速度与静力时变位置和姿态的符号表示位置�
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-04
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Life/" class="post-category">
-                                    Life
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
                                 </a>
                             
                             
@@ -513,8 +522,12 @@ Chapter5 雅可比：速度与静力时变位置和姿态的符号表示位置�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                        <span class="chip bg-color">机器人学导论</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/">
+                        <span class="chip bg-color">操作臂动力学</span>
                     </a>
                     
                 </div>
@@ -711,7 +724,7 @@ Chapter5 雅可比：速度与静力时变位置和姿态的符号表示位置�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13k</span>
+                        class="white-color">14.2k</span>
             
             
             

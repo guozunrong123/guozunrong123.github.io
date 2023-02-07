@@ -4,11 +4,18 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Kalman Filter, ZRong&#39;s Blog">
+    <meta name="keywords" content="Chapter7 轨迹生成, ZRong&#39;s Blog">
     <meta name="description" content="
 
-Kalman FilterLearn by DR_CAN
-Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data Processing Algorithm 最优化递归数">
+Chapter7 轨迹生成关节空间的规划方法三次多项式由初始值和最终值可得到对函数值的两个约束条件：
+
+在初始时刻和终止时刻关节速度为零：
+
+该三次多项式具有如下形式：
+
+解方程可得：
+
+但是该解仅适用于起始关节角速度与终止关节角速度均">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +27,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Kalman Filter | ZRong&#39;s Blog</title>
+    <title>Chapter7 轨迹生成 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -251,12 +258,12 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Kalman Filter</h1>
+                    <h1 class="description center-align post-title">Chapter7 轨迹生成</h1>
                 </div>
             </div>
         </div>
@@ -280,8 +287,12 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kalman-Filter/">
-                                <span class="chip bg-color">Kalman Filter</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                                <span class="chip bg-color">机器人学导论</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/">
+                                <span class="chip bg-color">轨迹生成</span>
                             </a>
                         
                     </div>
@@ -305,7 +316,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-11
+                    2023-02-07
                 </div>
                 
 
@@ -314,7 +325,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    299
+                    475
                 </div>
                 
 
@@ -341,42 +352,36 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="Kalman-Filter"><a href="#Kalman-Filter" class="headerlink" title="Kalman Filter"></a>Kalman Filter</h1><p>Learn by DR_CAN</p>
-<h2 id="Part1-Recursive-Algorithm-递归算法"><a href="#Part1-Recursive-Algorithm-递归算法" class="headerlink" title="Part1 Recursive Algorithm 递归算法"></a>Part1 Recursive Algorithm 递归算法</h2><h3 id="1-1-一句话概括"><a href="#1-1-一句话概括" class="headerlink" title="1.1 一句话概括"></a>1.1 一句话概括</h3><p>Optimal Recursive Data Processing Algorithm 最优化递归数字处理算法</p>
-<h3 id="1-2-不确定性"><a href="#1-2-不确定性" class="headerlink" title="1.2 不确定性"></a>1.2 不确定性</h3><ul>
-<li>不存在完美的数学模型</li>
-<li>系统的扰动不可控，也很难建模</li>
-<li>测量传感器存在误差</li>
-</ul>
-<h3 id="1-3-Example"><a href="#1-3-Example" class="headerlink" title="1.3 Example"></a>1.3 Example</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220913220448956.png"></p>
-<p><strong>由上式可知，随着k的增加，测量结果不再重要。</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220913220418191.png"></p>
-<h3 id="1-4-Step"><a href="#1-4-Step" class="headerlink" title="1.4 Step"></a>1.4 Step</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914170031982.png"></p>
-<h2 id="Part2-Data-Fusion-数据融合"><a href="#Part2-Data-Fusion-数据融合" class="headerlink" title="Part2 Data Fusion 数据融合"></a>Part2 Data Fusion 数据融合</h2><h3 id="1-1-Example"><a href="#1-1-Example" class="headerlink" title="1.1 Example"></a>1.1 Example</h3><p>Use math to solve a ploblem which has two sets of data.</p>
-<p>假设有两把秤，测重量。</p>
-<p>其中一把秤得到30g，已知其标准差为2g；另一把秤得到32g，标准差为4g。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914202400147.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914202448915.png"></p>
-<h3 id="1-2-Covariance-Matrix-协方差矩阵"><a href="#1-2-Covariance-Matrix-协方差矩阵" class="headerlink" title="1.2 Covariance Matrix 协方差矩阵"></a>1.2 Covariance Matrix 协方差矩阵</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210137551.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210229505.png"></p>
-<h3 id="1-3-State-Space-Representation"><a href="#1-3-State-Space-Representation" class="headerlink" title="1.3 State Space Representation"></a>1.3 State Space Representation</h3><p><strong>见现代控制理论状态空间方程的表示。</strong></p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210510464.png"></h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210749768.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914211339976.png"></p>
-<h2 id="Part3-Step-by-Step-Derivation-of-Kalman-Gain"><a href="#Part3-Step-by-Step-Derivation-of-Kalman-Gain" class="headerlink" title="Part3 Step by Step Derivation of Kalman Gain"></a>Part3 Step by Step Derivation of Kalman Gain</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hC4y1b7K7?spm_id_from=333.999.0.0&vd_source=dc5a7d7190173a321a8ae3df82a10d84">【卡尔曼滤波器】3_卡尔曼增益超详细数学推导 ～全网最完整_哔哩哔哩_bilibili</a></p>
-<p><u><strong>跟着学一遍</strong></u></p>
-<h3 id="1-1-建立状态空间方程"><a href="#1-1-建立状态空间方程" class="headerlink" title="1.1 建立状态空间方程"></a>1.1 建立状态空间方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220915191708100.png"></p>
-<h3 id="1-2-寻找增益k值，使得方差最小"><a href="#1-2-寻找增益k值，使得方差最小" class="headerlink" title="1.2 寻找增益k值，使得方差最小"></a>1.2 寻找增益k值，使得方差最小</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916001619736.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916001603500.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916002220270.png"></p>
-<h2 id="Part4-Priori-x2F-Posterrori-Error-Covariance-Matrix-先验-x2F-后验误差协方差矩阵"><a href="#Part4-Priori-x2F-Posterrori-Error-Covariance-Matrix-先验-x2F-后验误差协方差矩阵" class="headerlink" title="Part4 Priori&#x2F;Posterrori Error Covariance Matrix 先验&#x2F;后验误差协方差矩阵"></a>Part4 Priori&#x2F;Posterrori Error Covariance Matrix 先验&#x2F;后验误差协方差矩阵</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917005157630.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917004952941.png"></p>
-<h2 id="Part5-An-Example"><a href="#Part5-An-Example" class="headerlink" title="Part5 An Example"></a>Part5 An Example</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917010043597.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011807619.png"></p>
-<h3 id="如果测量误差小"><a href="#如果测量误差小" class="headerlink" title="如果测量误差小"></a>如果测量误差小</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011914629.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011853695.png"></p>
-<h3 id="如果测量误差大"><a href="#如果测量误差大" class="headerlink" title="如果测量误差大"></a>如果测量误差大</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012021251.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012032856.png"></p>
-<h2 id="Part6-Extended-Kalman-Filter-扩展卡尔曼滤波器"><a href="#Part6-Extended-Kalman-Filter-扩展卡尔曼滤波器" class="headerlink" title="Part6 Extended Kalman Filter 扩展卡尔曼滤波器"></a>Part6 Extended Kalman Filter 扩展卡尔曼滤波器</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012759494.png"></p>
+<h1 id="Chapter7-轨迹生成"><a href="#Chapter7-轨迹生成" class="headerlink" title="Chapter7 轨迹生成"></a>Chapter7 轨迹生成</h1><h2 id="关节空间的规划方法"><a href="#关节空间的规划方法" class="headerlink" title="关节空间的规划方法"></a>关节空间的规划方法</h2><h3 id="三次多项式"><a href="#三次多项式" class="headerlink" title="三次多项式"></a>三次多项式</h3><p>由初始值和最终值可得到对函数值的两个约束条件：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207194244309.png"></p>
+<p>在初始时刻和终止时刻关节速度为零：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207194316528.png"></p>
+<p>该三次多项式具有如下形式：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207195506054.png"></p>
+<p>解方程可得：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207195540457.png"></p>
+<p>但是该解仅适用于起始关节角速度与终止关节角速度均为零的情况。</p>
+<h3 id="具有中间点的路径的三次多项式"><a href="#具有中间点的路径的三次多项式" class="headerlink" title="具有中间点的路径的三次多项式"></a>具有中间点的路径的三次多项式</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207195856031.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207195901363.png"></p>
+<p>上式，可求出符合任何起始和终止位置以及任何起始和终止速度的三次多项式。</p>
+<h3 id="高次多项式"><a href="#高次多项式" class="headerlink" title="高次多项式"></a>高次多项式</h3><p>如果要确定在路径曲线段的起始点和终止点的位置、速度和加速度，则需要用一个五次多项式进行插值，即：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207203926123.png"></p>
+<p>解方程可得：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207203942341.png"></p>
+<h3 id="带由抛物线过渡的线性函数"><a href="#带由抛物线过渡的线性函数" class="headerlink" title="带由抛物线过渡的线性函数"></a>带由抛物线过渡的线性函数</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207220048119.png" alt="带有抛物线过渡的直线段"></p>
+<h2 id="笛卡尔空间规划方法"><a href="#笛卡尔空间规划方法" class="headerlink" title="笛卡尔空间规划方法"></a>笛卡尔空间规划方法</h2><h3 id="笛卡尔直线运动"><a href="#笛卡尔直线运动" class="headerlink" title="笛卡尔直线运动"></a>笛卡尔直线运动</h3><h3 id="笛卡尔路径的几何问题"><a href="#笛卡尔路径的几何问题" class="headerlink" title="笛卡尔路径的几何问题"></a>笛卡尔路径的几何问题</h3><h4 id="1、无法到达中间点"><a href="#1、无法到达中间点" class="headerlink" title="1、无法到达中间点"></a>1、无法到达中间点</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207222006079.png"></p>
+<h4 id="2、在奇异点附近关节速度增大"><a href="#2、在奇异点附近关节速度增大" class="headerlink" title="2、在奇异点附近关节速度增大"></a>2、在奇异点附近关节速度增大</h4><p>在操作臂的工作空间中存在某些位置，无法用有限的关节速度来实现末端执行器在笛卡尔空间中的期望速度。因此，有某些路径（在笛卡尔空间中描述）是操作臂所无法执行的。例如，一个操作臂沿笛卡尔直线路径接近某个奇异位形时，机器人的一个或多个关节可能激增至无穷大。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207222043695.png"></p>
+<h4 id="3、起始点和终止点有不同的解"><a href="#3、起始点和终止点有不同的解" class="headerlink" title="3、起始点和终止点有不同的解"></a>3、起始点和终止点有不同的解</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207222924982.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207222915309.png" alt="图7-14"></p>
+<h2 id="路径的实时生成"><a href="#路径的实时生成" class="headerlink" title="路径的实时生成"></a>路径的实时生成</h2><h3 id="关节空间路径的生成"><a href="#关节空间路径的生成" class="headerlink" title="关节空间路径的生成"></a>关节空间路径的生成</h3><p>在直线区段，对每个关节的轨迹计算如下：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207223811161.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207223842889.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207223856636.png"></p>
+<h3 id="笛卡尔空间路径的生成"><a href="#笛卡尔空间路径的生成" class="headerlink" title="笛卡尔空间路径的生成"></a>笛卡尔空间路径的生成</h3><p>使用符号x来表示笛卡尔位姿矢量的一个分量。</p>
+<p>在曲线的直线区段，x中的每个自由度按下式计算：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207223955659.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207224010801.png"></p>
 
                 
             </div>
@@ -391,8 +396,12 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Kalman-Filter/">
-                                    <span class="chip bg-color">Kalman Filter</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                                    <span class="chip bg-color">机器人学导论</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/">
+                                    <span class="chip bg-color">轨迹生成</span>
                                 </a>
                             
                         </div>
@@ -457,70 +466,18 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/01/12/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
+                <a href="/2023/02/07/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter7%20%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Chapter2 空间描述和变换">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Chapter7 轨迹生成">
                         
-                        <span class="card-title">Chapter2 空间描述和变换</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-12
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Learn/" class="post-category">
-                                    Learn
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                        <span class="chip bg-color">机器人学导论</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
-                        <span class="chip bg-color">空间描述和变换</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/01/11/Learn/%E6%9D%82/cubeide%E7%A7%BB%E6%A4%8D%E5%88%B0vscode/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="cubeide移植到vscode">
-                        
-                        <span class="card-title">cubeide移植到vscode</span>
+                        <span class="card-title">Chapter7 轨迹生成</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -531,7 +488,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-07
                             </span>
                         <span class="publish-author">
                             
@@ -545,15 +502,65 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/cubeide/">
-                        <span class="chip bg-color">cubeide</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                        <span class="chip bg-color">机器人学导论</span>
                     </a>
                     
-                    <a href="/tags/vscode/">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/">
+                        <span class="chip bg-color">轨迹生成</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/02/07/Life/2023.2.7%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="2023.2.7 note">
+                        
+                        <span class="card-title">2023.2.7 note</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Life/" class="post-category">
+                                    Life
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>

@@ -4,11 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Kalman Filter, ZRong&#39;s Blog">
+    <meta name="keywords" content="Chapter6 操作臂动力学, ZRong&#39;s Blog">
     <meta name="description" content="
 
-Kalman FilterLearn by DR_CAN
-Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data Processing Algorithm 最优化递归数">
+Chapter6 操作臂动力学刚体的加速度线加速度
+
+角加速度
+质量分布对于定轴旋转的情况，经常用到惯性矩这个概念。
+在一个刚体绕任意轴做旋转运动时，我们需要一种能够表征刚体质量分布的方式。在这里，引入惯性张量。
+坐标系{A}中的惯性张">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Kalman Filter | ZRong&#39;s Blog</title>
+    <title>Chapter6 操作臂动力学 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -251,12 +255,12 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Kalman Filter</h1>
+                    <h1 class="description center-align post-title">Chapter6 操作臂动力学</h1>
                 </div>
             </div>
         </div>
@@ -280,8 +284,12 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kalman-Filter/">
-                                <span class="chip bg-color">Kalman Filter</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                                <span class="chip bg-color">机器人学导论</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/">
+                                <span class="chip bg-color">操作臂动力学</span>
                             </a>
                         
                     </div>
@@ -305,7 +313,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-11
+                    2023-02-04
                 </div>
                 
 
@@ -314,7 +322,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    299
+                    512
                 </div>
                 
 
@@ -341,42 +349,38 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="Kalman-Filter"><a href="#Kalman-Filter" class="headerlink" title="Kalman Filter"></a>Kalman Filter</h1><p>Learn by DR_CAN</p>
-<h2 id="Part1-Recursive-Algorithm-递归算法"><a href="#Part1-Recursive-Algorithm-递归算法" class="headerlink" title="Part1 Recursive Algorithm 递归算法"></a>Part1 Recursive Algorithm 递归算法</h2><h3 id="1-1-一句话概括"><a href="#1-1-一句话概括" class="headerlink" title="1.1 一句话概括"></a>1.1 一句话概括</h3><p>Optimal Recursive Data Processing Algorithm 最优化递归数字处理算法</p>
-<h3 id="1-2-不确定性"><a href="#1-2-不确定性" class="headerlink" title="1.2 不确定性"></a>1.2 不确定性</h3><ul>
-<li>不存在完美的数学模型</li>
-<li>系统的扰动不可控，也很难建模</li>
-<li>测量传感器存在误差</li>
-</ul>
-<h3 id="1-3-Example"><a href="#1-3-Example" class="headerlink" title="1.3 Example"></a>1.3 Example</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220913220448956.png"></p>
-<p><strong>由上式可知，随着k的增加，测量结果不再重要。</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220913220418191.png"></p>
-<h3 id="1-4-Step"><a href="#1-4-Step" class="headerlink" title="1.4 Step"></a>1.4 Step</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914170031982.png"></p>
-<h2 id="Part2-Data-Fusion-数据融合"><a href="#Part2-Data-Fusion-数据融合" class="headerlink" title="Part2 Data Fusion 数据融合"></a>Part2 Data Fusion 数据融合</h2><h3 id="1-1-Example"><a href="#1-1-Example" class="headerlink" title="1.1 Example"></a>1.1 Example</h3><p>Use math to solve a ploblem which has two sets of data.</p>
-<p>假设有两把秤，测重量。</p>
-<p>其中一把秤得到30g，已知其标准差为2g；另一把秤得到32g，标准差为4g。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914202400147.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914202448915.png"></p>
-<h3 id="1-2-Covariance-Matrix-协方差矩阵"><a href="#1-2-Covariance-Matrix-协方差矩阵" class="headerlink" title="1.2 Covariance Matrix 协方差矩阵"></a>1.2 Covariance Matrix 协方差矩阵</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210137551.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210229505.png"></p>
-<h3 id="1-3-State-Space-Representation"><a href="#1-3-State-Space-Representation" class="headerlink" title="1.3 State Space Representation"></a>1.3 State Space Representation</h3><p><strong>见现代控制理论状态空间方程的表示。</strong></p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210510464.png"></h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210749768.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914211339976.png"></p>
-<h2 id="Part3-Step-by-Step-Derivation-of-Kalman-Gain"><a href="#Part3-Step-by-Step-Derivation-of-Kalman-Gain" class="headerlink" title="Part3 Step by Step Derivation of Kalman Gain"></a>Part3 Step by Step Derivation of Kalman Gain</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hC4y1b7K7?spm_id_from=333.999.0.0&vd_source=dc5a7d7190173a321a8ae3df82a10d84">【卡尔曼滤波器】3_卡尔曼增益超详细数学推导 ～全网最完整_哔哩哔哩_bilibili</a></p>
-<p><u><strong>跟着学一遍</strong></u></p>
-<h3 id="1-1-建立状态空间方程"><a href="#1-1-建立状态空间方程" class="headerlink" title="1.1 建立状态空间方程"></a>1.1 建立状态空间方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220915191708100.png"></p>
-<h3 id="1-2-寻找增益k值，使得方差最小"><a href="#1-2-寻找增益k值，使得方差最小" class="headerlink" title="1.2 寻找增益k值，使得方差最小"></a>1.2 寻找增益k值，使得方差最小</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916001619736.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916001603500.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916002220270.png"></p>
-<h2 id="Part4-Priori-x2F-Posterrori-Error-Covariance-Matrix-先验-x2F-后验误差协方差矩阵"><a href="#Part4-Priori-x2F-Posterrori-Error-Covariance-Matrix-先验-x2F-后验误差协方差矩阵" class="headerlink" title="Part4 Priori&#x2F;Posterrori Error Covariance Matrix 先验&#x2F;后验误差协方差矩阵"></a>Part4 Priori&#x2F;Posterrori Error Covariance Matrix 先验&#x2F;后验误差协方差矩阵</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917005157630.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917004952941.png"></p>
-<h2 id="Part5-An-Example"><a href="#Part5-An-Example" class="headerlink" title="Part5 An Example"></a>Part5 An Example</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917010043597.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011807619.png"></p>
-<h3 id="如果测量误差小"><a href="#如果测量误差小" class="headerlink" title="如果测量误差小"></a>如果测量误差小</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011914629.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011853695.png"></p>
-<h3 id="如果测量误差大"><a href="#如果测量误差大" class="headerlink" title="如果测量误差大"></a>如果测量误差大</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012021251.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012032856.png"></p>
-<h2 id="Part6-Extended-Kalman-Filter-扩展卡尔曼滤波器"><a href="#Part6-Extended-Kalman-Filter-扩展卡尔曼滤波器" class="headerlink" title="Part6 Extended Kalman Filter 扩展卡尔曼滤波器"></a>Part6 Extended Kalman Filter 扩展卡尔曼滤波器</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012759494.png"></p>
+<h1 id="Chapter6-操作臂动力学"><a href="#Chapter6-操作臂动力学" class="headerlink" title="Chapter6 操作臂动力学"></a>Chapter6 操作臂动力学</h1><h2 id="刚体的加速度"><a href="#刚体的加速度" class="headerlink" title="刚体的加速度"></a>刚体的加速度</h2><h3 id="线加速度"><a href="#线加速度" class="headerlink" title="线加速度"></a>线加速度</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164333594.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164348471.png"></p>
+<h3 id="角加速度"><a href="#角加速度" class="headerlink" title="角加速度"></a>角加速度</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164434766.png"></p>
+<h2 id="质量分布"><a href="#质量分布" class="headerlink" title="质量分布"></a>质量分布</h2><p>对于定轴旋转的情况，经常用到<strong>惯性矩</strong>这个概念。</p>
+<p>在一个刚体绕任意轴做旋转运动时，我们需要一种能够表征刚体质量分布的方式。在这里，引入<strong>惯性张量</strong>。</p>
+<p>坐标系{A}中的惯性张量可用3×3矩阵表示如下</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165112173.png"></p>
+<p>各元素：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165125375.png" alt="、"></p>
+<h2 id="牛顿方程和欧拉方程"><a href="#牛顿方程和欧拉方程" class="headerlink" title="牛顿方程和欧拉方程"></a>牛顿方程和欧拉方程</h2><p>如果知道了连杆质心的位置和惯性张量，那么它的质量分布特征就完全确定了。</p>
+<p>连杆运动所需的力是关于连杆期望加速度及其质量分布的函数。</p>
+<p>牛顿方程以及描述旋转运动的欧拉方程描述了力、惯量和加速度之间的关系。</p>
+<h3 id="牛顿方程"><a href="#牛顿方程" class="headerlink" title="牛顿方程"></a>牛顿方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165304745.png"></p>
+<h3 id="欧拉方程"><a href="#欧拉方程" class="headerlink" title="欧拉方程"></a>欧拉方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165319817.png"></p>
+<h2 id="牛顿-欧拉递推动力学方程"><a href="#牛顿-欧拉递推动力学方程" class="headerlink" title="牛顿-欧拉递推动力学方程"></a>牛顿-欧拉递推动力学方程</h2><h3 id="牛顿-欧拉递推动力学算法"><a href="#牛顿-欧拉递推动力学算法" class="headerlink" title="牛顿-欧拉递推动力学算法"></a>牛顿-欧拉递推动力学算法</h3><p>对于转动关节来说，这个算法归纳如下：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170101776.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170114338.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170138047.png"></p>
+<h3 id="考虑重力的动力学算法"><a href="#考虑重力的动力学算法" class="headerlink" title="考虑重力的动力学算法"></a>考虑重力的动力学算法</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170336208.png"></p>
+<h2 id="操作臂动力学的拉格朗日方程"><a href="#操作臂动力学的拉格朗日方程" class="headerlink" title="操作臂动力学的拉格朗日方程"></a>操作臂动力学的拉格朗日方程</h2><p>牛顿-欧拉公式可以被认为是一种解决动力学问题的力平衡方法，而拉格朗日公式则是一种基于能量的动力学方法。</p>
+<p>首先讨论操作臂动能的表达式。第i个连杆的动能k<del>i</del>可以表示为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205172901519.png"></p>
+<p>式中第一项是基于连杆质心线速度的动能，第二项是连杆的角速度动能。</p>
+<p>整个操作臂的动能是各个连杆功能之和，即：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205172955433.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185335730.png"></p>
+<p>拉格朗日动力学公式给出了一种从标量函数推导动力学方程的方法，我们称这个标量函数为拉格朗日函数，即一个机械系统的动能和势能的差值。这里，操作臂的拉格朗日函数表示为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185715196.png"></p>
+<p>则操作臂的运动方程为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185749283.png"></p>
+<p>这里，t是n×1的激励力矩矢量。对于操作臂来说，方程变为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185822085.png"></p>
 
                 
             </div>
@@ -391,8 +395,12 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Kalman-Filter/">
-                                    <span class="chip bg-color">Kalman Filter</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
+                                    <span class="chip bg-color">机器人学导论</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/">
+                                    <span class="chip bg-color">操作臂动力学</span>
                                 </a>
                             
                         </div>
@@ -461,13 +469,13 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/12/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
+                <a href="/2023/02/05/Life/2023.2.5%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Chapter2 空间描述和变换">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="2023.2.5 note">
                         
-                        <span class="card-title">Chapter2 空间描述和变换</span>
+                        <span class="card-title">2023.2.5 note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -478,8 +486,57 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Life/" class="post-category">
+                                    Life
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/02/02/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter5%20%E9%9B%85%E5%8F%AF%E6%AF%94%EF%BC%9A%E9%80%9F%E5%BA%A6%E4%B8%8E%E9%9D%99%E5%8A%9B/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Chapter5 雅可比：速度与静力">
+                        
+                        <span class="card-title">Chapter5 雅可比：速度与静力</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -499,61 +556,8 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                         <span class="chip bg-color">机器人学导论</span>
                     </a>
                     
-                    <a href="/tags/%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
-                        <span class="chip bg-color">空间描述和变换</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/01/11/Learn/%E6%9D%82/cubeide%E7%A7%BB%E6%A4%8D%E5%88%B0vscode/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="cubeide移植到vscode">
-                        
-                        <span class="card-title">cubeide移植到vscode</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Learn/" class="post-category">
-                                    Learn
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/cubeide/">
-                        <span class="chip bg-color">cubeide</span>
-                    </a>
-                    
-                    <a href="/tags/vscode/">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/%E9%9B%85%E5%8F%AF%E6%AF%94/">
+                        <span class="chip bg-color">雅可比</span>
                     </a>
                     
                 </div>

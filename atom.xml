@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-02-04T18:13:50.896Z</updated>
+  <updated>2023-02-07T14:40:19.325Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2023.2.5 note</title>
-    <link href="https://guozunrong123.github.io/2023/02/05/Life/2023.2.5%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/02/05/Life/2023.2.5%E8%AE%B0/</id>
-    <published>2023-02-04T17:54:00.000Z</published>
-    <updated>2023-02-04T18:13:50.896Z</updated>
+    <title>Chapter7 轨迹生成</title>
+    <link href="https://guozunrong123.github.io/2023/02/07/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter7%20%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/"/>
+    <id>https://guozunrong123.github.io/2023/02/07/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter7%20%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/</id>
+    <published>2023-02-07T13:21:30.000Z</published>
+    <updated>2023-02-07T14:40:19.325Z</updated>
     
     
       
@@ -30,11 +30,34 @@
         
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 
-&lt;p&gt;So … sad …&lt;/p&gt;
-&lt;p&gt;好像失去了什么 但我又没失去什么&lt;/p&gt;
-&lt;p&gt;谢谢你带来的开心&lt;/p&gt;
-&lt;p&gt;祝你 一切顺利&lt;/p&gt;
-&lt;p&gt;你太调皮了</summary>
+&lt;h1 id=&quot;Chapter7-轨迹生成&quot;&gt;&lt;a href=&quot;#Chapter7-轨迹生成&quot; class=&quot;headerlink&quot; title=&quot;Chapter7</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
+    
+    <category term="轨迹生成" scheme="https://guozunrong123.github.io/tags/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023.2.7 note</title>
+    <link href="https://guozunrong123.github.io/2023/02/07/Life/2023.2.7%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/02/07/Life/2023.2.7%E8%AE%B0/</id>
+    <published>2023-02-07T12:54:00.000Z</published>
+    <updated>2023-02-07T12:05:32.375Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;</summary>
         
       
     
@@ -48,11 +71,70 @@
   </entry>
   
   <entry>
+    <title>2023.2.5 note</title>
+    <link href="https://guozunrong123.github.io/2023/02/05/Life/2023.2.5%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/02/05/Life/2023.2.5%E8%AE%B0/</id>
+    <published>2023-02-04T17:54:00.000Z</published>
+    <updated>2023-02-07T12:02:57.033Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;p&gt;So … sad …&lt;/p&gt;
+&lt;p&gt;好像失去了什么 但我又没失去什么&lt;/p&gt;
+&lt;p&gt;谢谢你带来的开心&lt;/p&gt;
+&lt;p&gt;祝你</summary>
+        
+      
+    
+    
+    
+    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
+    
+    
+    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter6 操作臂动力学</title>
+    <link href="https://guozunrong123.github.io/2023/02/04/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter6%20%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/>
+    <id>https://guozunrong123.github.io/2023/02/04/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter6%20%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/</id>
+    <published>2023-02-04T07:21:30.000Z</published>
+    <updated>2023-02-07T12:00:58.929Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Chapter6-操作臂动力学&quot;&gt;&lt;a href=&quot;#Chapter6-操作臂动力学&quot; class=&quot;headerlink&quot; title=&quot;Chapter6</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
+    
+    <category term="操作臂动力学" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Chapter5 雅可比：速度与静力</title>
     <link href="https://guozunrong123.github.io/2023/02/02/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter5%20%E9%9B%85%E5%8F%AF%E6%AF%94%EF%BC%9A%E9%80%9F%E5%BA%A6%E4%B8%8E%E9%9D%99%E5%8A%9B/"/>
     <id>https://guozunrong123.github.io/2023/02/02/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter5%20%E9%9B%85%E5%8F%AF%E6%AF%94%EF%BC%9A%E9%80%9F%E5%BA%A6%E4%B8%8E%E9%9D%99%E5%8A%9B/</id>
     <published>2023-02-02T02:21:30.000Z</published>
-    <updated>2023-02-04T18:18:17.591Z</updated>
+    <updated>2023-02-05T08:20:27.280Z</updated>
     
     
       
@@ -494,35 +576,6 @@
     <category term="欧拉角" scheme="https://guozunrong123.github.io/tags/%E6%AC%A7%E6%8B%89%E8%A7%92/"/>
     
     <category term="旋转矩阵" scheme="https://guozunrong123.github.io/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>矩阵的伪逆</title>
-    <link href="https://guozunrong123.github.io/2023/01/11/Learn/%E6%9D%82/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/"/>
-    <id>https://guozunrong123.github.io/2023/01/11/Learn/%E6%9D%82/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/</id>
-    <published>2023-01-11T14:43:01.000Z</published>
-    <updated>2023-01-11T15:34:37.569Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h2 id=&quot;满秩-x2F-列满秩-x2F-行满秩&quot;&gt;&lt;a href=&quot;#满秩-x2F-列满秩-x2F-行满秩&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="矩阵" scheme="https://guozunrong123.github.io/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-    <category term="伪逆" scheme="https://guozunrong123.github.io/tags/%E4%BC%AA%E9%80%86/"/>
     
   </entry>
   

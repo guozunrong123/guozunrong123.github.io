@@ -4,11 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Kalman Filter, ZRong&#39;s Blog">
+    <meta name="keywords" content="2023.2.7 note, ZRong&#39;s Blog">
     <meta name="description" content="
 
-Kalman FilterLearn by DR_CAN
-Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data Processing Algorithm 最优化递归数">
+回学校了，心也相对静了许多。
+好好学习，好好努力。
+谁不想偷懒，总得逼着自己变得更好吧。
+早睡早起，不浪费时间在无用的事情上。
+加油！
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Kalman Filter | ZRong&#39;s Blog</title>
+    <title>2023.2.7 note | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -251,12 +255,12 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Kalman Filter</h1>
+                    <h1 class="description center-align post-title">2023.2.7 note</h1>
                 </div>
             </div>
         </div>
@@ -280,8 +284,8 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kalman-Filter/">
-                                <span class="chip bg-color">Kalman Filter</span>
+                            <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                                <span class="chip bg-color">随笔</span>
                             </a>
                         
                     </div>
@@ -292,8 +296,8 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Learn/" class="post-category">
-                                Learn
+                            <a href="/categories/Life/" class="post-category">
+                                Life
                             </a>
                         
                     </div>
@@ -305,7 +309,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-11
+                    2023-02-07
                 </div>
                 
 
@@ -314,7 +318,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    299
+                    54
                 </div>
                 
 
@@ -341,42 +345,11 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="Kalman-Filter"><a href="#Kalman-Filter" class="headerlink" title="Kalman Filter"></a>Kalman Filter</h1><p>Learn by DR_CAN</p>
-<h2 id="Part1-Recursive-Algorithm-递归算法"><a href="#Part1-Recursive-Algorithm-递归算法" class="headerlink" title="Part1 Recursive Algorithm 递归算法"></a>Part1 Recursive Algorithm 递归算法</h2><h3 id="1-1-一句话概括"><a href="#1-1-一句话概括" class="headerlink" title="1.1 一句话概括"></a>1.1 一句话概括</h3><p>Optimal Recursive Data Processing Algorithm 最优化递归数字处理算法</p>
-<h3 id="1-2-不确定性"><a href="#1-2-不确定性" class="headerlink" title="1.2 不确定性"></a>1.2 不确定性</h3><ul>
-<li>不存在完美的数学模型</li>
-<li>系统的扰动不可控，也很难建模</li>
-<li>测量传感器存在误差</li>
-</ul>
-<h3 id="1-3-Example"><a href="#1-3-Example" class="headerlink" title="1.3 Example"></a>1.3 Example</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220913220448956.png"></p>
-<p><strong>由上式可知，随着k的增加，测量结果不再重要。</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220913220418191.png"></p>
-<h3 id="1-4-Step"><a href="#1-4-Step" class="headerlink" title="1.4 Step"></a>1.4 Step</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914170031982.png"></p>
-<h2 id="Part2-Data-Fusion-数据融合"><a href="#Part2-Data-Fusion-数据融合" class="headerlink" title="Part2 Data Fusion 数据融合"></a>Part2 Data Fusion 数据融合</h2><h3 id="1-1-Example"><a href="#1-1-Example" class="headerlink" title="1.1 Example"></a>1.1 Example</h3><p>Use math to solve a ploblem which has two sets of data.</p>
-<p>假设有两把秤，测重量。</p>
-<p>其中一把秤得到30g，已知其标准差为2g；另一把秤得到32g，标准差为4g。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914202400147.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914202448915.png"></p>
-<h3 id="1-2-Covariance-Matrix-协方差矩阵"><a href="#1-2-Covariance-Matrix-协方差矩阵" class="headerlink" title="1.2 Covariance Matrix 协方差矩阵"></a>1.2 Covariance Matrix 协方差矩阵</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210137551.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210229505.png"></p>
-<h3 id="1-3-State-Space-Representation"><a href="#1-3-State-Space-Representation" class="headerlink" title="1.3 State Space Representation"></a>1.3 State Space Representation</h3><p><strong>见现代控制理论状态空间方程的表示。</strong></p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210510464.png"></h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914210749768.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220914211339976.png"></p>
-<h2 id="Part3-Step-by-Step-Derivation-of-Kalman-Gain"><a href="#Part3-Step-by-Step-Derivation-of-Kalman-Gain" class="headerlink" title="Part3 Step by Step Derivation of Kalman Gain"></a>Part3 Step by Step Derivation of Kalman Gain</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hC4y1b7K7?spm_id_from=333.999.0.0&vd_source=dc5a7d7190173a321a8ae3df82a10d84">【卡尔曼滤波器】3_卡尔曼增益超详细数学推导 ～全网最完整_哔哩哔哩_bilibili</a></p>
-<p><u><strong>跟着学一遍</strong></u></p>
-<h3 id="1-1-建立状态空间方程"><a href="#1-1-建立状态空间方程" class="headerlink" title="1.1 建立状态空间方程"></a>1.1 建立状态空间方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220915191708100.png"></p>
-<h3 id="1-2-寻找增益k值，使得方差最小"><a href="#1-2-寻找增益k值，使得方差最小" class="headerlink" title="1.2 寻找增益k值，使得方差最小"></a>1.2 寻找增益k值，使得方差最小</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916001619736.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916001603500.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220916002220270.png"></p>
-<h2 id="Part4-Priori-x2F-Posterrori-Error-Covariance-Matrix-先验-x2F-后验误差协方差矩阵"><a href="#Part4-Priori-x2F-Posterrori-Error-Covariance-Matrix-先验-x2F-后验误差协方差矩阵" class="headerlink" title="Part4 Priori&#x2F;Posterrori Error Covariance Matrix 先验&#x2F;后验误差协方差矩阵"></a>Part4 Priori&#x2F;Posterrori Error Covariance Matrix 先验&#x2F;后验误差协方差矩阵</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917005157630.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917004952941.png"></p>
-<h2 id="Part5-An-Example"><a href="#Part5-An-Example" class="headerlink" title="Part5 An Example"></a>Part5 An Example</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917010043597.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011807619.png"></p>
-<h3 id="如果测量误差小"><a href="#如果测量误差小" class="headerlink" title="如果测量误差小"></a>如果测量误差小</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011914629.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917011853695.png"></p>
-<h3 id="如果测量误差大"><a href="#如果测量误差大" class="headerlink" title="如果测量误差大"></a>如果测量误差大</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012021251.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012032856.png"></p>
-<h2 id="Part6-Extended-Kalman-Filter-扩展卡尔曼滤波器"><a href="#Part6-Extended-Kalman-Filter-扩展卡尔曼滤波器" class="headerlink" title="Part6 Extended Kalman Filter 扩展卡尔曼滤波器"></a>Part6 Extended Kalman Filter 扩展卡尔曼滤波器</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20220917012759494.png"></p>
+<p>回学校了，心也相对静了许多。</p>
+<p>好好学习，好好努力。</p>
+<p>谁不想偷懒，总得逼着自己变得更好吧。</p>
+<p>早睡早起，不浪费时间在无用的事情上。</p>
+<p>加油！</p>
 
                 
             </div>
@@ -391,8 +364,8 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Kalman-Filter/">
-                                    <span class="chip bg-color">Kalman Filter</span>
+                                <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                                    <span class="chip bg-color">随笔</span>
                                 </a>
                             
                         </div>
@@ -461,13 +434,13 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/12/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
+                <a href="/2023/02/07/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter7%20%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Chapter2 空间描述和变换">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Chapter7 轨迹生成">
                         
-                        <span class="card-title">Chapter2 空间描述和变换</span>
+                        <span class="card-title">Chapter7 轨迹生成</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -478,7 +451,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-07
                         </span>
                         <span class="publish-author">
                             
@@ -499,8 +472,8 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                         <span class="chip bg-color">机器人学导论</span>
                     </a>
                     
-                    <a href="/tags/%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
-                        <span class="chip bg-color">空间描述和变换</span>
+                    <a href="/tags/%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/">
+                        <span class="chip bg-color">轨迹生成</span>
                     </a>
                     
                 </div>
@@ -514,13 +487,13 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/11/Learn/%E6%9D%82/cubeide%E7%A7%BB%E6%A4%8D%E5%88%B0vscode/">
+                <a href="/2023/02/05/Life/2023.2.5%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="cubeide移植到vscode">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="2023.2.5 note">
                         
-                        <span class="card-title">cubeide移植到vscode</span>
+                        <span class="card-title">2023.2.5 note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -531,14 +504,14 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Learn/" class="post-category">
-                                    Learn
+                            <a href="/categories/Life/" class="post-category">
+                                    Life
                                 </a>
                             
                             
@@ -548,12 +521,8 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/cubeide/">
-                        <span class="chip bg-color">cubeide</span>
-                    </a>
-                    
-                    <a href="/tags/vscode/">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
