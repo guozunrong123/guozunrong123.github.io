@@ -3,59 +3,536 @@
   
   
     
-    
     <entry>
-      <title></title>
-      <link href="/404/index.html"/>
-      <url>/404/index.html</url>
+      <title>整流电路</title>
+      <link href="/2023/02/09/learn/dian-li-dian-zi-ji-zhu/zheng-liu-dian-lu/"/>
+      <url>/2023/02/09/learn/dian-li-dian-zi-ji-zhu/zheng-liu-dian-lu/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电力电子技术 </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>Chapter8 操作臂的机构设计</title>
+      <link href="/2023/02/08/learn/ji-qi-ren-xue-dao-lun/chapter8-cao-zuo-bi-de-ji-gou-she-ji/"/>
+      <url>/2023/02/08/learn/ji-qi-ren-xue-dao-lun/chapter8-cao-zuo-bi-de-ji-gou-she-ji/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人学导论 </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>资源</title>
-      <link href="/resources/index.html"/>
-      <url>/resources/index.html</url>
+      <title>Chapter7 轨迹生成</title>
+      <link href="/2023/02/07/learn/ji-qi-ren-xue-dao-lun/chapter7-gui-ji-sheng-cheng/"/>
+      <url>/2023/02/07/learn/ji-qi-ren-xue-dao-lun/chapter7-gui-ji-sheng-cheng/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人学导论 </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>2023.2.7 note</title>
+      <link href="/2023/02/07/life/2023.2.7-ji/"/>
+      <url>/2023/02/07/life/2023.2.7-ji/</url>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>contact</title>
-      <link href="/contact/index.html"/>
-      <url>/contact/index.html</url>
+      <title>2023.2.5 note</title>
+      <link href="/2023/02/05/life/2023.2.5-ji/"/>
+      <url>/2023/02/05/life/2023.2.5-ji/</url>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>Chapter6 操作臂动力学</title>
+      <link href="/2023/02/04/learn/ji-qi-ren-xue-dao-lun/chapter6-cao-zuo-bi-dong-li-xue/"/>
+      <url>/2023/02/04/learn/ji-qi-ren-xue-dao-lun/chapter6-cao-zuo-bi-dong-li-xue/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人学导论 </tag>
+            
+        </tags>
       
     </entry>
     
     
+    
+    <entry>
+      <title>Chapter5 雅可比：速度与静力</title>
+      <link href="/2023/02/02/learn/ji-qi-ren-xue-dao-lun/chapter5-ya-ke-bi-su-du-yu-jing-li/"/>
+      <url>/2023/02/02/learn/ji-qi-ren-xue-dao-lun/chapter5-ya-ke-bi-su-du-yu-jing-li/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人学导论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chapter 4 操作臂逆运动学</title>
+      <link href="/2023/01/29/learn/ji-qi-ren-xue-dao-lun/chapter4-cao-zuo-bi-ni-yun-dong-xue/"/>
+      <url>/2023/01/29/learn/ji-qi-ren-xue-dao-lun/chapter4-cao-zuo-bi-ni-yun-dong-xue/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人学导论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023.1.29 note</title>
+      <link href="/2023/01/29/life/2023.1.29-ji/"/>
+      <url>/2023/01/29/life/2023.1.29-ji/</url>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chapter3 操作臂运动学</title>
+      <link href="/2023/01/28/learn/ji-qi-ren-xue-dao-lun/chapter3-cao-zuo-bi-yun-dong-xue/"/>
+      <url>/2023/01/28/learn/ji-qi-ren-xue-dao-lun/chapter3-cao-zuo-bi-yun-dong-xue/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人学导论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023.1.25 note</title>
+      <link href="/2023/01/25/life/2023.1.25-ji/"/>
+      <url>/2023/01/25/life/2023.1.25-ji/</url>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023.1.17 note</title>
+      <link href="/2023/01/17/life/2023.1.17-ji/"/>
+      <url>/2023/01/17/life/2023.1.17-ji/</url>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023.1.15 note</title>
+      <link href="/2023/01/15/life/2023.1.15-ji/"/>
+      <url>/2023/01/15/life/2023.1.15-ji/</url>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Freertos基础知识</title>
+      <link href="/2023/01/13/learn/cao-zuo-xi-tong/freertos/"/>
+      <url>/2023/01/13/learn/cao-zuo-xi-tong/freertos/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chapter2 空间描述和变换</title>
+      <link href="/2023/01/12/learn/ji-qi-ren-xue-dao-lun/chapter2-kong-jian-miao-shu-he-bian-huan/"/>
+      <url>/2023/01/12/learn/ji-qi-ren-xue-dao-lun/chapter2-kong-jian-miao-shu-he-bian-huan/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人学导论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kalman Filter</title>
+      <link href="/2023/01/11/learn/suan-fa/kalman-filter/"/>
+      <url>/2023/01/11/learn/suan-fa/kalman-filter/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cubeide移植到vscode</title>
+      <link href="/2023/01/11/learn/za/cubeide-yi-zhi-dao-vscode/"/>
+      <url>/2023/01/11/learn/za/cubeide-yi-zhi-dao-vscode/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多旋翼飞行器控制与设计</title>
+      <link href="/2023/01/11/learn/uav/duo-xuan-yi-fei-xing-qi-kong-zhi-yu-she-ji/"/>
+      <url>/2023/01/11/learn/uav/duo-xuan-yi-fei-xing-qi-kong-zhi-yu-she-ji/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> UAV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>涵道无人机建模</title>
+      <link href="/2023/01/11/learn/uav/han-dao-han-dao-wu-ren-ji-jian-mo/"/>
+      <url>/2023/01/11/learn/uav/han-dao-han-dao-wu-ren-ji-jian-mo/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 建模 </tag>
+            
+            <tag> UAV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动手学ROS2</title>
+      <link href="/2023/01/11/learn/ros/dong-shou-xue-ros2/"/>
+      <url>/2023/01/11/learn/ros/dong-shou-xue-ros2/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ROS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>磁力计与地磁场</title>
+      <link href="/2023/01/11/learn/za/ci-li-ji-di-ci-chang/"/>
+      <url>/2023/01/11/learn/za/ci-li-ji-di-ci-chang/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>四元数与欧拉角与旋转矩阵</title>
+      <link href="/2023/01/11/learn/shu-xue/si-yuan-shu-yu-ou-la-jiao-yu-xuan-zhuan-ju-zhen/"/>
+      <url>/2023/01/11/learn/shu-xue/si-yuan-shu-yu-ou-la-jiao-yu-xuan-zhuan-ju-zhen/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>矩阵的伪逆</title>
+      <link href="/2023/01/11/learn/shu-xue/ju-zhen-de-wei-ni/"/>
+      <url>/2023/01/11/learn/shu-xue/ju-zhen-de-wei-ni/</url>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
   
 </search>
