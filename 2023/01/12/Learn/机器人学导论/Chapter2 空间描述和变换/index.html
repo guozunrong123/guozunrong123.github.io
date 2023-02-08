@@ -250,6 +250,19 @@ Chapter2 空间描述和变换描述：位置、姿态与位姿位置描述^A^P,
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -284,10 +297,6 @@ Chapter2 空间描述和变换描述：位置、姿态与位姿位置描述^A^P,
                         
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
                                 <span class="chip bg-color">机器人学导论</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
-                                <span class="chip bg-color">空间描述和变换</span>
                             </a>
                         
                     </div>
@@ -434,10 +443,6 @@ Chapter2 空间描述和变换描述：位置、姿态与位姿位置描述^A^P,
                             
                                 <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
                                     <span class="chip bg-color">机器人学导论</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
-                                    <span class="chip bg-color">空间描述和变换</span>
                                 </a>
                             
                         </div>
@@ -734,7 +739,7 @@ Chapter2 空间描述和变换描述：位置、姿态与位姿位置描述^A^P,
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.2k</span>
+                        class="white-color">14.8k</span>
             
             
             

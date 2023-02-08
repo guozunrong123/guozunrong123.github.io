@@ -248,6 +248,19 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -499,10 +512,6 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
                         <span class="chip bg-color">机器人学导论</span>
                     </a>
                     
-                    <a href="/tags/%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
-                        <span class="chip bg-color">空间描述和变换</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -697,7 +706,7 @@ Part1 Recursive Algorithm 递归算法1.1 一句话概括Optimal Recursive Data 
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.2k</span>
+                        class="white-color">14.8k</span>
             
             
             

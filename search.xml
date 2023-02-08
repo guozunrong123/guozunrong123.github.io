@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>整流电路</title>
+      <link href="/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/"/>
+      <url>/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="整流电路"><a href="#整流电路" class="headerlink" title="整流电路"></a>整流电路</h1><h2 id="单相可控整流电路"><a href="#单相可控整流电路" class="headerlink" title="单相可控整流电路"></a>单相可控整流电路</h2><h3 id="单相半波可控整流电路"><a href="#单相半波可控整流电路" class="headerlink" title="单相半波可控整流电路"></a>单相半波可控整流电路</h3><h4 id="带电阻负载工作"><a href="#带电阻负载工作" class="headerlink" title="带电阻负载工作"></a>带电阻负载工作</h4><p>电阻负载的特点是电压与电流成正比，两者波形相同。</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208131556763.png" alt="单相半波可控整流电路"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208131819686.png" alt="电路波形"></p><p>变压器T起变换电压和隔离的作用。</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208133731101.png" alt="基本数量关系"></p><h4 id="带阻感负载工作"><a href="#带阻感负载工作" class="headerlink" title="带阻感负载工作"></a>带阻感负载工作</h4><p>阻感负载的特点是电感对电流变化有抗拒作用，使得流过电感的电流不能发生突变。</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208134428496.png" alt="带阻感负载的单相半波可控整流电路及其波形"></p><p>电路分析：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208135120122.png"></p><h3 id="单相桥式全控整流电路"><a href="#单相桥式全控整流电路" class="headerlink" title="单相桥式全控整流电路"></a>单相桥式全控整流电路</h3><h3 id="单相全波可控整流电路"><a href="#单相全波可控整流电路" class="headerlink" title="单相全波可控整流电路"></a>单相全波可控整流电路</h3><h3 id="单相桥式半控整流电路"><a href="#单相桥式半控整流电路" class="headerlink" title="单相桥式半控整流电路"></a>单相桥式半控整流电路</h3><h2 id="三相可控整流电路"><a href="#三相可控整流电路" class="headerlink" title="三相可控整流电路"></a>三相可控整流电路</h2><h2 id="变压器漏感对整流电路的影响"><a href="#变压器漏感对整流电路的影响" class="headerlink" title="变压器漏感对整流电路的影响"></a>变压器漏感对整流电路的影响</h2><h2 id="电容滤波的不可控整流电路"><a href="#电容滤波的不可控整流电路" class="headerlink" title="电容滤波的不可控整流电路"></a>电容滤波的不可控整流电路</h2><h2 id="整流电路的谐波和功率因数"><a href="#整流电路的谐波和功率因数" class="headerlink" title="整流电路的谐波和功率因数"></a>整流电路的谐波和功率因数</h2><h2 id="大功率可控整流电路"><a href="#大功率可控整流电路" class="headerlink" title="大功率可控整流电路"></a>大功率可控整流电路</h2><h2 id="整流电路的有源逆变工作状态"><a href="#整流电路的有源逆变工作状态" class="headerlink" title="整流电路的有源逆变工作状态"></a>整流电路的有源逆变工作状态</h2><h2 id="相控电路的驱动控制"><a href="#相控电路的驱动控制" class="headerlink" title="相控电路的驱动控制"></a>相控电路的驱动控制</h2><h2 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电力电子技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chapter8 操作臂的机构设计</title>
+      <link href="/2023/02/08/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter8%20%E6%93%8D%E4%BD%9C%E8%87%82%E7%9A%84%E6%9C%BA%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+      <url>/2023/02/08/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter8%20%E6%93%8D%E4%BD%9C%E8%87%82%E7%9A%84%E6%9C%BA%E6%9E%84%E8%AE%BE%E8%AE%A1/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="Chapter8-操作臂的机构设计"><a href="#Chapter8-操作臂的机构设计" class="headerlink" title="Chapter8 操作臂的机构设计"></a>Chapter8 操作臂的机构设计</h1><p>机器人系统的组成大体可分为四部分：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208113440567.png"></p><h2 id="基于任务需求的设计"><a href="#基于任务需求的设计" class="headerlink" title="基于任务需求的设计"></a>基于任务需求的设计</h2><h3 id="自由度的数目"><a href="#自由度的数目" class="headerlink" title="自由度的数目"></a>自由度的数目</h3><p>操作臂的自由度数目应该与所要完成的任务相匹配。</p><h3 id="工作空间"><a href="#工作空间" class="headerlink" title="工作空间"></a>工作空间</h3><p>在执行工作任务时，操作臂必须能够抓取到若干工件或夹具。</p><h3 id="负载能力"><a href="#负载能力" class="headerlink" title="负载能力"></a>负载能力</h3><p>操作臂的负载能力与其结构尺寸、传动系统和驱动器有关。</p><h3 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h3><p>在设计操作臂时，一个明显的目标是使操作臂具有越来越高的速度。</p><h3 id="重复精度与精度"><a href="#重复精度与精度" class="headerlink" title="重复精度与精度"></a>重复精度与精度</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208113808042.png"></p><h2 id="运动学构型"><a href="#运动学构型" class="headerlink" title="运动学构型"></a>运动学构型</h2><h3 id="直角坐标型"><a href="#直角坐标型" class="headerlink" title="直角坐标型"></a>直角坐标型</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208113934738.png" alt="直角坐标型操作臂"></p><p><strong>优点与缺点：</strong></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208114155706.png"></p><h3 id="铰接型"><a href="#铰接型" class="headerlink" title="铰接型"></a>铰接型</h3><p>减少了操作臂侵入工作空间的可能性，使操作臂能够到达受限制的空间位置。它们的总体结构比直角坐标操作臂小，当应用于较小工作空间的场合时，可谓物美价廉。</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208114241065.png" alt="铰接型机器人"></p><h3 id="SCARA型"><a href="#SCARA型" class="headerlink" title="SCARA型"></a>SCARA型</h3><p>这种结构的最大优点是前三个关节不必支撑任何操作臂或负载的重量。这类结构最适合于执行平面内的任务。</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208114401573.png" alt="SCARA操作臂"></p><h3 id="极坐标型"><a href="#极坐标型" class="headerlink" title="极坐标型"></a>极坐标型</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208114533938.png" alt="极坐标型操作臂"></p><h3 id="圆柱坐标型"><a href="#圆柱坐标型" class="headerlink" title="圆柱坐标型"></a>圆柱坐标型</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208114608229.png"></p><h2 id="位置检测"><a href="#位置检测" class="headerlink" title="位置检测"></a>位置检测</h2><ol><li>旋转光学编码器</li><li>旋转变压器</li><li>电位计</li><li>转速计</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器人学导论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Chapter7 轨迹生成</title>
       <link href="/2023/02/07/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter7%20%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/"/>
       <url>/2023/02/07/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter7%20%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/</url>
@@ -22,8 +72,6 @@
             
             <tag> 机器人学导论 </tag>
             
-            <tag> 轨迹生成 </tag>
-            
         </tags>
       
     </entry>
@@ -35,7 +83,7 @@
       <link href="/2023/02/07/Life/2023.2.7%E8%AE%B0/"/>
       <url>/2023/02/07/Life/2023.2.7%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>回学校了，心也相对静了许多。</p><p>好好学习，好好努力。</p><p>谁不想偷懒，总得逼着自己变得更好吧。</p><p>早睡早起，不浪费时间在无用的事情上。</p><p>加油！</p>]]></content>
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>回学校了，心也相对静了。</p><p>收拾了一下宿舍，变舒服了很多。</p><p>好好学习，好好努力。</p><p>谁不想偷懒，总得逼着自己变得更好吧。</p><p>早睡早起，不浪费时间在无用的事情上。</p><p>加油！</p>]]></content>
       
       
       <categories>
@@ -99,8 +147,6 @@
             
             <tag> 机器人学导论 </tag>
             
-            <tag> 操作臂动力学 </tag>
-            
         </tags>
       
     </entry>
@@ -126,8 +172,6 @@
             
             <tag> 机器人学导论 </tag>
             
-            <tag> 雅可比 </tag>
-            
         </tags>
       
     </entry>
@@ -152,8 +196,6 @@
         <tags>
             
             <tag> 机器人学导论 </tag>
-            
-            <tag> 逆运动学 </tag>
             
         </tags>
       
@@ -204,8 +246,6 @@
         <tags>
             
             <tag> 机器人学导论 </tag>
-            
-            <tag> 正运动学 </tag>
             
         </tags>
       
@@ -331,8 +371,6 @@
         <tags>
             
             <tag> 机器人学导论 </tag>
-            
-            <tag> 空间描述和变换 </tag>
             
         </tags>
       

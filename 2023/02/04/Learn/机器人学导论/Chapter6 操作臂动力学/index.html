@@ -252,6 +252,19 @@ Chapter6 操作臂动力学刚体的加速度线加速度
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -286,10 +299,6 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                         
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
                                 <span class="chip bg-color">机器人学导论</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/">
-                                <span class="chip bg-color">操作臂动力学</span>
                             </a>
                         
                     </div>
@@ -399,10 +408,6 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                                     <span class="chip bg-color">机器人学导论</span>
                                 </a>
                             
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/">
-                                    <span class="chip bg-color">操作臂动力学</span>
-                                </a>
-                            
                         </div>
                     
                 </div>
@@ -481,7 +486,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Sorry, it is private, but you can ask me for password.
                         
                     </div>
                     <div class="publish-info">
@@ -554,10 +559,6 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                     
                     <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
                         <span class="chip bg-color">机器人学导论</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9B%85%E5%8F%AF%E6%AF%94/">
-                        <span class="chip bg-color">雅可比</span>
                     </a>
                     
                 </div>
@@ -701,7 +702,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.2k</span>
+                        class="white-color">14.8k</span>
             
             
             

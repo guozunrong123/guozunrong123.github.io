@@ -5,18 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="2023.2.5 note, ZRong&#39;s Blog">
-    <meta name="description" content="
-
-So … sad …
-好像失去了什么 但我又没失去什么
-谢谢你带来的开心
-祝你 一切顺利
-你真的好搞笑
-少玩点 抓紧时间 好好学习
-也没多久了 到时候再慢慢玩
-看了很久的励志语句 想给你鼓励
-你说不喜欢 那便算了吧
-很多话想说 又无从说">
+    <meta name="description" content="Sorry, it is private, but you can ask me for password.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -256,6 +245,19 @@ So … sad …
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = 'd07b74a8e0a61b0bea65f753894b05f6bb6d1e68686ad6db66f66de5d295e56f';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -459,7 +461,7 @@ So … sad …
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Sorry, it is private, but you can ask me for password.
                         
                     </div>
                     <div class="publish-info">
@@ -532,10 +534,6 @@ So … sad …
                     
                     <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
                         <span class="chip bg-color">机器人学导论</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E8%87%82%E5%8A%A8%E5%8A%9B%E5%AD%A6/">
-                        <span class="chip bg-color">操作臂动力学</span>
                     </a>
                     
                 </div>
@@ -679,7 +677,7 @@ So … sad …
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.2k</span>
+                        class="white-color">14.8k</span>
             
             
             

@@ -249,6 +249,19 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -283,10 +296,6 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                         
                             <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
                                 <span class="chip bg-color">机器人学导论</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%AD%A3%E8%BF%90%E5%8A%A8%E5%AD%A6/">
-                                <span class="chip bg-color">正运动学</span>
                             </a>
                         
                     </div>
@@ -380,10 +389,6 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                                     <span class="chip bg-color">机器人学导论</span>
                                 </a>
                             
-                                <a href="/tags/%E6%AD%A3%E8%BF%90%E5%8A%A8%E5%AD%A6/">
-                                    <span class="chip bg-color">正运动学</span>
-                                </a>
-                            
                         </div>
                     
                 </div>
@@ -462,7 +467,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Sorry, it is private, but you can ask me for password.
                         
                     </div>
                     <div class="publish-info">
@@ -511,7 +516,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Sorry, it is private, but you can ask me for password.
                         
                     </div>
                     <div class="publish-info">
@@ -678,7 +683,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.2k</span>
+                        class="white-color">14.8k</span>
             
             
             
