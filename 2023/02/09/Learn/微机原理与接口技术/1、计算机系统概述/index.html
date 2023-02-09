@@ -4,15 +4,19 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="整流电路, ZRong&#39;s Blog">
+    <meta name="keywords" content="计算机系统概述, ZRong&#39;s Blog">
     <meta name="description" content="
 
-整流电路单相可控整流电路单相半波可控整流电路带电阻负载工作电阻负载的特点是电压与电流成正比，两者波形相同。
+计算机系统概述计算机中的数据表示与编码数与数制
 
 
-变压器T起变换电压和隔离的作用。
 
-带阻感负载工作阻感负载的特点是电感对电流变化有抗拒作用，使得流过电感的电流不能发生突变。">
+
+原码：
+对于二进制数，正数的原码就是它本身，负数的原码符号位取1，数值部分是真值的绝对值。
+反码：
+对于二进制数，正数的反码就是它本身，负数的反码符号位取1，数值部分按位取反。
+补">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +28,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>整流电路 | ZRong&#39;s Blog</title>
+    <title>计算机系统概述 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -268,12 +272,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">整流电路</h1>
+                    <h1 class="description center-align post-title">计算机系统概述</h1>
                 </div>
             </div>
         </div>
@@ -297,8 +301,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
-                                <span class="chip bg-color">电力电子技术</span>
+                            <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
+                                <span class="chip bg-color">微机原理</span>
                             </a>
                         
                     </div>
@@ -331,7 +335,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    679
+                    425
                 </div>
                 
 
@@ -358,89 +362,33 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="整流电路"><a href="#整流电路" class="headerlink" title="整流电路"></a>整流电路</h1><h2 id="单相可控整流电路"><a href="#单相可控整流电路" class="headerlink" title="单相可控整流电路"></a>单相可控整流电路</h2><h3 id="单相半波可控整流电路"><a href="#单相半波可控整流电路" class="headerlink" title="单相半波可控整流电路"></a>单相半波可控整流电路</h3><h4 id="带电阻负载工作"><a href="#带电阻负载工作" class="headerlink" title="带电阻负载工作"></a>带电阻负载工作</h4><p>电阻负载的特点是电压与电流成正比，两者波形相同。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208131556763.png" alt="单相半波可控整流电路"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208131819686.png" alt="电路波形"></p>
-<p>变压器T起变换电压和隔离的作用。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208133731101.png" alt="基本数量关系"></p>
-<h4 id="带阻感负载工作"><a href="#带阻感负载工作" class="headerlink" title="带阻感负载工作"></a>带阻感负载工作</h4><p>阻感负载的特点是电感对电流变化有抗拒作用，使得流过电感的电流不能发生突变。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208134428496.png" alt="带阻感负载的单相半波可控整流电路及其波形"></p>
-<p>电路分析：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208135120122.png"></p>
-<p>在整流电路的负载两端并联一个二极管，称为续流二极管，用VD<del>R</del>表示。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208145000292.png" alt="单相半波带阻感负载有续流二极管的电路及波形"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208145053071.png" alt="电路分析"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208150626105.png" alt="基本数量关系"></p>
-<p>单相半波可控整流电路的特点是简单，但输出脉冲大，变压器二次侧电流中含直流分量，造成变压器铁芯<strong>直接磁化</strong>。为使变压器铁芯不饱和，需增大铁芯截面积，增大了设备的容量。</p>
-<h3 id="单相桥式全控整流电路"><a href="#单相桥式全控整流电路" class="headerlink" title="单相桥式全控整流电路"></a>单相桥式全控整流电路</h3><h4 id="带电阻负载工作-1"><a href="#带电阻负载工作-1" class="headerlink" title="带电阻负载工作"></a>带电阻负载工作</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208151911944.png" alt="单相全控桥式带电阻负载时的电路及波形"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208151956112.png" alt="电路分析"></p>
-<p><strong>基本数量关系：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208152356937.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208152624495.png"></p>
-<h4 id="带阻感负载工作-1"><a href="#带阻感负载工作-1" class="headerlink" title="带阻感负载工作"></a>带阻感负载工作</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208152924294.png" alt="单相桥式全控整流电路带阻感负载时的电路及波形"></p>
-<p><strong>电路分析：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208153455205.png"></p>
-<p><strong>数量关系：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208154044578.png"></p>
-<h4 id="带反电动势负载工作"><a href="#带反电动势负载工作" class="headerlink" title="带反电动势负载工作"></a>带反电动势负载工作</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208160515079.png" alt="单相桥式全控整流电路接反电动势——电阻负载时的电路及波形"></p>
-<p><strong>工作情况：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208160617766.png"></p>
-<p><strong>电流断续：</strong></p>
-<ul>
-<li>i<del>d</del>波形在一周期内有部分时间为0的情况，称为电流断续。</li>
-<li>负载为直流电动机时，如果出现电流断续，则电动机的机械特性很软。</li>
-<li>为了克服此缺点，一般在主电路中直流输出侧串联一个平波电抗器。</li>
-<li>为保证电流连续所需的电感量L可由下式求出：</li>
-</ul>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208161815024.png"></p>
-<h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208161931826.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208161944131.png"></p>
-<h3 id="单相全波可控整流电路"><a href="#单相全波可控整流电路" class="headerlink" title="单相全波可控整流电路"></a>单相全波可控整流电路</h3><h4 id="带电阻负载工作-2"><a href="#带电阻负载工作-2" class="headerlink" title="带电阻负载工作"></a>带电阻负载工作</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208162303847.png" alt="单相全波可控整流电路及波形"></p>
-<p><strong>电路分析</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208162401109.png"></p>
-<p><strong><u>单相全波与单相全控桥的区别：</u></strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208162540902.png"></p>
-<p>从上述后两点考虑，单相全波电路有利于在低输出电压的场合应用。</p>
-<h3 id="单相桥式半控整流电路"><a href="#单相桥式半控整流电路" class="headerlink" title="单相桥式半控整流电路"></a>单相桥式半控整流电路</h3><p>与全控电路在电阻负载时的工作情况相同。</p>
-<h4 id="带阻感负载工作-2"><a href="#带阻感负载工作-2" class="headerlink" title="带阻感负载工作"></a>带阻感负载工作</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208163145575.png" alt="单相桥式半控整流电路，有续流二极管，阻感负载时的电路及波形"></p>
-<p><strong>电路分析：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208165245605.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208171926755.png"></p>
-<p><strong>单相桥式半控整流电路的另一种解法：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208172041729.png" alt="单相桥式半控整流电路的另一种接法"></p>
-<p>这样可以省去续流二极管VD<del>R</del>，续流由VD<del>3</del>和VD<del>4</del>来实现。</p>
-<p>这种接法的两个晶闸管阴极电位不同，二者的触发电路需要隔离。</p>
-<h2 id="三相可控整流电路"><a href="#三相可控整流电路" class="headerlink" title="三相可控整流电路"></a>三相可控整流电路</h2><h3 id="三相半波可控整流电路"><a href="#三相半波可控整流电路" class="headerlink" title="三相半波可控整流电路"></a>三相半波可控整流电路</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208195144548.png" alt="三相半波可控整流电路共阴极接法电阻负载时的电路及α=0°时的波形"></p>
-<p><strong>电路分析：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208195731714.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208212739385.png" alt="三相半波可控整流电路，电阻负载，α=30°时的波形"></p>
-<p>当α&#x3D;30°时，负载电流处于连续和断续的临界状态，各相仍导电120°。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208213425241.png" alt="三相半波可控整流电路，电阻负载，α=60°时的波形"></p>
-<p>当α&gt;30°时，负载电流断续。</p>
-<p><strong>基本数量关系：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208213629214.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208215556971.png"></p>
-<h4 id="阻感负载"><a href="#阻感负载" class="headerlink" title="阻感负载"></a>阻感负载</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208220607031.png"></p>
-<p><strong>基本数量关系：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208220944083.png" alt="image-20230208220944083"></p>
-<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230208225103313.png"></p>
-<h3 id="三相桥式全控整流电路"><a href="#三相桥式全控整流电路" class="headerlink" title="三相桥式全控整流电路"></a>三相桥式全控整流电路</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209093710352.png" alt="三相桥式全控整流电路原理图"></p>
-<h4 id="带电阻负载工作-3"><a href="#带电阻负载工作-3" class="headerlink" title="带电阻负载工作"></a>带电阻负载工作</h4><p>电路分析：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209093905989.png"></p>
-<p><strong>一些特点：</strong></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209095354972.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209095437316.png"></p>
-<h4 id="带阻感负载工作-3"><a href="#带阻感负载工作-3" class="headerlink" title="带阻感负载工作"></a>带阻感负载工作</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209095518445.png" alt="电路分析"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209095532687.png" alt="基本数量关系"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209095552645.png"></p>
-<h2 id="变压器漏感对整流电路的影响"><a href="#变压器漏感对整流电路的影响" class="headerlink" title="变压器漏感对整流电路的影响"></a>变压器漏感对整流电路的影响</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209101227701.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209101539090.png" alt="基本数量关系"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209102415733.png" alt="换向重叠角"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209102518736.png"></p>
-<h2 id="整流电路的谐波和功率因数"><a href="#整流电路的谐波和功率因数" class="headerlink" title="整流电路的谐波和功率因数"></a>整流电路的谐波和功率因数</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209105533862.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209105556310.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209110551864.png"></p>
-<h2 id="整流电路的有源逆变工作状态"><a href="#整流电路的有源逆变工作状态" class="headerlink" title="整流电路的有源逆变工作状态"></a>整流电路的有源逆变工作状态</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209112146759.png"></p>
+<h1 id="计算机系统概述"><a href="#计算机系统概述" class="headerlink" title="计算机系统概述"></a>计算机系统概述</h1><h2 id="计算机中的数据表示与编码"><a href="#计算机中的数据表示与编码" class="headerlink" title="计算机中的数据表示与编码"></a>计算机中的数据表示与编码</h2><h3 id="数与数制"><a href="#数与数制" class="headerlink" title="数与数制"></a>数与数制</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209163055786.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209163110832.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209163124268.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209163251973.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209163850855.png"></p>
+<p><strong>原码：</strong></p>
+<p>对于二进制数，正数的原码就是它本身，负数的原码符号位取1，数值部分是真值的绝对值。</p>
+<p><strong>反码：</strong></p>
+<p>对于二进制数，正数的反码就是它本身，负数的反码符号位取1，数值部分按位取反。</p>
+<p><strong>补码：</strong></p>
+<p>对于二进制数，正数的补码就是它本身，负数的补码符号位取1，数值部分按位取反末位加1。</p>
+<p><strong>ASCII码：</strong></p>
+<p>A 十进制：65  十六进制：41</p>
+<p>a 十进制：97  十六进制：61</p>
+<h2 id="逻辑电路基础"><a href="#逻辑电路基础" class="headerlink" title="逻辑电路基础"></a>逻辑电路基础</h2><p>数电学了。略。</p>
+<p><strong>触发器</strong>是计算机<strong>记忆装置的基本单元</strong>，也是构成<strong>时序电路的基础</strong>。</p>
+<p>由n个触发器可以组成一个n位寄存器。</p>
+<h2 id="计算机系统概述-1"><a href="#计算机系统概述-1" class="headerlink" title="计算机系统概述"></a>计算机系统概述</h2><h3 id="计算机系统的组成"><a href="#计算机系统的组成" class="headerlink" title="计算机系统的组成"></a>计算机系统的组成</h3><p>计算机由运算器、存储器、控制器、输入设备和输出设备五大基本部件组成。</p>
+<p>冯诺依曼结构的计算机是以<strong>运算器</strong>为中心的，输入&#x2F;输出设备与存储器之间的数据传送都要通过运算器。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209202254324.png" alt="图1.14 以运算器为中心的计算机结构"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209202327580.png"></p>
+<p>将早期运算器和控制器集成在一片集成电路中，称为中央处理器。(CPU)</p>
+<p>CPU和内存构成计算机的主机。</p>
+<p>主机以外的其他硬件设备都称为外设。</p>
+<p>现代计算机系统是以<strong>存储器</strong>为中心的，采用总线结构，在系统总线上配置一定容量的存储器和一定数目的I&#x2F;O接口电路，以及相对应的I&#x2F;O设备而构成的。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209203518589.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209203607434.png"></p>
 
                 
             </div>
@@ -455,8 +403,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
-                                    <span class="chip bg-color">电力电子技术</span>
+                                <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
+                                    <span class="chip bg-color">微机原理</span>
                                 </a>
                             
                         </div>
@@ -521,18 +469,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/">
+                <a href="/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/2%E3%80%81%E9%80%86%E5%8F%98%E7%94%B5%E8%B7%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="整流电路">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="逆变电路">
                         
-                        <span class="card-title">整流电路</span>
+                        <span class="card-title">逆变电路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -542,9 +489,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -557,7 +504,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -576,13 +522,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E8%AF%BE%E8%AE%BE/">
+                <a href="/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/1%E3%80%81%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="电力电子课设">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="整流电路">
                         
-                        <span class="card-title">电力电子课设</span>
+                        <span class="card-title">整流电路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -755,7 +701,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">19.7k</span>
+                        class="white-color">20.3k</span>
             
             
             

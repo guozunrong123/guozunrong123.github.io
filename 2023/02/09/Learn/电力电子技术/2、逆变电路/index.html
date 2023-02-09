@@ -4,8 +4,26 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2023.2.7 note, ZRong&#39;s Blog">
-    <meta name="description" content="Sorry, it is private, but you can ask me for password.">
+    <meta name="keywords" content="逆变电路, ZRong&#39;s Blog">
+    <meta name="description" content="
+
+逆变电路换流方式逆变电路的基本工作原理
+换流方式分类换流：电流从一个支路向另一个支路转移的过程，也称为换相。
+研究换流方式主要是研究如何使器件关断。
+
+
+
+
+换流方式
+
+器件换流
+电网换流
+负载换流
+强迫换流
+
+换流方式总结
+
+电压型逆">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +35,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2023.2.7 note | ZRong&#39;s Blog</title>
+    <title>逆变电路 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -248,7 +266,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = 'd07b74a8e0a61b0bea65f753894b05f6bb6d1e68686ad6db66f66de5d295e56f';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -261,12 +279,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2023.2.7 note</h1>
+                    <h1 class="description center-align post-title">逆变电路</h1>
                 </div>
             </div>
         </div>
@@ -290,8 +308,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                                <span class="chip bg-color">随笔</span>
+                            <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">电力电子技术</span>
                             </a>
                         
                     </div>
@@ -302,8 +320,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Life/" class="post-category">
-                                Life
+                            <a href="/categories/Learn/" class="post-category">
+                                Learn
                             </a>
                         
                     </div>
@@ -315,7 +333,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-07
+                    2023-02-09
                 </div>
                 
 
@@ -324,7 +342,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    65
+                    210
                 </div>
                 
 
@@ -351,12 +369,46 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<p>回学校了，心也相对静了。</p>
-<p>收拾了一下宿舍，变舒服了很多。</p>
-<p>好好学习，好好努力。</p>
-<p>谁不想偷懒，总得逼着自己变得更好吧。</p>
-<p>早睡早起，不浪费时间在无用的事情上。</p>
-<p>加油！</p>
+<h1 id="逆变电路"><a href="#逆变电路" class="headerlink" title="逆变电路"></a>逆变电路</h1><h2 id="换流方式"><a href="#换流方式" class="headerlink" title="换流方式"></a>换流方式</h2><h3 id="逆变电路的基本工作原理"><a href="#逆变电路的基本工作原理" class="headerlink" title="逆变电路的基本工作原理"></a>逆变电路的基本工作原理</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209121740519.png"></p>
+<h3 id="换流方式分类"><a href="#换流方式分类" class="headerlink" title="换流方式分类"></a>换流方式分类</h3><p>换流：电流从一个支路向另一个支路转移的过程，也称为换相。</p>
+<p>研究换流方式主要是研究如何使器件关断。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209121959959.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209122123624.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209122204002.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209122225353.png"></p>
+<p><strong>换流方式</strong></p>
+<ol>
+<li>器件换流</li>
+<li>电网换流</li>
+<li>负载换流</li>
+<li>强迫换流</li>
+</ol>
+<p><strong>换流方式总结</strong></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209122254783.png"></p>
+<h2 id="电压型逆变电路"><a href="#电压型逆变电路" class="headerlink" title="电压型逆变电路"></a>电压型逆变电路</h2><h3 id="单相电压型逆变电路"><a href="#单相电压型逆变电路" class="headerlink" title="单相电压型逆变电路"></a>单相电压型逆变电路</h3><h4 id="半桥逆变电路"><a href="#半桥逆变电路" class="headerlink" title="半桥逆变电路"></a>半桥逆变电路</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209143902543.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209144005971.png"></p>
+<h4 id="全桥逆变电路"><a href="#全桥逆变电路" class="headerlink" title="全桥逆变电路"></a>全桥逆变电路</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209144218865.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209144801708.png"></p>
+<h4 id="带中心抽头变压器的逆变电路"><a href="#带中心抽头变压器的逆变电路" class="headerlink" title="带中心抽头变压器的逆变电路"></a>带中心抽头变压器的逆变电路</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209144940822.png"></p>
+<h3 id="三相电压型逆变电路"><a href="#三相电压型逆变电路" class="headerlink" title="三相电压型逆变电路"></a>三相电压型逆变电路</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209145815895.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209150542037.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209150604537.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209150651633.png" alt="基本数量关系"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209151911980.png"></p>
+<h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209152355444.png"></p>
+<h2 id="电流型逆变电路"><a href="#电流型逆变电路" class="headerlink" title="电流型逆变电路"></a>电流型逆变电路</h2><h3 id="单相电流型逆变电路"><a href="#单相电流型逆变电路" class="headerlink" title="单相电流型逆变电路"></a>单相电流型逆变电路</h3><h4 id="单相桥式电流型逆变电路"><a href="#单相桥式电流型逆变电路" class="headerlink" title="单相桥式电流型逆变电路"></a>单相桥式电流型逆变电路</h4><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209152535263.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209152616819.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209152653652.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209152714375.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209152729764.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209152748304.png"></p>
+<h3 id="三相电流型逆变电路"><a href="#三相电流型逆变电路" class="headerlink" title="三相电流型逆变电路"></a>三相电流型逆变电路</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209152844759.png"></p>
+<h2 id="多重逆变电路和多电平逆变电路"><a href="#多重逆变电路和多电平逆变电路" class="headerlink" title="多重逆变电路和多电平逆变电路"></a>多重逆变电路和多电平逆变电路</h2><h3 id="多重逆变电路"><a href="#多重逆变电路" class="headerlink" title="多重逆变电路"></a>多重逆变电路</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209153240116.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209153315196.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209153426115.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209153437525.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209153456740.png" alt="image-20230209153456740"></p>
+<h3 id="多电平逆变电路"><a href="#多电平逆变电路" class="headerlink" title="多电平逆变电路"></a>多电平逆变电路</h3><p>略</p>
 
                 
             </div>
@@ -371,8 +423,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                                    <span class="chip bg-color">随笔</span>
+                                <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">电力电子技术</span>
                                 </a>
                             
                         </div>
@@ -437,17 +489,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/02/07/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter7%20%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90/">
+                <a href="/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/2%E3%80%81%E9%80%86%E5%8F%98%E7%94%B5%E8%B7%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Chapter7 轨迹生成">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="逆变电路">
                         
-                        <span class="card-title">Chapter7 轨迹生成</span>
+                        <span class="card-title">逆变电路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -457,9 +510,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-07
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">电力电子技术</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/02/09/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/1%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="计算机系统概述">
+                        
+                        <span class="card-title">计算机系统概述</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -475,57 +578,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                        <span class="chip bg-color">机器人学导论</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/02/05/Life/2023.2.5%E8%AE%B0/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="2023.2.5 note">
-                        
-                        <span class="card-title">2023.2.5 note</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Sorry, it is private, but you can ask me for password.
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Life/" class="post-category">
-                                    Life
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">微机原理</span>
                     </a>
                     
                 </div>
