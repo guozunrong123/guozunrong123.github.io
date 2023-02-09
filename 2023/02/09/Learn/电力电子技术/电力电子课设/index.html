@@ -4,15 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chapter6 操作臂动力学, ZRong&#39;s Blog">
+    <meta name="keywords" content="电力电子课设, ZRong&#39;s Blog">
     <meta name="description" content="
 
-Chapter6 操作臂动力学刚体的加速度线加速度
-
-角加速度
-质量分布对于定轴旋转的情况，经常用到惯性矩这个概念。
-在一个刚体绕任意轴做旋转运动时，我们需要一种能够表征刚体质量分布的方式。在这里，引入惯性张量。
-坐标系{A}中的惯性张">
+电力电子课设一、选题背景与设计指标1.选题背景介绍本课程作为本学院《电力电子技术》课程的配套课程设计课，以开放式、学生实践的形式开出。课程从理论联系实际的角度出发，掌握各种电力电子电路的结构、工作原理、控制方法、设计计算方法及实验技能，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +19,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chapter6 操作臂动力学 | ZRong&#39;s Blog</title>
+    <title>电力电子课设 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -273,7 +268,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chapter6 操作臂动力学</h1>
+                    <h1 class="description center-align post-title">电力电子课设</h1>
                 </div>
             </div>
         </div>
@@ -297,8 +292,8 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                                <span class="chip bg-color">机器人学导论</span>
+                            <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">电力电子技术</span>
                             </a>
                         
                     </div>
@@ -322,7 +317,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-04
+                    2023-02-09
                 </div>
                 
 
@@ -331,7 +326,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    512
+                    3.4k
                 </div>
                 
 
@@ -358,38 +353,174 @@ Chapter6 操作臂动力学刚体的加速度线加速度
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="Chapter6-操作臂动力学"><a href="#Chapter6-操作臂动力学" class="headerlink" title="Chapter6 操作臂动力学"></a>Chapter6 操作臂动力学</h1><h2 id="刚体的加速度"><a href="#刚体的加速度" class="headerlink" title="刚体的加速度"></a>刚体的加速度</h2><h3 id="线加速度"><a href="#线加速度" class="headerlink" title="线加速度"></a>线加速度</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164333594.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164348471.png"></p>
-<h3 id="角加速度"><a href="#角加速度" class="headerlink" title="角加速度"></a>角加速度</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164434766.png"></p>
-<h2 id="质量分布"><a href="#质量分布" class="headerlink" title="质量分布"></a>质量分布</h2><p>对于定轴旋转的情况，经常用到<strong>惯性矩</strong>这个概念。</p>
-<p>在一个刚体绕任意轴做旋转运动时，我们需要一种能够表征刚体质量分布的方式。在这里，引入<strong>惯性张量</strong>。</p>
-<p>坐标系{A}中的惯性张量可用3×3矩阵表示如下</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165112173.png"></p>
-<p>各元素：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165125375.png" alt="、"></p>
-<h2 id="牛顿方程和欧拉方程"><a href="#牛顿方程和欧拉方程" class="headerlink" title="牛顿方程和欧拉方程"></a>牛顿方程和欧拉方程</h2><p>如果知道了连杆质心的位置和惯性张量，那么它的质量分布特征就完全确定了。</p>
-<p>连杆运动所需的力是关于连杆期望加速度及其质量分布的函数。</p>
-<p>牛顿方程以及描述旋转运动的欧拉方程描述了力、惯量和加速度之间的关系。</p>
-<h3 id="牛顿方程"><a href="#牛顿方程" class="headerlink" title="牛顿方程"></a>牛顿方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165304745.png"></p>
-<h3 id="欧拉方程"><a href="#欧拉方程" class="headerlink" title="欧拉方程"></a>欧拉方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165319817.png"></p>
-<h2 id="牛顿-欧拉递推动力学方程"><a href="#牛顿-欧拉递推动力学方程" class="headerlink" title="牛顿-欧拉递推动力学方程"></a>牛顿-欧拉递推动力学方程</h2><h3 id="牛顿-欧拉递推动力学算法"><a href="#牛顿-欧拉递推动力学算法" class="headerlink" title="牛顿-欧拉递推动力学算法"></a>牛顿-欧拉递推动力学算法</h3><p>对于转动关节来说，这个算法归纳如下：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170101776.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170114338.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170138047.png"></p>
-<h3 id="考虑重力的动力学算法"><a href="#考虑重力的动力学算法" class="headerlink" title="考虑重力的动力学算法"></a>考虑重力的动力学算法</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170336208.png"></p>
-<h2 id="操作臂动力学的拉格朗日方程"><a href="#操作臂动力学的拉格朗日方程" class="headerlink" title="操作臂动力学的拉格朗日方程"></a>操作臂动力学的拉格朗日方程</h2><p>牛顿-欧拉公式可以被认为是一种解决动力学问题的力平衡方法，而拉格朗日公式则是一种基于能量的动力学方法。</p>
-<p>首先讨论操作臂动能的表达式。第i个连杆的动能k<del>i</del>可以表示为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205172901519.png"></p>
-<p>式中第一项是基于连杆质心线速度的动能，第二项是连杆的角速度动能。</p>
-<p>整个操作臂的动能是各个连杆功能之和，即：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205172955433.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185335730.png"></p>
-<p>拉格朗日动力学公式给出了一种从标量函数推导动力学方程的方法，我们称这个标量函数为拉格朗日函数，即一个机械系统的动能和势能的差值。这里，操作臂的拉格朗日函数表示为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185715196.png"></p>
-<p>则操作臂的运动方程为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185749283.png"></p>
-<p>这里，t是n×1的激励力矩矢量。对于操作臂来说，方程变为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185822085.png"></p>
+<h1 id="电力电子课设"><a href="#电力电子课设" class="headerlink" title="电力电子课设"></a>电力电子课设</h1><h2 id="一、选题背景与设计指标"><a href="#一、选题背景与设计指标" class="headerlink" title="一、选题背景与设计指标"></a><strong>一、</strong>选题背景与设计指标</h2><h3 id="1-选题背景介绍"><a href="#1-选题背景介绍" class="headerlink" title="1.选题背景介绍"></a>1.选题背景介绍</h3><p>本课程作为本学院《电力电子技术》课程的配套课程设计课，以开放式、学生实践的形式开出。课程从理论联系实际的角度出发，掌握各种电力电子电路的结构、工作原理、控制方法、设计计算方法及实验技能，并将各种变换电路组合实现电能的变换和控制，让学生体会将理论知识运用于实际的过程和团队合作的意义，同时培养学生的创新精神、激发学生的创新意识、增强学生的动手和实践能力。</p>
+<p>通过本次课程设计，学生将学会利用仿真平台实现整流电路、Buck斩波电路和逆变电路的设计，本在各自的课程要求上通过对电路参数的调节实现整流电路输出软启动、降压斩波和单相逆变输出期望电压波形。</p>
+<h3 id="2-电路设计指标"><a href="#2-电路设计指标" class="headerlink" title="2.电路设计指标"></a>2.电路设计指标</h3><p>根据课程设计相关课程要求，本报告所需要实现的设计指标如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th><strong>设计指标</strong></th>
+<th><strong>要求</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可控整流输出电压</td>
+<td>150V</td>
+</tr>
+<tr>
+<td>可控整流软启动时间</td>
+<td>2.6s</td>
+</tr>
+<tr>
+<td>降压斩波输出电压</td>
+<td>80V</td>
+</tr>
+<tr>
+<td>降压斩波开关频率</td>
+<td>15KHz</td>
+</tr>
+<tr>
+<td>逆变输出频率</td>
+<td>150Hz</td>
+</tr>
+<tr>
+<td>逆变输出幅值</td>
+<td>38V</td>
+</tr>
+<tr>
+<td>逆变开关频率</td>
+<td>26KHz</td>
+</tr>
+</tbody></table>
+<h2 id="二、设计思路"><a href="#二、设计思路" class="headerlink" title="二、设计思路"></a>二、设计思路</h2><p>本次课程设计的相关电路按照功能可以划分为：</p>
+<p>1）触发脉冲产生电路：通过电压比较器和晶体管积分电路实现整流电路移相触发脉冲的产生。</p>
+<p>2）单相整流电路：通过全桥整流和滤波环节实现将220V&#x2F;50Hz的交流输入电压转化为直流电压，并实现2.6s的电路软启动。</p>
+<p>3）直流斩波电路：利用Buck斩波电路和电容元件将整流电路的输出电压降低为要求输出值；</p>
+<p>4）单相逆变电路：通过PWM调制的方式将斩波电路的输出直流电压转化为要求幅值和频率的正弦交流电输出；</p>
+<h2 id="三、过程论述"><a href="#三、过程论述" class="headerlink" title="三、过程论述"></a>三、过程论述</h2><h3 id="1-仿真电路的主要组成"><a href="#1-仿真电路的主要组成" class="headerlink" title="1.仿真电路的主要组成"></a>1.仿真电路的主要组成</h3><p>由本报告“二、设计思路”分析可得，本课程设计的仿真电路主要由四个部分组成，方框图表示如下：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114715959.png" alt="图3-1：基本仿真电路方框图">                    </p>
+<h3 id="2-基本仿真实验"><a href="#2-基本仿真实验" class="headerlink" title="2.基本仿真实验"></a>2.基本仿真实验</h3><h4 id="1）可控整流仿真Simulink图与仿真波形"><a href="#1）可控整流仿真Simulink图与仿真波形" class="headerlink" title="1）可控整流仿真Simulink图与仿真波形"></a>1）可控整流仿真Simulink图与仿真波形</h4><h5 id="i-主电路原理及仿真电路图"><a href="#i-主电路原理及仿真电路图" class="headerlink" title="i.主电路原理及仿真电路图"></a>i.主电路原理及仿真电路图</h5><p>典型的单相桥式全控整流电路由晶闸管构成桥式开关，其原理图及其输出电压ud波形如下图所示：</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114740144.png" alt="图3-2：典型的单相桥式全控整流电路及其相关波形"></p>
+<p>由图可知，若在电路的输出侧加上大电容进行低频滤波，则可以从电容两端取得一个较为平缓的直流输出电压。因此，Simulink中对该电路的仿真原理图如下图所示：</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114755917.png" alt="图3-3：Simulink中搭建的单相桥式全控整流电路"></p>
+<p>其中，与电容并接的二极管起续流作用；</p>
+<h5 id="ii-相触发电路原理及仿真电路图"><a href="#ii-相触发电路原理及仿真电路图" class="headerlink" title="ii.相触发电路原理及仿真电路图"></a>ii.相触发电路原理及仿真电路图</h5><p>移相触发电路将为整流电路提供合适的触发脉冲，通过改变整流电路晶闸管的导通角，使整流电路输出不同的整流电压。</p>
+<p>典型的移相触发电路由以下几个部分组成：</p>
+<p>1）同步环节</p>
+<p>2）锯齿波产生环节</p>
+<p>3）触发脉冲产生环节</p>
+<p>经过课本的电路分析可知，从模块的角度上看，该触发电路对外暴露X、Y端子，利用这两个端子可将同类型的触发电路进行串联，实现双触发脉冲的产生。<br>考虑到本次课设所采用的触发电路是针对单相整流电路的，因此，本课设将采用另一种形式的触发电路实现，其Simulink电路仿真原理图如下图所示：</p>
+<p> <img src="C:/Users/Zunrong%20Guo/AppData/Roaming/Typora/typora-user-images/image-20230209114812164.png" alt="图3-4：本课设所采用的移相触发电路"></p>
+<p>下面对该电路的工作原理进行详细分析：</p>
+<p>1）同步环节：将电源电压通过变压器同步到触发电路侧，并利用电压比较器产生两路矩形波；</p>
+<p>2）锯齿波产生环节：</p>
+<p>将同步环节的两路矩形波送入由晶体管构成的积分电路中，即可从电容侧得到锯齿波；</p>
+<p>积分电路原理：晶体管与射极电阻、以及与be极相并联的二极管构成了简易恒流源电路。当电压比较器输出负电压时，电容将与二极管、电压比较器的输出端构成放电回路，电容迅速放电，电容电压uc &#x3D; 0；当电压比较器输出正电压时，二极管截止，集电极回路的电容被恒流源充电，故uc线性增长，从而在电容正极得到锯齿波。</p>
+<p>3）脉冲产生环节</p>
+<p>将锯齿波与一个恒定的可调直流电压送入电压比较器，即可得到触发脉冲，脉冲前沿由锯齿波斜坡与直流电压的交点位置决定。STW1、STW2为锯齿波波形，峰值为5V。Ref_U为输入电压比较器的直流电压；波形图下方为触发脉冲输出。可见触发脉冲的脉宽由锯齿波和直流电压共同决定 ；</p>
+<h5 id="iii-软启动实现"><a href="#iii-软启动实现" class="headerlink" title="iii.软启动实现"></a>iii.软启动实现</h5><p>由上述分析可以联想到：实现电路软启动要求整流电路的触发角α能随时间改变，即触发脉冲产生电路能产生一组脉冲前沿随时间变化的触发脉冲；</p>
+<p>故软启动问题可以简化为求取一条电压值随时间发生变化的直流电压，并将该直流电压输入到脉冲产生环节的电压比较器即可。</p>
+<p>利用Simulink中的可变电阻及斜坡信号模型，即可完成时变直流电压的产生，相关电路仿真原理图如下：</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114828903.png" alt="图3-5：软启动部分的电路仿真原理图"></p>
+<p>​       iv.     相关参数整定</p>
+<p>1）整流输出电压相关参数：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114846161.png" alt="图3-6：整流输出的电路参数计算"></p>
+<p>由前述对电路原理的分析可知：影响整流输出电压的参数实际上为饱和非线性环节的限幅下限值。由二分法试凑可迅速得出限幅下限为0.175。</p>
+<p>通过试凑方式的参数整定，本人也感受到了Simulink进行电路仿真的优势所在。</p>
+<p>2）软启动时间相关参数：</p>
+<p>观察整流电路的输出波形可知，输出波形增大到达稳态的转折处大致与时变直流电压的转折点在同一个时间点上。而当触发角α &#x3D; 180°时，此时直流电压的幅值应为锯齿波电压的幅值，即5V，对应斜坡信号值为0.5；</p>
+<p>根据软启动时间的定义可知：整流电路需在t &#x3D; 3s时输出150 * 80% V &#x3D; 120V的直流电压。故先计算使输出为120V时的限幅下限值为0.21598，之后计算0到2.6秒内的斜坡环节斜率：</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114859931.png" alt="图3-7：软启动部分的电路参数计算"></p>
+<p>将计算值代入Simulink斜坡环节，同时限幅下限更改为0.175（150V电压输出对应的下限值），微调参数k &#x3D; -0.1095，即可使t &#x3D; 2.6s时输出电压为120V，达到要求； </p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114922477.png"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114933908.png" alt="图3-8：软启动部分的电路仿真图"></p>
+<h4 id="2）Buck斩波仿真Simulink图与波形"><a href="#2）Buck斩波仿真Simulink图与波形" class="headerlink" title="2）Buck斩波仿真Simulink图与波形"></a>2）Buck斩波仿真Simulink图与波形</h4><h5 id="i-Buck降压斩波电路原理及仿真电路图"><a href="#i-Buck降压斩波电路原理及仿真电路图" class="headerlink" title="i.Buck降压斩波电路原理及仿真电路图"></a>i.Buck降压斩波电路原理及仿真电路图</h5><p>典型的Buck降压斩波电路由全控型电力电子器件、续流二极管以及电感元件组成，全控器件采用PWM调制控制开关动作。其电路原理及输出波形图如下：</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209114952065.png" alt="图3-9：Buck降压斩波电路原理图及输出波形图"></p>
+<p>该电路的输出电压均值Ud与输入电压E的关系为：</p>
+<p>Ud &#x3D; αE</p>
+<p>其中，α为PWM波的导通占空比，通过调节PWM占空比，即可调节输出电压的平均值；</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115006150.png" alt="图3-10：Buck部分的电路仿真图"></p>
+<h5 id="ii-相关参数整定"><a href="#ii-相关参数整定" class="headerlink" title="ii.相关参数整定"></a>ii.相关参数整定</h5><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115032026.png"></p>
+<p>降压斩波开关频率为15KHz，周期为Period&#x3D;1&#x2F;15KHz&#x3D;0.00006667</p>
+<p>   输入电压为150V，输出电压为80V。由降压斩波电路的输入、输出电压关系：Ud &#x3D; αE可得，当要求输出电压为80V直流电时，理想占空比应为 α &#x3D; 53.33%。</p>
+<p>设置PWM占空比为该值，并在此基础上利用二分法试凑进行小范围调整，可得该电路模块在 α &#x3D; 61%时，恰能输出80V直流电，其测量波形可见下方的“仿真波形展示”。</p>
+<h5 id="iii-仿真波形展示"><a href="#iii-仿真波形展示" class="headerlink" title="iii.仿真波形展示"></a>iii.仿真波形展示</h5><p> Buck斩波电路的仿真波形图如下图所示，其中由测量结果可知，该电路模块达到输出80V直流电压的指标要求：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115051084.png" alt="图3-11：Buck斩波电路的Simulink仿真波形"></p>
+<h4 id="3）单相逆变仿真Simulink图与波形"><a href="#3）单相逆变仿真Simulink图与波形" class="headerlink" title="3）单相逆变仿真Simulink图与波形"></a>3）单相逆变仿真Simulink图与波形</h4><h5 id="i-双极性PWM调制原理"><a href="#i-双极性PWM调制原理" class="headerlink" title="i.双极性PWM调制原理"></a>i.双极性PWM调制原理</h5><p>接下来以单相桥式逆变电路为例，分析双极性PWM调制的原理：</p>
+<p>1）PWM调制的原理保证：面积等效原理。即对于感性电路，在窄脉冲电压源作用之后，回路上的电流响应规律与脉冲电压的形状基本无关；</p>
+<p>2）PWM调制：PWM调制即将信号波所蕴含的规律“加载”到一组PWM波上，信号波在某一时刻附近的幅值由PWM在这里时刻附近的占空比大小进行表征。</p>
+<p>3）基本的PWM调制由单极性调制和双极性调制，两者对正弦信号进行调制时产生的PWM波对比如下图所示。其中左图为单极性调制（信号波在一个极性周期内，对应的PWM幅值只能有两种取值，例如0和+Ud）、右图为双极性调制（信号波在一个极性周期内，对应的PWM幅值有三种取值：0和±Ud）：</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115104407.png" alt="图3-12：单极性PWM调制（左）与双极性PWM调制（右）"></p>
+<h5 id="ii-单相桥式逆变电路的原理"><a href="#ii-单相桥式逆变电路的原理" class="headerlink" title="ii.单相桥式逆变电路的原理"></a>ii.单相桥式逆变电路的原理</h5><p>若将经过正弦波调制后的PWM波（称为SPWM）作用于由全控型器件（例如IGBT）组成的全控桥，全控桥输入直流电压，并使全控桥带阻感负载，则负载输出的电流波形将近似为正弦波，且该正弦波与被调制的正弦信号基本同步，这即为单相桥式逆变电路的原理。</p>
+<p>Simulink中的单相桥式逆变电路仿真图如下图所示：</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115118824.png" alt="图3-13：Simulink中的单相桥式逆变电路仿真图"></p>
+<p>其中，仿真图下方的电路部分利用逻辑运算电路，实现了SPWM双极性调制。IGBT全控桥带阻感负载，并在电阻两端取电压输出。由上述分析可知，输出电流近似正弦波时，经过电阻负载上的电压也应为近似正弦波的波形；</p>
+<h5 id="iii-相关参数整定"><a href="#iii-相关参数整定" class="headerlink" title="iii.相关参数整定"></a>iii.相关参数整定</h5><p>1）逆变开关频率：1&#x2F;26KHz&#x3D;0.00003846</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115147988.png"></p>
+<p>2） 逆变输出频率：Frequency&#x3D;150<em>2</em>Π</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115158697.png"></p>
+<p>3）逆变输出赋值：信号波幅值&#x2F;载波幅值&#x3D;输出电压&#x2F;输入电压</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115222099.png"></p>
+<h5 id="iv-仿真波形展示"><a href="#iv-仿真波形展示" class="headerlink" title="iv.仿真波形展示"></a>iv.仿真波形展示</h5><p>​<br> 双极性PWM调制电路及单相逆变电路的Simulink仿真波形图如下图所示，且由图示测量结果可知，电路输出电压达到指标要求：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115234903.png" alt="图3-14：Simulink中的单相桥式逆变电路波形图"></p>
+<h4 id="4）综合仿真Simulink图与波形"><a href="#4）综合仿真Simulink图与波形" class="headerlink" title="4）综合仿真Simulink图与波形"></a>4）综合仿真Simulink图与波形</h4><p> 综合电路仿真图和波形如下图所示：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115249551.png" alt="图3-15：Simulink综合电路仿真图"></p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115302556.png"></p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115314954.png" alt="图3-16：Simulink综合电路波形图"></p>
+<h3 id="3-附加扩展"><a href="#3-附加扩展" class="headerlink" title="3.   附加扩展"></a><strong>3.</strong>   <strong>附加扩展</strong></h3><p>本设计采用PI闭环形式对Buck电路进行闭环控制，让斩波输出电压与80V做差，为偏差信号，因为I是波形在时间上的积分，在软启动阶段有较大的偏差，导致PI控制器的输出在短时间内无法到达稳定，所以在0时刻加入P控制，在3s后再加入I控制减少误差。如图所示：</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115330546.png" alt="图3-17：Buck电路闭环仿真图"></p>
+<p>仿真效果较好，波形如图所示。</p>
+<p> <img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230209115343868.png" alt="图3-18：Buck电路闭环波形图"></p>
+<h2 id="四、结果分析"><a href="#四、结果分析" class="headerlink" title="四、结果分析"></a>四、结果分析</h2><p>由综合电路的仿真波形图测量可知，仿真电路的各项实际指标与期望指标的对比如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th><strong>设计指标</strong></th>
+<th><strong>要求</strong></th>
+<th><strong>实际指标</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可控整流输出电压</td>
+<td>150V</td>
+<td>150.18V</td>
+</tr>
+<tr>
+<td>可控整流软启动时间</td>
+<td>2.6s</td>
+<td>2.64s</td>
+</tr>
+<tr>
+<td>降压斩波输出电压</td>
+<td>80V</td>
+<td>79.85V</td>
+</tr>
+<tr>
+<td>降压斩波开关频率</td>
+<td>15KHz</td>
+<td>15.0KHz</td>
+</tr>
+<tr>
+<td>逆变输出频率</td>
+<td>150Hz</td>
+<td>150.0Hz</td>
+</tr>
+<tr>
+<td>逆变输出幅值</td>
+<td>38V</td>
+<td>38.84V</td>
+</tr>
+<tr>
+<td>逆变开关频率</td>
+<td>26KHz</td>
+<td>26KHz</td>
+</tr>
+</tbody></table>
+<p>   对比可知，本课程设计所设计的仿真电路基本符合指标要求；</p>
+<h2 id="五、课程设计总结"><a href="#五、课程设计总结" class="headerlink" title="五、课程设计总结"></a>五、课程设计总结</h2><p>在本次课程设计中，我学会将课程上所学到的各种分散的电路功能模块结合到一起，在Simulink仿真平台进行各个模块的设计与调参，并且最终实现了一个简易的AC-AC变频电路（市电到190Hz正弦交流电）。</p>
+<p>通过本次课程设计，我对各个电路环节在实际工程中的用法有了一个初步的了解，并且通过仿真平台学习到了一些工程上的知识，例如整流电路的输出接大电容进行输出滤波、单相桥式PWM逆变电路输出接小电容滤去输出电压的高频毛刺……。</p>
+<p>另外，本次课程设计将PWM调制和移相调制巧妙地结合起来，而我通过对这两种调制方式的电路实现中也直观感受出了PWM调制的优势所在（上一次这么深刻的感悟是在电力电子技术的第一次实验课上，用PWM调制控制一个单相全控整流桥）。</p>
+<p>最后，在Simulink上设计电路以及调参的过程还是挺有趣的。</p>
 
                 
             </div>
@@ -404,8 +535,8 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                                    <span class="chip bg-color">机器人学导论</span>
+                                <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">电力电子技术</span>
                                 </a>
                             
                         </div>
@@ -474,31 +605,31 @@ Chapter6 操作臂动力学刚体的加速度线加速度
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/02/05/Life/2023.2.5%E8%AE%B0/">
+                <a href="/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="2023.2.5 note">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="整流电路">
                         
-                        <span class="card-title">2023.2.5 note</span>
+                        <span class="card-title">整流电路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Sorry, it is private, but you can ask me for password.
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Life/" class="post-category">
-                                    Life
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
                                 </a>
                             
                             
@@ -508,8 +639,8 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">电力电子技术</span>
                     </a>
                     
                 </div>
@@ -523,13 +654,13 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/02/02/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter5%20%E9%9B%85%E5%8F%AF%E6%AF%94%EF%BC%9A%E9%80%9F%E5%BA%A6%E4%B8%8E%E9%9D%99%E5%8A%9B/">
+                <a href="/2023/02/09/Learn/%E6%9D%82/blog%20title/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Chapter5 雅可比：速度与静力">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Front-matter">
                         
-                        <span class="card-title">Chapter5 雅可比：速度与静力</span>
+                        <span class="card-title">Front-matter</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -540,7 +671,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
                             </span>
                         <span class="publish-author">
                             
@@ -557,8 +688,8 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                        <span class="chip bg-color">机器人学导论</span>
+                    <a href="/tags/%E6%9D%82/">
+                        <span class="chip bg-color">杂</span>
                     </a>
                     
                 </div>
