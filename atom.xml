@@ -44,31 +44,6 @@
   </entry>
   
   <entry>
-    <title>2023.2.8 note</title>
-    <link href="https://guozunrong123.github.io/2023/02/08/life/2023.2.8-ji/"/>
-    <id>https://guozunrong123.github.io/2023/02/08/life/2023.2.8-ji/</id>
-    <published>2023-02-08T15:33:00.000Z</published>
-    <updated>2023-02-09T01:46:05.982Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
-    
-    
-    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Chapter8 操作臂的机构设计</title>
     <link href="https://guozunrong123.github.io/2023/02/08/learn/ji-qi-ren-xue-dao-lun/chapter8-cao-zuo-bi-de-ji-gou-she-ji/"/>
     <id>https://guozunrong123.github.io/2023/02/08/learn/ji-qi-ren-xue-dao-lun/chapter8-cao-zuo-bi-de-ji-gou-she-ji/</id>
@@ -551,9 +526,36 @@
     <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
     
     
+    <category term="建模" scheme="https://guozunrong123.github.io/tags/%E5%BB%BA%E6%A8%A1/"/>
+    
     <category term="UAV" scheme="https://guozunrong123.github.io/tags/UAV/"/>
     
-    <category term="建模" scheme="https://guozunrong123.github.io/tags/%E5%BB%BA%E6%A8%A1/"/>
+  </entry>
+  
+  <entry>
+    <title>动手学ROS2</title>
+    <link href="https://guozunrong123.github.io/2023/01/11/learn/ros/dong-shou-xue-ros2/"/>
+    <id>https://guozunrong123.github.io/2023/01/11/learn/ros/dong-shou-xue-ros2/</id>
+    <published>2023-01-11T15:20:01.000Z</published>
+    <updated>2023-01-12T04:07:31.441Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;p&gt;&lt;strong&gt;原文作者链接：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="ROS" scheme="https://guozunrong123.github.io/tags/ROS/"/>
     
   </entry>
   
