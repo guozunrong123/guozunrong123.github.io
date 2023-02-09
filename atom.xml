@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-02-09T03:23:03.033Z</updated>
+  <updated>2023-02-09T02:56:02.679Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -15,33 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>asdsddasdas</title>
-    <link href="https://guozunrong123.github.io/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF%20-%20%E5%89%AF%E6%9C%AC/"/>
-    <id>https://guozunrong123.github.io/2023/02/09/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF%20-%20%E5%89%AF%E6%9C%AC/</id>
-    <published>2023-02-09T04:07:20.000Z</published>
-    <updated>2023-02-09T03:23:03.033Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;整流电路&quot;&gt;&lt;a href=&quot;#整流电路&quot; class=&quot;headerlink&quot; title=&quot;整流电路&quot;&gt;&lt;/a&gt;整流电路&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="电力电子技术" scheme="https://guozunrong123.github.io/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
   
   <entry>
     <title>整流电路</title>
@@ -67,6 +40,31 @@
     
     
     <category term="电力电子技术" scheme="https://guozunrong123.github.io/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Front-matter</title>
+    <link href="https://guozunrong123.github.io/2023/02/09/Learn/%E6%9D%82/blog%20title/"/>
+    <id>https://guozunrong123.github.io/2023/02/09/Learn/%E6%9D%82/blog%20title/</id>
+    <published>2023-02-09T03:27:40.000Z</published>
+    <updated>2023-02-09T03:32:04.470Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;文章-Front-matter-介绍&quot;&gt;&lt;a href=&quot;#文章-Front-matter-介绍&quot; class=&quot;headerlink&quot; title=&quot;文章 Front-matter 介绍&quot;&gt;&lt;/a&gt;文章 Front-matter 介绍&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="杂" scheme="https://guozunrong123.github.io/tags/%E6%9D%82/"/>
     
   </entry>
   
@@ -100,7 +98,7 @@
     <link href="https://guozunrong123.github.io/2023/02/08/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter8%20%E6%93%8D%E4%BD%9C%E8%87%82%E7%9A%84%E6%9C%BA%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     <id>https://guozunrong123.github.io/2023/02/08/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter8%20%E6%93%8D%E4%BD%9C%E8%87%82%E7%9A%84%E6%9C%BA%E6%9E%84%E8%AE%BE%E8%AE%A1/</id>
     <published>2023-02-08T03:21:30.000Z</published>
-    <updated>2023-02-08T05:09:23.247Z</updated>
+    <updated>2023-02-09T03:31:18.412Z</updated>
     
     
       
