@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>QT_Chaprter1</title>
+      <link href="/2023/02/12/Learn/QT/QT_Chaprter1/"/>
+      <url>/2023/02/12/Learn/QT/QT_Chaprter1/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="QT-Chaprter1"><a href="#QT-Chaprter1" class="headerlink" title="QT_Chaprter1"></a>QT_Chaprter1</h1><h2 id="1、创建第一个QT程序"><a href="#1、创建第一个QT程序" class="headerlink" title="1、创建第一个QT程序"></a>1、创建第一个QT程序</h2><p>int main(int argc, char *argv[]){}</p><p>&#x2F;&#x2F;argc命令行变量的数量 argv命令行变量的数组</p><p>return a.exec();</p><p>&#x2F;&#x2F;让应用程序对象进入消息循环，点右上角×退出</p><h2 id="2、命名规范以及快捷键"><a href="#2、命名规范以及快捷键" class="headerlink" title="2、命名规范以及快捷键"></a>2、命名规范以及快捷键</h2><p>命名规范：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230212093911498.png"></p><p>快捷键：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230212093851189.png"></p><h2 id="3、QPushButton创建"><a href="#3、QPushButton创建" class="headerlink" title="3、QPushButton创建"></a>3、QPushButton创建</h2><pre class="line-numbers language-none"><code class="language-none">#include &lt;QPushButton&gt;myWidget::myWidget(QWidget *parent)    : QWidget(parent)    , ui(new Ui::myWidget)&#123;    ui-&gt;setupUi(this);    QPushButton *btn &#x3D; new QPushButton; &#x2F;&#x2F;创建一个按钮    btn-&gt;show(); &#x2F;&#x2F;show以顶层方式弹出窗口控件    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230212094311813.png" style="zoom:50%;" /><pre class="line-numbers language-none"><code class="language-none">myWidget::myWidget(QWidget *parent)    : QWidget(parent)    , ui(new Ui::myWidget)&#123;    ui-&gt;setupUi(this);    QPushButton *btn &#x3D; new QPushButton;    btn-&gt;setParent(this); &#x2F;&#x2F;让btn对象依赖在myWidget窗口中    btn-&gt;setText(&quot;第一个按钮&quot;); &#x2F;&#x2F;显示文本&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230212094428218.png" style="zoom:50%;" /><pre class="line-numbers language-none"><code class="language-none">QPushButton *btn2 &#x3D; new QPushButton(&quot;第二个按钮&quot;, this); &#x2F;&#x2F;创建第二个按钮btn2-&gt;move(100,100); &#x2F;&#x2F;移动btn2按钮resize(600,400); &#x2F;&#x2F;重置窗口大小setFixedSize(600,400); &#x2F;&#x2F;设置固定界面大小setWindowTitle(&quot;第一个窗口&quot;); &#x2F;&#x2F;设置窗口标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="4、对象树"><a href="#4、对象树" class="headerlink" title="4、对象树"></a>4、对象树</h2><p>构造从父到子，析构从子到父。</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230212100243605.png"></p><h2 id="5、QT坐标系"><a href="#5、QT坐标系" class="headerlink" title="5、QT坐标系"></a>5、QT坐标系</h2><p>以左上角为原点(0, 0)，X向右增加，Y向下增加</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230212101645676.png"></p><h2 id="6、信号和槽"><a href="#6、信号和槽" class="headerlink" title="6、信号和槽"></a>6、信号和槽</h2><p>Connect( 信号的发送者， 发送的具体信号， 信号的接受者， 信号的处理(槽) )</p><p>信号槽的优点：松散耦合，信号发送端和接受端本身是没有关联的，通过connect连接将两端耦合在一起。</p><pre class="line-numbers language-none"><code class="language-none">connect(btn2, &amp;QPushButton::clicked, this, &amp;QWidget::close);&#x2F;&#x2F;参数1 信号的发送者， 参数2 发送的信号， 参数3 信号的接受者， 参数4 处理的槽函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="7、自定义信号和槽"><a href="#7、自定义信号和槽" class="headerlink" title="7、自定义信号和槽"></a>7、自定义信号和槽</h2><p>前情：下课后，老师会触发一个信号，饿了，学生响应信号，请客吃饭。</p><pre class="line-numbers language-none"><code class="language-none">signals:    &#x2F;&#x2F;自定义信号写到signals下    &#x2F;&#x2F;返回值为void，只需要声明，不需要实现    &#x2F;&#x2F;可以有参数，可以重载    void hungry();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;slots 槽函数&#x2F;&#x2F;返回值void，需要声明，也需要实现&#x2F;&#x2F;可以有参数，可以重载void treat();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>emit 自定义信号 &#x2F;&#x2F;触发信号</p><h2 id="8、自定义信号和槽发生重载的解决"><a href="#8、自定义信号和槽发生重载的解决" class="headerlink" title="8、自定义信号和槽发生重载的解决"></a>8、自定义信号和槽发生重载的解决</h2><p>需要利用函数指针，明确指向函数的地址</p><pre class="line-numbers language-none"><code class="language-none">void(Teacher:: *teacherSingal)(QString) &#x3D; &amp;Teacher::hungry;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>QString 转成 char *</p><p>.ToUtf8() 转为 QByteArray</p><p>.Data() 转为 Char*</p><pre class="line-numbers language-none"><code class="language-none">void hungry(QString foodName);qDebug &lt;&lt; &quot;请老师吃饭，老师要吃：&quot; &lt;&lt;foodName.toUtf8().data();&#x2F;&#x2F;去掉引号<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="9、Lambda表达式"><a href="#9、Lambda表达式" class="headerlink" title="9、Lambda表达式"></a>9、Lambda表达式</h2><p>C++ 11 新特性，用于定义并创建匿名的函数对象，以简化编程工作。</p><p>[]标识一个Lambda的开始，这部分必须存在，不能省略。</p><p>&#x3D; 值传递</p><p>mutalbe 修改拷贝，不修改本体</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> QT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>80×86微处理器</title>
       <link href="/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/"/>
       <url>/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/</url>
@@ -534,9 +559,9 @@
       
         <tags>
             
-            <tag> 建模 </tag>
-            
             <tag> UAV </tag>
+            
+            <tag> 建模 </tag>
             
         </tags>
       

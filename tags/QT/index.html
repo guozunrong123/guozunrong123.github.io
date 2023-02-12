@@ -4,12 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chapter3 操作臂运动学, ZRong&#39;s Blog">
-    <meta name="description" content="
-
-Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通过关节连接成运动链的刚体。我们将这些刚体称为连杆。当两个刚体之间的相对运动是两个平面相互之间的相对滑动时，连接相邻两个刚体的运动副称为低副。
-
-为了确定末端执行器在三维空间">
+    <meta name="keywords" content="标签: QT, ZRong&#39;s Blog">
+    <meta name="description" content="There is no royal road to learning.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +17,7 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chapter3 操作臂运动学 | ZRong&#39;s Blog</title>
+    <title>标签: QT | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -248,419 +244,218 @@ Chapter3 操作臂运动学连杆的描述操作臂可以看成由一系列通�
 
 </header>
 
-    
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
-
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">Chapter3 操作臂运动学</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<main class="post-container content">
-
-    
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
     <div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                                <span class="chip bg-color">机器人学导论</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Learn/" class="post-category">
-                                Learn
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="post-info">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-28
-                </div>
-                
-
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    493
-                </div>
-                
-
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.min.css">
-        
-
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <meta name="referrer" content="no-referrer" />
-
-<h1 id="Chapter3-操作臂运动学"><a href="#Chapter3-操作臂运动学" class="headerlink" title="Chapter3 操作臂运动学"></a>Chapter3 操作臂运动学</h1><h2 id="连杆的描述"><a href="#连杆的描述" class="headerlink" title="连杆的描述"></a>连杆的描述</h2><p>操作臂可以看成由一系列通过关节连接成运动链的刚体。我们将这些刚体称为连杆。当两个刚体之间的相对运动是两个平面相互之间的相对滑动时，连接相邻两个刚体的运动副称为低副。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230112172810077.png" alt="6种常见的低副关节"></p>
-<p>为了确定末端执行器在三维空间的位置和姿态，操作臂至少需要6个关节。</p>
-<p>三维空间中的任意两个轴之间的距离是固定的，即为两轴之间公垂线的长度。</p>
-<p>如图，关节轴i-1和关节轴i之间公垂线的长度为a<del>i-1</del>，a<del>i-1</del>即为连杆长度。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230116220205755.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230116220623404.png"></p>
-<h2 id="连杆连接的描述"><a href="#连杆连接的描述" class="headerlink" title="连杆连接的描述"></a>连杆连接的描述</h2><p>在研究机器人运动学时，仅需要考虑两个参数，这两个参数完全确定了所有连杆时如何连接的。</p>
-<p>沿两个相邻连杆公共轴线方向的距离可以用一个参数描述，该参数称为连杆偏距，在关节轴i上的连杆偏距记为d<del>i</del> 。用另一个参数描述两相邻连杆绕公共轴线旋转的夹角，该参数称为关节角，记为Θ<del>i</del>。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230126114600090.png"></p>
-<h2 id="连杆参数"><a href="#连杆参数" class="headerlink" title="连杆参数"></a>连杆参数</h2><p>因此，机器人的每个连杆都可以用4个运动学参数来描述，其中两个参数用于描述连杆本身，另两个参数用于描述连杆之间的连接关系。通常，对于转动关节，Θ<del>i</del>为关节变量，其他三个连杆参数是固定不变的；对于移动关节，d<del>i</del>为关节变量，其他三个连杆参数是固定不变的。这种用连杆参数描述机构运动关系的规则称为DH法。</p>
-<h2 id="连杆坐标系的定义"><a href="#连杆坐标系的定义" class="headerlink" title="连杆坐标系的定义"></a>连杆坐标系的定义</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128144122352.png"></p>
-<h3 id="连杆参数在连杆坐标系中的表示方法"><a href="#连杆参数在连杆坐标系中的表示方法" class="headerlink" title="连杆参数在连杆坐标系中的表示方法"></a>连杆参数在连杆坐标系中的表示方法</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128144235355.png"></p>
-<h3 id="建立连杆坐标系的步骤"><a href="#建立连杆坐标系的步骤" class="headerlink" title="建立连杆坐标系的步骤"></a>建立连杆坐标系的步骤</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128150718420.png"></p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128155509861.png"></p>
-<h2 id="操作臂运动学"><a href="#操作臂运动学" class="headerlink" title="操作臂运动学"></a>操作臂运动学</h2><h3 id="连杆变换的推导"><a href="#连杆变换的推导" class="headerlink" title="连杆变换的推导"></a>连杆变换的推导</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230128165201317.png"></p>
-
+                Welcome
                 
             </div>
-            <hr/>
 
-            
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                                    <span class="chip bg-color">机器人学导论</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-
-    
-
-</div>
-
-                </div>
-            </div>
-            
-        </div>
-    </div>
-
-    
-
-    
-
-    
-
-    
-    <div class="livere-card card" data-aos="fade-up">
-    <!-- 来必力City版安装代码 -->
-    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NzkxMS8zNDM3NA==">
-        <script type="text/javascript">
-            (function (d, s) {
-                let j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') {
-                    return;
-                }
-
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
-    </div>
-    <!-- City版安装代码已完成 -->
-</div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2023/01/29/Life/2023.1.29%E8%AE%B0/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="2023.1.29 note">
-                        
-                        <span class="card-title">2023.1.29 note</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Sorry, it is private, but you can ask me for password.
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Life/" class="post-category">
-                                    Life
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
+            <div class="description center-align">
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
-                    </a>
-                    
-                </div>
+                <span id="subtitle"></span>
+                <script src="/libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "从来没有真正的绝境, 只有心灵的迷途",
+                            
+                                "Never really desperate, only the lost of the soul",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
                 
             </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/01/25/Life/2023.1.25%E8%AE%B0/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="2023.1.25 note">
-                        
-                        <span class="card-title">2023.1.25 note</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Sorry, it is private, but you can ask me for password.
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Life/" class="post-category">
-                                    Life
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
-
-</div>
-
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-
-  <!-- 是否加载使用自带的 prismjs. -->
-  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
-
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
         </div>
     </div>
 </div>
 
-<!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
+
+    </div>
+</div>
+
+<main class="content">
+
     
 
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/%E9%9A%8F%E7%AC%94/" title="随笔: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="随笔" style="background-color: #F9EBEA;">随笔
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/QT/" title="QT: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="QT" style="background-color: #F5EEF8;">QT
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/ROS/" title="ROS: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="ROS" style="background-color: #D5F5E3;">ROS
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/UAV/" title="UAV: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="UAV" style="background-color: #E8F8F5;">UAV
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BB%BA%E6%A8%A1/" title="建模: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="建模" style="background-color: #FEF9E7;">建模
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/" title="微机原理: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="微机原理" style="background-color: #F8F9F9;">微机原理
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="操作系统" style="background-color: #82E0AA;">操作系统
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/" title="机器人学导论: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="机器人学导论" style="background-color: #D7BDE2;">机器人学导论
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9D%82/" title="杂: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="杂" style="background-color: #A3E4D7;">杂
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="数学" style="background-color: #85C1E9;">数学
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="电力电子技术: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="电力电子技术" style="background-color: #F8C471;">电力电子技术
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="算法" style="background-color: #F9E79F;">算法
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="QT" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2023/02/12/Learn/QT/QT_Chaprter1/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="QT_Chaprter1">
+                            
+                            <span class="card-title">QT_Chaprter1</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Learn/" class="post-category">
+                                Learn
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
 
 
