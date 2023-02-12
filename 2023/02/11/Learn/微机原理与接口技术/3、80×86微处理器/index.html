@@ -4,15 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chapter6 操作臂动力学, ZRong&#39;s Blog">
+    <meta name="keywords" content="80×86微处理器, ZRong&#39;s Blog">
     <meta name="description" content="
 
-Chapter6 操作臂动力学刚体的加速度线加速度
-
-角加速度
-质量分布对于定轴旋转的情况，经常用到惯性矩这个概念。
-在一个刚体绕任意轴做旋转运动时，我们需要一种能够表征刚体质量分布的方式。在这里，引入惯性张量。
-坐标系{A}中的惯性张">
+80×86微处理器8086 的存储器组织寻址空间和数据存储格式寻址空间是指存储器地址允许的最大范围
+当存储器按字节编址时，若地址总线为n位，CPU寻址范围位2^n^字节。
+8086地址总线20位，寻址能力为1MB.
+存储器的分段结构和物">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +22,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chapter6 操作臂动力学 | ZRong&#39;s Blog</title>
+    <title>80×86微处理器 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -268,12 +266,12 @@ Chapter6 操作臂动力学刚体的加速度线加速度
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chapter6 操作臂动力学</h1>
+                    <h1 class="description center-align post-title">80×86微处理器</h1>
                 </div>
             </div>
         </div>
@@ -297,8 +295,8 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                                <span class="chip bg-color">机器人学导论</span>
+                            <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
+                                <span class="chip bg-color">微机原理</span>
                             </a>
                         
                     </div>
@@ -322,7 +320,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-04
+                    2023-02-11
                 </div>
                 
 
@@ -331,7 +329,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    512
+                    605
                 </div>
                 
 
@@ -358,38 +356,28 @@ Chapter6 操作臂动力学刚体的加速度线加速度
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="Chapter6-操作臂动力学"><a href="#Chapter6-操作臂动力学" class="headerlink" title="Chapter6 操作臂动力学"></a>Chapter6 操作臂动力学</h1><h2 id="刚体的加速度"><a href="#刚体的加速度" class="headerlink" title="刚体的加速度"></a>刚体的加速度</h2><h3 id="线加速度"><a href="#线加速度" class="headerlink" title="线加速度"></a>线加速度</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164333594.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164348471.png"></p>
-<h3 id="角加速度"><a href="#角加速度" class="headerlink" title="角加速度"></a>角加速度</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205164434766.png"></p>
-<h2 id="质量分布"><a href="#质量分布" class="headerlink" title="质量分布"></a>质量分布</h2><p>对于定轴旋转的情况，经常用到<strong>惯性矩</strong>这个概念。</p>
-<p>在一个刚体绕任意轴做旋转运动时，我们需要一种能够表征刚体质量分布的方式。在这里，引入<strong>惯性张量</strong>。</p>
-<p>坐标系{A}中的惯性张量可用3×3矩阵表示如下</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165112173.png"></p>
-<p>各元素：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165125375.png" alt="、"></p>
-<h2 id="牛顿方程和欧拉方程"><a href="#牛顿方程和欧拉方程" class="headerlink" title="牛顿方程和欧拉方程"></a>牛顿方程和欧拉方程</h2><p>如果知道了连杆质心的位置和惯性张量，那么它的质量分布特征就完全确定了。</p>
-<p>连杆运动所需的力是关于连杆期望加速度及其质量分布的函数。</p>
-<p>牛顿方程以及描述旋转运动的欧拉方程描述了力、惯量和加速度之间的关系。</p>
-<h3 id="牛顿方程"><a href="#牛顿方程" class="headerlink" title="牛顿方程"></a>牛顿方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165304745.png"></p>
-<h3 id="欧拉方程"><a href="#欧拉方程" class="headerlink" title="欧拉方程"></a>欧拉方程</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205165319817.png"></p>
-<h2 id="牛顿-欧拉递推动力学方程"><a href="#牛顿-欧拉递推动力学方程" class="headerlink" title="牛顿-欧拉递推动力学方程"></a>牛顿-欧拉递推动力学方程</h2><h3 id="牛顿-欧拉递推动力学算法"><a href="#牛顿-欧拉递推动力学算法" class="headerlink" title="牛顿-欧拉递推动力学算法"></a>牛顿-欧拉递推动力学算法</h3><p>对于转动关节来说，这个算法归纳如下：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170101776.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170114338.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170138047.png"></p>
-<h3 id="考虑重力的动力学算法"><a href="#考虑重力的动力学算法" class="headerlink" title="考虑重力的动力学算法"></a>考虑重力的动力学算法</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205170336208.png"></p>
-<h2 id="操作臂动力学的拉格朗日方程"><a href="#操作臂动力学的拉格朗日方程" class="headerlink" title="操作臂动力学的拉格朗日方程"></a>操作臂动力学的拉格朗日方程</h2><p>牛顿-欧拉公式可以被认为是一种解决动力学问题的力平衡方法，而拉格朗日公式则是一种基于能量的动力学方法。</p>
-<p>首先讨论操作臂动能的表达式。第i个连杆的动能k<del>i</del>可以表示为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205172901519.png"></p>
-<p>式中第一项是基于连杆质心线速度的动能，第二项是连杆的角速度动能。</p>
-<p>整个操作臂的动能是各个连杆功能之和，即：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230205172955433.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185335730.png"></p>
-<p>拉格朗日动力学公式给出了一种从标量函数推导动力学方程的方法，我们称这个标量函数为拉格朗日函数，即一个机械系统的动能和势能的差值。这里，操作臂的拉格朗日函数表示为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185715196.png"></p>
-<p>则操作臂的运动方程为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185749283.png"></p>
-<p>这里，t是n×1的激励力矩矢量。对于操作臂来说，方程变为：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230207185822085.png"></p>
+<h1 id="80×86微处理器"><a href="#80×86微处理器" class="headerlink" title="80×86微处理器"></a>80×86微处理器</h1><h2 id="8086-的存储器组织"><a href="#8086-的存储器组织" class="headerlink" title="8086 的存储器组织"></a>8086 的存储器组织</h2><h3 id="寻址空间和数据存储格式"><a href="#寻址空间和数据存储格式" class="headerlink" title="寻址空间和数据存储格式"></a>寻址空间和数据存储格式</h3><p>寻址空间是指<strong>存储器地址允许的最大范围</strong></p>
+<p>当存储器按字节编址时，若地址总线为<strong>n</strong>位，CPU寻址范围位<strong>2^n^</strong>字节。</p>
+<p>8086地址总线20位，寻址能力为1MB.</p>
+<h3 id="存储器的分段结构和物理地址的形成"><a href="#存储器的分段结构和物理地址的形成" class="headerlink" title="存储器的分段结构和物理地址的形成"></a>存储器的分段结构和物理地址的形成</h3><p>任何一个内存单元的地址都可以用段地址和偏移地址来表示，其格式为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211140537957.png"></p>
+<p>根据逻辑地址，可以求出它对应得物理地址：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211140907181.png"></p>
+<p>一般可将存储器划分为程序段、数据段、堆栈段和附加段。</p>
+<p>程序段中存储程序得指令代码；</p>
+<p>数据段和附加段中存储数据、中间结果和最后结果；</p>
+<p>堆栈段存储压入堆栈的数据或状态信息。</p>
+<h2 id="8086-微处理器内部结构"><a href="#8086-微处理器内部结构" class="headerlink" title="8086 微处理器内部结构"></a>8086 微处理器内部结构</h2><h3 id="8086-CPU的内部结构"><a href="#8086-CPU的内部结构" class="headerlink" title="8086 CPU的内部结构"></a>8086 CPU的内部结构</h3><p>CPU的任务是执行存放在存储器中的指令序列，即<strong>取指令</strong>和<strong>执行指令</strong></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211152711341.png" alt="8086 CPU 逻辑结构框图"></p>
+<h3 id="8086-CPU的寄存器结构"><a href="#8086-CPU的寄存器结构" class="headerlink" title="8086 CPU的寄存器结构"></a>8086 CPU的寄存器结构</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211152904332.png" alt="8086 CPU内部寄存器"></p>
+<p>标志寄存器</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211154028224.png"></p>
+<h2 id="8086-总线的工作周期"><a href="#8086-总线的工作周期" class="headerlink" title="8086 总线的工作周期"></a>8086 总线的工作周期</h2><p>一个时钟脉冲时间称为一个时钟周期。</p>
+<p>CPU通过总线对存储器或外设I&#x2F;O接口进行一次访问所需要的时间称为总线周期。</p>
+<p><strong>CPU执行一条指令完整过程：</strong></p>
+<p>CPU执行某一个程序之前，先要把编译后的目标程序放到主存储器的某个区域。在启动执行后，CPU就发出读指令的命令，根据代码段寄存器CS和指令指针IP生成20位物理地址并将其输出到地址总线上，在存储器中读取相应的存储单元，把它送至CPU的指令寄存器中；CPU对读出指令经过译码器分析之后，发出一系列控制信号，执行指令规定的全部操作，控制各种信息在系统各部件之间传送。每条指令的执行由取指令、译码和执行等操作组成。</p>
+<h2 id="8086-微处理器的时序"><a href="#8086-微处理器的时序" class="headerlink" title="8086 微处理器的时序"></a>8086 微处理器的时序</h2><h3 id="系统的复位与启动"><a href="#系统的复位与启动" class="headerlink" title="系统的复位与启动"></a>系统的复位与启动</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211160442426.png" alt="image-20230211160442426"></p>
+<p>由表可以看出，CPU复位时，代码段寄存器CS被初始化为FFFFH，而指令指针寄存器被初始化为0000H。因此，当CPU复位完成，再重新启动时，就会从主存地址为FFFF0H的位置开始执行指令。</p>
 
                 
             </div>
@@ -404,8 +392,8 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                                    <span class="chip bg-color">机器人学导论</span>
+                                <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
+                                    <span class="chip bg-color">微机原理</span>
                                 </a>
                             
                         </div>
@@ -470,46 +458,48 @@ Chapter6 操作臂动力学刚体的加速度线加速度
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/02/05/Life/2023.2.5%E8%AE%B0/">
+                <a href="/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="2023.2.5 note">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="80×86微处理器">
                         
-                        <span class="card-title">2023.2.5 note</span>
+                        <span class="card-title">80×86微处理器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Sorry, it is private, but you can ask me for password.
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Life/" class="post-category">
-                                    Life
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">微机原理</span>
                     </a>
                     
                 </div>
@@ -523,13 +513,13 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/02/02/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter5%20%E9%9B%85%E5%8F%AF%E6%AF%94%EF%BC%9A%E9%80%9F%E5%BA%A6%E4%B8%8E%E9%9D%99%E5%8A%9B/">
+                <a href="/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/4%E3%80%81%E4%BA%A4%E6%B5%81%E4%BA%A4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Chapter5 雅可比：速度与静力">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="交流交流变流电路">
                         
-                        <span class="card-title">Chapter5 雅可比：速度与静力</span>
+                        <span class="card-title">交流交流变流电路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -540,7 +530,7 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-10
                             </span>
                         <span class="publish-author">
                             
@@ -557,8 +547,8 @@ Chapter6 操作臂动力学刚体的加速度线加速度
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                        <span class="chip bg-color">机器人学导论</span>
+                    <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">电力电子技术</span>
                     </a>
                     
                 </div>

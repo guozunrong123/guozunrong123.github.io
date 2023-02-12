@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>80×86微处理器</title>
+      <link href="/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/"/>
+      <url>/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="80×86微处理器"><a href="#80×86微处理器" class="headerlink" title="80×86微处理器"></a>80×86微处理器</h1><h2 id="8086-的存储器组织"><a href="#8086-的存储器组织" class="headerlink" title="8086 的存储器组织"></a>8086 的存储器组织</h2><h3 id="寻址空间和数据存储格式"><a href="#寻址空间和数据存储格式" class="headerlink" title="寻址空间和数据存储格式"></a>寻址空间和数据存储格式</h3><p>寻址空间是指<strong>存储器地址允许的最大范围</strong></p><p>当存储器按字节编址时，若地址总线为<strong>n</strong>位，CPU寻址范围位<strong>2^n^</strong>字节。</p><p>8086地址总线20位，寻址能力为1MB.</p><h3 id="存储器的分段结构和物理地址的形成"><a href="#存储器的分段结构和物理地址的形成" class="headerlink" title="存储器的分段结构和物理地址的形成"></a>存储器的分段结构和物理地址的形成</h3><p>任何一个内存单元的地址都可以用段地址和偏移地址来表示，其格式为：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211140537957.png"></p><p>根据逻辑地址，可以求出它对应得物理地址：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211140907181.png"></p><p>一般可将存储器划分为程序段、数据段、堆栈段和附加段。</p><p>程序段中存储程序得指令代码；</p><p>数据段和附加段中存储数据、中间结果和最后结果；</p><p>堆栈段存储压入堆栈的数据或状态信息。</p><h2 id="8086-微处理器内部结构"><a href="#8086-微处理器内部结构" class="headerlink" title="8086 微处理器内部结构"></a>8086 微处理器内部结构</h2><h3 id="8086-CPU的内部结构"><a href="#8086-CPU的内部结构" class="headerlink" title="8086 CPU的内部结构"></a>8086 CPU的内部结构</h3><p>CPU的任务是执行存放在存储器中的指令序列，即<strong>取指令</strong>和<strong>执行指令</strong></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211152711341.png" alt="8086 CPU 逻辑结构框图"></p><h3 id="8086-CPU的寄存器结构"><a href="#8086-CPU的寄存器结构" class="headerlink" title="8086 CPU的寄存器结构"></a>8086 CPU的寄存器结构</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211152904332.png" alt="8086 CPU内部寄存器"></p><p>标志寄存器</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211154028224.png"></p><h2 id="8086-总线的工作周期"><a href="#8086-总线的工作周期" class="headerlink" title="8086 总线的工作周期"></a>8086 总线的工作周期</h2><p>一个时钟脉冲时间称为一个时钟周期。</p><p>CPU通过总线对存储器或外设I&#x2F;O接口进行一次访问所需要的时间称为总线周期。</p><p><strong>CPU执行一条指令完整过程：</strong></p><p>CPU执行某一个程序之前，先要把编译后的目标程序放到主存储器的某个区域。在启动执行后，CPU就发出读指令的命令，根据代码段寄存器CS和指令指针IP生成20位物理地址并将其输出到地址总线上，在存储器中读取相应的存储单元，把它送至CPU的指令寄存器中；CPU对读出指令经过译码器分析之后，发出一系列控制信号，执行指令规定的全部操作，控制各种信息在系统各部件之间传送。每条指令的执行由取指令、译码和执行等操作组成。</p><h2 id="8086-微处理器的时序"><a href="#8086-微处理器的时序" class="headerlink" title="8086 微处理器的时序"></a>8086 微处理器的时序</h2><h3 id="系统的复位与启动"><a href="#系统的复位与启动" class="headerlink" title="系统的复位与启动"></a>系统的复位与启动</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230211160442426.png" alt="image-20230211160442426"></p><p>由表可以看出，CPU复位时，代码段寄存器CS被初始化为FFFFH，而指令指针寄存器被初始化为0000H。因此，当CPU复位完成，再重新启动时，就会从主存地址为FFFF0H的位置开始执行指令。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微机原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>交流交流变流电路</title>
+      <link href="/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/4%E3%80%81%E4%BA%A4%E6%B5%81%E4%BA%A4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/"/>
+      <url>/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/4%E3%80%81%E4%BA%A4%E6%B5%81%E4%BA%A4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="交流交流变流电路"><a href="#交流交流变流电路" class="headerlink" title="交流交流变流电路"></a>交流交流变流电路</h1><h2 id="交流调压电路"><a href="#交流调压电路" class="headerlink" title="交流调压电路"></a>交流调压电路</h2><h3 id="单相交流调压电路"><a href="#单相交流调压电路" class="headerlink" title="单相交流调压电路"></a>单相交流调压电路</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230210115607498.png"></p><h3 id="三相交流调压电路"><a href="#三相交流调压电路" class="headerlink" title="三相交流调压电路"></a>三相交流调压电路</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230210140146631.png"></p><h2 id="其他交流电力控制电路"><a href="#其他交流电力控制电路" class="headerlink" title="其他交流电力控制电路"></a>其他交流电力控制电路</h2><h3 id="交流调功电路"><a href="#交流调功电路" class="headerlink" title="交流调功电路"></a>交流调功电路</h3><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230210141904728.png" style="zoom:50%;" /><p><strong>工作原理：</strong></p><p>和交流调压电路的电路形式完全相同，只是控制方式不同。</p><p>通过改变接通周波数与断开周波数的比值来调节负载所消耗的平均功率。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电力电子技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>直流直流变流电路</title>
       <link href="/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/3%E3%80%81%E7%9B%B4%E6%B5%81%E7%9B%B4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/"/>
       <url>/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/3%E3%80%81%E7%9B%B4%E6%B5%81%E7%9B%B4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/</url>
@@ -484,9 +534,9 @@
       
         <tags>
             
-            <tag> UAV </tag>
-            
             <tag> 建模 </tag>
+            
+            <tag> UAV </tag>
             
         </tags>
       

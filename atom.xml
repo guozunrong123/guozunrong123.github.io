@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-02-10T03:43:18.234Z</updated>
+  <updated>2023-02-11T08:09:49.020Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>80×86微处理器</title>
+    <link href="https://guozunrong123.github.io/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/"/>
+    <id>https://guozunrong123.github.io/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/</id>
+    <published>2023-02-11T08:18:20.000Z</published>
+    <updated>2023-02-11T08:09:49.020Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;80×86微处理器&quot;&gt;&lt;a href=&quot;#80×86微处理器&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="微机原理" scheme="https://guozunrong123.github.io/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>交流交流变流电路</title>
+    <link href="https://guozunrong123.github.io/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/4%E3%80%81%E4%BA%A4%E6%B5%81%E4%BA%A4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/"/>
+    <id>https://guozunrong123.github.io/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/4%E3%80%81%E4%BA%A4%E6%B5%81%E4%BA%A4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/</id>
+    <published>2023-02-10T07:20:20.000Z</published>
+    <updated>2023-02-10T06:21:11.895Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;交流交流变流电路&quot;&gt;&lt;a href=&quot;#交流交流变流电路&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="电力电子技术" scheme="https://guozunrong123.github.io/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>直流直流变流电路</title>
@@ -485,62 +539,6 @@
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 
 &lt;h1 id=&quot;过年&quot;&gt;&lt;a href=&quot;#过年&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
-    
-    
-    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2023.1.17 note</title>
-    <link href="https://guozunrong123.github.io/2023/01/17/Life/2023.1.17%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/01/17/Life/2023.1.17%E8%AE%B0/</id>
-    <published>2023-01-17T15:48:10.000Z</published>
-    <updated>2023-02-09T01:45:41.483Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;p&gt;太过摆烂了啊。&lt;/p&gt;
-&lt;p&gt;其他事情也有点多。&lt;/p&gt;
-&lt;p&gt;但还是自己太摆了，天天刷手机-</summary>
-        
-      
-    
-    
-    
-    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
-    
-    
-    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2023.1.15 note</title>
-    <link href="https://guozunrong123.github.io/2023/01/15/Life/2023.1.15%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/01/15/Life/2023.1.15%E8%AE%B0/</id>
-    <published>2023-01-15T13:29:20.000Z</published>
-    <updated>2023-02-09T01:45:37.902Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h2 id=&quot;杂&quot;&gt;&lt;a href=&quot;#杂&quot; class=&quot;headerlink&quot; title=&quot;杂&quot;&gt;&lt;/a&gt;杂&lt;/h2&gt;&lt;p&gt;第一次上传到Life</summary>
         
       
     
