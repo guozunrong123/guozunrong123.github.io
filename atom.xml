@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-02-12T03:49:23.930Z</updated>
+  <updated>2023-02-14T14:08:11.427Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2023.2.14 note</title>
+    <link href="https://guozunrong123.github.io/2023/02/14/Life/2023.2.14%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/02/14/Life/2023.2.14%E8%AE%B0/</id>
+    <published>2023-02-14T14:00:00.000Z</published>
+    <updated>2023-02-14T14:08:11.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
+    
+    
+    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>QT_Chaprter1</title>
@@ -521,33 +546,6 @@
     
     
     <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter3 操作臂运动学</title>
-    <link href="https://guozunrong123.github.io/2023/01/28/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
-    <id>https://guozunrong123.github.io/2023/01/28/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/</id>
-    <published>2023-01-28T09:40:50.000Z</published>
-    <updated>2023-02-08T05:08:46.572Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;Chapter3-操作臂运动学&quot;&gt;&lt;a href=&quot;#Chapter3-操作臂运动学&quot; class=&quot;headerlink&quot; title=&quot;Chapter3</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
     
   </entry>
   
