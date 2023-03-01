@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-02-14T14:08:11.427Z</updated>
+  <updated>2023-03-01T14:46:09.998Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2023.2.14 note</title>
-    <link href="https://guozunrong123.github.io/2023/02/14/Life/2023.2.14%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/02/14/Life/2023.2.14%E8%AE%B0/</id>
-    <published>2023-02-14T14:00:00.000Z</published>
-    <updated>2023-02-14T14:08:11.427Z</updated>
+    <title>2023.2.20 Note</title>
+    <link href="https://guozunrong123.github.io/2023/02/20/Note/2023.2.14%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/02/20/Note/2023.2.14%E8%AE%B0/</id>
+    <published>2023-02-20T14:00:00.000Z</published>
+    <updated>2023-03-01T14:46:09.998Z</updated>
     
     
       
@@ -34,10 +34,8 @@
     
     
     
-    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
+    <category term="Diary" scheme="https://guozunrong123.github.io/categories/Diary/"/>
     
-    
-    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -310,31 +308,6 @@
   </entry>
   
   <entry>
-    <title>2023.2.8 note</title>
-    <link href="https://guozunrong123.github.io/2023/02/08/Life/2023.2.8%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/02/08/Life/2023.2.8%E8%AE%B0/</id>
-    <published>2023-02-08T15:33:00.000Z</published>
-    <updated>2023-02-09T01:46:05.982Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
-    
-    
-    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Chapter8 操作臂的机构设计</title>
     <link href="https://guozunrong123.github.io/2023/02/08/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter8%20%E6%93%8D%E4%BD%9C%E8%87%82%E7%9A%84%E6%9C%BA%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
     <id>https://guozunrong123.github.io/2023/02/08/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter8%20%E6%93%8D%E4%BD%9C%E8%87%82%E7%9A%84%E6%9C%BA%E6%9E%84%E8%AE%BE%E8%AE%A1/</id>
@@ -385,61 +358,6 @@
     
     
     <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2023.2.7 note</title>
-    <link href="https://guozunrong123.github.io/2023/02/07/Life/2023.2.7%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/02/07/Life/2023.2.7%E8%AE%B0/</id>
-    <published>2023-02-07T12:54:00.000Z</published>
-    <updated>2023-02-09T02:27:15.807Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
-    
-    
-    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2023.2.5 note</title>
-    <link href="https://guozunrong123.github.io/2023/02/05/Life/2023.2.5%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/02/05/Life/2023.2.5%E8%AE%B0/</id>
-    <published>2023-02-04T17:54:00.000Z</published>
-    <updated>2023-02-09T01:45:57.277Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;p&gt;So … sad …&lt;/p&gt;
-&lt;p&gt;好像失去了什么 但我又没失去什么&lt;/p&gt;
-&lt;p&gt;谢谢你带来的开心&lt;/p&gt;
-&lt;p&gt;祝你</summary>
-        
-      
-    
-    
-    
-    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
-    
-    
-    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -525,27 +443,108 @@
   </entry>
   
   <entry>
-    <title>2023.1.29 note</title>
-    <link href="https://guozunrong123.github.io/2023/01/29/Life/2023.1.29%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/01/29/Life/2023.1.29%E8%AE%B0/</id>
-    <published>2023-01-29T02:15:20.000Z</published>
-    <updated>2023-02-09T01:45:52.146Z</updated>
+    <title>Chapter3 操作臂运动学</title>
+    <link href="https://guozunrong123.github.io/2023/01/28/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
+    <id>https://guozunrong123.github.io/2023/01/28/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/</id>
+    <published>2023-01-28T09:40:50.000Z</published>
+    <updated>2023-02-08T05:08:46.572Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;</summary>
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Chapter3-操作臂运动学&quot;&gt;&lt;a href=&quot;#Chapter3-操作臂运动学&quot; class=&quot;headerlink&quot; title=&quot;Chapter3</summary>
         
       
     
     
     
-    <category term="Life" scheme="https://guozunrong123.github.io/categories/Life/"/>
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
     
     
-    <category term="随笔" scheme="https://guozunrong123.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023.1.25 note</title>
+    <link href="https://guozunrong123.github.io/2023/01/25/Note/2023.1.25%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/01/25/Note/2023.1.25%E8%AE%B0/</id>
+    <published>2023-01-25T06:15:20.000Z</published>
+    <updated>2023-03-01T14:40:27.879Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;过年&quot;&gt;&lt;a href=&quot;#过年&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Diary" scheme="https://guozunrong123.github.io/categories/Diary/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Freertos基础知识</title>
+    <link href="https://guozunrong123.github.io/2023/01/13/Learn/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/FreeRTOS/"/>
+    <id>https://guozunrong123.github.io/2023/01/13/Learn/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/FreeRTOS/</id>
+    <published>2023-01-13T03:46:40.000Z</published>
+    <updated>2023-02-08T07:31:03.698Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h2 id=&quot;Freertos基础知识&quot;&gt;&lt;a href=&quot;#Freertos基础知识&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="操作系统" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter2 空间描述和变换</title>
+    <link href="https://guozunrong123.github.io/2023/01/12/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/"/>
+    <id>https://guozunrong123.github.io/2023/01/12/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/</id>
+    <published>2023-01-12T04:07:20.000Z</published>
+    <updated>2023-02-08T06:32:57.647Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Chapter2-空间描述和变换&quot;&gt;&lt;a href=&quot;#Chapter2-空间描述和变换&quot; class=&quot;headerlink&quot; title=&quot;Chapter2</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
     
   </entry>
   
