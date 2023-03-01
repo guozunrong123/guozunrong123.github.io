@@ -4,9 +4,28 @@
   
     
     <entry>
-      <title>2023.2.20 Note</title>
-      <link href="/2023/02/20/Note/2023.2.14%E8%AE%B0/"/>
-      <url>/2023/02/20/Note/2023.2.14%E8%AE%B0/</url>
+      <title>Project Summary</title>
+      <link href="/2023/03/01/Project/2023-03-01-Project-Summary/"/>
+      <url>/2023/03/01/Project/2023-03-01-Project-Summary/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" />]]></content>
+      
+      
+      <categories>
+          
+          <category> Projcet </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023.2.14 Note</title>
+      <link href="/2023/02/14/Note/2023.2.14%E8%AE%B0/"/>
+      <url>/2023/02/14/Note/2023.2.14%E8%AE%B0/</url>
       
         <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>准备开始为期两周的期末考。</p><p>提前一周准备。</p><p>考完再更！</p>]]></content>
       
@@ -423,7 +442,7 @@
     
     
     <entry>
-      <title>2023.1.25 note</title>
+      <title>2023.1.25 Note</title>
       <link href="/2023/01/25/Note/2023.1.25%E8%AE%B0/"/>
       <url>/2023/01/25/Note/2023.1.25%E8%AE%B0/</url>
       
@@ -583,9 +602,9 @@
       
         <tags>
             
-            <tag> UAV </tag>
-            
             <tag> 建模 </tag>
+            
+            <tag> UAV </tag>
             
         </tags>
       

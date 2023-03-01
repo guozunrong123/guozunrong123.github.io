@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-03-01T14:46:09.998Z</updated>
+  <updated>2023-03-01T15:53:01.027Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2023.2.20 Note</title>
-    <link href="https://guozunrong123.github.io/2023/02/20/Note/2023.2.14%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/02/20/Note/2023.2.14%E8%AE%B0/</id>
-    <published>2023-02-20T14:00:00.000Z</published>
-    <updated>2023-03-01T14:46:09.998Z</updated>
+    <title>Project Summary</title>
+    <link href="https://guozunrong123.github.io/2023/03/01/Project/2023-03-01-Project-Summary/"/>
+    <id>https://guozunrong123.github.io/2023/03/01/Project/2023-03-01-Project-Summary/</id>
+    <published>2023-03-01T03:49:40.000Z</published>
+    <updated>2023-03-01T15:53:01.027Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Projcet" scheme="https://guozunrong123.github.io/categories/Projcet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2023.2.14 Note</title>
+    <link href="https://guozunrong123.github.io/2023/02/14/Note/2023.2.14%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/02/14/Note/2023.2.14%E8%AE%B0/</id>
+    <published>2023-02-14T14:00:00.000Z</published>
+    <updated>2023-03-01T17:30:08.471Z</updated>
     
     
       
@@ -44,7 +67,7 @@
     <link href="https://guozunrong123.github.io/2023/02/12/Learn/QT/QT_Chaprter1/"/>
     <id>https://guozunrong123.github.io/2023/02/12/Learn/QT/QT_Chaprter1/</id>
     <published>2023-02-12T03:49:40.000Z</published>
-    <updated>2023-02-12T03:49:23.930Z</updated>
+    <updated>2023-03-01T15:51:25.124Z</updated>
     
     
       
@@ -470,11 +493,11 @@
   </entry>
   
   <entry>
-    <title>2023.1.25 note</title>
+    <title>2023.1.25 Note</title>
     <link href="https://guozunrong123.github.io/2023/01/25/Note/2023.1.25%E8%AE%B0/"/>
     <id>https://guozunrong123.github.io/2023/01/25/Note/2023.1.25%E8%AE%B0/</id>
     <published>2023-01-25T06:15:20.000Z</published>
-    <updated>2023-03-01T14:40:27.879Z</updated>
+    <updated>2023-03-01T17:30:02.347Z</updated>
     
     
       
@@ -518,33 +541,6 @@
     
     
     <category term="操作系统" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter2 空间描述和变换</title>
-    <link href="https://guozunrong123.github.io/2023/01/12/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/"/>
-    <id>https://guozunrong123.github.io/2023/01/12/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/</id>
-    <published>2023-01-12T04:07:20.000Z</published>
-    <updated>2023-02-08T06:32:57.647Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;Chapter2-空间描述和变换&quot;&gt;&lt;a href=&quot;#Chapter2-空间描述和变换&quot; class=&quot;headerlink&quot; title=&quot;Chapter2</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
     
   </entry>
   
