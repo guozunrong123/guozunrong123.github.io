@@ -4,12 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="微型计算机系统基础, ZRong&#39;s Blog">
+    <meta name="keywords" content="2023.3.4 牛客题库, ZRong&#39;s Blog">
     <meta name="description" content="
 
-微型计算机系统基础微型计算机系统结构微处理器与微型计算机微处理器是将运算器和控制器集成在一起的中央处理器部件。
-微型计算机是指以微处理器为核心，配上内存储器、输入&amp;#x2F;输出接口电路及系统总线所组成的计算机。
-微型计算机系统是指以微">
+2023.3.41、质数因子
+这题卡了好久，一直有一个案例不通过。原因是忽略了质数的质数是它本身！考虑的不够全面。
+My Code#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;math.h&amp;gt;
+usi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>微型计算机系统基础 | ZRong&#39;s Blog</title>
+    <title>2023.3.4 牛客题库 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -265,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微型计算机系统基础</h1>
+                    <h1 class="description center-align post-title">2023.3.4 牛客题库</h1>
                 </div>
             </div>
         </div>
@@ -294,8 +296,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
-                                <span class="chip bg-color">微机原理</span>
+                            <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                                <span class="chip bg-color">牛客Code</span>
                             </a>
                         
                     </div>
@@ -319,7 +321,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-10
+                    2023-03-04
                 </div>
                 
 
@@ -328,7 +330,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    372
+                    933
                 </div>
                 
 
@@ -355,19 +357,199 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="微型计算机系统基础"><a href="#微型计算机系统基础" class="headerlink" title="微型计算机系统基础"></a>微型计算机系统基础</h1><h2 id="微型计算机系统结构"><a href="#微型计算机系统结构" class="headerlink" title="微型计算机系统结构"></a>微型计算机系统结构</h2><h3 id="微处理器与微型计算机"><a href="#微处理器与微型计算机" class="headerlink" title="微处理器与微型计算机"></a>微处理器与微型计算机</h3><p><strong>微处理器</strong>是将运算器和控制器集成在一起的中央处理器部件。</p>
-<p><strong>微型计算机</strong>是指以微处理器为核心，配上内存储器、输入&#x2F;输出接口电路及系统总线所组成的计算机。</p>
-<p><strong>微型计算机系统</strong>是指以微型计算机为中心，配以相应的外围设备、电源、辅助电路，以及控制微型计算机工作的系统软件所构成的计算机系统。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230210091824141.png"></p>
-<h3 id="微处理器中主要的寄存器"><a href="#微处理器中主要的寄存器" class="headerlink" title="微处理器中主要的寄存器"></a>微处理器中主要的寄存器</h3><p><strong>指令寄存器</strong>用来保存当前正在执行的一条指令。</p>
-<p><strong>程序计数器</strong>指出下一条将要执行的指令在主存储器中的地址。</p>
-<p><strong>地址寄存器</strong>用来保存CPU当前所访问的主存单元的地址。</p>
-<h3 id="微型计算机中的存储器与地址分配"><a href="#微型计算机中的存储器与地址分配" class="headerlink" title="微型计算机中的存储器与地址分配"></a>微型计算机中的存储器与地址分配</h3><p>对I&#x2F;O端口的编址通常由两种方法：一种是I&#x2F;O端口和内存储器统一编址；另一种是I&#x2F;O端口单独编址。</p>
-<h2 id="输入-x2F-输出系统"><a href="#输入-x2F-输出系统" class="headerlink" title="输入&#x2F;输出系统"></a>输入&#x2F;输出系统</h2><p>直接存储器存取(DMA)方式是一种<strong>完全由硬件执行</strong>I&#x2F;O交换的方式。</p>
-<p>中断：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230210101615261.png" alt="中断处理示意图"></p>
-<p>中断源：内部中断源和外部中断源</p>
-<p>中断的过程一般包括中断请求、中断响应、中断处理和中断返回。</p>
+<h1 id="2023-3-4"><a href="#2023-3-4" class="headerlink" title="2023.3.4"></a>2023.3.4</h1><h2 id="1、质数因子"><a href="#1、质数因子" class="headerlink" title="1、质数因子"></a>1、质数因子</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230304084628356.png"></p>
+<p>这题卡了好久，一直有一个案例不通过。原因是忽略了质数的质数是它本身！考虑的不够全面。</p>
+<h3 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;math.h&gt;
+using namespace std;
+
+int main() &#123;
+    int numIn &#x3D; 0;
+    cin &gt;&gt; numIn;
+    for(int i&#x3D;2; i&lt;&#x3D;sqrt(numIn); i++)
+    &#123;
+        while(numIn % i &#x3D;&#x3D; 0)
+        &#123;
+            cout&lt;&lt; i &lt;&lt; &#39; &#39;;
+            numIn &#x3D; numIn&#x2F;i;
+        &#125;
+    &#125;
+    if(numIn!&#x3D;1)
+    &#123;
+        cout&lt;&lt; numIn &lt;&lt; &#39; &#39;;
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn"><a href="#Learn" class="headerlink" title="Learn"></a>Learn</h3><p>想问题要全面！！先分析再写。</p>
+<h2 id="2、取近似值"><a href="#2、取近似值" class="headerlink" title="2、取近似值"></a>2、取近似值</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230304091227629.png"></p>
+<h3 id="My-Code-1"><a href="#My-Code-1" class="headerlink" title="My Code"></a>My Code</h3><p>思路：浮点转整型后面的小数会去掉，那如果浮点乘以10减去转型的乘以10，那么就得到了小数点后一位的数字。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+using namespace std;
+
+int main() &#123;
+    double numIn &#x3D; 0;
+    long int num &#x3D; 0;
+    cin &gt;&gt; numIn;
+    long int numtemp &#x3D; (numIn*10);
+    numtemp -&#x3D; (int)numIn*10;
+    if(numtemp &lt; 5)&#123;
+        numtemp &#x3D; 0;
+    &#125;
+    else &#123;
+        numtemp &#x3D; 1;
+    &#125;
+    num &#x3D; (int)numIn + numtemp;
+    cout &lt;&lt; num;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn-1"><a href="#Learn-1" class="headerlink" title="Learn"></a>Learn</h3><p>乘以10%10就可以得到了….好像是。。晕</p>
+<h2 id="3、合并表记录"><a href="#3、合并表记录" class="headerlink" title="3、合并表记录"></a>3、合并表记录</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230304100637701.png"></p>
+<h3 id="My-Code-2"><a href="#My-Code-2" class="headerlink" title="My Code"></a>My Code</h3><p>代码出现问题如下：直接把index作为数组地址，那么就会在有限的内存内导致越界，index[11111111]太大了。此方法行不通。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+#define Max 1111
+int main() &#123;
+    int numKey &#x3D; 0;
+    int index[Max]&#x3D;&#123;0&#125;;
+    cin &gt;&gt; numKey;
+    int numTemp[3]&#x3D;&#123;0&#125;;
+    for(int i&#x3D;0;i&lt;numKey;i++)
+    &#123;
+        cin&gt;&gt;numTemp[0];
+        cin&gt;&gt;numTemp[2];
+        index[(numTemp[0])] +&#x3D; numTemp[2];
+    &#125;
+    for(int i&#x3D;0;i&lt;Max;i++)
+    &#123;
+        if(index[i] !&#x3D; 0)
+        &#123;
+            cout &lt;&lt; i &lt;&lt; &#39; &#39; &lt;&lt; index[i]  &lt;&lt; endl;
+        &#125;
+    &#125;
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn-2"><a href="#Learn-2" class="headerlink" title="Learn"></a>Learn</h3><p>使用图，如下。今天补一下STL的知识。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+#include&lt;map&gt;
+using namespace std;
+int main()
+&#123;
+    int n;
+    map&lt;int,int&gt; m;
+    cin&gt;&gt;n;
+    for(int i&#x3D;0;i&lt;n;i++)
+    &#123;
+        pair&lt;int,int&gt; tmp;
+        cin&gt;&gt;tmp.first;
+        cin&gt;&gt;tmp.second;
+        if((m.find(tmp.first))!&#x3D;m.end())
+            m[tmp.first]+&#x3D;tmp.second;
+        else
+            m[tmp.first]&#x3D;tmp.second;
+    &#125;
+    for(auto it&#x3D;m.begin();it!&#x3D;m.end();it++)
+        cout&lt;&lt;it-&gt;first&lt;&lt;&quot; &quot;&lt;&lt;it-&gt;second&lt;&lt;endl;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="4、提取不重复的整数"><a href="#4、提取不重复的整数" class="headerlink" title="4、提取不重复的整数"></a>4、提取不重复的整数</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230304111918681.png"></p>
+<h3 id="My-Code-3"><a href="#My-Code-3" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() &#123;
+    string str;
+    getline(cin,str);
+    for(int i&#x3D;0;i&lt;str.length()&#x2F;2;i++)&#123;
+        char temp &#x3D; str[i];
+        str[i] &#x3D; str[str.length()-1-i];
+        str[str.length()-1-i] &#x3D; temp;
+    &#125;
+    for(int i&#x3D;0;i&lt;str.length();i++)&#123;
+        for(int j&#x3D;i+1;j&lt;str.length();j++)&#123;
+            if(str[i] &#x3D;&#x3D; str[j])
+            &#123;
+                str[j]&#x3D;-1;
+            &#125;
+        &#125;
+    &#125;
+    for(int i&#x3D;0;i&lt;str.length();i++)&#123;
+        if(str[i]!&#x3D;-1)
+        &#123;
+        cout &lt;&lt; str[i];
+        &#125;
+    &#125;
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn-3"><a href="#Learn-3" class="headerlink" title="Learn"></a>Learn</h3><p>提取最后一位，判断是否重复，不重复则打印，再提取倒数第二位。。。</p>
+<p>判断重复方法即地址去判断，好用。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int n;
+    while(scanf(&quot;%d&quot;,&amp;n) !&#x3D; EOF)
+    &#123;
+        int a[15]&#x3D;&#123;0&#125;;
+        while(n !&#x3D; 0)
+        &#123;
+            int i&#x3D;n%10;
+            if(a[i] !&#x3D; 1)
+            &#123;
+                printf(&quot;%d&quot;,i);
+                a[i]&#x3D;1;
+            &#125;
+            n&#x3D;n&#x2F;10;
+        &#125;
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5、字符个数统计"><a href="#5、字符个数统计" class="headerlink" title="5、字符个数统计"></a>5、字符个数统计</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230304112643904.png"></p>
+<h3 id="My-Code-4"><a href="#My-Code-4" class="headerlink" title="My Code"></a>My Code</h3><p>思路：先将重复的字符置为’ ‘，再计算不是’ ‘的数量</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() &#123;
+    string str;
+    getline(cin,str);
+    int Num &#x3D; 0;
+    for(int i&#x3D;0;i&lt;str.length();i++)
+    &#123;
+        for(int j&#x3D;i+1;j&lt;str.length();j++)
+        &#123;
+            if(str[i] &#x3D;&#x3D; str[j] &amp;&amp; str[i] !&#x3D; &#39; &#39;)
+            &#123;
+                str[j] &#x3D; &#39; &#39;;
+            &#125;
+        &#125;
+        if(str[i] !&#x3D; &#39; &#39;)&#123;
+            Num++;
+        &#125;
+    &#125;
+    cout &lt;&lt; Num;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn-4"><a href="#Learn-4" class="headerlink" title="Learn"></a>Learn</h3><p>采用set容器，使用set的insert去消除重复项，最后输出set的大小</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+int main()
+&#123;
+    char s;
+    set&lt;char&gt; a;
+    while(cin&gt;&gt;s)
+    &#123;
+        a.insert(s);
+    &#125;
+    cout&lt;&lt;a.size();
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -382,8 +564,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
-                                    <span class="chip bg-color">微机原理</span>
+                                <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                                    <span class="chip bg-color">牛客Code</span>
                                 </a>
                             
                         </div>
@@ -448,66 +630,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/3%E3%80%81%E7%9B%B4%E6%B5%81%E7%9B%B4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/">
+                <a href="/2023/03/04/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.4%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="直流直流变流电路">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="2023.3.4 牛客题库">
                         
-                        <span class="card-title">直流直流变流电路</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-10
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Learn/" class="post-category">
-                                    Learn
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">
-                        <span class="chip bg-color">电力电子技术</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/02/10/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/1%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="计算机系统概述">
-                        
-                        <span class="card-title">计算机系统概述</span>
+                        <span class="card-title">2023.3.4 牛客题库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -518,7 +652,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-04
                             </span>
                         <span class="publish-author">
                             
@@ -532,13 +666,55 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">
-                        <span class="chip bg-color">微机原理</span>
+                    <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                        <span class="chip bg-color">牛客Code</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/03/Note/2023.3.3%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="2023.3.3 Note">
+                        
+                        <span class="card-title">2023.3.3 Note</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Diary/" class="post-category">
+                                    Diary
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
