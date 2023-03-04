@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-03-04T03:40:10.438Z</updated>
+  <updated>2023-03-04T03:57:26.263Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>嵌入式C语言自我修养</title>
+    <link href="https://guozunrong123.github.io/2023/03/04/Books/%E5%B5%8C%E5%85%A5%E5%BC%8FC%E8%AF%AD%E8%A8%80%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%EF%BC%9A%E4%BB%8E%E8%8A%AF%E7%89%87%E3%80%81%E7%BC%96%E8%AF%91%E5%99%A8%E5%88%B0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://guozunrong123.github.io/2023/03/04/Books/%E5%B5%8C%E5%85%A5%E5%BC%8FC%E8%AF%AD%E8%A8%80%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%EF%BC%9A%E4%BB%8E%E8%8A%AF%E7%89%87%E3%80%81%E7%BC%96%E8%AF%91%E5%99%A8%E5%88%B0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</id>
+    <published>2023-03-04T03:57:01.000Z</published>
+    <updated>2023-03-04T03:57:26.263Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;嵌入式C语言自我修养：从芯片、编译器到操作系统&quot;&gt;&lt;a href=&quot;#嵌入式C语言自我修养：从芯片、编译器到操作系统&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Book" scheme="https://guozunrong123.github.io/categories/Book/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>2023.3.4 牛客题库</title>
@@ -507,33 +532,6 @@
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 
 &lt;h1 id=&quot;Chapter4-操作臂逆运动学&quot;&gt;&lt;a href=&quot;#Chapter4-操作臂逆运动学&quot; class=&quot;headerlink&quot; title=&quot;Chapter4</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="机器人学导论" scheme="https://guozunrong123.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter3 操作臂运动学</title>
-    <link href="https://guozunrong123.github.io/2023/01/28/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
-    <id>https://guozunrong123.github.io/2023/01/28/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter3%20%E6%93%8D%E4%BD%9C%E8%87%82%E8%BF%90%E5%8A%A8%E5%AD%A6/</id>
-    <published>2023-01-28T09:40:50.000Z</published>
-    <updated>2023-02-08T05:08:46.572Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;Chapter3-操作臂运动学&quot;&gt;&lt;a href=&quot;#Chapter3-操作臂运动学&quot; class=&quot;headerlink&quot; title=&quot;Chapter3</summary>
         
       
     
