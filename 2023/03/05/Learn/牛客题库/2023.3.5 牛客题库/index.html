@@ -4,17 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2023.3.3 Note, ZRong&#39;s Blog">
+    <meta name="keywords" content="2023.3.5 牛客题库, ZRong&#39;s Blog">
     <meta name="description" content="
 
-今天终于考完试了。
-终结一下，好也不好。
-好的是复习的还是可以的，知识点有去深入理解。
-不好的是考的有点偏，填空到处挖，不会啊。
-Very happy.
-接下来就好好补一下代码能力和嵌入式知识吧。
-加油。
-">
+2023.3.51、数字颠倒
+My Code使用&amp;#x2F;计算个数，使用%取最后一位数。特殊考虑0的情况！
+#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+using namespa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +23,7 @@ Very happy.
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2023.3.3 Note | ZRong&#39;s Blog</title>
+    <title>2023.3.5 牛客题库 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -275,7 +272,7 @@ Very happy.
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2023.3.3 Note</h1>
+                    <h1 class="description center-align post-title">2023.3.5 牛客题库</h1>
                 </div>
             </div>
         </div>
@@ -297,9 +294,13 @@ Very happy.
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                                <span class="chip bg-color">牛客Code</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -307,8 +308,8 @@ Very happy.
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Diary/" class="post-category">
-                                Diary
+                            <a href="/categories/Learn/" class="post-category">
+                                Learn
                             </a>
                         
                     </div>
@@ -320,7 +321,7 @@ Very happy.
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-03
+                    2023-03-05
                 </div>
                 
 
@@ -329,7 +330,7 @@ Very happy.
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    77
+                    888
                 </div>
                 
 
@@ -356,13 +357,199 @@ Very happy.
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<p>今天终于考完试了。</p>
-<p>终结一下，好也不好。</p>
-<p>好的是复习的还是可以的，知识点有去深入理解。</p>
-<p>不好的是考的有点偏，填空到处挖，不会啊。</p>
-<p>Very happy.</p>
-<p>接下来就好好补一下代码能力和嵌入式知识吧。</p>
-<p>加油。</p>
+<h1 id="2023-3-5"><a href="#2023-3-5" class="headerlink" title="2023.3.5"></a>2023.3.5</h1><h2 id="1、数字颠倒"><a href="#1、数字颠倒" class="headerlink" title="1、数字颠倒"></a>1、数字颠倒</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305091143712.png"></p>
+<h3 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h3><p>使用&#x2F;计算个数，使用%取最后一位数。特殊考虑0的情况！</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() &#123;
+    int numIn &#x3D; 0;
+    cin &gt;&gt; numIn;
+    string str;
+    int count &#x3D; 0;
+    int numCount &#x3D; numIn;
+    if(numIn &#x3D;&#x3D; 0)&#123;
+        cout &lt;&lt; &#39;0&#39;;
+        retrun 0;
+    &#125;
+    while(numCount !&#x3D; 0)&#123;
+        numCount &#x2F;&#x3D; 10;
+        count++;
+    &#125;
+    for(int i&#x3D;0; i&lt;count; i++)&#123;
+        str[i] &#x3D; numIn%10 + &#39;0&#39;;
+        numIn &#x2F;&#x3D; 10;
+    &#125;
+    for(int j&#x3D;0; j&lt;count; j++)&#123;
+        cout &lt;&lt; str[j];
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn"><a href="#Learn" class="headerlink" title="Learn"></a>Learn</h3><p>取完数就输出，不要单独再跑一次，浪费资源</p>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+using namespace std;
+
+int main()&#123;
+    long num;
+    string str;
+    cin &gt;&gt; num;
+    if(num &#x3D;&#x3D; 0)&#123;
+        cout &lt;&lt; num;
+    &#125;
+    while(num &gt;&#x3D; 1)&#123;
+        int temp &#x3D; num % 10;
+        cout &lt;&lt; temp;
+        num &#x2F;&#x3D; 10;
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>to_string( );可以把整形浮点等等转为字符</p>
+<p>使用reverse_iterator反向迭代器适配器</p>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+
+int main()&#123;
+    int data;
+    string str;
+    cin&gt;&gt;data;
+    str &#x3D; to_string(data);
+    string::reverse_iterator it;
+    for(it&#x3D;str.rbegin();it!&#x3D;str.rend();it++)&#123;
+        cout&lt;&lt;*it;
+    &#125;
+    
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="2、字符串反转"><a href="#2、字符串反转" class="headerlink" title="2、字符串反转"></a>2、字符串反转</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305091126125.png"></p>
+<h3 id="My-Code-1"><a href="#My-Code-1" class="headerlink" title="My Code"></a>My Code</h3><p>学习上一题解法。使用string反向迭代器。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() &#123;
+   string str;
+   getline(cin,str);
+   string::reverse_iterator it;
+   for(it&#x3D;str.rbegin();it!&#x3D;str.rend();it++)&#123;
+        cout &lt;&lt; *it;
+   &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn-1"><a href="#Learn-1" class="headerlink" title="Learn"></a>Learn</h3><p>None</p>
+<h2 id="3、句子逆序"><a href="#3、句子逆序" class="headerlink" title="3、句子逆序"></a>3、句子逆序</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305091418938.png"></p>
+<h3 id="My-Code-2"><a href="#My-Code-2" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main() &#123;
+    string str;
+    getline(cin,str);
+    int sp_pos &#x3D;str.length();
+    for(int i&#x3D;str.length(); i&gt;&#x3D;0; i--)&#123;
+        if(str[i]&#x3D;&#x3D;&#39; &#39;)&#123;
+            for(int j&#x3D;i+1; j&lt;sp_pos; j++)&#123;
+                cout &lt;&lt; str[j];
+            &#125;
+            cout&lt;&lt;&#39; &#39;;
+            sp_pos &#x3D; i;
+        &#125;
+        if(i &#x3D;&#x3D; 0)&#123;
+            for(int j&#x3D;i; j&lt;sp_pos; j++)&#123;
+                cout &lt;&lt; str[j];
+            &#125;
+        &#125;
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn-2"><a href="#Learn-2" class="headerlink" title="Learn"></a>Learn</h3><p>没看到很好的解法</p>
+<p>思路差不多，采用substr。</p>
+<blockquote>
+<p>语法<br>substr(size_type _Off &#x3D; 0,size_type _Count &#x3D; npos)<br>一种构造string的方法<br>形式 ： s.substr(pos, len)<br>返回值： string，包含s中从pos开始的len个字符的拷贝（pos的默认值是0，len的默认值是s.size() - pos，即不加参数会默认拷贝整个s）<br>异常 ：若pos的值超过了string的大小，则substr函数会抛出一个out_of_range异常；若pos+n的值超过了string的大小，则substr会调整n的值，只拷贝到string的末尾</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+int main()&#123;
+    string s;
+    while(getline(cin,s))&#123;
+        int right&#x3D;s.size(),left;
+        for(int i&#x3D;s.size()-1;i&gt;&#x3D;0;i--)&#123;
+            if(s[i]&#x3D;&#x3D;&#39; &#39;)&#123;
+                left&#x3D;i;
+                cout&lt;&lt;s.substr(left+1,right-left-1)&lt;&lt;&#39; &#39;;
+                right&#x3D;left;
+            &#125;
+        &#125;
+        cout&lt;&lt;s.substr(0,right);
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="4、字符串排序"><a href="#4、字符串排序" class="headerlink" title="4、字符串排序"></a>4、字符串排序</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305101731054.png"></p>
+<h3 id="My-Code-3"><a href="#My-Code-3" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+bool cmp(string a,string b)&#123;
+    return a&lt;b;
+&#125;
+int main() &#123;
+    int num;
+    cin &gt;&gt; num;
+    string str[1001];
+    for(int i&#x3D;0; i&lt;num; i++)&#123;
+        cin &gt;&gt; str[i];
+    &#125;
+    sort(str,str+num,cmp);
+    for(int i&#x3D;0;i&lt;num;i++)&#123;
+        cout&lt;&lt;str[i]&lt;&lt;endl;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="Learn-3"><a href="#Learn-3" class="headerlink" title="Learn"></a>Learn</h3><p>sort排序</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305103543810.png"></p>
+<h2 id="5、求int型正整数在内存中存储时1的个数"><a href="#5、求int型正整数在内存中存储时1的个数" class="headerlink" title="5、求int型正整数在内存中存储时1的个数"></a>5、求int型正整数在内存中存储时1的个数</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305104458255.png"></p>
+<h3 id="My-Code-4"><a href="#My-Code-4" class="headerlink" title="My Code"></a>My Code</h3><p>按位与最后一位，按位右移。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+using namespace std;
+
+int main() &#123;
+    int num;
+    cin &gt;&gt; num;
+    int count &#x3D; 0;
+    while(num)&#123;
+        if((num&amp;1) &#x3D;&#x3D; 1)&#123;
+            count++;
+        &#125;
+        num&#x3D;num&gt;&gt;1;
+    &#125;
+    cout &lt;&lt; count;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn-4"><a href="#Learn-4" class="headerlink" title="Learn"></a>Learn</h3><p>采用%2取最后一位，直接累加。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+#include &lt;cstdlib&gt;
+using namespace std;
+
+int main()&#123;
+	int a;
+	int count&#x3D;0;
+	cin&gt;&gt;a;
+	while(a&gt;0)&#123;
+		count+&#x3D;a%2;
+		a &#x3D; a&#x2F;2;
+	&#125;
+	cout&lt;&lt;count&lt;&lt;endl;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -376,7 +563,11 @@ Very happy.
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                                    <span class="chip bg-color">牛客Code</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -439,17 +630,18 @@ Very happy.
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/04/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.4%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/">
+                <a href="/2023/03/05/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.5%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="2023.3.4 牛客题库">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="2023.3.5 牛客题库">
                         
-                        <span class="card-title">2023.3.4 牛客题库</span>
+                        <span class="card-title">2023.3.5 牛客题库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -459,9 +651,9 @@ Very happy.
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -474,6 +666,7 @@ Very happy.
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -492,13 +685,13 @@ Very happy.
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/03/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.3%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/">
+                <a href="/2023/03/04/Books/%E5%B5%8C%E5%85%A5%E5%BC%8FC%E8%AF%AD%E8%A8%80%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%EF%BC%9A%E4%BB%8E%E8%8A%AF%E7%89%87%E3%80%81%E7%BC%96%E8%AF%91%E5%99%A8%E5%88%B0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="2023.3.3 牛客题库">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="嵌入式C语言自我修养">
                         
-                        <span class="card-title">2023.3.3 牛客题库</span>
+                        <span class="card-title">嵌入式C语言自我修养</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -509,27 +702,19 @@ Very happy.
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Learn/" class="post-category">
-                                    Learn
+                            <a href="/categories/Book/" class="post-category">
+                                    Book
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
-                        <span class="chip bg-color">牛客Code</span>
-                    </a>
-                    
                 </div>
                 
             </div>
