@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-03-08T08:12:15.732Z</updated>
+  <updated>2023-03-08T08:31:53.396Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2023.3.8Note</title>
+    <link href="https://guozunrong123.github.io/2023/03/08/Note/2023.3.8%E8%AE%B0/"/>
+    <id>https://guozunrong123.github.io/2023/03/08/Note/2023.3.8%E8%AE%B0/</id>
+    <published>2023-03-08T14:00:00.000Z</published>
+    <updated>2023-03-08T08:31:53.396Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h2 id=&quot;1、&quot;&gt;&lt;a href=&quot;#1、&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Diary" scheme="https://guozunrong123.github.io/categories/Diary/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ahrs 航姿参考系统</title>
@@ -515,31 +540,6 @@
     
     
     <category term="电力电子技术" scheme="https://guozunrong123.github.io/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Front-matter</title>
-    <link href="https://guozunrong123.github.io/2023/02/09/Learn/%E6%9D%82/blog%20title/"/>
-    <id>https://guozunrong123.github.io/2023/02/09/Learn/%E6%9D%82/blog%20title/</id>
-    <published>2023-02-09T03:27:40.000Z</published>
-    <updated>2023-02-09T03:32:04.470Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;文章-Front-matter-介绍&quot;&gt;&lt;a href=&quot;#文章-Front-matter-介绍&quot; class=&quot;headerlink&quot; title=&quot;文章 Front-matter 介绍&quot;&gt;&lt;/a&gt;文章 Front-matter 介绍&lt;/h2&gt;&lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="杂" scheme="https://guozunrong123.github.io/tags/%E6%9D%82/"/>
     
   </entry>
   
