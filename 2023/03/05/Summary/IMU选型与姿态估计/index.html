@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="磁力计与地磁场, ZRong&#39;s Blog">
-    <meta name="description" content="
-
-1、地球磁场分布图： 地球磁场：地球的磁场象一个条形磁体一样由磁南极指向磁北极。在磁极点处磁场和当地的水平面垂直，在赤道磁场和当地的水平面平行，所以在北半球磁场方向倾斜指向地面。用来衡量磁感应强度大小的单位是Tesla或者Gauss（1">
+    <meta name="keywords" content="ahrs 航姿参考系统, ZRong&#39;s Blog">
+    <meta name="description" content="姿态估计">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>磁力计与地磁场 | ZRong&#39;s Blog</title>
+    <title>ahrs 航姿参考系统 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -263,12 +261,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">磁力计与地磁场</h1>
+                    <h1 class="description center-align post-title">ahrs 航姿参考系统</h1>
                 </div>
             </div>
         </div>
@@ -292,8 +290,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9D%82/">
-                                <span class="chip bg-color">杂</span>
+                            <a href="/tags/ahrs/">
+                                <span class="chip bg-color">ahrs</span>
                             </a>
                         
                     </div>
@@ -304,8 +302,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Learn/" class="post-category">
-                                Learn
+                            <a href="/categories/summary/" class="post-category">
+                                summary
                             </a>
                         
                     </div>
@@ -317,7 +315,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-11
+                    2023-03-05
                 </div>
                 
 
@@ -326,7 +324,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    716
+                    3.1k
                 </div>
                 
 
@@ -353,21 +351,114 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h3 id="1、地球磁场分布图："><a href="#1、地球磁场分布图：" class="headerlink" title="1、地球磁场分布图："></a>1、地球磁场分布图：</h3><p> 地球磁场：地球的磁场象一个条形磁体一样由磁南极指向磁北极。在磁极点处磁场和当地的水平面垂直，在赤道磁场和当地的水平面平行，所以在北半球磁场方向倾斜指向地面。用来衡量磁感应强度大小的单位是Tesla或者Gauss（1Tesla&#x3D;10000Gauss）。随着地理位置的不同，通常地磁场的强度是0.4-0.6Gauss。需要注意的是，磁北极和地理上的北极并不重合，通常他们之间有11.5度左右的夹角。</p>
-<p>单位：</p>
-<p>1Tesla&#x3D;10000Gauss</p>
-<p>1高斯 &#x3D;100000 nT</p>
-<p>1高斯 &#x3D;1000 mGauss</p>
-<p>1mGauss&#x3D;100nT<br><img src="https://img-blog.csdnimg.cn/2020042015072466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="2、-地磁要素图："><a href="#2、-地磁要素图：" class="headerlink" title="2、 地磁要素图："></a><strong>2、 地磁要素图：</strong></h3><p>设观测点在O处，并以O点为原点建立地理坐标系OXYZ，X轴指向北，Y轴指向东，Z轴垂直指向地。</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200420150740771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"><img src="https://img-blog.csdnimg.cn/20200420150740771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"></a></p>
-<p>   地磁场强度T在X轴上的投影Bn称为地磁场的北向分量；T在Y轴上的投影Be称为东向分量；T在Z轴上的投影Bz称为地磁场的垂向分量。T在水平面O-XY的投影Bh称为地磁场的水平分量。地磁水平分量Bh和垂向分量Bz所在平面称为磁子午面，磁子午面和地理子午面O-XZ平面的夹角称为磁偏角，用D表示，并规定其东偏为正，西偏为负。地磁场强度T与水平面O-XY的夹角称为磁倾角，用I表示。上述，T、Bh、Bn、Be、Bz、D、I统称为地磁场七要素，可作为定位定向的参考量。七要素只要知道三个独立的要素，就可以求其余的要素，常用的是磁倾角、磁偏角和水平分量。七要素间有如下关系：<br><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200420152053240.png"><img src="https://img-blog.csdnimg.cn/20200420152053240.png"></a></p>
-<p>3、中国地磁要素变化：<br>    中国的地磁要素大致分布情况：国境内地磁强度总量范围0.41~0.60Gauss(1 Gauss &#x3D; 10^-4T)；水平分量Bh由南至北从0.4降至0.21；垂直分量Bz由南至北从-0.1增至0.56；磁倾角I由南至北从-10°增至70°；磁偏角D由东向西从-11°增至5°，零偏线在中国中部偏西处，由北向南经过甘肃的安西以及西藏的得宋。</p>
-<p>4、地磁场的一级近似：<br>对地磁场的一种近似，如下图所示：<br><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200420153133439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"><img src="https://img-blog.csdnimg.cn/20200420153133439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1d3VrdTEyMw==,size_16,color_FFFFFF,t_70"></a></p>
-<p>不考虑地磁轴与地球自转轴的偏离问题，地磁强度分量可用以下解析式来描述：</p>
-<p><img src="https://img-blog.csdnimg.cn/2020042015332184.png"></p>
-<p>其中，东向地磁分量为0；在实际运算中，将磁力计在水平面X、Y轴的测量值，全部投影到北向，并将东向置零。</p>
-<h1 id="二、计算"><a href="#二、计算" class="headerlink" title="二、计算"></a>二、计算</h1><p>[<a target="_blank" rel="noopener" href="https://zinghd.gitee.io/knowledge-point-1/">知识点]基于加速度计与磁力计的姿态解算方法(加计补偿偏航) | 曾同学的思考 (gitee.io)</a></p>
+<p>以下为笔者自己的思考与总结，若有错误，欢迎批评和指出！感谢感谢！</p>
+<h1 id="ahrs-航姿参考系统"><a href="#ahrs-航姿参考系统" class="headerlink" title="ahrs 航姿参考系统"></a>ahrs 航姿参考系统</h1><h2 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h2><p>IMU，惯性测量单元。<strong>一个IMU包含了三个单轴的加速度计和三个单轴的陀螺</strong>。</p>
+<p>AHRS（Attitude and Heading Reference System）俗称航姿参考系统，AHRS由<strong>加速度计，磁场计，陀螺仪构成</strong>，能够为飞行器提供航向(yaw)，横滚(roll)和侧翻(pitch)信息，这类系统用来为飞行器提供准确可靠的姿态与航行信息。AHRS的真正参考来自于地球的重力场和地球的磁场，其静态终精度取决于对磁场的测量精度和对重力的测量精度，而则陀螺决定了他的动态性能。</p>
+<h2 id="2、ahrs传感器原理"><a href="#2、ahrs传感器原理" class="headerlink" title="2、ahrs传感器原理"></a>2、ahrs传感器原理</h2><h3 id="2-1-加速度计"><a href="#2-1-加速度计" class="headerlink" title="2.1 加速度计"></a>2.1 加速度计</h3><p>传感器检测技术里写道：传感器是由<strong>敏感元件</strong>和<strong>转换元件</strong>组成。</p>
+<p>那么，加速度计的敏感元件是什么？</p>
+<p>电压式？电阻式？电容式？等等，不管这些传到电路的问题。</p>
+<p>牛顿告诉我们F&#x3D;ma，总之，先受力。</p>
+<img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305190907378.png" style="zoom:50%;" />
+
+<p>如图所示。能很好的解释这个问题。</p>
+<p>在三维空间中，我们想象一个球放在立方体里。在重力下，对立方体下部尝试mg的力，从而在z方向上初始就有g。</p>
+<p>在姿态计算过程中，我们对g进行了补偿，去掉后等效球在正中心，对六个面都不产生力。</p>
+<p>那如果想象一个平抛运动，我们还能用相同的解法吗？</p>
+<p>我想，不能吧。平抛运动是自由落体运动，g不用补偿。</p>
+<p>还有个特别注意的地方，加速度计是没法测yaw的，为什么？还是想这个球，他在这个立方体里yaw随便转，产生的力也不变。</p>
+<h3 id="2-2-角速度计"><a href="#2-2-角速度计" class="headerlink" title="2.2 角速度计"></a>2.2 角速度计</h3><p>我们采用的是MEMS陀螺仪。</p>
+<p>其原理是科里奥利力，即旋转物体在有径向运动时所受到的切向力。</p>
+<p>那么径向运动哪里来？答案是施加交替改变的电压，让一个质量块来回运动。</p>
+<p>什么是科里奥利力？当一个质点相对于惯性系做直线运动时，相对于旋转体系，其轨迹是一条曲线。立足于旋转体系，我们认为有一个力驱使质点运动轨迹形成曲线，这个力就是科里奥利力。F  &#x3D;−2m( ω× v )。其中F为科里奥利力，m为质点质量，v为质点运动速度，w为旋转系得角速度。</p>
+<p>若三个量已知，那么就可以得到w的值。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306165159462.png"></p>
+<p><img src="C:/Users/Zunrong%20Guo/AppData/Roaming/Typora/typora-user-images/image-20230306214540297.png" alt="image-20230306214540297"></p>
+<h3 id="2-3-磁力计"><a href="#2-3-磁力计" class="headerlink" title="2.3 磁力计"></a>2.3 磁力计</h3><p><a target="_blank" rel="noopener" href="https://potzrrr.top/2023/01/11/Learn/%E6%9D%82/%E7%A3%81%E5%8A%9B%E8%AE%A1&%E5%9C%B0%E7%A3%81%E5%9C%BA/">磁力计与地磁场 | ZRong’s Blog (potzrrr.top)</a></p>
+<p>在上面链接中，我对地磁场有过了介绍。</p>
+<p>但是对于磁力计原理，不是很懂。于是查了一下资料。</p>
+<p><a target="_blank" rel="noopener" href="https://www.dzsc.com/data/2010-11-29/87454.html">ST集成传感器方案实现电子罗盘功能-基础电子-维库电子市场网 (dzsc.com)</a></p>
+<p>实际上磁致电阻来检测空间中磁感应强度的大小，自身电阻值会相应发生变化，这是通过电桥转换为电压输出。具体的还是看上面的文章。这里没有做更深入的了解，我觉得跟材料有关了。</p>
+<p>但我们需要知道，传感器由敏感元件和转换元件组成。这里的磁致电阻就是敏感元件，电桥是转换元件。</p>
+<h2 id="3、IMU选择"><a href="#3、IMU选择" class="headerlink" title="3、IMU选择"></a>3、IMU选择</h2><p>IMU传感器有很多，我们常见的有六轴和九轴。六轴和九轴的区别在于六轴少了三轴的磁力计。</p>
+<p>那么，少这三轴会影响什么？</p>
+<p>首先我们先来看看三者的关系。</p>
+<p>加速度计测pitch和roll，没法测yaw，没有累计误差，抗高频信号能力差。</p>
+<p>角速度可以测三轴，但有累计误差，因为角度都是积分出来的，抗低频信号能力差。</p>
+<p>磁力计只能测yaw，没有累计误差，抗高频信号能力差。</p>
+<p>那么组合一下，磁力计和加速度计结合，得到三轴角度，和角速度计做数据融合。结合高频和低频的特点，做好估计，这也是后文要讲的。</p>
+<p>六轴的情况是怎样的呢？只有角速度计和加速度计，那么这时yaw轴没法进行数据融合。会导致什么？</p>
+<p>没错，yaw轴误差靠角速度积分，在足够的时间后，一定会产生漂移！这也是为什么步兵云台会漂移的原因。</p>
+<p>我们没法消除这个，因为在原理上就不行！能做的只有优化，少漂点…补偿点…或者靠人来修正。</p>
+<p><strong>以下MPU6050为重，其他稍微对比。</strong></p>
+<h3 id="3-1-Mpu6050"><a href="#3-1-Mpu6050" class="headerlink" title="3.1 Mpu6050"></a>3.1 Mpu6050</h3><p>Mpu6050最大的优点就是便宜！！！便宜！！！做事要考虑成本，诚然贵的好…</p>
+<h4 id="3-1-1-内部结构"><a href="#3-1-1-内部结构" class="headerlink" title="3.1.1 内部结构"></a>3.1.1 内部结构</h4><p>我们来了解一下陀螺仪内部的结构。</p>
+<img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305221343891.png" style="zoom: 67%;" />
+
+<p>其中，SCL和 SDA是连接MCU的 IIC接口，MCU通过这个IIC 接口来控制MPU6050，另外还有一个 IIC 接口： AUX_CL和AUX_DA ，这个接口可用来连外部从设备比如磁力计，这样就可以组成一个九轴传感器。VLOGIC是IO口电压，该引脚最低可以到1.8V电压， 我们一般直接连VDD即可。AD0是从IIC 接口（接 MCU）的地址控制引脚，该引脚控制的是IIC 地址的最低位。如果接 GND ，则 MPU6050的IIC地址是：0X68，如果接VDD，则是0X69。需要注意的是：这里的地址0x68和0x69是不包含用于数据传输的最低位的，因此并不是八位数据，如0x68表示的是110 1000，0x69表示的则是110 1001，通常最低位用于表示IIC主机的读取数据&#x2F;写数据模式。<br>self test为自检，自检的作用是可用来测试传感器的机械和电气结构。也就是说通过自检来测试芯片是否损坏。自检启动后，电路会使传感器工作并且产生输出信号。</p>
+<h4 id="3-1-2-DMP"><a href="#3-1-2-DMP" class="headerlink" title="3.1.2 DMP"></a>3.1.2 DMP</h4><p>DMP就是MPU6050内部的运动引擎，全称Digital Motion Processor，直接输出四元数，可以减轻外围微处理器的工作负担且避免了繁琐的滤波和数据融合。</p>
+<p>通过DMP我们在MCU上只需将四元数转为欧拉角即可得到角度。</p>
+<h4 id="3-1-3-参数"><a href="#3-1-3-参数" class="headerlink" title="3.1.3 参数"></a>3.1.3 参数</h4><p>陀螺仪可测范围为±250，±500，±1000，±2000°&#x2F;秒（dps）</p>
+<p>加速度计可测范围为±2，±4，±8，±16g。</p>
+<h3 id="3-2-JY61P"><a href="#3-2-JY61P" class="headerlink" title="3.2 JY61P"></a>3.2 JY61P</h3><p>价格50元。一个等于n个6050.</p>
+<h4 id="3-2-1-通信方式"><a href="#3-2-1-通信方式" class="headerlink" title="3.2.1 通信方式"></a>3.2.1 通信方式</h4><p>串口TTL、IIC，姿态在内部做了卡尔曼滤波算法后输出。</p>
+<h4 id="3-2-2-参数"><a href="#3-2-2-参数" class="headerlink" title="3.2.2 参数"></a>3.2.2 参数</h4><p>陀螺仪可测范围为±250，±500，±1000，±2000°&#x2F;秒（dps）</p>
+<p>加速度计可测范围为±2，±4，±8，±16g。</p>
+<p>角度精度： X、Y轴0.2°，</p>
+<p>回传速率：0.2-200Hz</p>
+<h3 id="3-3-ICM20602"><a href="#3-3-ICM20602" class="headerlink" title="3.3 ICM20602"></a>3.3 ICM20602</h3><p>20元，价格适中，反馈频率高，适用！</p>
+<h4 id="3-3-1-通信方式"><a href="#3-3-1-通信方式" class="headerlink" title="3.3.1 通信方式"></a>3.3.1 通信方式</h4><p>IIC、SPI（10M比特率）</p>
+<h4 id="3-3-2-参数"><a href="#3-3-2-参数" class="headerlink" title="3.3.2 参数"></a>3.3.2 参数</h4><p>陀螺仪可测范围为±250，±500，±1000，±2000°&#x2F;秒（dps）</p>
+<p>加速度计可测范围为±2，±4，±8，±16g。</p>
+<h2 id="4、传感器校准"><a href="#4、传感器校准" class="headerlink" title="4、传感器校准"></a>4、传感器校准</h2><p>IMU校准十分重要，不可忽视。</p>
+<h3 id="4-1-加速度计校准"><a href="#4-1-加速度计校准" class="headerlink" title="4.1 加速度计校准"></a>4.1 加速度计校准</h3><p>加速度计在不校准的情况下会产生偏差，不校准前大的偏差对于我们来说是不可接受的。</p>
+<p>在校准后，我们在z方向上的加速度近似为 -9.8。</p>
+<p>校准方法采用六面校准。即将IMU六面轮流放置在桌面上，持续记录一段时间。</p>
+<h4 id="4-1-1-比例因子和偏移值求解"><a href="#4-1-1-比例因子和偏移值求解" class="headerlink" title="4.1.1 比例因子和偏移值求解"></a>4.1.1 比例因子和偏移值求解</h4><p>建立模型：</p>
+<img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306223920708.png" style="zoom: 67%;" />
+
+<p>accel_corr[3]是参考向量，也就是重力加速度向量</p>
+<p>accel_T[3][3是转换矩阵，包含旋转和尺度缩放</p>
+<p>accel_raw[3]是实际测量的加速度向量</p>
+<p>accel_offs[3]是加速度数据的零点偏移</p>
+<p>步骤如下：</p>
+<p>1.求x、y、z轴加速度偏差。以x轴为例，分x轴向下和x轴向上，这时求二者各自的平均值后取二者平均值即偏差。</p>
+<p>acc_x_bias &#x3D; (mean(x+) + mean(x-) ) *  0.5f;</p>
+<p>2.下面求转换矩阵。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306224043936.png"></p>
+<p>求解可以得到转换矩阵。</p>
+<p>3、主对角线元素即为比例因子a。</p>
+<p>AccRel &#x3D; a*(AccRot-AccBias);</p>
+<p>由于其他轴相比之下太小，可忽略不计。</p>
+<h3 id="4-2-角速度计校准"><a href="#4-2-角速度计校准" class="headerlink" title="4.2 角速度计校准"></a>4.2 角速度计校准</h3><p>角速度计主要问题是零偏，利用以下方法解决：</p>
+<p>1.将陀螺仪静止放置在桌面上，持续记录一段时间的数据。</p>
+<p>2.将记录的多组数据求出平均值作为陀螺仪的3轴零偏。</p>
+<p>最后在代码中对角速度计进行补偿即可。</p>
+<p>关于误差原因等：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24280315">陀螺仪的数据处理 - 知乎 (zhihu.com)</a></p>
+<h3 id="4-3-磁力计校准"><a href="#4-3-磁力计校准" class="headerlink" title="4.3 磁力计校准"></a>4.3 磁力计校准</h3><p>采用的是八字校准的方法。</p>
+<p>八字校准：将带有磁力计的设备在空中划八字，身体跟着转圈，使得磁力计在各个方向都有值。转几圈后采集数据导入matlab，我们可以发现得到的数据可以构成一个圆。通过样本拟合算法基本能精确计算出椭球球心位置，这表示了磁力计三轴的偏移量，而实际飞控代码中也应对磁力计初始数据减去该偏移量。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305214756214.png"></p>
+<p>首先，我们要知道通过磁力计获得什么？！当然是yaw值。</p>
+<p>看以下画的图，有点丑但是没关系。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305215652474.png" alt="image-20230305215652474"></p>
+<p>如上，我们要计算yaw值，就要把磁力计圆的圆心归到原点上，即可完成磁力计校准。</p>
+<h4 id="4-3-1-关于球心求解"><a href="#4-3-1-关于球心求解" class="headerlink" title="4.3.1 关于球心求解"></a>4.3.1 关于球心求解</h4><p>这里引用别人的一篇文章。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunshine_zoe/article/details/78852978">(78条消息) 球面数据拟合算法简介_球面算法_sunshine_zoe的博客-CSDN博客</a></p>
+<h2 id="5、数据融合"><a href="#5、数据融合" class="headerlink" title="5、数据融合"></a>5、数据融合</h2><h3 id="5-1-Mahony"><a href="#5-1-Mahony" class="headerlink" title="5.1 Mahony"></a>5.1 Mahony</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/438724546">Mahony姿态解算算法详解 - 知乎 (zhihu.com)</a></p>
+<h3 id="5-2-ESKF"><a href="#5-2-ESKF" class="headerlink" title="5.2 ESKF"></a>5.2 ESKF</h3><p>ESKF（Error state Kalman Filter，误差卡尔曼滤波器）。在现代的大多数IMU系统中，人们往往使用误差状态卡尔曼滤波器（Error state Kalman filter, ESKF）而非原始状态的卡尔曼滤波器。</p>
+<p>相比于传统KF，ESKF的优点可以总结如下：</p>
+<ol>
+<li>在旋转的处理上，ESKF的状态变量可以采用最小化的参数表达，也就是使用三维变量来表达旋转的增量。而传统KF需要用到四元数（4维）或者更高维的表达（旋转矩阵，9维），要不就得采用带有奇异性的表达方式（欧拉角）。</li>
+<li>ESKF总是在原点附近，离奇异点较远，并且也不会由于离工作点太远而导致线性化近似不够的问题。</li>
+<li>ESKF的状态量为小量，其二阶变量相对来说可以忽略。同时大多数雅可比矩阵在小量情况下变得非常简单，甚至可以用单位阵代替。</li>
+<li>误差状态的运动学也相比原状态变量要来得更小，因为我们可以把大量更新部分放到原状态变量中。</li>
+</ol>
+<p>在ESKF中，我们通常把原状态变量称为<strong>名义状态变量</strong>（nominal state），然后把ESKF里的状态变量称为<strong>误差状态变量</strong>（error state）。ESKF整体流程如下：当IMU测量数据到达时，我们把它积分后，放入名义状态变量中。由于这种做法没有考虑噪声，其结果自然会快速漂移，于是我们希望把误差部分作为误差变量，放在ESKF中。ESKF内部会考虑各种噪声和零偏的影响，并且给出误差状态的一个高斯分布描述。同时，ESKF本身作为一种卡尔曼滤波器，也具有预测过程和修正过程，其中修正过程需要依赖IMU以外的传感器观测。当然，在修正之后，ESKF可以给出后验的误差高斯分布，随后我们可以把这部分误差放入名义状态变量中，并把ESKF置零，这样就完成了一次循环。</p>
+<p>卡尔曼滤波更新为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230307174406389.png"></p>
+<p>ESKF的更新为：</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230307174208505.png"></p>
+<p>参考文献：</p>
+<p>[1] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/441182819">简明ESKF推导 - 知乎 (zhihu.com)</a></p>
 
                 
             </div>
@@ -382,8 +473,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9D%82/">
-                                    <span class="chip bg-color">杂</span>
+                                <a href="/tags/ahrs/">
+                                    <span class="chip bg-color">ahrs</span>
                                 </a>
                             
                         </div>
@@ -452,13 +543,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/11/Learn/ROS/%E5%8A%A8%E6%89%8B%E5%AD%A6ROS2/">
+                <a href="/2023/03/06/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.6%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="动手学ROS2">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="2023.3.6 牛客题库">
                         
-                        <span class="card-title">动手学ROS2</span>
+                        <span class="card-title">2023.3.6 牛客题库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -469,7 +560,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-06
                         </span>
                         <span class="publish-author">
                             
@@ -486,8 +577,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ROS/">
-                        <span class="chip bg-color">ROS</span>
+                    <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                        <span class="chip bg-color">牛客Code</span>
                     </a>
                     
                 </div>
@@ -501,13 +592,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/11/Learn/%E6%95%B0%E5%AD%A6/%E5%9B%9B%E5%85%83%E6%95%B0%E4%B8%8E%E6%AC%A7%E6%8B%89%E8%A7%92%E4%B8%8E%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                <a href="/2023/03/05/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.5%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="四元数与欧拉角与旋转矩阵">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="2023.3.5 牛客题库">
                         
-                        <span class="card-title">四元数与欧拉角与旋转矩阵</span>
+                        <span class="card-title">2023.3.5 牛客题库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -518,7 +609,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-05
                             </span>
                         <span class="publish-author">
                             
@@ -535,8 +626,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
+                    <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                        <span class="chip bg-color">牛客Code</span>
                     </a>
                     
                 </div>
