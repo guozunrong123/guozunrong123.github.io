@@ -302,8 +302,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/summary/" class="post-category">
-                                summary
+                            <a href="/categories/Summary/" class="post-category">
+                                Summary
                             </a>
                         
                     </div>
@@ -372,7 +372,7 @@
 <p>什么是科里奥利力？当一个质点相对于惯性系做直线运动时，相对于旋转体系，其轨迹是一条曲线。立足于旋转体系，我们认为有一个力驱使质点运动轨迹形成曲线，这个力就是科里奥利力。F  &#x3D;−2m( ω× v )。其中F为科里奥利力，m为质点质量，v为质点运动速度，w为旋转系得角速度。</p>
 <p>若三个量已知，那么就可以得到w的值。</p>
 <p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306165159462.png"></p>
-<p><img src="C:/Users/Zunrong%20Guo/AppData/Roaming/Typora/typora-user-images/image-20230306214540297.png" alt="image-20230306214540297"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306214540297.png"></p>
 <h3 id="2-3-磁力计"><a href="#2-3-磁力计" class="headerlink" title="2.3 磁力计"></a>2.3 磁力计</h3><p><a target="_blank" rel="noopener" href="https://potzrrr.top/2023/01/11/Learn/%E6%9D%82/%E7%A3%81%E5%8A%9B%E8%AE%A1&%E5%9C%B0%E7%A3%81%E5%9C%BA/">磁力计与地磁场 | ZRong’s Blog (potzrrr.top)</a></p>
 <p>在上面链接中，我对地磁场有过了介绍。</p>
 <p>但是对于磁力计原理，不是很懂。于是查了一下资料。</p>
@@ -439,7 +439,7 @@
 <p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305214756214.png"></p>
 <p>首先，我们要知道通过磁力计获得什么？！当然是yaw值。</p>
 <p>看以下画的图，有点丑但是没关系。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305215652474.png" alt="image-20230305215652474"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230305215652474.png"></p>
 <p>如上，我们要计算yaw值，就要把磁力计圆的圆心归到原点上，即可完成磁力计校准。</p>
 <h4 id="4-3-1-关于球心求解"><a href="#4-3-1-关于球心求解" class="headerlink" title="4.3.1 关于球心求解"></a>4.3.1 关于球心求解</h4><p>这里引用别人的一篇文章。</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunshine_zoe/article/details/78852978">(78条消息) 球面数据拟合算法简介_球面算法_sunshine_zoe的博客-CSDN博客</a></p>
@@ -453,6 +453,8 @@
 <li>误差状态的运动学也相比原状态变量要来得更小，因为我们可以把大量更新部分放到原状态变量中。</li>
 </ol>
 <p>在ESKF中，我们通常把原状态变量称为<strong>名义状态变量</strong>（nominal state），然后把ESKF里的状态变量称为<strong>误差状态变量</strong>（error state）。ESKF整体流程如下：当IMU测量数据到达时，我们把它积分后，放入名义状态变量中。由于这种做法没有考虑噪声，其结果自然会快速漂移，于是我们希望把误差部分作为误差变量，放在ESKF中。ESKF内部会考虑各种噪声和零偏的影响，并且给出误差状态的一个高斯分布描述。同时，ESKF本身作为一种卡尔曼滤波器，也具有预测过程和修正过程，其中修正过程需要依赖IMU以外的传感器观测。当然，在修正之后，ESKF可以给出后验的误差高斯分布，随后我们可以把这部分误差放入名义状态变量中，并把ESKF置零，这样就完成了一次循环。</p>
+<p>这是基于卡尔曼滤波的，对于卡尔曼滤波，之前有发过相关的记录。Learn from DR_CAN.感谢！</p>
+<p>[Kalman Filter | ZRong’s Blog (potzrrr.top)](<a target="_blank" rel="noopener" href="https://potzrrr.top/2023/01/11/Learn/%E7%AE%97%E6%B3%95/Kalman">https://potzrrr.top/2023/01/11/Learn/算法/Kalman</a> Filter&#x2F;)</p>
 <p>卡尔曼滤波更新为：</p>
 <p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230307174406389.png"></p>
 <p>ESKF的更新为：</p>
@@ -547,9 +549,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="2023.3.8Note">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="2023.3.8 Note">
                         
-                        <span class="card-title">2023.3.8Note</span>
+                        <span class="card-title">2023.3.8 Note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -755,7 +757,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">41.3k</span>
+                        class="white-color">43.9k</span>
             
             
             
