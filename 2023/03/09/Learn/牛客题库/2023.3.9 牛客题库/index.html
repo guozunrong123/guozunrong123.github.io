@@ -4,11 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Freertos基础知识, ZRong&#39;s Blog">
+    <meta name="keywords" content="2023.3.9 牛客题库, ZRong&#39;s Blog">
     <meta name="description" content="
 
-Freertos基础知识什么是Freertos？​	Free 就是免费的、RTOS 全称是 Real Time Operating System，中文名就是实时操作系统。可以看出 FreeROTS 就是一个免费的 RTOS 类系统。
-​">
+2023.3.91、字符串排序
+My Code#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+#include &amp;lt;vector&amp;gt;
+using namespace std;
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@ Freertos基础知识什么是Freertos？​	Free 就是免费的、RTOS 全称�
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Freertos基础知识 | ZRong&#39;s Blog</title>
+    <title>2023.3.9 牛客题库 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -264,12 +268,12 @@ Freertos基础知识什么是Freertos？​	Free 就是免费的、RTOS 全称�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Freertos基础知识</h1>
+                    <h1 class="description center-align post-title">2023.3.9 牛客题库</h1>
                 </div>
             </div>
         </div>
@@ -293,8 +297,8 @@ Freertos基础知识什么是Freertos？​	Free 就是免费的、RTOS 全称�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                <span class="chip bg-color">操作系统</span>
+                            <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                                <span class="chip bg-color">牛客Code</span>
                             </a>
                         
                     </div>
@@ -318,7 +322,7 @@ Freertos基础知识什么是Freertos？​	Free 就是免费的、RTOS 全称�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-13
+                    2023-03-09
                 </div>
                 
 
@@ -327,7 +331,7 @@ Freertos基础知识什么是Freertos？​	Free 就是免费的、RTOS 全称�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    1.1k
                 </div>
                 
 
@@ -354,278 +358,217 @@ Freertos基础知识什么是Freertos？​	Free 就是免费的、RTOS 全称�
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h2 id="Freertos基础知识"><a href="#Freertos基础知识" class="headerlink" title="Freertos基础知识"></a>Freertos基础知识</h2><h3 id="什么是Freertos？"><a href="#什么是Freertos？" class="headerlink" title="什么是Freertos？"></a>什么是Freertos？</h3><p>​	Free 就是免费的、RTOS 全称是 Real Time Operating System，中文名就是实时操作系统。可以看出 FreeROTS 就是一个免费的 RTOS 类系统。</p>
-<p>​	操作系统允许多个任务同时运行，这个叫做多任务，实际上，一个处理器核心在某一时刻只能运行一个任务。操作系统中任务调度器的责任就是决定在某一时刻究竟运行哪个任务，任务调度在各个任务之间的切换非常快！这就给人们造成了同一时刻有多个任务同时运行的错觉。</p>
-<p>​	FreeRTOS 由用户给每个任务分配一个任务优先级，任务调度器就可以根据此优先级来决定下一刻应该运行哪个任务。</p>
-<h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><h4 id="什么是多任务系统？"><a href="#什么是多任务系统？" class="headerlink" title="什么是多任务系统？"></a>什么是多任务系统？</h4><p>​	回想一下我们以前在使用 51、STM32 单片机裸机(未使用系统)的时候一般都是在 main 函数里面用 while(1)做一个大循环来完成所有的处理，即应用程序是一个无限的循环，循环中调用相应的函数完成所需的处理。有时候我们也需要中断中完成一些处理。相对于多任务系统而言，这个就是单任务系统，也称作前后台系统，中断服务函数作为前台程序，大循环 while(1)作为后台程序。如图所示。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003003311071.png"></p>
-<p>​	可以看到，前后台系统各个任务都是排队等着轮流执行，不管你这个程序现在有多紧急，没轮到你就只能等着！相当于所有任务的优先级都是一样的。</p>
-<p>​	FreeRTOS 是一个抢占式的实时多任务系统，那么其任务调度器也是抢占式的。如图所示。</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003003616795.png"></p>
-<h4 id="任务状态"><a href="#任务状态" class="headerlink" title="任务状态"></a>任务状态</h4><ol>
-<li>运行态<br>当一个任务正在运行时，那么就说这个任务处于运行态，处于运行态的任务就是当前正在使用处理器的任务。如果使用的是单核处理器的话那么不管在任何时刻永远都只有一个任务处于运行态。</li>
-<li>就绪态<br>处于就绪态的任务是那些已经准备就绪(这些任务没有被阻塞或者挂起)，可以运行的任务， 但是处于就绪态的任务还没有运行，因为有一个同优先级或者更高优先级的任务正在运行！</li>
-<li>阻塞态<br>如果一个任务当前正在等待某个外部事件的话就说它处于阻塞态，比如说如果某个任务调 用了函数 vTaskDelay()的话就会进入阻塞态，直到延时周期完成。任务在等待队列、信号量、事 件组、通知或互斥信号量的时候也会进入阻塞态。任务进入阻塞态会有一个超时时间，当超过 这个超时时间任务就会退出阻塞态，即使所等待的事件还没有来临！</li>
-<li>挂起态<br>像阻塞态一样，任务进入挂起态以后也不能被调度器调用进入运行态，但是进入挂起态的 任务没有超时时间。任务进入和退出挂起态通过调用函数 vTaskSuspend()和 xTaskResume()。</li>
-</ol>
-<h4 id="任务优先级"><a href="#任务优先级" class="headerlink" title="任务优先级"></a>任务优先级</h4><p>​	每个任务都可以分配一个从 0~(configMAX_PRIORITIES-1) 的优先级，宏 configMAX_PRIORITIES 不能超过 32！优先级数字越低表示任务的优先级越低，0 的优先级最低，configMAX_PRIORITIES-1 的优先级最高。空闲任务的优先级最低，为 0。 FreeRTOS 调度器确保处于就绪态或运行态的高优先级的任务获取处理器使用权，换句话说就是处于就绪态的最高优先级的任务才会运行。</p>
-<p>​	当宏 configUSE_TIME_SLICING 定义为 1 的时候多个任务可以共用一个优先级，数量不限。此时处于就绪态的优先级相同的任务就会使用时间片轮转调度器获取运行时间，一个时间片的长度就是滴答定时器的中断周期，由宏configTICK_RATE_HZ确定。</p>
-<h4 id="任务堆栈"><a href="#任务堆栈" class="headerlink" title="任务堆栈"></a>任务堆栈</h4><p>​	FreeRTOS 之所以能正确的恢复一个任务的运行就是因为有任务堆栈在保驾护航，任务调度器在进行任务切换的时候会将当前任务的现场(CPU 寄存器值等)保存在此任务的任务堆栈中， 等到此任务下次运行的时候就会先用堆栈中保存的值来恢复现场，恢复现场以后任务就会接着从上次中断的地方开始运行。</p>
-<p>​	基于RTOS的应用中，每个任务都拥有自己的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%A0%86%E6%A0%88&spm=1001.2101.3001.7020">堆栈</a>空间。堆栈设置过大，会造成内存资源浪费；设置过小，可能导致运行过程中的任务栈溢出，从而导致一些奇怪的系统行为。</p>
-<p>​	一般来说，任务堆栈可以从一个比较大的堆栈空间开始，如需进而开发出更高质量的代码：在运行时监视堆栈空间的使用情况，以查看应用程序运行一段时间后实际使用了多少堆栈空间。基于可视化分析，用户可以更清晰直观的掌握系统中内存的使用情况。</p>
-<p><a target="_blank" rel="noopener" href="https://strongerhuang.blog.csdn.net/article/details/125108922?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-125108922-blog-103144501.pc_relevant_3mothn_strategy_and_data_recovery&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-125108922-blog-103144501.pc_relevant_3mothn_strategy_and_data_recovery&utm_relevant_index=2">(46条消息) 如何设置RTOS任务的堆栈大小？_strongerHuang的博客-CSDN博客</a></p>
-<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>​	看个定义：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/81018602">算法一看就懂之「 队列 」 - 知乎 (zhihu.com)</a></p>
-<p>​	队列在这里是为了任务与任务、任务与中断之间的通信而准备的，可以在任务与任务、任务与中断之间传递消息，队列中可以存储有限的、大小固定的数据项目。任务与任务、任务与中断之间要交流的数据保存在队列中，叫做队列项目。队列所能保存的最大数据项目数量叫做队列的 长度，创建队列的时候会指定数据项目的大小和队列的长度。由于队列用来传递消息的，所以也称为消息队列。FreeRTOS 中的信号量的也是依据队列实现的。</p>
-<h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>​	信号量是操作系统中重要的一部分，信号量一般用来进行资源管理和任务同步，FreeRTOS 中信号量又分为二值信号量、计数型信号量、互斥信号量和递归互斥信号量。</p>
-<p>​	详细了解请自己查资料。</p>
-<h2 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h2><h3 id="在CubeMX上配置FreeRTOS"><a href="#在CubeMX上配置FreeRTOS" class="headerlink" title="在CubeMX上配置FreeRTOS"></a>在CubeMX上配置FreeRTOS</h3><p>（一）首先，像往常一样需要先设置RCC、SYS以及时钟树，这里不做详细介绍。</p>
-<p>需要提醒一点的是：裸机的时钟源默认是SysTick，但是开启FreeRTOS后，FreeRTOS会占用SysTick，所以需要需要为其他总线提供另外的时钟源。具体步骤如下图（以TIM7例）</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003013440220.png"></p>
-<p>（二）开启FreeRTOS</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003013556891.png"></p>
-<blockquote>
-<p>vTaskDelay：任务A每次延时都是从调用延时函数vTaskDelay()开始算起的，延时是相对于这一时刻开始的，所以叫做相对延时函数。如果执行任务A的过程中发生中断，那么任务A执行的周期就会变长，所以使用相对延时函数vTaskDelay()，不能周期性的执行任务A。 </p>
-<p>vTaskDelayUntil：从调用函数vTaskDelayUntil()开始，每隔固定周期，任务B的主体代码就会被执行一次，即使任务B在执行过程中发生中断，也不会影响这个周期性，只是会缩短其它任务的执行时间。所以这个函数被称为绝对延时函数，它可以用于周期性的执行任务B的主体代码。</p>
-</blockquote>
-<p><strong>config parameters</strong>系统内核配置：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003013959738.png"></p>
-<h3 id="Keil中代码实现"><a href="#Keil中代码实现" class="headerlink" title="Keil中代码实现"></a>Keil中代码实现</h3><ol>
-<li>创建任务</li>
-</ol>
-<p>创建任务函数：</p>
-<pre><code>BaseType_t xTaskCreate(	
-                        TaskFunction_t pxTaskCode,//函数指针，指向任务函数的入口
-                        const char * const pcName,//任务描述。主要用于调试
-                        const configSTACK_DEPTH_TYPE usStackDepth,//指定任务堆栈大小，能够支持的堆栈变量数量（堆栈深度），而字节数=堆栈深度*宽度（比如，在 16 位宽度的堆栈下，usStackDepth 定义为 100，则实际使用 200 字节堆栈存储空间）
-                        void * const pvParameters,//参数指针，当任务创建时，作为一个参数传递给任务，一般传进NULL
-                        UBaseType_t uxPriority,//任务优先级
-                        TaskHandle_t * const pxCreatedTask //回传句柄，创建任务后用这个句柄引用任务
-                      )
-</code></pre>
-<p>应用举例：</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;宏定义各任务的堆栈大小及优先级
-#define TASK1_STK_SIZE     128
-#define TASK1_TASK_PRIO    2
+<h1 id="2023-3-9"><a href="#2023-3-9" class="headerlink" title="2023.3.9"></a>2023.3.9</h1><h2 id="1、字符串排序"><a href="#1、字符串排序" class="headerlink" title="1、字符串排序"></a>1、字符串排序</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230309174228986.png"></p>
+<h3 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
 
-#define TASK2_STK_SIZE     128
-#define TASK2_TASK_PRIO    1
-
-&#x2F;&#x2F;定义任务句柄
-TaskHandle_t    Task1_Handler;    
-TaskHandle_t    Task2_Handler;
-
-&#x2F;&#x2F;函数声明
-void task1_(void * arg);
-void task2_(void * arg);
-void System_Task_Init(void);
-
-&#x2F;&#x2F;任务创建
-void System_Task_Init(void)
-&#123;
-	xTaskCreate(task1_, &quot;task1_&quot;, TASK1_STK_SIZE, NULL, TASK1_TASK_PRIO, &amp;Task1_Handler);
-	xTaskCreate(task2_, &quot;task2_&quot;, TASK2_STK_SIZE, NULL, TASK2_TASK_PRIO, &amp;Task2_Handler);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>2.任务函数</p>
-<pre class="line-numbers language-none"><code class="language-none">void task1_(void * arg)
-&#123;
-	int i1 &#x3D; 0;
-	vTaskSuspend(Task2_Handler);	&#x2F;&#x2F;一的优先级高于二，先挂起二
-	for(;;)
-	&#123;
-		i1++;
-		printf(&quot;任务一已执行次数：%d\r\n&quot;, i1);
-		vTaskDelay(1000);
-		if(i1 &gt; 3)&#123; vTaskResume(Task2_Handler); &#125;	&#x2F;&#x2F;当一执行4次之后解挂二
-	&#125;
-&#125;
-
-void task2_(void * arg)
-&#123;
-	int i2 &#x3D; 0;
-	vTaskDelete(Task1_Handler);&#x2F;&#x2F;第一次运行二时删除一
-	for(;;)
-	&#123;
-		i2++;
-		printf(&quot;任务二已执行次数：%d\r\n&quot;, i2);
-		vTaskDelay(1000);
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>3.开启任务</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003014555435.png"></p>
-<blockquote>
-<p>注意：</p>
-<p>1.在任务调度器开启前创建任务：</p>
-<p>初始化函数放在main函数MX_FREERTOS_Init()前面</p>
-<p>2.在任务调度器开启后创建任务：</p>
-<p>初始化函数放在 StartDefaultTask任务中。</p>
-</blockquote>
-<p>结果：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003014528997.png"></p>
-<h3 id="队列的使用"><a href="#队列的使用" class="headerlink" title="队列的使用"></a>队列的使用</h3><p>结构体定义</p>
-<pre class="line-numbers language-none"><code class="language-none">typedef struct
-&#123;
-  uint8_t port_num;
-  uint16_t len;
-  void* address;
-&#125; USART_COB;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>·1、存储队列定义和初始化</p>
-<pre class="line-numbers language-none"><code class="language-none">QueueHandle_t  USART_RxPort; &#x2F;&#x2F;全局变量
-USART_RxPort &#x3D; xQueueCreate(4,sizeof(USART_COB));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>原型：</p>
-<p>xQueueHandle xQueueCreate( </p>
-<p>unsigned portBASE_TYPE uxQueueLength,    &#x2F;&#x2F;队列中包含最大项目数量</p>
-<p>unsigned portBASE_TYPE uxItemSize   		&#x2F;&#x2F;队列中每个项目所需的字节数。</p>
-<p>);</p>
-</blockquote>
-<p>2、定义回调函数</p>
-<pre class="line-numbers language-none"><code class="language-none">uint32_t User_UART1_RxCpltCallback(uint8_t* Recv_Data, uint16_t ReceiveLen)
-&#123;
-  static USART_COB Usart_RxCOB;
-  &#x2F;&#x2F;Send To UART Receive Queue
-  if(USART_RxPort !&#x3D; NULL)
-  &#123;
-    Usart_RxCOB.port_num &#x3D; 1;
-    Usart_RxCOB.len      &#x3D; ReceiveLen;
-    Usart_RxCOB.address  &#x3D; Recv_Data;
-    xQueueSendFromISR(USART_RxPort,&amp;Usart_RxCOB,0); &#x2F;&#x2F;在中断中调用，需要中断保护版本，故此处不能用xQueueSend。
-  &#125;
-  return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>原型：</p>
-<p>xQueueSendFromISR(</p>
-<p>QueueHandle_t xQueue,   							&#x2F;&#x2F;目标队列的句柄。</p>
-<p>const void *pvItemToQueue, 					  &#x2F;&#x2F;发送数据的指针。</p>
-<p>BaseType_t *pxHigherPriorityTaskWoken   </p>
-<p>&#x2F;&#x2F;如果入队导致一个任务解锁，并且解锁的任务优先级高于当前被中断的任务，则将*pxHigherPriorityTaskWoken 设置成 pdTRUE。</p>
-<p>);</p>
-</blockquote>
-<p>3、定义处理函数</p>
-<pre class="line-numbers language-none"><code class="language-none">void Task_UsartRecieve(void *arg)
-&#123;
-   USART_COB Usart_RxCOB;
-   for(;;)
-  &#123;
-    &#x2F;* Usart Recevice Port *&#x2F;   	                                                                                                                                                                                                           if(xQueueReceive(USART_RxPort,&amp;Usart_RxCOB,portMAX_DELAY) &#x3D;&#x3D; pdPASS) 
-     &#123;
-     	
-     &#125;
-  &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>原型：</p>
-<p>xQueueReceive(</p>
-<p>QueueHandle_t xQueue,	&#x2F;&#x2F;被读队列的句柄。这个句柄即是调用 xQueueCreate() 创建该队列时的返回值。</p>
-<p> void *pvBuffer,					&#x2F;&#x2F;接收缓存指针。其指向一段内存区域，用于接收从队列中拷贝来的数据。</p>
-<p> TickType_t xTicksToWait	&#x2F;&#x2F;队列空时，阻塞超时的最大时间。如果该参数设置为 0，函数立刻返回。延时为 portMAX_DELAY 将导致任务无限阻塞。</p>
-<p>);</p>
-<p>返回值：队列项接收成功返回 pdTRUE，否则返回 pdFALSE。</p>
-</blockquote>
-<h1 id="上位机培训"><a href="#上位机培训" class="headerlink" title="上位机培训"></a>上位机培训</h1><h2 id="UpperMonitor库使用"><a href="#UpperMonitor库使用" class="headerlink" title="UpperMonitor库使用"></a>UpperMonitor库使用</h2><p>软件上位机：<a target="_blank" rel="noopener" href="https://gitee.com/ennishsu/upper-monitor.git">https://gitee.com/ennishsu/upper-monitor.git</a></p>
-<p>打开 ~.cpp 文件可以看到以下注释</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003124726584.png"></p>
-<p>1、</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;* Private variables ---------------------------------------------------------*&#x2F;
-extern moto_info_t motor_info;
-extern int target_speed;
-extern double kp;
-extern double ki;
-extern double kd;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>注意：</p>
-<p>uint8_t USART0_Sent_Choose_Data[9]&#x3D;{0,1,2,3,0,1,2,3,0};  此处也需要修改。需要观察n个数据就输入0-(n-1)，不足九位补齐九位。输入0-8也可。</p>
-<p>2、</p>
-<pre class="line-numbers language-none"><code class="language-none">void UpperMonitor_Sent_Choose(float * data)
-&#123;
-  uint8_t i;
-  for(i&#x3D;0;i&lt;Sent_Data_Num;i++)
-  &#123;
-    switch(USART0_Sent_Choose_Data[i])
-    &#123;
-      &#x2F;* ÒÔÏÂ²¿·ÖÓÃÓÚ¹Û²ì²ÎÊýÇúÏß *&#x2F;
-      case 0: data[i]&#x3D; motor_info.rotor_speed;
-          break;
-      case 1: data[i]&#x3D; target_speed;
-          break;
-      case 2: data[i]&#x3D; target_speed*1.05;
-         break;
-			case 3: data[i]&#x3D; target_speed*0.95;
-         break;
-      default:break;
-	  &#x2F;* ÒÔÉÏ²¿·ÖÓÃÓÚ¹Û²ì²ÎÊýÇúÏß *&#x2F;
+int main() &#123;
+    string str;
+    getline(cin, str);
+    vector&lt;char&gt; sortstr;
+    int count &#x3D; 0;
+    &#x2F;* 从a到z逐个搜索 *&#x2F;
+    for(char i&#x3D;&#39;a&#39;;i&lt;&#x3D;&#39;z&#39;;i++)&#123;
+        for(int j&#x3D;0;j&lt;str.length();j++)&#123;
+            if(str[j] &#x3D;&#x3D; i || str[j] &#x3D;&#x3D; (i-&#39;a&#39;+&#39;A&#39;)) &#x2F;&#x2F;判断是不是字母
+            &#123;
+                sortstr.push_back(str[j]); &#x2F;&#x2F;放进vector
+            &#125;
+        &#125;
     &#125;
-  &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>3、</p>
-<pre class="line-numbers language-none"><code class="language-none">void PARAMETER_MODIFICATION(uint8_t * PARAMETER)
-&#123;
-  switch(PARAMETER[0])
-  &#123;
-    &#x2F;* ÒÔÏÂ²¿·ÖÓÃÓÚÐÞ¸Ä²ÎÊýÄÚÈÝ *&#x2F;
-		case 0x00: kp &#x3D; PARAMETER_Change_float(PARAMETER+1);
-         break;
-		case 0x01: ki &#x3D; PARAMETER_Change_float(PARAMETER+1);
-				 break;
-		case 0x02: kd &#x3D; PARAMETER_Change_float(PARAMETER+1);
-				 break;
-	&#x2F;* ÒÔÉÏ²¿·ÖÓÃÓÚÐÞ¸Ä²ÎÊýÄÚÈÝ *&#x2F;
-  &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>4、在中断中</p>
-<pre class="line-numbers language-none"><code class="language-none">#define BUFFERSIZE 255    &#x2F;&#x2F;可接收最大数据量
-extern uint8_t Rx_len,bootfirst;
-extern uint8_t ReceiveBuff[BUFFERSIZE]; &#x2F;&#x2F;接收缓存区
-
-void USART1_IRQHandler(void)
-&#123;
-  &#x2F;* USER CODE BEGIN USART1_IRQn 0 *&#x2F;
-
-  &#x2F;* USER CODE END USART1_IRQn 0 *&#x2F;
-  HAL_UART_IRQHandler(&amp;huart1);
-  &#x2F;* USER CODE BEGIN USART1_IRQn 1 *&#x2F;
-	uint32_t temp;
-	if(USART1 &#x3D;&#x3D; huart1.Instance)
-	&#123;
-		if(RESET !&#x3D; __HAL_UART_GET_FLAG(&amp;huart1,UART_FLAG_IDLE))&#x2F;&#x2F;如果串口1为空闲
-		&#123;
-			__HAL_UART_CLEAR_IDLEFLAG(&amp;huart1);&#x2F;&#x2F;清除中断标志位
-			HAL_UART_DMAStop(&amp;huart1);&#x2F;&#x2F;停止DMA接收
-			temp  &#x3D; __HAL_DMA_GET_COUNTER(&amp;hdma_usart1_rx);&#x2F;&#x2F;获取DMA当前还有多少未填充
-			Rx_len &#x3D;  BUFFERSIZE - temp; &#x2F;&#x2F;计算串口接收到的数据个数
-			RecHandle(ReceiveBuff,Rx_len);
-			HAL_UART_Transmit_DMA(&amp;huart1,ReceiveBuff,Rx_len);&#x2F;&#x2F;发送数据
-			Rx_len &#x3D; 0;&#x2F;&#x2F;接收数据长度清零
-			HAL_UART_Receive_DMA(&amp;huart1,ReceiveBuff,BUFFERSIZE);&#x2F;&#x2F;开启下一次接收
-		&#125;	
-	&#125;
+    for(int i&#x3D;0,k&#x3D;0;i&lt;str.length();i++)&#123;
+        if((str[i] &gt;&#x3D; &#39;a&#39;&amp;&amp;str[i]&lt;&#x3D;&#39;z&#39;) || (str[i]&gt;&#x3D;&#39;A&#39;&amp;&amp;str[i]&lt;&#x3D;&#39;Z&#39;))&#123;
+            str[i] &#x3D; sortstr[k];&#x2F;&#x2F;修改str值
+            k++;
+        &#125;
+    &#125;
+    cout &lt;&lt; str;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>5、在任务中调用</p>
-<pre class="line-numbers language-none"><code class="language-none">Sent_Contorl(&amp;huart2);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2、查找兄弟单词"><a href="#2、查找兄弟单词" class="headerlink" title="2、查找兄弟单词"></a>2、查找兄弟单词</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230309193626797.png"></p>
+<h3 id="My-Code-1"><a href="#My-Code-1" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+bool is_brother(string bro, string bro_1)&#123;
+    if(bro &#x3D;&#x3D; bro_1)&#123;
+        return false;
+    &#125;
+    sort(bro.begin(),bro.end());
+    sort(bro_1.begin(),bro_1.end());
+    return bro&#x3D;&#x3D;bro_1;
+&#125;
+int main() &#123;
+    int num &#x3D; 0;
+    int outNum &#x3D; 0;
+    int count &#x3D; 0;
+    cin &gt;&gt; num;&#x2F;&#x2F;单词个数
+    string str[num+1];
+    vector&lt;string&gt; brother;
+    for(int i&#x3D;0;i&lt;&#x3D;num;i++)&#123;
+        cin &gt;&gt; str[i];
+    &#125;
+    cin &gt;&gt; outNum;&#x2F;&#x2F;字典第几个数
+    for(int i&#x3D;0;i&lt;num;i++)&#123;
+        if(is_brother(str[num], str[i]) )&#123;
+            count++;
+            brother.push_back(str[i]);
+        &#125;
+    &#125;
+    if(count &#x3D;&#x3D; 0)&#123;
+        cout &lt;&lt; 0;
+        return 0;
+    &#125;
+    sort(brother.begin(),brother.end());
+    cout&lt;&lt; count &lt;&lt;endl;
+    cout&lt;&lt; brother[outNum-1];
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="上位机界面使用"><a href="#上位机界面使用" class="headerlink" title="上位机界面使用"></a>上位机界面使用</h2><h3 id="上位机调参"><a href="#上位机调参" class="headerlink" title="上位机调参"></a>上位机调参</h3><p>1、打开临时指令指令表，修改变量名</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221010162048056.png"></p>
-<p>2、打开上位机软件</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003133231406.png"></p>
-<h3 id="曲线显示"><a href="#曲线显示" class="headerlink" title="曲线显示"></a>曲线显示</h3><p>鼠标移到右上角，即可显示相关曲线</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003133600904.png"></p>
-<h3 id="光标调节"><a href="#光标调节" class="headerlink" title="光标调节"></a>光标调节</h3><p>右键黑屏，可以调出光标</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20221003133629067.png"></p>
-<h3 id="曲线横向放大-x2F-纵向放大"><a href="#曲线横向放大-x2F-纵向放大" class="headerlink" title="曲线横向放大&#x2F;纵向放大"></a>曲线横向放大&#x2F;纵向放大</h3><p>Shift+滚轮</p>
-<p>Ctrl+滚轮</p>
-<p>滚轮</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1]STM32F1 FreeRTOS开发手册  ALIENTEK</p>
-<p>[2]FreeRTOS系列 CSDN：冬瓜~</p>
-<p>[3]FreeRTOS学习笔记 by Tzrrr</p>
+<h2 id="3、素数伴侣"><a href="#3、素数伴侣" class="headerlink" title="3、素数伴侣"></a>3、素数伴侣</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230309203559059.png"></p>
+<h3 id="My-Code-2"><a href="#My-Code-2" class="headerlink" title="My Code"></a>My Code</h3><p>匈牙利解法</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;cmath&gt;
+
+int nums[100]; &#x2F;&#x2F; 数字
+int match[100];
+bool visited[100];
+
+bool is_prime(int n)
+&#123;
+    int end &#x3D; std::sqrt(n);
+    for (int i &#x3D; 2; i &lt;&#x3D; end; ++i)
+        if (n % i &#x3D;&#x3D; 0) return false;
+    return true;
+&#125;
+
+bool find_mate(int x, int n)
+&#123;
+    for (int i &#x3D; 0; i &lt; n; ++i) &#123;
+        if (nums[i] % 2 &#x3D;&#x3D; 0 &amp;&amp; !visited[i] &amp;&amp; is_prime(nums[i] + nums[x])) &#123;
+            visited[i] &#x3D; true;
+            if (match[i] &#x3D;&#x3D; -1 || find_mate(match[i], n)) &#123;
+                match[i] &#x3D; x; &#x2F;&#x2F; 相互匹配
+                match[x] &#x3D; i; &#x2F;&#x2F; 相互匹配
+                return true;
+            &#125;
+        &#125;
+    &#125;
+    return false;
+&#125;
+
+int main()
+&#123;
+    int n;
+    while (std::cin &gt;&gt; n) &#123;
+        for (int i &#x3D; 0; i &lt; n; ++i)
+            std::cin &gt;&gt; nums[i];
+        for (int i &#x3D; 0; i &lt; n; ++i)
+            match[i] &#x3D; -1; &#x2F;&#x2F; reset
+        int count &#x3D; 0;
+        for (int i &#x3D; 0; i &lt; n; ++i) &#123;
+            if (nums[i] % 2 !&#x3D; 0) &#123; &#x2F;&#x2F; 针对每个奇数，找偶数
+                memset(visited, 0x0, sizeof(false)*n);
+                if (find_mate(i, n)) &#123;
+                    ++count;
+                &#125;     
+            &#125;
+        &#125;
+        std::cout &lt;&lt; count &lt;&lt; std::endl;
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="4、字符串加解密"><a href="#4、字符串加解密" class="headerlink" title="4、字符串加解密"></a>4、字符串加解密</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230309211458566.png"></p>
+<h3 id="My-Code-3"><a href="#My-Code-3" class="headerlink" title="My Code"></a>My Code</h3><p>暴力法</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() &#123;
+    string a;&#x2F;&#x2F;加密
+    string b;&#x2F;&#x2F;解密
+    getline(cin,a);
+    getline(cin,b);
+    for(int i&#x3D;0;i&lt;a.length();i++)&#123;
+        if(a[i]&gt;&#x3D;&#39;a&#39; &amp;&amp; a[i]&lt;&#39;z&#39;)
+        &#123;
+            a[i] &#x3D; a[i]-&#39;a&#39;+&#39;A&#39;+1;
+        &#125;
+        else if(a[i] &#x3D;&#x3D; &#39;z&#39;)&#123;
+            a[i] &#x3D; &#39;A&#39;;
+        &#125;
+        else if(a[i]&gt;&#x3D;&#39;A&#39; &amp;&amp; a[i]&lt;&#39;Z&#39;)&#123;
+            a[i] &#x3D; a[i]-&#39;A&#39;+&#39;a&#39;+1;
+        &#125;
+        else if(a[i]&#x3D;&#x3D;&#39;Z&#39;)&#123;
+            a[i] &#x3D; &#39;a&#39;;
+        &#125;
+        else if(a[i]&lt;&#39;9&#39; &amp;&amp; a[i]&gt;&#x3D;&#39;0&#39;)&#123;
+            a[i] &#x3D; a[i]+1;
+        &#125;
+        else if(a[i] &#x3D;&#x3D; &#39;9&#39;)
+        &#123;
+            a[i] &#x3D; &#39;0&#39;;
+        &#125;
+    &#125;
+    for(int i&#x3D;0;i&lt;b.length();i++)&#123;
+        if(b[i]&gt;&#39;a&#39; &amp;&amp; b[i]&lt;&#x3D;&#39;z&#39;)
+        &#123;
+            b[i] &#x3D; b[i]-&#39;a&#39;+&#39;A&#39;-1;
+        &#125;
+        else if(b[i] &#x3D;&#x3D; &#39;a&#39;)&#123;
+            b[i] &#x3D; &#39;Z&#39;;
+        &#125;
+        else if(b[i]&gt;&#39;A&#39; &amp;&amp; b[i]&lt;&#x3D;&#39;Z&#39;)&#123;
+            b[i] &#x3D; b[i]-&#39;A&#39;+&#39;a&#39;-1;
+        &#125;
+        else if(b[i]&#x3D;&#x3D;&#39;A&#39;)&#123;
+            b[i] &#x3D; &#39;z&#39;;
+        &#125;
+        else if(b[i]-&#39;0&#39;&gt; 0)&#123;
+            b[i] &#x3D; b[i]-1;
+        &#125;
+        else if(b[i] &#x3D;&#x3D; &#39;0&#39;)
+        &#123;
+            b[i] &#x3D; &#39;9&#39;;
+        &#125;
+    &#125;
+    cout &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; b &lt;&lt; endl;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5、字符串合并处理"><a href="#5、字符串合并处理" class="headerlink" title="5、字符串合并处理"></a>5、字符串合并处理</h2><h3 id="My-Code-4"><a href="#My-Code-4" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() &#123;
+    string str;
+    getline(cin,str);
+    int j&#x3D;str.length();
+    for(int i&#x3D;str.length()-1;i&gt;&#x3D;0;i--)&#123;
+        if(!((str[i]&gt;&#x3D;&#39;a&#39;&amp;&amp;str[i]&lt;&#x3D;&#39;z&#39;)||(str[i]&gt;&#x3D;&#39;A&#39;&amp;&amp;str[i]&lt;&#x3D;&#39;Z&#39;)))&#123;
+            for(int k&#x3D;i+1;k&lt;j-1;k++)&#123;
+                cout &lt;&lt; str[k];
+            &#125;
+            if(j &#x3D;&#x3D; str.length())&#123;
+                cout&lt;&lt;str[str.length()-1];
+            &#125;
+            j &#x3D; i+1;
+            cout&lt;&lt;&#39; &#39;;
+        &#125;    
+    &#125;
+    for(int i&#x3D;0;i&lt;j-1;i++)
+    &#123;
+        cout &lt;&lt; str[i];
+    &#125; 
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -640,8 +583,8 @@ void USART1_IRQHandler(void)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                    <span class="chip bg-color">操作系统</span>
+                                <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
+                                    <span class="chip bg-color">牛客Code</span>
                                 </a>
                             
                         </div>
@@ -710,13 +653,13 @@ void USART1_IRQHandler(void)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/25/Note/2023.1.25%E8%AE%B0/">
+                <a href="/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="2023.1.25 Note">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="进程与线程">
                         
-                        <span class="card-title">2023.1.25 Note</span>
+                        <span class="card-title">进程与线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -727,19 +670,27 @@ void USART1_IRQHandler(void)
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Diary/" class="post-category">
-                                    Diary
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -751,13 +702,13 @@ void USART1_IRQHandler(void)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/12/Learn/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/Chapter2%20%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E5%92%8C%E5%8F%98%E6%8D%A2/">
+                <a href="/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%201/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Chapter2 空间描述和变换">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="操作系统Chapter 1">
                         
-                        <span class="card-title">Chapter2 空间描述和变换</span>
+                        <span class="card-title">操作系统Chapter 1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -768,7 +719,7 @@ void USART1_IRQHandler(void)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-09
                             </span>
                         <span class="publish-author">
                             
@@ -785,8 +736,8 @@ void USART1_IRQHandler(void)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E5%AF%BC%E8%AE%BA/">
-                        <span class="chip bg-color">机器人学导论</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
                 </div>
