@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-03-12T10:06:14.660Z</updated>
+  <updated>2023-03-15T14:25:12.942Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -15,6 +15,170 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Freertos</title>
+    <link href="https://guozunrong123.github.io/2023/03/15/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/"/>
+    <id>https://guozunrong123.github.io/2023/03/15/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/</id>
+    <published>2023-03-15T12:46:40.000Z</published>
+    <updated>2023-03-15T14:25:12.942Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="操作系统" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Freertos" scheme="https://guozunrong123.github.io/tags/Freertos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QT_Chaprter2</title>
+    <link href="https://guozunrong123.github.io/2023/03/13/Learn/QT/QT_Chaprter2/"/>
+    <id>https://guozunrong123.github.io/2023/03/13/Learn/QT/QT_Chaprter2/</id>
+    <published>2023-03-13T03:49:40.000Z</published>
+    <updated>2023-03-14T12:32:25.312Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;QT-Chaprter2&quot;&gt;&lt;a href=&quot;#QT-Chaprter2&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="QT" scheme="https://guozunrong123.github.io/tags/QT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QT_Chaprter3</title>
+    <link href="https://guozunrong123.github.io/2023/03/13/Learn/QT/QT_Chaprter3/"/>
+    <id>https://guozunrong123.github.io/2023/03/13/Learn/QT/QT_Chaprter3/</id>
+    <published>2023-03-13T03:49:40.000Z</published>
+    <updated>2023-03-15T07:34:54.749Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;QT-Chaprter3&quot;&gt;&lt;a href=&quot;#QT-Chaprter3&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="QT" scheme="https://guozunrong123.github.io/tags/QT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统Chapter 3</title>
+    <link href="https://guozunrong123.github.io/2023/03/12/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%203/"/>
+    <id>https://guozunrong123.github.io/2023/03/12/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%203/</id>
+    <published>2023-03-12T15:20:01.000Z</published>
+    <updated>2023-03-12T14:13:55.552Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Chapter-3&quot;&gt;&lt;a href=&quot;#Chapter-3&quot; class=&quot;headerlink&quot; title=&quot;Chapter 3&quot;&gt;&lt;/a&gt;Chapter</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="操作系统" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统Chapter 4</title>
+    <link href="https://guozunrong123.github.io/2023/03/12/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%204/"/>
+    <id>https://guozunrong123.github.io/2023/03/12/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%204/</id>
+    <published>2023-03-12T15:20:01.000Z</published>
+    <updated>2023-03-12T14:14:37.482Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Chapter-4&quot;&gt;&lt;a href=&quot;#Chapter-4&quot; class=&quot;headerlink&quot; title=&quot;Chapter 4&quot;&gt;&lt;/a&gt;Chapter</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="操作系统" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023.3.15 LeetCode</title>
+    <link href="https://guozunrong123.github.io/2023/03/12/Learn/LeetCode/2023.3.15-LeetCode/"/>
+    <id>https://guozunrong123.github.io/2023/03/12/Learn/LeetCode/2023.3.15-LeetCode/</id>
+    <published>2023-03-12T08:49:40.000Z</published>
+    <updated>2023-03-15T14:24:36.648Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;2023-3-15&quot;&gt;&lt;a href=&quot;#2023-3-15&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="LeetCode" scheme="https://guozunrong123.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>2023.3.12 牛客题库</title>
@@ -44,33 +208,6 @@
   </entry>
   
   <entry>
-    <title>操作系统Chapter 2</title>
-    <link href="https://guozunrong123.github.io/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%202/"/>
-    <id>https://guozunrong123.github.io/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%202/</id>
-    <published>2023-03-09T15:20:01.000Z</published>
-    <updated>2023-03-09T09:38:58.245Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;Chapter-2&quot;&gt;&lt;a href=&quot;#Chapter-2&quot; class=&quot;headerlink&quot; title=&quot;Chapter 2&quot;&gt;&lt;/a&gt;Chapter</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="操作系统" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>进程与线程</title>
     <link href="https://guozunrong123.github.io/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/"/>
     <id>https://guozunrong123.github.io/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/</id>
@@ -85,6 +222,33 @@
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 
 &lt;h1 id=&quot;进程与线程&quot;&gt;&lt;a href=&quot;#进程与线程&quot; class=&quot;headerlink&quot; title=&quot;进程与线程&quot;&gt;&lt;/a&gt;进程与线程&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="操作系统" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统Chapter 2</title>
+    <link href="https://guozunrong123.github.io/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%202/"/>
+    <id>https://guozunrong123.github.io/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%202/</id>
+    <published>2023-03-09T15:20:01.000Z</published>
+    <updated>2023-03-12T11:28:30.088Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Chapter-2&quot;&gt;&lt;a href=&quot;#Chapter-2&quot; class=&quot;headerlink&quot; title=&quot;Chapter 2&quot;&gt;&lt;/a&gt;Chapter</summary>
         
       
     
@@ -178,8 +342,8 @@
   
   <entry>
     <title>ahrs 航姿参考系统</title>
-    <link href="https://guozunrong123.github.io/2023/03/08/Summary/IMU%E9%80%89%E5%9E%8B%E4%B8%8E%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/"/>
-    <id>https://guozunrong123.github.io/2023/03/08/Summary/IMU%E9%80%89%E5%9E%8B%E4%B8%8E%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/</id>
+    <link href="https://guozunrong123.github.io/2023/03/08/Summary/ahrs%20%E8%88%AA%E5%A7%BF%E5%8F%82%E8%80%83%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://guozunrong123.github.io/2023/03/08/Summary/ahrs%20%E8%88%AA%E5%A7%BF%E5%8F%82%E8%80%83%E7%B3%BB%E7%BB%9F/</id>
     <published>2023-03-08T07:20:01.000Z</published>
     <updated>2023-03-09T09:29:01.559Z</updated>
     
@@ -382,164 +546,6 @@
     
     <category term="Diary" scheme="https://guozunrong123.github.io/categories/Diary/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>2023.3.3 牛客题库</title>
-    <link href="https://guozunrong123.github.io/2023/03/03/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.3%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/"/>
-    <id>https://guozunrong123.github.io/2023/03/03/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.3%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/</id>
-    <published>2023-03-03T11:49:40.000Z</published>
-    <updated>2023-03-04T03:40:16.646Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;2023-3-3&quot;&gt;&lt;a href=&quot;#2023-3-3&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="牛客Code" scheme="https://guozunrong123.github.io/tags/%E7%89%9B%E5%AE%A2Code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2023.2.14 Note</title>
-    <link href="https://guozunrong123.github.io/2023/02/14/Note/2023.2.14%E8%AE%B0/"/>
-    <id>https://guozunrong123.github.io/2023/02/14/Note/2023.2.14%E8%AE%B0/</id>
-    <published>2023-02-14T14:00:00.000Z</published>
-    <updated>2023-03-01T17:30:08.471Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Diary" scheme="https://guozunrong123.github.io/categories/Diary/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>QT_Chaprter1</title>
-    <link href="https://guozunrong123.github.io/2023/02/12/Learn/QT/QT_Chaprter1/"/>
-    <id>https://guozunrong123.github.io/2023/02/12/Learn/QT/QT_Chaprter1/</id>
-    <published>2023-02-12T03:49:40.000Z</published>
-    <updated>2023-03-01T15:51:25.124Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;QT-Chaprter1&quot;&gt;&lt;a href=&quot;#QT-Chaprter1&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="QT" scheme="https://guozunrong123.github.io/tags/QT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>80×86微处理器</title>
-    <link href="https://guozunrong123.github.io/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/"/>
-    <id>https://guozunrong123.github.io/2023/02/11/Learn/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/3%E3%80%8180%C3%9786%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8/</id>
-    <published>2023-02-11T08:18:20.000Z</published>
-    <updated>2023-02-11T08:09:49.020Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;80×86微处理器&quot;&gt;&lt;a href=&quot;#80×86微处理器&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="微机原理" scheme="https://guozunrong123.github.io/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交流交流变流电路</title>
-    <link href="https://guozunrong123.github.io/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/4%E3%80%81%E4%BA%A4%E6%B5%81%E4%BA%A4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/"/>
-    <id>https://guozunrong123.github.io/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/4%E3%80%81%E4%BA%A4%E6%B5%81%E4%BA%A4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/</id>
-    <published>2023-02-10T07:20:20.000Z</published>
-    <updated>2023-02-10T06:21:11.895Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;交流交流变流电路&quot;&gt;&lt;a href=&quot;#交流交流变流电路&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="电力电子技术" scheme="https://guozunrong123.github.io/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>直流直流变流电路</title>
-    <link href="https://guozunrong123.github.io/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/3%E3%80%81%E7%9B%B4%E6%B5%81%E7%9B%B4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/"/>
-    <id>https://guozunrong123.github.io/2023/02/10/Learn/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/3%E3%80%81%E7%9B%B4%E6%B5%81%E7%9B%B4%E6%B5%81%E5%8F%98%E6%B5%81%E7%94%B5%E8%B7%AF/</id>
-    <published>2023-02-10T04:10:20.000Z</published>
-    <updated>2023-02-10T03:43:18.234Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;直流直流变流电路&quot;&gt;&lt;a href=&quot;#直流直流变流电路&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="电力电子技术" scheme="https://guozunrong123.github.io/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
