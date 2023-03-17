@@ -328,7 +328,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.8k
+                    28.5k
                 </div>
                 
 
@@ -381,7 +381,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/01_heap_stack.png" alt="image-20210728144756070"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/01_heap_stack.png"></p>
 <h2 id="2-2-FreeRTOS的5种内存管理方法"><a href="#2-2-FreeRTOS的5种内存管理方法" class="headerlink" title="2.2 FreeRTOS的5种内存管理方法"></a>2.2 FreeRTOS的5种内存管理方法</h2><p>FreeRTOS中内存管理的接口函数为：pvPortMalloc 、vPortFree，对应于C库的malloc、free。</p>
 <p>文件在<code>FreeRTOS/Source/portable/MemMang</code>下，它也是放在<code>portable</code>目录下，表示你可以提供自己的函数。</p>
 <p>源码中默认提供了5个文件，对应内存管理的5种方法。</p>
@@ -446,7 +446,7 @@
 <li>B：创建第1个任务之后，蓝色区域被分配出去了</li>
 <li>C：创建3个任务之后的数组使用情况</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/02_heap_1.png" alt="image-20210728154645642"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/02_heap_1.png"></p>
 <h3 id="2-2-2-Heap-2"><a href="#2-2-2-Heap-2" class="headerlink" title="2.2.2 Heap_2"></a>2.2.2 Heap_2</h3><p>Heap_2之所以还保留，只是为了兼容以前的代码。新设计中不再推荐使用Heap_2。建议使用Heap_4来替代Heap_2，更加高效。</p>
 <p>Heap_2也是在数组上分配内存，跟Heap_1不一样的地方在于：</p>
 <ul>
@@ -473,7 +473,7 @@
 <li>B：删除了一个任务，空闲内存有3部分：顶层的、被删除任务的TCB空间、被删除任务的Stack空间</li>
 <li>C：创建了一个新任务，因为TCB、栈大小跟前面被删除任务的TCB、栈大小一致，所以刚好分配到原来的内存</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/03_heap_2.png" alt="image-20210728161556536"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/03_heap_2.png"></p>
 <h3 id="2-2-3-Heap-3"><a href="#2-2-3-Heap-3" class="headerlink" title="2.2.3 Heap_3"></a>2.2.3 Heap_3</h3><p>Heap_3使用标准C库里的malloc、free函数，所以堆大小由链接器的配置决定，配置项configTOTAL_HEAP_SIZE不再起作用。</p>
 <p>C库里的malloc、free函数并非线程安全的，Heap_3中先暂停FreeRTOS的调度器，再去调用这些函数，使用这种方法实现了线程安全。</p>
 <h3 id="2-2-4-Heap-4"><a href="#2-2-4-Heap-4" class="headerlink" title="2.2.4 Heap_4"></a>2.2.4 Heap_4</h3><p>跟Heap_1、Heap_2一样，Heap_4也是使用大数组来分配内存。</p>
@@ -503,7 +503,7 @@
 <li>E：释放的Queue，User前后都有一块空闲内存</li>
 <li>F：释放了User数据，User前后的内存、User本身占据的内存，合并为一个大的空闲内存</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/04_heap_4.png" alt="image-20210728180440125"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/04_heap_4.png"></p>
 <p>Heap_4执行的时间是不确定的，但是它的效率高于标准库的malloc、free。</p>
 <h3 id="2-2-5-Heap-5"><a href="#2-2-5-Heap-5" class="headerlink" title="2.2.5 Heap_5"></a>2.2.5 Heap_5</h3><p>Heap_5分配内存、释放内存的算法跟Heap_4是一样的。</p>
 <p>相比于Heap_4，Heap_5并不局限于管理一个大数组：它可以管理多块、分隔开的内存。</p>
@@ -769,7 +769,7 @@ void vPortFree( void * pv );	&#x2F;&#x2F; 释放内存<span aria-hidden="true" c
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行结果如下：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/04_create_two_task.png" alt="image-20210729170906116"></p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/04_create_two_task.png"></p>
 <p>注意：</p>
 <ul>
 <li>task 2先运行！</li>
@@ -780,7 +780,7 @@ void vPortFree( void * pv );	&#x2F;&#x2F; 释放内存<span aria-hidden="true" c
 <li>在t1：Task2进入运行态，一直运行直到t2</li>
 <li>在t2：Task1进入运行态，一直运行直到t3；在t3，Task2重新进入运行态</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/05_task_schedul.png" alt="image-20210729172213224"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/05_task_schedul.png"></p>
 <h3 id="3-2-4-示例2-使用任务参数"><a href="#3-2-4-示例2-使用任务参数" class="headerlink" title="3.2.4 示例2: 使用任务参数"></a>3.2.4 示例2: 使用任务参数</h3><p>代码为：<code>FreeRTOS_02_create_task_use_params</code></p>
 <p>我们说过，多个任务可以使用同一个函数，怎么体现它们的差别？</p>
 <ul>
@@ -905,7 +905,7 @@ int main( void )
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行结果如下：</p>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/04_delete_task.png" alt="image-20210731110531625"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/04_delete_task.png"></p>
 <p>任务运行图：</p>
 <ul>
 <li>main函数中创建任务1，优先级为1。任务1运行时，它创建任务2，任务2的优先级是2。</li>
@@ -916,11 +916,11 @@ int main( void )
 <li>时间到后，任务1变为最高优先级的任务继续执行。</li>
 <li>如此循环。</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/06_task_schedul_for_delete.png" alt="image-20210731111929008"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/06_task_schedul_for_delete.png"></p>
 <p>在任务1的函数中，如果不调用vTaskDelay，则Idle任务用于没有机会执行，它就无法释放创建任务2是分配的内存。</p>
 <p>而任务1在不断地创建任务，不断地消耗内存，最终内存耗尽再也无法创建新的任务。</p>
 <p>现象如下：</p>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/07_create_task_fail.png" alt="image-20210731112826679"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/07_create_task_fail.png"></p>
 <p>任务1的代码中，需要注意的是：xTaskCreate的返回值。</p>
 <ul>
 <li>很多手册里说它失败时返回值是pdFAIL，这个宏是0</li>
@@ -954,7 +954,7 @@ int main( void )
 <li>两次中断之间的时间被称为时间片(time slice、tick period)</li>
 <li>时间片的长度由configTICK_RATE_HZ 决定，假设configTICK_RATE_HZ为100，那么时间片长度就是10ms</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/08_time_tick.png" alt="image-20210731130348561"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/08_time_tick.png"></p>
 <p>相同优先级的任务怎么切换呢？请看下图：</p>
 <ul>
 <li>任务2从t1执行到t2</li>
@@ -966,7 +966,7 @@ int main( void )
 <li>任务1从t2执行到t3</li>
 <li>从下图中可以看出，任务运行的时间并不是严格从t1,t2,t3哪里开始</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/09_tick_interrtups.png" alt="image-20210731130720669"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/09_tick_interrtups.png"></p>
 <p>有了Tick的概念后，我们就可以使用Tick来衡量时间了，比如：</p>
 <pre class="line-numbers language-none"><code class="language-none">vTaskDelay(2);  &#x2F;&#x2F; 等待2个Tick，假设configTICK_RATE_HZ&#x3D;100, Tick周期时10ms, 等待20ms
 
@@ -975,7 +975,7 @@ vTaskDelay(pdMS_TO_TICKS(100));	 &#x2F;&#x2F; 等待100ms<span aria-hidden="true
 
 <p>注意，基于Tick实现的延时并不精确，比如<code>vTaskDelay(2)</code>的本意是延迟2个Tick周期，有可能经过1个Tick多一点就返回了。</p>
 <p>如下图：</p>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/10_taskdelay.png" alt="image-20210731133559155"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/10_taskdelay.png"></p>
 <p>使用vTaskDelay函数时，建议以ms为单位，使用pdMS_TO_TICKS把时间转换为Tick。</p>
 <p>这样的代码就与configTICK_RATE_HZ无关，即使配置项configTICK_RATE_HZ改变了，我们也不用去修改代码。</p>
 <h3 id="3-3-3-示例4-优先级实验"><a href="#3-3-3-示例4-优先级实验" class="headerlink" title="3.3.3 示例4: 优先级实验"></a>3.3.3 示例4: 优先级实验</h3><p>代码为：<code>FreeRTOS_04_task_priority</code></p>
@@ -1041,9 +1041,9 @@ void vTask2( void *pvParameters )
 <li>任务3优先执行，直到它调用vTaskDelay主动放弃运行</li>
 <li>任务1、任务2：轮流执行</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/11_priority_result.png" alt="image-20210731140405148"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/11_priority_result.png"></p>
 <p>调度情况如下图所示：</p>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/12_priority_scheduler.png" alt="image-20210731143751639"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/12_priority_scheduler.png"></p>
 <h3 id="3-3-4-示例5-修改优先级"><a href="#3-3-4-示例5-修改优先级" class="headerlink" title="3.3.4 示例5: 修改优先级"></a>3.3.4 示例5: 修改优先级</h3><p>本节代码为：<code>FreeRTOS_05_change_priority</code>。</p>
 <p>使用uxTaskPriorityGet来获得任务的优先级：</p>
 <pre class="line-numbers language-none"><code class="language-none">UBaseType_t uxTaskPriorityGet( const TaskHandle_t xTask );<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1135,7 +1135,7 @@ void vTask2( void *pvParameters )
 <li>如此循环。</li>
 <li>注意：Task1的优先级一直是2，Task2的优先级是3或1，都大于0。所以Idel任务没有机会执行。</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/15_change_priority.png" alt="image-20210731220350206"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/15_change_priority.png"></p>
 <h2 id="3-4-任务状态"><a href="#3-4-任务状态" class="headerlink" title="3.4 任务状态"></a>3.4 任务状态</h2><p>以前我们很简单地把任务的状态分为2中：运行(Runing)、非运行(Not Running)。</p>
 <p>对于非运行的状态，还可以继续细分，比如前面的<code>FreeRTOS_04_task_priority</code>中：</p>
 <ul>
@@ -1200,7 +1200,7 @@ void vTask2( void *pvParameters )
 </ul>
 <p>实际开发中，暂停状态用得不多。</p>
 <h3 id="3-4-3-就绪状态-Ready"><a href="#3-4-3-就绪状态-Ready" class="headerlink" title="3.4.3 就绪状态(Ready)"></a>3.4.3 就绪状态(Ready)</h3><p>这个任务完全准备好了，随时可以运行：只是还轮不到它。这时，它就处于就绪态(Ready)。</p>
-<h3 id="3-4-4-完整的状态转换图"><a href="#3-4-4-完整的状态转换图" class="headerlink" title="3.4.4 完整的状态转换图"></a>3.4.4 完整的状态转换图</h3><p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/13_full_task_state_machine.png" alt="image-20210731155223985"></p>
+<h3 id="3-4-4-完整的状态转换图"><a href="#3-4-4-完整的状态转换图" class="headerlink" title="3.4.4 完整的状态转换图"></a>3.4.4 完整的状态转换图</h3><p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/13_full_task_state_machine.png"></p>
 <h2 id="3-5-Delay函数"><a href="#3-5-Delay函数" class="headerlink" title="3.5 Delay函数"></a>3.5 Delay函数</h2><h3 id="3-5-1-两个Delay函数"><a href="#3-5-1-两个Delay函数" class="headerlink" title="3.5.1 两个Delay函数"></a>3.5.1 两个Delay函数</h3><p>有两个Delay函数：</p>
 <ul>
 <li>vTaskDelay：至少等待指定个数的Tick Interrupt才能变为就绪状态</li>
@@ -1225,7 +1225,7 @@ BaseType_t xTaskDelayUntil( TickType_t * const pxPreviousWakeTime,
 </ul>
 </li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/14_delay_functions.png" alt="image-20210731205236939"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/14_delay_functions.png"></p>
 <h3 id="3-5-2-示例6-Delay"><a href="#3-5-2-示例6-Delay" class="headerlink" title="3.5.2 示例6: Delay"></a>3.5.2 示例6: Delay</h3><p>本节代码为：<code>FreeRTOS_06_taskdelay</code>。</p>
 <p>本程序会创建2个任务：</p>
 <ul>
@@ -1298,7 +1298,7 @@ BaseType_t xTaskDelayUntil( TickType_t * const pxPreviousWakeTime,
 <li>vTaskDelay：指定的是阻塞的时间</li>
 <li>vTaskDelayUntil：指定的是任务执行的间隔、周期</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/16_delay_time.png" alt="image-20210731233309265"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/16_delay_time.png"></p>
 <h2 id="3-6-空闲任务及其钩子函数"><a href="#3-6-空闲任务及其钩子函数" class="headerlink" title="3.6 空闲任务及其钩子函数"></a>3.6 空闲任务及其钩子函数</h2><h3 id="3-6-1-介绍"><a href="#3-6-1-介绍" class="headerlink" title="3.6.1 介绍"></a>3.6.1 介绍</h3><p>在<code>FreeRTOS_03_delete_task</code>的实验里，我们体验过空闲任务(Idle任务)的作用：释放被删除的任务的内存。</p>
 <p>除了上述目的之外，为什么必须要有空闲任务？一个良好的程序，它的任务都是事件驱动的：平时大部分时间处于阻塞状态。有可能我们自己创建的所有任务都无法执行，但是调度器必须能找到一个可以运行的任务：所以，我们要提供空闲任务。在使用<code>vTaskStartScheduler() </code>函数来创建、启动调度器时，这个函数内部会创建空闲任务：</p>
 <ul>
@@ -1323,7 +1323,7 @@ BaseType_t xTaskDelayUntil( TickType_t * const pxPreviousWakeTime,
 <li>把这个宏定义为1：configUSE_IDLE_HOOK</li>
 <li>实现<code>vApplicationIdleHook</code>函数</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/17_idle_hook.png" alt="image-20210801005130872"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/17_idle_hook.png"></p>
 <h2 id="3-7-调度算法"><a href="#3-7-调度算法" class="headerlink" title="3.7 调度算法"></a>3.7 调度算法</h2><h3 id="3-7-1-重要概念"><a href="#3-7-1-重要概念" class="headerlink" title="3.7.1 重要概念"></a>3.7.1 重要概念</h3><p>这些知识在前面都提到过了，这里总结一下。</p>
 <p>正在运行的任务，被称为”正在使用处理器”，它处于运行状态。在单处理系统中，任何时间里只能有一个任务处于运行状态。</p>
 <p>非运行状态的任务，它处于这3中状态之一：阻塞(Blocked)、暂停(Suspended)、就绪(Ready)。就绪态的任务，可以被调度器挑选出来切换为运行状态，调度器永远都是挑选最高优先级的就绪态任务并让它进入运行状态。</p>
@@ -1510,7 +1510,7 @@ void vTask2( void *pvParameters )
 <li>抢占时：高优先级任务就绪时，就可以马上执行</li>
 <li>不抢占时：优先级失去意义了，既然不能抢占就只能协商了，图中任务1一直在运行(一点都没有协商精神)，其他任务都无法执行。即使任务3的<code>vTaskDelay</code>已经超时、即使它的优先级更高，都没办法执行。</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/18_pre-emptive_or_not.png" alt="image-20210802000142854"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/18_pre-emptive_or_not.png"></p>
 <h3 id="3-7-5-对比效果-时间片轮转与否"><a href="#3-7-5-对比效果-时间片轮转与否" class="headerlink" title="3.7.5 对比效果: 时间片轮转与否"></a>3.7.5 对比效果: 时间片轮转与否</h3><p>在<code>FreeRTOSConfig.h</code>中，定义这样的宏，对比逻辑分析仪的效果：</p>
 <pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 实验1：时间片轮转
 #define configUSE_PREEMPTION		1
@@ -1527,7 +1527,7 @@ void vTask2( void *pvParameters )
 <li>时间片轮转：在Tick中断中会引起任务切换</li>
 <li>时间片不轮转：高优先级任务就绪时会引起任务切换，高优先级任务不再运行时也会引起任务切换。可以看到任务3就绪后可以马上执行，它运行完毕后导致任务切换。其他时间没有任务切换，可以看到任务1、任务2都运行了很长时间。</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/19_time_slicing_or_not.png" alt="image-20210802000056846"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/19_time_slicing_or_not.png"></p>
 <h3 id="3-7-6-对比效果-空闲任务让步"><a href="#3-7-6-对比效果-空闲任务让步" class="headerlink" title="3.7.6 对比效果: 空闲任务让步"></a>3.7.6 对比效果: 空闲任务让步</h3><p>在<code>FreeRTOSConfig.h</code>中，定义这样的宏，对比逻辑分析仪的效果：</p>
 <pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 实验1：空闲任务让步
 #define configUSE_PREEMPTION		1
@@ -1544,7 +1544,2016 @@ void vTask2( void *pvParameters )
 <li>让步时：在空闲任务的每个循环中，会主动让出处理器，从图中可以看到flagIdelTaskrun的波形很小</li>
 <li>不让步时：空闲任务跟任务1、任务2同等待遇，它们的波形宽度是差不多的</li>
 </ul>
-<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/20_yield_or_not.png" alt="image-20210802000255899"></p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/20_yield_or_not.png"></p>
+<h1 id="4-同步互斥与通信"><a href="#4-同步互斥与通信" class="headerlink" title="4.同步互斥与通信"></a>4.同步互斥与通信</h1><h2 id="4-1-同步与互斥的概念"><a href="#4-1-同步与互斥的概念" class="headerlink" title="4.1 同步与互斥的概念"></a>4.1 同步与互斥的概念</h2><p>一句话理解同步与互斥：我等你用完厕所，我再用厕所。 什么叫同步？就是：哎哎哎，我正在用厕所，你等会。 什么叫互斥？就是：哎哎哎，我正在用厕所，你不能进来。 同步与互斥经常放在一起讲，是因为它们之的关系很大，“互斥”操作可以使用“同步”来实现。我“等”你用完厕所，我再用厕所。这不就是用“同步”来实现“互斥”吗？</p>
+<p>再举一个例子。在团队活动里，同事A先写完报表，经理B才能拿去向领导汇报。经理B必须等同事A完成报表，AB之间有依赖，B必须放慢脚步，被称为同步。在团队活动中，同事A已经使用会议室了，经理B也想使用，即使经理B是领导，他也得等着，这就叫互斥。经理B跟同事A说：你用完会议室就提醒我。这就是使用”同步”来实现”互斥”。</p>
+<p>有时候看代码更容易理解，伪代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">01 void  抢厕所(void)
+02 &#123;
+03    if (有人在用) 我眯一会;
+04    用厕所;
+05    喂，醒醒，有人要用厕所吗;
+06 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>假设有A、B两人早起抢厕所，A先行一步占用了；B慢了一步，于是就眯一会；当A用完后叫醒B，B也就愉快地上厕所了。 在这个过程中，A、B是互斥地访问“厕所”，“厕所”被称之为临界资源。我们使用了“休眠-唤醒”的同步机制实现了“临界资源”的“互斥访问”。</p>
+<p>同一时间只能有一个人使用的资源，被称为临界资源。比如任务A、B都要使用串口来打印，串口就是临界资源。如果A、B同时使用串口，那么打印出来的信息就是A、B混杂，无法分辨。所以使用串口时，应该是这样：A用完，B再用；B用完，A再用。</p>
+<h2 id="4-2-同步与互斥并不简单"><a href="#4-2-同步与互斥并不简单" class="headerlink" title="4.2 同步与互斥并不简单"></a>4.2 同步与互斥并不简单</h2><h2 id="4-3-各类方法的对比"><a href="#4-3-各类方法的对比" class="headerlink" title="4.3 各类方法的对比"></a>4.3 各类方法的对比</h2><p>能实现同步、互斥的内核方法有：任务通知(task notification)、队列(queue)、事件组(event group)、信号量(semaphoe)、互斥量(mutex)。</p>
+<p>它们都有类似的操作方法：获取&#x2F;释放、阻塞&#x2F;唤醒、超时。比如：</p>
+<ul>
+<li>A获取资源，用完后A释放资源</li>
+<li>A获取不到资源则阻塞，B释放资源并把A唤醒</li>
+<li>A获取不到资源则阻塞，并定个闹钟；A要么超时返回，要么在这段时间内因为B释放资源而被唤醒。</li>
+</ul>
+<p>这些内核对象五花八门，记不住怎么办？我也记不住，通过对比的方法来区分它们。</p>
+<ul>
+<li>能否传信息？只能传递状态？</li>
+<li>为众生？只为你？</li>
+<li>我生产，你们消费？</li>
+<li>我上锁，只能由我开锁</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>内核对象</th>
+<th>生产者</th>
+<th>消费者</th>
+<th>数据&#x2F;状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>队列</td>
+<td>ALL</td>
+<td>ALL</td>
+<td>数据：若干个数据 谁都可以往队列里扔数据， 谁都可以从队列里读数据</td>
+<td>用来传递数据， 发送者、接收者无限制， 一个数据只能唤醒一个接收者</td>
+</tr>
+<tr>
+<td>事件组</td>
+<td>ALL</td>
+<td>ALL</td>
+<td>多个位：或、与 谁都可以设置(生产)多个位， 谁都可以等待某个位、若干个位</td>
+<td>用来传递事件， 可以是N个事件， 发送者、接受者无限制， 可以唤醒多个接收者：像广播</td>
+</tr>
+<tr>
+<td>信号量</td>
+<td>ALL</td>
+<td>ALL</td>
+<td>数量：0~n 谁都可以增加一个数量， 谁都可消耗一个数量</td>
+<td>用来维持资源的个数， 生产者、消费者无限制， 1个资源只能唤醒1个接收者</td>
+</tr>
+<tr>
+<td>任务通知</td>
+<td>ALL</td>
+<td>只有我</td>
+<td>数据、状态都可以传输， 使用任务通知时， 必须指定接受者</td>
+<td>N对1的关系： 发送者无限制， 接收者只能是这个任务</td>
+</tr>
+<tr>
+<td>互斥量</td>
+<td>只能A开锁</td>
+<td>A上锁</td>
+<td>位：0、1 我上锁：1变为0， 只能由我开锁：0变为1</td>
+<td>就像一个空厕所， 谁使用谁上锁， 也只能由他开锁</td>
+</tr>
+</tbody></table>
+<p>使用图形对比如下：</p>
+<ul>
+<li>队列：<ul>
+<li>里面可以放任意数据，可以放多个数据</li>
+<li>任务、ISR都可以放入数据；任务、ISR都可以从中读出数据</li>
+</ul>
+</li>
+<li>事件组：<ul>
+<li>一个事件用一bit表示，1表示事件发生了，0表示事件没发生</li>
+<li>可以用来表示事件、事件的组合发生了，不能传递数据</li>
+<li>有广播效果：事件或事件的组合发生了，等待它的多个任务都会被唤醒</li>
+</ul>
+</li>
+<li>信号量：<ul>
+<li>核心是”计数值”</li>
+<li>任务、ISR释放信号量时让计数值加1</li>
+<li>任务、ISR获得信号量时，让计数值减1</li>
+</ul>
+</li>
+<li>任务通知：<ul>
+<li>核心是任务的TCB里的数值</li>
+<li>会被覆盖</li>
+<li>发通知给谁？必须指定接收任务</li>
+<li>只能由接收任务本身获取该通知</li>
+</ul>
+</li>
+<li>互斥量：<ul>
+<li>数值只有0或1</li>
+<li>谁获得互斥量，就必须由谁释放同一个互斥量</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/01_compare_sync_objects.png"></p>
+<h1 id="5-队列"><a href="#5-队列" class="headerlink" title="5.队列"></a>5.队列</h1><h2 id="5-1-队列的特性"><a href="#5-1-队列的特性" class="headerlink" title="5.1 队列的特性"></a>5.1 队列的特性</h2><h3 id="5-1-1-常规操作"><a href="#5-1-1-常规操作" class="headerlink" title="5.1.1 常规操作"></a>5.1.1 常规操作</h3><p>队列的简化操如入下图所示，从此图可知：</p>
+<ul>
+<li>队列可以包含若干个数据：队列中有若干项，这被称为”长度”(length)</li>
+<li>每个数据大小固定</li>
+<li>创建队列时就要指定长度、数据大小</li>
+<li>数据的操作采用先进先出的方法(FIFO，First In First Out)：写数据时放到尾部，读数据时从头部读</li>
+<li>也可以强制写队列头部：覆盖头部数据</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/02_queue.png"></p>
+<p>更详细的操作入下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/03_queue_detail.png"></p>
+<h3 id="5-1-2-传输数据的两种方法"><a href="#5-1-2-传输数据的两种方法" class="headerlink" title="5.1.2 传输数据的两种方法"></a>5.1.2 传输数据的两种方法</h3><p>使用队列传输数据时有两种方法：</p>
+<ul>
+<li>拷贝：把数据、把变量的值复制进队列里</li>
+<li>引用：把数据、把变量的地址复制进队列里</li>
+</ul>
+<p>FreeRTOS使用拷贝值的方法，这更简单：</p>
+<ul>
+<li>局部变量的值可以发送到队列中，后续即使函数退出、局部变量被回收，也不会影响队列中的数据</li>
+<li>无需分配buffer来保存数据，队列中有buffer</li>
+<li>局部变量可以马上再次使用</li>
+<li>发送任务、接收任务解耦：接收任务不需要知道这数据是谁的、也不需要发送任务来释放数据</li>
+<li>如果数据实在太大，你还是可以使用队列传输它的地址</li>
+<li>队列的空间有FreeRTOS内核分配，无需任务操心</li>
+<li>对于有内存保护功能的系统，如果队列使用引用方法，也就是使用地址，必须确保双方任务对这个地址都有访问权限。使用拷贝方法时，则无此限制：内核有足够的权限，把数据复制进队列、再把数据复制出队列。</li>
+</ul>
+<h3 id="5-1-3-队列的阻塞访问"><a href="#5-1-3-队列的阻塞访问" class="headerlink" title="5.1.3 队列的阻塞访问"></a>5.1.3 队列的阻塞访问</h3><p>只要知道队列的句柄，谁都可以读、写该队列。任务、ISR都可读、写队列。可以多个任务读写队列。</p>
+<p>任务读写队列时，简单地说：如果读写不成功，则阻塞；可以指定超时时间。口语化地说，就是可以定个闹钟：如果能读写了就马上进入就绪态，否则就阻塞直到超时。</p>
+<p>某个任务读队列时，如果队列没有数据，则该任务可以进入阻塞状态：还可以指定阻塞的时间。如果队列有数据了，则该阻塞的任务会变为就绪态。如果一直都没有数据，则时间到之后它也会进入就绪态。</p>
+<p>既然读取队列的任务个数没有限制，那么当多个任务读取空队列时，这些任务都会进入阻塞状态：有多个任务在等待同一个队列的数据。当队列中有数据时，哪个任务会进入就绪态？</p>
+<ul>
+<li>优先级最高的任务</li>
+<li>如果大家的优先级相同，那等待时间最久的任务会进入就绪态</li>
+</ul>
+<p>跟读队列类似，一个任务要写队列时，如果队列满了，该任务也可以进入阻塞状态：还可以指定阻塞的时间。如果队列有空间了，则该阻塞的任务会变为就绪态。如果一直都没有空间，则时间到之后它也会进入就绪态。</p>
+<p>既然写队列的任务个数没有限制，那么当多个任务写”满队列”时，这些任务都会进入阻塞状态：有多个任务在等待同一个队列的空间。当队列中有空间时，哪个任务会进入就绪态？</p>
+<ul>
+<li>优先级最高的任务</li>
+<li>如果大家的优先级相同，那等待时间最久的任务会进入就绪态</li>
+</ul>
+<h2 id="5-2-队列函数"><a href="#5-2-队列函数" class="headerlink" title="5.2 队列函数"></a>5.2 队列函数</h2><p>使用队列的流程：创建队列、写队列、读队列、删除队列。</p>
+<h3 id="5-2-1-创建"><a href="#5-2-1-创建" class="headerlink" title="5.2.1 创建"></a>5.2.1 创建</h3><p>队列的创建有两种方法：动态分配内存、静态分配内存，</p>
+<ul>
+<li>动态分配内存：xQueueCreate，队列的内存在函数内部动态分配</li>
+</ul>
+<p>函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">QueueHandle_t xQueueCreate( UBaseType_t uxQueueLength, UBaseType_t uxItemSize );<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uxQueueLength</td>
+<td>队列长度，最多能存放多少个数据(item)</td>
+</tr>
+<tr>
+<td>uxItemSize</td>
+<td>每个数据(item)的大小：以字节为单位</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>非0：成功，返回句柄，以后使用句柄来操作队列 NULL：失败，因为内存不足</td>
+</tr>
+</tbody></table>
+<ul>
+<li>静态分配内存：xQueueCreateStatic，队列的内存要事先分配好</li>
+</ul>
+<p>函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">QueueHandle_t xQueueCreateStatic(
+                           UBaseType_t uxQueueLength,
+                           UBaseType_t uxItemSize,
+                           uint8_t *pucQueueStorageBuffer,
+                           StaticQueue_t *pxQueueBuffer
+                       );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uxQueueLength</td>
+<td>队列长度，最多能存放多少个数据(item)</td>
+</tr>
+<tr>
+<td>uxItemSize</td>
+<td>每个数据(item)的大小：以字节为单位</td>
+</tr>
+<tr>
+<td>pucQueueStorageBuffer</td>
+<td>如果uxItemSize非0，pucQueueStorageBuffer必须指向一个uint8_t数组， 此数组大小至少为”uxQueueLength * uxItemSize”</td>
+</tr>
+<tr>
+<td>pxQueueBuffer</td>
+<td>必须执行一个StaticQueue_t结构体，用来保存队列的数据结构</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>非0：成功，返回句柄，以后使用句柄来操作队列 NULL：失败，因为pxQueueBuffer为NULL</td>
+</tr>
+</tbody></table>
+<p>示例代码：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 示例代码
+ #define QUEUE_LENGTH 10
+ #define ITEM_SIZE sizeof( uint32_t )
+ 
+ &#x2F;&#x2F; xQueueBuffer用来保存队列结构体
+ StaticQueue_t xQueueBuffer;
+ 
+ &#x2F;&#x2F; ucQueueStorage 用来保存队列的数据
+ &#x2F;&#x2F; 大小为：队列长度 * 数据大小
+ uint8_t ucQueueStorage[ QUEUE_LENGTH * ITEM_SIZE ];
+ 
+ void vATask( void *pvParameters )
+ &#123;
+	QueueHandle_t xQueue1;
+ 
+	&#x2F;&#x2F; 创建队列: 可以容纳QUEUE_LENGTH个数据，每个数据大小是ITEM_SIZE
+	xQueue1 &#x3D; xQueueCreateStatic( QUEUE_LENGTH,
+						  ITEM_SIZE,
+						  ucQueueStorage,
+						  &amp;xQueueBuffer ); 
+ &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-2-2-复位"><a href="#5-2-2-复位" class="headerlink" title="5.2.2 复位"></a>5.2.2 复位</h3><p>队列刚被创建时，里面没有数据；使用过程中可以调用<code>xQueueReset()</code>把队列恢复为初始状态，此函数原型为：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* pxQueue : 复位哪个队列;
+ * 返回值: pdPASS(必定成功)
+ *&#x2F;
+BaseType_t xQueueReset( QueueHandle_t pxQueue);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-2-3-删除"><a href="#5-2-3-删除" class="headerlink" title="5.2.3 删除"></a>5.2.3 删除</h3><p>删除队列的函数为<code>vQueueDelete()</code>，只能删除使用动态方法创建的队列，它会释放内存。原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">void vQueueDelete( QueueHandle_t xQueue );<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="5-2-4-写队列"><a href="#5-2-4-写队列" class="headerlink" title="5.2.4 写队列"></a>5.2.4 写队列</h3><p>可以把数据写到队列头部，也可以写到尾部，这些函数有两个版本：在任务中使用、在ISR中使用。函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 等同于xQueueSendToBack
+ * 往队列尾部写入数据，如果没有空间，阻塞时间为xTicksToWait
+ *&#x2F;
+BaseType_t xQueueSend(
+                                QueueHandle_t    xQueue,
+                                const void       *pvItemToQueue,
+                                TickType_t       xTicksToWait
+                            );
+
+&#x2F;* 
+ * 往队列尾部写入数据，如果没有空间，阻塞时间为xTicksToWait
+ *&#x2F;
+BaseType_t xQueueSendToBack(
+                                QueueHandle_t    xQueue,
+                                const void       *pvItemToQueue,
+                                TickType_t       xTicksToWait
+                            );
+
+
+&#x2F;* 
+ * 往队列尾部写入数据，此函数可以在中断函数中使用，不可阻塞
+ *&#x2F;
+BaseType_t xQueueSendToBackFromISR(
+                                      QueueHandle_t xQueue,
+                                      const void *pvItemToQueue,
+                                      BaseType_t *pxHigherPriorityTaskWoken
+                                   );
+
+&#x2F;* 
+ * 往队列头部写入数据，如果没有空间，阻塞时间为xTicksToWait
+ *&#x2F;
+BaseType_t xQueueSendToFront(
+                                QueueHandle_t    xQueue,
+                                const void       *pvItemToQueue,
+                                TickType_t       xTicksToWait
+                            );
+
+&#x2F;* 
+ * 往队列头部写入数据，此函数可以在中断函数中使用，不可阻塞
+ *&#x2F;
+BaseType_t xQueueSendToFrontFromISR(
+                                      QueueHandle_t xQueue,
+                                      const void *pvItemToQueue,
+                                      BaseType_t *pxHigherPriorityTaskWoken
+                                   );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这些函数用到的参数是类似的，统一说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xQueue</td>
+<td>队列句柄，要写哪个队列</td>
+</tr>
+<tr>
+<td>pvItemToQueue</td>
+<td>数据指针，这个数据的值会被复制进队列， 复制多大的数据？在创建队列时已经指定了数据大小</td>
+</tr>
+<tr>
+<td>xTicksToWait</td>
+<td>如果队列满则无法写入新数据，可以让任务进入阻塞状态， xTicksToWait表示阻塞的最大时间(Tick Count)。 如果被设为0，无法写入数据时函数会立刻返回； 如果被设为portMAX_DELAY，则会一直阻塞直到有空间可写</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>pdPASS：数据成功写入了队列 errQUEUE_FULL：写入失败，因为队列满了。</td>
+</tr>
+</tbody></table>
+<h3 id="5-2-5-读队列"><a href="#5-2-5-读队列" class="headerlink" title="5.2.5 读队列"></a>5.2.5 读队列</h3><p>使用<code>xQueueReceive()</code>函数读队列，读到一个数据后，队列中该数据会被移除。这个函数有两个版本：在任务中使用、在ISR中使用。函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">BaseType_t xQueueReceive( QueueHandle_t xQueue,
+                          void * const pvBuffer,
+                          TickType_t xTicksToWait );
+
+BaseType_t xQueueReceiveFromISR(
+                                    QueueHandle_t    xQueue,
+                                    void             *pvBuffer,
+                                    BaseType_t       *pxTaskWoken
+                                );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参数说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xQueue</td>
+<td>队列句柄，要读哪个队列</td>
+</tr>
+<tr>
+<td>pvBuffer</td>
+<td>bufer指针，队列的数据会被复制到这个buffer 复制多大的数据？在创建队列时已经指定了数据大小</td>
+</tr>
+<tr>
+<td>xTicksToWait</td>
+<td>果队列空则无法读出数据，可以让任务进入阻塞状态， xTicksToWait表示阻塞的最大时间(Tick Count)。 如果被设为0，无法读出数据时函数会立刻返回； 如果被设为portMAX_DELAY，则会一直阻塞直到有数据可写</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>pdPASS：从队列读出数据入 errQUEUE_EMPTY：读取失败，因为队列空了。</td>
+</tr>
+</tbody></table>
+<h3 id="5-2-6-查询"><a href="#5-2-6-查询" class="headerlink" title="5.2.6 查询"></a>5.2.6 查询</h3><p>可以查询队列中有多少个数据、有多少空余空间。函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;*
+ * 返回队列中可用数据的个数
+ *&#x2F;
+UBaseType_t uxQueueMessagesWaiting( const QueueHandle_t xQueue );
+
+&#x2F;*
+ * 返回队列中可用空间的个数
+ *&#x2F;
+UBaseType_t uxQueueSpacesAvailable( const QueueHandle_t xQueue );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-2-7-覆盖-x2F-偷看"><a href="#5-2-7-覆盖-x2F-偷看" class="headerlink" title="5.2.7 覆盖&#x2F;偷看"></a>5.2.7 覆盖&#x2F;偷看</h3><p>当队列长度为1时，可以使用<code>xQueueOverwrite()</code>或<code>xQueueOverwriteFromISR()</code>来覆盖数据。 注意，队列长度必须为1。当队列满时，这些函数会覆盖里面的数据，这也以为着这些函数不会被阻塞。 函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 覆盖队列
+ * xQueue: 写哪个队列
+ * pvItemToQueue: 数据地址
+ * 返回值: pdTRUE表示成功, pdFALSE表示失败
+ *&#x2F;
+BaseType_t xQueueOverwrite(
+                           QueueHandle_t xQueue,
+                           const void * pvItemToQueue
+                      );
+
+BaseType_t xQueueOverwriteFromISR(
+                           QueueHandle_t xQueue,
+                           const void * pvItemToQueue,
+                           BaseType_t *pxHigherPriorityTaskWoken
+                      );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果想让队列中的数据供多方读取，也就是说读取时不要移除数据，要留给后来人。那么可以使用”窥视”，也就是<code>xQueuePeek()</code>或<code>xQueuePeekFromISR()</code>。这些函数会从队列中复制出数据，但是不移除数据。这也意味着，如果队列中没有数据，那么”偷看”时会导致阻塞；一旦队列中有数据，以后每次”偷看”都会成功。 函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 偷看队列
+ * xQueue: 偷看哪个队列
+ * pvItemToQueue: 数据地址, 用来保存复制出来的数据
+ * xTicksToWait: 没有数据的话阻塞一会
+ * 返回值: pdTRUE表示成功, pdFALSE表示失败
+ *&#x2F;
+BaseType_t xQueuePeek(
+                          QueueHandle_t xQueue,
+                          void * const pvBuffer,
+                          TickType_t xTicksToWait
+                      );
+
+BaseType_t xQueuePeekFromISR(
+                                 QueueHandle_t xQueue,
+                                 void *pvBuffer,
+                             );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5-3-示例8-队列的基本使用"><a href="#5-3-示例8-队列的基本使用" class="headerlink" title="5.3 示例8: 队列的基本使用"></a>5.3 示例8: 队列的基本使用</h2><p>本节代码为：<code>FreeRTOS_08_queue</code>。</p>
+<p>本程序会创建一个队列，然后创建2个发送任务、1个接收任务：</p>
+<ul>
+<li>发送任务优先级为1，分别往队列中写入100、200</li>
+<li>接收任务优先级为2，读队列、打印数值</li>
+</ul>
+<p>main函数中创建的队列、创建了发送任务、接收任务，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 队列句柄, 创建队列时会设置这个变量 *&#x2F;
+QueueHandle_t xQueue;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建队列: 长度为5，数据大小为4字节(存放一个整数) *&#x2F;
+    xQueue &#x3D; xQueueCreate( 5, sizeof( int32_t ) );
+
+	if( xQueue !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建2个任务用于写队列, 传入的参数分别是100、200
+		 * 任务函数会连续执行，向队列发送数值100、200
+		 * 优先级为1
+		 *&#x2F;
+		xTaskCreate( vSenderTask, &quot;Sender1&quot;, 1000, ( void * ) 100, 1, NULL );
+		xTaskCreate( vSenderTask, &quot;Sender2&quot;, 1000, ( void * ) 200, 1, NULL );
+
+		&#x2F;* 创建1个任务用于读队列
+		 * 优先级为2, 高于上面的两个任务
+		 * 这意味着队列一有数据就会被读走
+		 *&#x2F;
+		xTaskCreate( vReceiverTask, &quot;Receiver&quot;, 1000, NULL, 2, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建队列 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送任务的函数中，不断往队列中写入数值，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">static void vSenderTask( void *pvParameters )
+&#123;
+	int32_t lValueToSend;
+	BaseType_t xStatus;
+
+	&#x2F;* 我们会使用这个函数创建2个任务
+	 * 这些任务的pvParameters不一样
+ 	 *&#x2F;
+	lValueToSend &#x3D; ( int32_t ) pvParameters;
+
+	&#x2F;* 无限循环 *&#x2F;
+	for( ;; )
+	&#123;
+		&#x2F;* 写队列
+		 * xQueue: 写哪个队列
+		 * &amp;lValueToSend: 写什么数据? 传入数据的地址, 会从这个地址把数据复制进队列
+		 * 0: 不阻塞, 如果队列满的话, 写入失败, 立刻返回
+		 *&#x2F;
+		xStatus &#x3D; xQueueSendToBack( xQueue, &amp;lValueToSend, 0 );
+
+		if( xStatus !&#x3D; pdPASS )
+		&#123;
+			printf( &quot;Could not send to the queue.\r\n&quot; );
+		&#125;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接收任务的函数中，读取队列、判断返回值、打印，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">static void vReceiverTask( void *pvParameters )
+&#123;
+	&#x2F;* 读取队列时, 用这个变量来存放数据 *&#x2F;
+	int32_t lReceivedValue;
+	BaseType_t xStatus;
+	const TickType_t xTicksToWait &#x3D; pdMS_TO_TICKS( 100UL );
+
+	&#x2F;* 无限循环 *&#x2F;
+	for( ;; )
+	&#123;
+		&#x2F;* 读队列
+		 * xQueue: 读哪个队列
+		 * &amp;lReceivedValue: 读到的数据复制到这个地址
+		 * xTicksToWait: 如果队列为空, 阻塞一会
+		 *&#x2F;
+		xStatus &#x3D; xQueueReceive( xQueue, &amp;lReceivedValue, xTicksToWait );
+
+		if( xStatus &#x3D;&#x3D; pdPASS )
+		&#123;
+			&#x2F;* 读到了数据 *&#x2F;
+			printf( &quot;Received &#x3D; %d\r\n&quot;, lReceivedValue );
+		&#125;
+		else
+		&#123;
+			&#x2F;* 没读到数据 *&#x2F;
+			printf( &quot;Could not receive from the queue.\r\n&quot; );
+		&#125;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>程序运行结果如下：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/04_queue_read_example.png"></p>
+<p>任务调度情况如下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/05_queue_read_schedule.png"></p>
+<h2 id="5-4-示例9-分辨数据源"><a href="#5-4-示例9-分辨数据源" class="headerlink" title="5.4 示例9: 分辨数据源"></a>5.4 示例9: 分辨数据源</h2><p>本节代码为：<code>FreeRTOS_09_queue_datasource</code>。</p>
+<p>当有多个发送任务，通过同一个队列发出数据，接收任务如何分辨数据来源？数据本身带有”来源”信息，比如写入队列的数据是一个结构体，结构体中的lDataSouceID用来表示数据来源：</p>
+<pre class="line-numbers language-none"><code class="language-none">typedef struct &#123;
+    ID_t eDataID;
+    int32_t lDataValue;
+&#125;Data_t;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>不同的发送任务，先构造好结构体，填入自己的<code>eDataID</code>，再写队列；接收任务读出数据后，根据<code>eDataID</code>就可以知道数据来源了，如下图所示：</p>
+<ul>
+<li>CAN任务发送的数据：eDataID&#x3D;eMotorSpeed</li>
+<li>HMI任务发送的数据：eDataID&#x3D;eSpeedSetPoint</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/06_data_contain_source.png"></p>
+<p><code>FreeRTOS_09_queue_datasource</code>程序会创建一个队列，然后创建2个发送任务、1个接收任务：</p>
+<ul>
+<li>创建的队列，用来发送结构体：数据大小是结构体的大小</li>
+<li>发送任务优先级为2，分别往队列中写入自己的结构体，结构体中会标明数据来源</li>
+<li>接收任务优先级为1，读队列、根据数据来源打印信息</li>
+</ul>
+<p>main函数中创建了队列、创建了发送任务、接收任务，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 定义2种数据来源(ID) *&#x2F;
+typedef enum
+&#123;
+	eMotorSpeed,
+	eSpeedSetPoint
+&#125; ID_t;
+
+&#x2F;* 定义在队列中传输的数据的格式 *&#x2F;
+typedef struct &#123;
+    ID_t eDataID;
+    int32_t lDataValue;
+&#125;Data_t;
+
+&#x2F;* 定义2个结构体 *&#x2F;
+static const Data_t xStructsToSend[ 2 ] &#x3D;
+&#123;
+	&#123; eMotorSpeed,    10 &#125;, &#x2F;* CAN任务发送的数据 *&#x2F;
+	&#123; eSpeedSetPoint, 5 &#125;   &#x2F;* HMI任务发送的数据 *&#x2F;
+&#125;;
+
+&#x2F;* vSenderTask被用来创建2个任务，用于写队列
+ * vReceiverTask被用来创建1个任务，用于读队列
+ *&#x2F;
+static void vSenderTask( void *pvParameters );
+static void vReceiverTask( void *pvParameters );
+
+&#x2F;*-----------------------------------------------------------*&#x2F;
+
+&#x2F;* 队列句柄, 创建队列时会设置这个变量 *&#x2F;
+QueueHandle_t xQueue;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建队列: 长度为5，数据大小为4字节(存放一个整数) *&#x2F;
+    xQueue &#x3D; xQueueCreate( 5, sizeof( Data_t ) );
+
+	if( xQueue !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建2个任务用于写队列, 传入的参数是不同的结构体地址
+		 * 任务函数会连续执行，向队列发送结构体
+		 * 优先级为2
+		 *&#x2F;
+		xTaskCreate(vSenderTask, &quot;CAN Task&quot;, 1000, (void *) &amp;(xStructsToSend[0]), 2, NULL);
+		xTaskCreate(vSenderTask, &quot;HMI Task&quot;, 1000, (void *) &amp;( xStructsToSend[1]), 2, NULL);
+
+		&#x2F;* 创建1个任务用于读队列
+		 * 优先级为1, 低于上面的两个任务
+		 * 这意味着发送任务优先写队列，队列常常是满的状态
+		 *&#x2F;
+		xTaskCreate( vReceiverTask, &quot;Receiver&quot;, 1000, NULL, 1, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建队列 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送任务的函数中，不断往队列中写入数值，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">static void vSenderTask( void *pvParameters )
+&#123;
+	BaseType_t xStatus;
+	const TickType_t xTicksToWait &#x3D; pdMS_TO_TICKS( 100UL );
+
+	&#x2F;* 无限循环 *&#x2F;
+	for( ;; )
+	&#123;
+		&#x2F;* 写队列
+		 * xQueue: 写哪个队列
+		 * pvParameters: 写什么数据? 传入数据的地址, 会从这个地址把数据复制进队列
+		 * xTicksToWait: 如果队列满的话, 阻塞一会
+		 *&#x2F;
+		xStatus &#x3D; xQueueSendToBack( xQueue, pvParameters, xTicksToWait );
+
+		if( xStatus !&#x3D; pdPASS )
+		&#123;
+			printf( &quot;Could not send to the queue.\r\n&quot; );
+		&#125;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接收任务的函数中，读取队列、判断返回值、打印，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">static void vReceiverTask( void *pvParameters )
+&#123;
+	&#x2F;* 读取队列时, 用这个变量来存放数据 *&#x2F;
+	Data_t xReceivedStructure;
+	BaseType_t xStatus;
+
+	&#x2F;* 无限循环 *&#x2F;
+	for( ;; )
+	&#123;
+		&#x2F;* 读队列
+		 * xQueue: 读哪个队列
+		 * &amp;xReceivedStructure: 读到的数据复制到这个地址
+		 * 0: 没有数据就即刻返回，不阻塞
+		 *&#x2F;
+		xStatus &#x3D; xQueueReceive( xQueue, &amp;xReceivedStructure, 0 );
+
+		if( xStatus &#x3D;&#x3D; pdPASS )
+		&#123;
+			&#x2F;* 读到了数据 *&#x2F;
+			if( xReceivedStructure.eDataID &#x3D;&#x3D; eMotorSpeed )
+			&#123;
+				printf( &quot;From CAN, MotorSpeed &#x3D; %d\r\n&quot;, xReceivedStructure.lDataValue );
+			&#125;
+			else if( xReceivedStructure.eDataID &#x3D;&#x3D; eSpeedSetPoint )
+			&#123;
+				printf( &quot;From HMI, SpeedSetPoint &#x3D; %d\r\n&quot;, xReceivedStructure.lDataValue );
+			&#125;
+		&#125;
+		else
+		&#123;
+			&#x2F;* 没读到数据 *&#x2F;
+			printf( &quot;Could not receive from the queue.\r\n&quot; );
+		&#125;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果如下：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/07_queue_data_with_struct.png"></p>
+<p>任务调度情况如下图所示：</p>
+<ul>
+<li>t1：HMI是最后创建的最高优先级任务，它先执行，一下子向队列写入5个数据，把队列都写满了</li>
+<li>t2：队列已经满了，HMI任务再发起第6次写操作时，进入阻塞状态。这时CAN任务是最高优先级的就绪态任务，它开始执行</li>
+<li>t3：CAN任务发现队列已经满了，进入阻塞状态；接收任务变为最高优先级的就绪态任务，它开始运行</li>
+<li>t4：现在，HMI任务、CAN任务的优先级都比接收任务高，它们都在等待队列有空闲的空间；一旦接收任务读出1个数据，会马上被抢占。被谁抢占？谁等待最久？HMI任务！所以在t4时刻，切换到HMI任务。</li>
+<li>t5：HMI任务向队列写入第6个数据，然后再次阻塞，这是CAN任务已经阻塞很久了。接收任务变为最高优先级的就绪态任务，开始执行。</li>
+<li>t6：现在，HMI任务、CAN任务的优先级都比接收任务高，它们都在等待队列有空闲的空间；一旦接收任务读出1个数据，会马上被抢占。被谁抢占？谁等待最久？CAN任务！所以在t6时刻，切换到CAN任务。</li>
+<li>t7：CAN任务向队列写入数据，因为仅仅有一个空间供写入，所以它马上再次进入阻塞状态。这时HMI任务、CAN任务都在等待空闲空间，只有接收任务可以继续执行。</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/08_queue_data_with_struct_schedule.png"></p>
+<h2 id="5-5-示例10-传输大块数据"><a href="#5-5-示例10-传输大块数据" class="headerlink" title="5.5 示例10: 传输大块数据"></a>5.5 示例10: 传输大块数据</h2><p>本节代码为：<code>FreeRTOS_10_queue_bigtransfer</code>。</p>
+<p>FreeRTOS的队列使用拷贝传输，也就是要传输uint32_t时，把4字节的数据拷贝进队列；要传输一个8字节的结构体时，把8字节的数据拷贝进队列。</p>
+<p>如果要传输1000字节的结构体呢？写队列时拷贝1000字节，读队列时再拷贝1000字节？不建议这么做，影响效率！</p>
+<p>这时候，我们要传输的是这个巨大结构体的地址：把它的地址写入队列，对方从队列得到这个地址，使用地址去访问那1000字节的数据。</p>
+<p>使用地址来间接传输数据时，这些数据放在RAM里，对于这块RAM，要保证这几点：</p>
+<ul>
+<li>RAM的所有者、操作者，必须清晰明了 这块内存，就被称为”共享内存”。要确保不能同时修改RAM。比如，在写队列之前只有由发送者修改这块RAM，在读队列之后只能由接收者访问这块RAM。</li>
+<li>RAM要保持可用 这块RAM应该是全局变量，或者是动态分配的内存。对于动然分配的内存，要确保它不能提前释放：要等到接收者用完后再释放。另外，不能是局部变量。</li>
+</ul>
+<p><code>FreeRTOS_10_queue_bigtransfer</code>程序会创建一个队列，然后创建1个发送任务、1个接收任务：</p>
+<ul>
+<li>创建的队列：长度为1，用来传输”char *”指针</li>
+<li>发送任务优先级为1，在字符数组中写好数据后，把它的地址写入队列</li>
+<li>接收任务优先级为2，读队列得到”char *”值，把它打印出来</li>
+</ul>
+<p>这个程序故意设置接收任务的优先级更高，在它访问数组的过程中，接收任务无法执行、无法写这个数组。</p>
+<p>main函数中创建了队列、创建了发送任务、接收任务，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 定义一个字符数组 *&#x2F;
+static char pcBuffer[100];
+
+
+&#x2F;* vSenderTask被用来创建2个任务，用于写队列
+ * vReceiverTask被用来创建1个任务，用于读队列
+ *&#x2F;
+static void vSenderTask( void *pvParameters );
+static void vReceiverTask( void *pvParameters );
+
+&#x2F;*-----------------------------------------------------------*&#x2F;
+
+&#x2F;* 队列句柄, 创建队列时会设置这个变量 *&#x2F;
+QueueHandle_t xQueue;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建队列: 长度为1，数据大小为4字节(存放一个char指针) *&#x2F;
+    xQueue &#x3D; xQueueCreate( 1, sizeof(char *) );
+
+	if( xQueue !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建1个任务用于写队列
+		 * 任务函数会连续执行，构造buffer数据，把buffer地址写入队列
+		 * 优先级为1
+		 *&#x2F;
+		xTaskCreate( vSenderTask, &quot;Sender&quot;, 1000, NULL, 1, NULL );
+
+		&#x2F;* 创建1个任务用于读队列
+		 * 优先级为2, 高于上面的两个任务
+		 * 这意味着读队列得到buffer地址后，本任务使用buffer时不会被打断
+		 *&#x2F;
+		xTaskCreate( vReceiverTask, &quot;Receiver&quot;, 1000, NULL, 2, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建队列 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送任务的函数中，现在全局大数组pcBuffer中构造数据，然后把它的地址写入队列，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">static void vSenderTask( void *pvParameters )
+&#123;
+	BaseType_t xStatus;
+	static int cnt &#x3D; 0;
+	
+	char *buffer;
+
+	&#x2F;* 无限循环 *&#x2F;
+	for( ;; )
+	&#123;
+		sprintf(pcBuffer, &quot;www.100ask.net Msg %d\r\n&quot;, cnt++);
+		buffer &#x3D; pcBuffer; &#x2F;&#x2F; buffer变量等于数组的地址, 下面要把这个地址写入队列
+		
+		&#x2F;* 写队列
+		 * xQueue: 写哪个队列
+		 * pvParameters: 写什么数据? 传入数据的地址, 会从这个地址把数据复制进队列
+		 * 0: 如果队列满的话, 即刻返回
+		 *&#x2F;
+		xStatus &#x3D; xQueueSendToBack( xQueue, &amp;buffer, 0 ); &#x2F;* 只需要写入4字节, 无需写入整个buffer *&#x2F;
+
+		if( xStatus !&#x3D; pdPASS )
+		&#123;
+			printf( &quot;Could not send to the queue.\r\n&quot; );
+		&#125;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接收任务的函数中，读取队列、得到buffer的地址、打印，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">static void vReceiverTask( void *pvParameters )
+&#123;
+	&#x2F;* 读取队列时, 用这个变量来存放数据 *&#x2F;
+	char *buffer;
+	const TickType_t xTicksToWait &#x3D; pdMS_TO_TICKS( 100UL );	
+	BaseType_t xStatus;
+
+	&#x2F;* 无限循环 *&#x2F;
+	for( ;; )
+	&#123;
+		&#x2F;* 读队列
+		 * xQueue: 读哪个队列
+		 * &amp;xReceivedStructure: 读到的数据复制到这个地址
+		 * xTicksToWait: 没有数据就阻塞一会
+		 *&#x2F;
+		xStatus &#x3D; xQueueReceive( xQueue, &amp;buffer, xTicksToWait); &#x2F;* 得到buffer地址，只是4字节 *&#x2F;
+
+		if( xStatus &#x3D;&#x3D; pdPASS )
+		&#123;
+			&#x2F;* 读到了数据 *&#x2F;
+			printf(&quot;Get: %s&quot;, buffer);
+		&#125;
+		else
+		&#123;
+			&#x2F;* 没读到数据 *&#x2F;
+			printf( &quot;Could not receive from the queue.\r\n&quot; );
+		&#125;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果如下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/09_queue_transfer_big_data.png"></p>
+<h2 id="5-6-示例11-邮箱-Mailbox"><a href="#5-6-示例11-邮箱-Mailbox" class="headerlink" title="5.6 示例11: 邮箱(Mailbox)"></a>5.6 示例11: 邮箱(Mailbox)</h2><p>本节代码为：<code>FreeRTOS_11_queue_mailbox</code>。</p>
+<p>FreeRTOS的邮箱概念跟别的RTOS不一样，这里的邮箱称为”橱窗”也许更恰当：</p>
+<ul>
+<li>它是一个队列，队列长度只有1</li>
+<li>写邮箱：新数据覆盖旧数据，在任务中使用<code>xQueueOverwrite()</code>，在中断中使用<code>xQueueOverwriteFromISR()</code>。 既然是覆盖，那么无论邮箱中是否有数据，这些函数总能成功写入数据。</li>
+<li>读邮箱：读数据时，数据不会被移除；在任务中使用<code>xQueuePeek()</code>，在中断中使用<code>xQueuePeekFromISR()</code>。 这意味着，第一次调用时会因为无数据而阻塞，一旦曾经写入数据，以后读邮箱时总能成功。</li>
+</ul>
+<p>main函数中创建了队列(队列长度为1)、创建了发送任务、接收任务：</p>
+<ul>
+<li>发送任务的优先级为2，它先执行</li>
+<li>接收任务的优先级为1</li>
+</ul>
+<p>代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 队列句柄, 创建队列时会设置这个变量 *&#x2F;
+QueueHandle_t xQueue;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建队列: 长度为1，数据大小为4字节(存放一个char指针) *&#x2F;
+    xQueue &#x3D; xQueueCreate( 1, sizeof(uint32_t) );
+
+	if( xQueue !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建1个任务用于写队列
+		 * 任务函数会连续执行，构造buffer数据，把buffer地址写入队列
+		 * 优先级为2
+		 *&#x2F;
+		xTaskCreate( vSenderTask, &quot;Sender&quot;, 1000, NULL, 2, NULL );
+
+		&#x2F;* 创建1个任务用于读队列
+		 * 优先级为1
+		 *&#x2F;
+		xTaskCreate( vReceiverTask, &quot;Receiver&quot;, 1000, NULL, 1, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建队列 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送任务、接收任务的代码和执行流程如下：</p>
+<ul>
+<li>A：发送任务先执行，马上阻塞</li>
+<li>BC：接收任务执行，这是邮箱无数据，打印”Could not …”。在发送任务阻塞过程中，接收任务多次执行、多次打印。</li>
+<li>D：发送任务从阻塞状态退出，立刻执行、写队列</li>
+<li>E：发送任务再次阻塞</li>
+<li>FG、HI、……：接收任务不断”偷看”邮箱，得到同一个数据，打印出多个”Get: 0”</li>
+<li>J：发送任务从阻塞状态退出，立刻执行、覆盖队列，写入1</li>
+<li>K：发送任务再次阻塞</li>
+<li>LM、……：接收任务不断”偷看”邮箱，得到同一个数据，打印出多个”Get: 1”</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/11_queue_mailbox_code.png"></p>
+<p>运行结果如下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/10_queue_mailbox_result.png"></p>
+<h1 id="6、信号量"><a href="#6、信号量" class="headerlink" title="6、信号量"></a>6、信号量</h1><h2 id="6-1-信号量的特性"><a href="#6-1-信号量的特性" class="headerlink" title="6.1 信号量的特性"></a>6.1 信号量的特性</h2><h3 id="6-1-1-信号量的常规操作"><a href="#6-1-1-信号量的常规操作" class="headerlink" title="6.1.1 信号量的常规操作"></a>6.1.1 信号量的常规操作</h3><p>信号量这个名字很恰当：</p>
+<ul>
+<li>信号：起通知作用</li>
+<li>量：还可以用来表示资源的数量<ul>
+<li>当”量”没有限制时，它就是”计数型信号量”(Counting Semaphores)</li>
+<li>当”量”只有0、1两个取值时，它就是”二进制信号量”(Binary Semaphores)</li>
+</ul>
+</li>
+<li>支持的动作：”give”给出资源，计数值加1；”take”获得资源，计数值减1</li>
+</ul>
+<p>计数型信号量的典型场景是：</p>
+<ul>
+<li>计数：事件产生时”give”信号量，让计数值加1；处理事件时要先”take”信号量，就是获得信号量，让计数值减1。</li>
+<li>资源管理：要想访问资源需要先”take”信号量，让计数值减1；用完资源后”give”信号量，让计数值加1。</li>
+</ul>
+<p>信号量的”give”、”take”双方并不需要相同，可以用于生产者-消费者场合：</p>
+<ul>
+<li>生产者为任务A、B，消费者为任务C、D</li>
+<li>一开始信号量的计数值为0，如果任务C、D想获得信号量，会有两种结果：<ul>
+<li>阻塞：买不到东西咱就等等吧，可以定个闹钟(超时时间)</li>
+<li>即刻返回失败：不等</li>
+</ul>
+</li>
+<li>任务A、B可以生产资源，就是让信号量的计数值增加1，并且把等待这个资源的顾客唤醒</li>
+<li>唤醒谁？谁优先级高就唤醒谁，如果大家优先级一样就唤醒等待时间最长的人</li>
+</ul>
+<p>二进制信号量跟计数型的唯一差别，就是计数值的最大值被限定为1。</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/01_semaphore_usage.png"></p>
+<h3 id="6-1-2-信号量跟队列的对比"><a href="#6-1-2-信号量跟队列的对比" class="headerlink" title="6.1.2 信号量跟队列的对比"></a>6.1.2 信号量跟队列的对比</h3><p>差异列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>队列</th>
+<th>信号量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可以容纳多个数据， 创建队列时有2部分内存: 队列结构体、存储数据的空间</td>
+<td>只有计数值，无法容纳其他数据。 创建信号量时，只需要分配信号量结构体</td>
+</tr>
+<tr>
+<td>生产者：没有空间存入数据时可以阻塞</td>
+<td>生产者：用于不阻塞，计数值已经达到最大时返回失败</td>
+</tr>
+<tr>
+<td>消费者：没有数据时可以阻塞</td>
+<td>消费者：没有资源时可以阻塞</td>
+</tr>
+</tbody></table>
+<h2 id="6-1-3-两种信号量的对比"><a href="#6-1-3-两种信号量的对比" class="headerlink" title="6.1.3 两种信号量的对比"></a>6.1.3 两种信号量的对比</h2><p>信号量的计数值都有限制：限定了最大值。如果最大值被限定为1，那么它就是二进制信号量；如果最大值不是1，它就是计数型信号量。</p>
+<p>差别列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>二进制信号量</th>
+<th>技术型信号量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>被创建时初始值为0</td>
+<td>被创建时初始值可以设定</td>
+</tr>
+<tr>
+<td>其他操作是一样的</td>
+<td>其他操作是一样的</td>
+</tr>
+</tbody></table>
+<h2 id="6-2-信号量函数"><a href="#6-2-信号量函数" class="headerlink" title="6.2 信号量函数"></a>6.2 信号量函数</h2><p>使用信号量时，先创建、然后去添加资源、获得资源。使用句柄来表示一个信号量。</p>
+<h3 id="6-2-1-创建"><a href="#6-2-1-创建" class="headerlink" title="6.2.1 创建"></a>6.2.1 创建</h3><p>使用信号量之前，要先创建，得到一个句柄；使用信号量时，要使用句柄来表明使用哪个信号量。</p>
+<p>对于二进制信号量、计数型信号量，它们的创建函数不一样：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>二进制信号量</th>
+<th>计数型信号量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>动态创建</td>
+<td>xSemaphoreCreateBinary 计数值初始值为0</td>
+<td>xSemaphoreCreateCounting</td>
+</tr>
+<tr>
+<td></td>
+<td>vSemaphoreCreateBinary(过时了) 计数值初始值为1</td>
+<td></td>
+</tr>
+<tr>
+<td>静态创建</td>
+<td>xSemaphoreCreateBinaryStatic</td>
+<td>xSemaphoreCreateCountingStatic</td>
+</tr>
+</tbody></table>
+<p>创建二进制信号量的函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 创建一个二进制信号量，返回它的句柄。
+ * 此函数内部会分配信号量结构体 
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+SemaphoreHandle_t xSemaphoreCreateBinary( void );
+
+&#x2F;* 创建一个二进制信号量，返回它的句柄。
+ * 此函数无需动态分配内存，所以需要先有一个StaticSemaphore_t结构体，并传入它的指针
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+SemaphoreHandle_t xSemaphoreCreateBinaryStatic( StaticSemaphore_t *pxSemaphoreBuffer );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>创建计数型信号量的函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 创建一个计数型信号量，返回它的句柄。
+ * 此函数内部会分配信号量结构体 
+ * uxMaxCount: 最大计数值
+ * uxInitialCount: 初始计数值
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+SemaphoreHandle_t xSemaphoreCreateCounting(UBaseType_t uxMaxCount, UBaseType_t uxInitialCount);
+
+&#x2F;* 创建一个计数型信号量，返回它的句柄。
+ * 此函数无需动态分配内存，所以需要先有一个StaticSemaphore_t结构体，并传入它的指针
+ * uxMaxCount: 最大计数值
+ * uxInitialCount: 初始计数值
+ * pxSemaphoreBuffer: StaticSemaphore_t结构体指针
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+SemaphoreHandle_t xSemaphoreCreateCountingStatic( UBaseType_t uxMaxCount, 
+                                                 UBaseType_t uxInitialCount, 
+                                                 StaticSemaphore_t *pxSemaphoreBuffer );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-2-2-删除"><a href="#6-2-2-删除" class="headerlink" title="6.2.2 删除"></a>6.2.2 删除</h3><p>对于动态创建的信号量，不再需要它们时，可以删除它们以回收内存。</p>
+<p>vSemaphoreDelete可以用来删除二进制信号量、计数型信号量，函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;*
+ * xSemaphore: 信号量句柄，你要删除哪个信号量
+ *&#x2F;
+void vSemaphoreDelete( SemaphoreHandle_t xSemaphore );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-2-3-give-x2F-take"><a href="#6-2-3-give-x2F-take" class="headerlink" title="6.2.3 give&#x2F;take"></a>6.2.3 give&#x2F;take</h3><p>二进制信号量、计数型信号量的give、take操作函数是一样的。这些函数也分为2个版本：给任务使用，给ISR使用。列表如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>在任务中使用</th>
+<th>在ISR中使用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>give</td>
+<td>xSemaphoreGive</td>
+<td>xSemaphoreGiveFromISR</td>
+</tr>
+<tr>
+<td>take</td>
+<td>xSemaphoreTake</td>
+<td>xSemaphoreTakeFromISR</td>
+</tr>
+</tbody></table>
+<p>xSemaphoreGive的函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">BaseType_t xSemaphoreGive( SemaphoreHandle_t xSemaphore );<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>xSemaphoreGive函数的参数与返回值列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xSemaphore</td>
+<td>信号量句柄，释放哪个信号量</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>pdTRUE表示成功, 如果二进制信号量的计数值已经是1，再次调用此函数则返回失败； 如果计数型信号量的计数值已经是最大值，再次调用此函数则返回失败</td>
+</tr>
+</tbody></table>
+<p>pxHigherPriorityTaskWoken的函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">BaseType_t xSemaphoreGiveFromISR(
+                        SemaphoreHandle_t xSemaphore,
+                        BaseType_t *pxHigherPriorityTaskWoken
+                    );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>xSemaphoreGiveFromISR函数的参数与返回值列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xSemaphore</td>
+<td>信号量句柄，释放哪个信号量</td>
+</tr>
+<tr>
+<td>pxHigherPriorityTaskWoken</td>
+<td>如果释放信号量导致更高优先级的任务变为了就绪态， 则*pxHigherPriorityTaskWoken &#x3D; pdTRUE</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>pdTRUE表示成功, 如果二进制信号量的计数值已经是1，再次调用此函数则返回失败； 如果计数型信号量的计数值已经是最大值，再次调用此函数则返回失败</td>
+</tr>
+</tbody></table>
+<p>xSemaphoreTake的函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">BaseType_t xSemaphoreTake(
+                   SemaphoreHandle_t xSemaphore,
+                   TickType_t xTicksToWait
+               );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>xSemaphoreTake函数的参数与返回值列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xSemaphore</td>
+<td>信号量句柄，获取哪个信号量</td>
+</tr>
+<tr>
+<td>xTicksToWait</td>
+<td>如果无法马上获得信号量，阻塞一会： 0：不阻塞，马上返回 portMAX_DELAY: 一直阻塞直到成功 其他值: 阻塞的Tick个数，可以使用<code>pdMS_TO_TICKS()</code>来指定阻塞时间为若干ms</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>pdTRUE表示成功</td>
+</tr>
+</tbody></table>
+<p>xSemaphoreTakeFromISR的函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">BaseType_t xSemaphoreTakeFromISR(
+                        SemaphoreHandle_t xSemaphore,
+                        BaseType_t *pxHigherPriorityTaskWoken
+                    );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>xSemaphoreTakeFromISR函数的参数与返回值列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xSemaphore</td>
+<td>信号量句柄，获取哪个信号量</td>
+</tr>
+<tr>
+<td>pxHigherPriorityTaskWoken</td>
+<td>如果获取信号量导致更高优先级的任务变为了就绪态， 则*pxHigherPriorityTaskWoken &#x3D; pdTRUE</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>pdTRUE表示成功</td>
+</tr>
+</tbody></table>
+<h2 id="6-3-示例12-使用二进制信号量来同步"><a href="#6-3-示例12-使用二进制信号量来同步" class="headerlink" title="6.3 示例12: 使用二进制信号量来同步"></a>6.3 示例12: 使用二进制信号量来同步</h2><p>本节代码为： <code>FreeRTOS_12_semaphore_binary</code> 。</p>
+<p>main函数中创建了一个二进制信号量，然后创建2个任务：一个用于释放信号量，另一个用于获取信号量，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 二进制信号量句柄 *&#x2F;
+SemaphoreHandle_t xBinarySemaphore;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建二进制信号量 *&#x2F;
+    xBinarySemaphore &#x3D; xSemaphoreCreateBinary( );
+
+	if( xBinarySemaphore !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建1个任务用于释放信号量
+		 * 优先级为2
+		 *&#x2F;
+		xTaskCreate( vSenderTask, &quot;Sender&quot;, 1000, NULL, 2, NULL );
+
+		&#x2F;* 创建1个任务用于获取信号量
+		 * 优先级为1
+		 *&#x2F;
+		xTaskCreate( vReceiverTask, &quot;Receiver&quot;, 1000, NULL, 1, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建二进制信号量 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送任务、接收任务的代码和执行流程如下：</p>
+<ul>
+<li>A：发送任务优先级高，先执行。连续3次释放二进制信号量，只有第1次成功</li>
+<li>B：发送任务进入阻塞态</li>
+<li>C：接收任务得以执行，得到信号量，打印OK；再次去获得信号量时，进入阻塞状态</li>
+<li>在发送任务的vTaskDelay退出之前，运行的是空闲任务：现在发送任务、接收任务都阻塞了</li>
+<li>D：发送任务再次运行，连续3次释放二进制信号量，只有第1次成功</li>
+<li>E：发送任务进入阻塞态</li>
+<li>F：接收任务被唤醒，得到信号量，打印OK；再次去获得信号量时，进入阻塞状态</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/03_binarysemaphore_code.png"></p>
+<p>运行结果如下图所示，即使发送任务连续释放多个信号量，也只能成功1次。释放、获得信号量是一一对应的。</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/02_binarysemaphore_example1.png"></p>
+<h2 id="6-4-示例13-防止数据丢失"><a href="#6-4-示例13-防止数据丢失" class="headerlink" title="6.4 示例13: 防止数据丢失"></a>6.4 示例13: 防止数据丢失</h2><p>本节代码为： <code>FreeRTOS_13_semaphore_circle_buffer</code> 。</p>
+<p>在示例12中，发送任务发出3次”提醒”，但是接收任务只接收到1次”提醒”，其中2次”提醒”丢失了。</p>
+<p>这种情况很常见，比如每接收到一个串口字符，串口中断程序就给任务发一次”提醒”，假设收到多个字符、发出了多次”提醒”。当任务来处理时，它只能得到1次”提醒”。</p>
+<p>你需要使用其他方法来防止数据丢失，比如：</p>
+<ul>
+<li>在串口中断中，把数据放入缓冲区</li>
+<li>在任务中，一次性把缓冲区中的数据都读出</li>
+<li>简单地说，就是：你提醒了我多次，我太忙只响应你一次，但是我一次性拿走所有数据</li>
+</ul>
+<p>main函数中创建了一个二进制信号量，然后创建2个任务：一个用于释放信号量，另一个用于获取信号量，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 二进制信号量句柄 *&#x2F;
+SemaphoreHandle_t xBinarySemaphore;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建二进制信号量 *&#x2F;
+    xBinarySemaphore &#x3D; xSemaphoreCreateBinary( );
+
+	if( xBinarySemaphore !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建1个任务用于释放信号量
+		 * 优先级为2
+		 *&#x2F;
+		xTaskCreate( vSenderTask, &quot;Sender&quot;, 1000, NULL, 2, NULL );
+
+		&#x2F;* 创建1个任务用于获取信号量
+		 * 优先级为1
+		 *&#x2F;
+		xTaskCreate( vReceiverTask, &quot;Receiver&quot;, 1000, NULL, 1, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建二进制信号量 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送任务、接收任务的代码和执行流程如下：</p>
+<ul>
+<li>A：发送任务优先级高，先执行。连续写入3个数据、释放3个信号量：只有1个信号量起作用</li>
+<li>B：发送任务进入阻塞态</li>
+<li>C：接收任务得以执行，得到信号量</li>
+<li>D：接收任务一次性把所有数据取出</li>
+<li>E：接收任务再次尝试获取信号量，进入阻塞状态</li>
+<li>在发送任务的vTaskDelay退出之前，运行的是空闲任务：现在发送任务、接收任务都阻塞了</li>
+<li>F：发送任务再次运行，连续写入3个数据、释放3个信号量：只有1个信号量起作用</li>
+<li>G：发送任务进入阻塞态</li>
+<li>H：接收任务被唤醒，得到信号量，一次性把所有数据取出</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/04_binarysemaphore_code2.png"></p>
+<p>程序运行结果如下，数据未丢失：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/05_binarysemaphore_example2.png"></p>
+<h2 id="6-5-示例14-使用计数型信号量"><a href="#6-5-示例14-使用计数型信号量" class="headerlink" title="6.5 示例14: 使用计数型信号量"></a>6.5 示例14: 使用计数型信号量</h2><p>本节代码为： <code>FreeRTOS_14_semaphore_counting</code> 。</p>
+<p>使用计数型信号量时，可以多次释放信号量；当信号量的技术值达到最大时，再次释放信号量就会出错。</p>
+<p>如果信号量计数值为n，就可以连续n次获取信号量，第(n+1)次获取信号量就会阻塞或失败。</p>
+<p>main函数中创建了一个计数型信号量，最大计数值为3，初始值计数值为0；然后创建2个任务：一个用于释放信号量，另一个用于获取信号量，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 计数型信号量句柄 *&#x2F;
+SemaphoreHandle_t xCountingSemaphore;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建计数型信号量 *&#x2F;
+    xCountingSemaphore &#x3D; xSemaphoreCreateCounting(3, 0);
+
+	if( xCountingSemaphore !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建1个任务用于释放信号量
+		 * 优先级为2
+		 *&#x2F;
+		xTaskCreate( vSenderTask, &quot;Sender&quot;, 1000, NULL, 2, NULL );
+
+		&#x2F;* 创建1个任务用于获取信号量
+		 * 优先级为1
+		 *&#x2F;
+		xTaskCreate( vReceiverTask, &quot;Receiver&quot;, 1000, NULL, 1, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建信号量 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送任务、接收任务的代码和执行流程如下：</p>
+<ul>
+<li>A：发送任务优先级高，先执行。连续释放4个信号量：只有前面3次成功，第4次失败</li>
+<li>B：发送任务进入阻塞态</li>
+<li>CDE：接收任务得以执行，得到3个信号量</li>
+<li>F：接收任务试图获得第4个信号量时进入阻塞状态</li>
+<li>在发送任务的vTaskDelay退出之前，运行的是空闲任务：现在发送任务、接收任务都阻塞了</li>
+<li>G：发送任务再次运行，连续释放4个信号量：只有前面3次成功，第4次失败</li>
+<li>H：发送任务进入阻塞态</li>
+<li>IJK：接收任务得以执行，得到3个信号量</li>
+<li>L：接收任务再次获取信号量时进入阻塞状态</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/06_countingsemaphore_code.png"></p>
+<p>运行结果如下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/07_countingsemaphore_example.png"></p>
+<h1 id="7-互斥量"><a href="#7-互斥量" class="headerlink" title="7.互斥量"></a>7.互斥量</h1><h2 id="7-1-互斥量的使用场合"><a href="#7-1-互斥量的使用场合" class="headerlink" title="7.1 互斥量的使用场合"></a>7.1 互斥量的使用场合</h2><p>在多任务系统中，任务A正在使用某个资源，还没用完的情况下任务B也来使用的话，就可能导致问题。</p>
+<p>比如对于串口，任务A正使用它来打印，在打印过程中任务B也来打印，客户看到的结果就是A、B的信息混杂在一起。</p>
+<p>这种现象很常见：</p>
+<ul>
+<li><p>访问外设：刚举的串口例子</p>
+</li>
+<li><p>读、修改、写操作导致的问题 对于同一个变量，比如<code>int a</code>，如果有两个任务同时写它就有可能导致问题。 对于变量的修改，C代码只有一条语句，比如：<code>a=a+8;</code>，它的内部实现分为3步：读出原值、修改、写入。 <img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/01_modify_val.png"></p>
+<p>我们想让任务A、B都执行add_a函数，a的最终结果是<code>1+8+8=17</code>。 假设任务A运行完代码①，在执行代码②之前被任务B抢占了：现在任务A的R0等于1。 任务B执行完add_a函数，a等于9。 任务A继续运行，在代码②处R0仍然是被抢占前的数值1，执行完②③的代码，a等于9，这跟预期的17不符合。</p>
+</li>
+<li><p>对变量的非原子化访问 修改变量、设置结构体、在16位的机器上写32位的变量，这些操作都是非原子的。也就是它们的操作过程都可能被打断，如果被打断的过程有其他任务来操作这些变量，就可能导致冲突。</p>
+</li>
+<li><p>函数重入 “可重入的函数”是指：多个任务同时调用它、任务和中断同时调用它，函数的运行也是安全的。可重入的函数也被称为”线程安全”(thread safe)。 每个任务都维持自己的栈、自己的CPU寄存器，如果一个函数只使用局部变量，那么它就是线程安全的。 函数中一旦使用了全局变量、静态变量、其他外设，它就不是”可重入的”，如果改函数正在被调用，就必须阻止其他任务、中断再次调用它。</p>
+</li>
+</ul>
+<p>上述问题的解决方法是：任务A访问这些全局变量、函数代码时，独占它，就是上个锁。这些全局变量、函数代码必须被独占地使用，它们被称为临界资源。</p>
+<p>互斥量也被称为互斥锁，使用过程如下：</p>
+<ul>
+<li>互斥量初始值为1</li>
+<li>任务A想访问临界资源，先获得并占有互斥量，然后开始访问</li>
+<li>任务B也想访问临界资源，也要先获得互斥量：被别人占有了，于是阻塞</li>
+<li>任务A使用完毕，释放互斥量；任务B被唤醒、得到并占有互斥量，然后开始访问临界资源</li>
+<li>任务B使用完毕，释放互斥量</li>
+</ul>
+<p>正常来说：在任务A占有互斥量的过程中，任务B、任务C等等，都无法释放互斥量。</p>
+<p>但是FreeRTOS未实现这点：任务A占有互斥量的情况下，任务B也可释放互斥量。</p>
+<h2 id="7-2-互斥量函数"><a href="#7-2-互斥量函数" class="headerlink" title="7.2 互斥量函数"></a>7.2 互斥量函数</h2><h3 id="7-2-1-创建"><a href="#7-2-1-创建" class="headerlink" title="7.2.1 创建"></a>7.2.1 创建</h3><p>互斥量是一种特殊的二进制信号量。</p>
+<p>使用互斥量时，先创建、然后去获得、释放它。使用句柄来表示一个互斥量。</p>
+<p>创建互斥量的函数有2种：动态分配内存，静态分配内存，函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 创建一个互斥量，返回它的句柄。
+ * 此函数内部会分配互斥量结构体 
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+SemaphoreHandle_t xSemaphoreCreateMutex( void );
+
+&#x2F;* 创建一个互斥量，返回它的句柄。
+ * 此函数无需动态分配内存，所以需要先有一个StaticSemaphore_t结构体，并传入它的指针
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+SemaphoreHandle_t xSemaphoreCreateMutexStatic( StaticSemaphore_t *pxMutexBuffer );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>要想使用互斥量，需要在配置文件FreeRTOSConfig.h中定义：</p>
+<pre class="line-numbers language-none"><code class="language-none">#define configUSE_MUTEXES 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="7-2-2-其他函数"><a href="#7-2-2-其他函数" class="headerlink" title="7.2.2 其他函数"></a>7.2.2 其他函数</h3><p>要注意的是，互斥量不能在ISR中使用。</p>
+<p>各类操作函数，比如删除、give&#x2F;take，跟一般是信号量是一样的。</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;*
+ * xSemaphore: 信号量句柄，你要删除哪个信号量, 互斥量也是一种信号量
+ *&#x2F;
+void vSemaphoreDelete( SemaphoreHandle_t xSemaphore );
+
+&#x2F;* 释放 *&#x2F;
+BaseType_t xSemaphoreGive( SemaphoreHandle_t xSemaphore );
+
+&#x2F;* 释放(ISR版本) *&#x2F;
+BaseType_t xSemaphoreGiveFromISR(
+                       SemaphoreHandle_t xSemaphore,
+                       BaseType_t *pxHigherPriorityTaskWoken
+                   );
+
+&#x2F;* 获得 *&#x2F;
+BaseType_t xSemaphoreTake(
+                   SemaphoreHandle_t xSemaphore,
+                   TickType_t xTicksToWait
+               );
+&#x2F;* 获得(ISR版本) *&#x2F;
+xSemaphoreGiveFromISR(
+                       SemaphoreHandle_t xSemaphore,
+                       BaseType_t *pxHigherPriorityTaskWoken
+                   );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="7-3-示例15-互斥量基本使用"><a href="#7-3-示例15-互斥量基本使用" class="headerlink" title="7.3 示例15: 互斥量基本使用"></a>7.3 示例15: 互斥量基本使用</h2><p>本节代码为： <code>FreeRTOS_15_mutex</code> 。</p>
+<p>使用互斥量时有如下特点：</p>
+<ul>
+<li>刚创建的互斥量可以被成功”take”</li>
+<li>“take”互斥量成功的任务，被称为”holder”，只能由它”give”互斥量；别的任务”give”不成功</li>
+<li>在ISR中不能使用互斥量</li>
+</ul>
+<p>本程序创建2个发送任务：故意发送大量的字符。可以做2个实验：</p>
+<ul>
+<li>使用互斥量：可以看到任务1、任务2打印的字符串没有混杂在一起</li>
+<li>不使用互斥量：任务1、任务2打印的字符串混杂在一起</li>
+</ul>
+<p>main函数代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 互斥量句柄 *&#x2F;
+SemaphoreHandle_t xMutex;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建互斥量 *&#x2F;
+    xMutex &#x3D; xSemaphoreCreateMutex( );
+
+
+	if( xMutex !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建2个任务: 都是打印
+		 * 优先级相同
+		 *&#x2F;
+		xTaskCreate( vSenderTask, &quot;Sender1&quot;, 1000, (void *)1, 1, NULL );
+		xTaskCreate( vSenderTask, &quot;Sender2&quot;, 1000, (void *)2, 1, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建互斥量 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送任务的函数如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">static void vSenderTask( void *pvParameters )
+&#123;
+	const TickType_t xTicksToWait &#x3D; pdMS_TO_TICKS( 10UL );	
+	int cnt &#x3D; 0;
+	int task &#x3D; (int)pvParameters;
+	int i;
+	char c;
+	
+	&#x2F;* 无限循环 *&#x2F;
+	for( ;; )
+	&#123;	
+		&#x2F;* 获得互斥量: 上锁 *&#x2F;
+		xSemaphoreTake(xMutex, portMAX_DELAY);
+		
+		printf(&quot;Task %d use UART count: %d, &quot;, task, cnt++);
+		c &#x3D; (task &#x3D;&#x3D; 1 ) ? &#39;a&#39; : &#39;A&#39;;
+		for (i &#x3D; 0; i &lt; 26; i++)
+			printf(&quot;%c&quot;, c + i);
+		printf(&quot;\r\n&quot;);
+		
+		&#x2F;* 释放互斥量: 开锁 *&#x2F;
+		xSemaphoreGive(xMutex);
+		
+		vTaskDelay(xTicksToWait);
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以做两个实验：vSenderTask函数的for循环中xSemaphoreTake和xSemaphoreGive这2句代码保留、不保留</p>
+<ul>
+<li>保留：实验现象如下图左边，任务1、任务2的打印信息没有混在一起</li>
+<li>不保留：实验现象如下图右边，打印信息混杂在一起</li>
+</ul>
+<p>程序运行结果如下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/02_mutex_result1.png"></p>
+<h2 id="7-4-示例16-谁上锁就由谁解锁？"><a href="#7-4-示例16-谁上锁就由谁解锁？" class="headerlink" title="7.4 示例16: 谁上锁就由谁解锁？"></a>7.4 示例16: 谁上锁就由谁解锁？</h2><p>互斥量、互斥锁，本来的概念确实是：谁上锁就得由谁解锁。</p>
+<p>但是FreeRTOS并没有实现这点，只是要求程序员按照这样的惯例写代码。</p>
+<p>本节代码为： <code>FreeRTOS_16_mutex_who_give</code> 。</p>
+<p>main函数创建了2个任务：</p>
+<ul>
+<li>任务1：高优先级，一开始就获得互斥锁，永远不释放。</li>
+<li>任务2：任务1阻塞时它开始执行，它先尝试获得互斥量，失败的话就监守自盗(释放互斥量、开锁)，然后再上锁</li>
+</ul>
+<p>代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建互斥量 *&#x2F;
+    xMutex &#x3D; xSemaphoreCreateMutex( );
+
+	if( xMutex !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建2个任务: 一个上锁, 另一个自己监守自盗(开别人的锁自己用)
+		 *&#x2F;
+		xTaskCreate( vTakeTask, &quot;Task1&quot;, 1000, NULL, 2, NULL );
+		xTaskCreate( vGiveAndTakeTask, &quot;Task2&quot;, 1000, NULL, 1, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建互斥量 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>两个任务的代码和执行流程如下图所示：</p>
+<ul>
+<li>A：任务1的优先级高，先运行，立刻上锁</li>
+<li>B：任务1阻塞</li>
+<li>C：任务2开始执行，尝试获得互斥量(上锁)，超时时间设为0。根据返回值打印出：上锁失败</li>
+<li>D：任务2监守自盗，开锁，成功！</li>
+<li>E：任务2成功获得互斥量</li>
+<li>F：任务2阻塞</li>
+</ul>
+<p>可见，任务1上的锁，被任务2解开了。所以，FreeRTOS并没有实现”谁上锁就得由谁开锁”的功能。</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/03_mutex_code2.png"></p>
+<p>程序运行结果如下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/04_mutex_result2.png"></p>
+<h2 id="7-5-示例17-优先级反转"><a href="#7-5-示例17-优先级反转" class="headerlink" title="7.5 示例17: 优先级反转"></a>7.5 示例17: 优先级反转</h2><p>假设任务A、B都想使用串口，A优先级比较低：</p>
+<ul>
+<li>任务A获得了串口的互斥量</li>
+<li>任务B也想使用串口，它将会阻塞、等待A释放互斥量</li>
+<li>高优先级的任务，被低优先级的任务延迟，这被称为”优先级反转”(priority inversion)</li>
+</ul>
+<p>如果涉及3个任务，可以让”优先级反转”的后果更加恶劣。</p>
+<p>本节代码为： <code>FreeRTOS_17_mutex_inversion</code> 。</p>
+<p>互斥量可以通过”优先级继承”，可以很大程度解决”优先级反转”的问题，这也是FreeRTOS中互斥量和二级制信号量的差别。</p>
+<p>本节程序使用二级制信号量来演示”优先级反转”的恶劣后果。</p>
+<p>main函数创建了3个任务：LPTask&#x2F;MPTask&#x2F;HPTask(低&#x2F;中&#x2F;高优先级任务)，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 互斥量&#x2F;二进制信号量句柄 *&#x2F;
+SemaphoreHandle_t xLock;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建互斥量&#x2F;二进制信号量 *&#x2F;
+    xLock &#x3D; xSemaphoreCreateBinary( );
+
+
+	if( xLock !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建3个任务: LP,MP,HP(低&#x2F;中&#x2F;高优先级任务)
+		 *&#x2F;
+		xTaskCreate( vLPTask, &quot;LPTask&quot;, 1000, NULL, 1, NULL );
+		xTaskCreate( vMPTask, &quot;MPTask&quot;, 1000, NULL, 2, NULL );
+		xTaskCreate( vHPTask, &quot;HPTask&quot;, 1000, NULL, 3, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建互斥量&#x2F;二进制信号量 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>LPTask&#x2F;MPTask&#x2F;HPTask三个任务的代码和运行过程如下图所示：</p>
+<ul>
+<li>A：HPTask优先级最高，它最先运行。在这里故意打印，这样才可以观察到flagHPTaskRun的脉冲。</li>
+<li>HP Delay：HPTask阻塞</li>
+<li>B：MPTask开始运行。在这里故意打印，这样才可以观察到flagMPTaskRun的脉冲。</li>
+<li>MP Delay：MPTask阻塞</li>
+<li>C：LPTask开始运行，获得二进制信号量，然后故意打印很多字符</li>
+<li>D：HP Delay时间到，HPTask恢复运行，它无法获得二进制信号量，一直阻塞等待</li>
+<li>E：MP Delay时间到，MPTask恢复运行，它比LPTask优先级高，一直运行。导致LPTask无法运行，自然无法释放二进制信号量，于是HPTask用于无法运行。</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li>LPTask先持有二进制信号量，</li>
+<li>但是MPTask抢占LPTask，是的LPTask一直无法运行也就无法释放信号量，</li>
+<li>导致HPTask任务无法运行</li>
+<li>优先级最高的HPTask竟然一直无法运行！</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/05_semaphore_priority_inversion.png"></p>
+<p>程序运行的时序图如下：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/06_semaphore_priority_inversion_result.png"></p>
+<h2 id="7-6-示例18-优先级继承"><a href="#7-6-示例18-优先级继承" class="headerlink" title="7.6 示例18: 优先级继承"></a>7.6 示例18: 优先级继承</h2><p>本节代码为： <code>FreeRTOS_18_mutex_inheritance</code> 。</p>
+<p>示例17的问题在于，LPTask低优先级任务获得了锁，但是它优先级太低而无法运行。</p>
+<p>如果能提升LPTask任务的优先级，让它能尽快运行、释放锁，”优先级反转”的问题不就解决了吗？</p>
+<p>把LPTask任务的优先级提升到什么水平？</p>
+<p>优先级继承：</p>
+<ul>
+<li>假设持有互斥锁的是任务A，如果更高优先级的任务B也尝试获得这个锁</li>
+<li>任务B说：你既然持有宝剑，又不给我，那就继承我的愿望吧</li>
+<li>于是任务A就继承了任务B的优先级</li>
+<li>这就叫：优先级继承</li>
+<li>等任务A释放互斥锁时，它就恢复为原来的优先级</li>
+<li>互斥锁内部就实现了优先级的提升、恢复</li>
+</ul>
+<p>本节源码是在<code>FreeRTOS_17_mutex_inversion</code> 的代码上做了一些简单修改：</p>
+<pre class="line-numbers language-none"><code class="language-none">int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建互斥量&#x2F;二进制信号量 *&#x2F;
+    &#x2F;&#x2F;xLock &#x3D; xSemaphoreCreateBinary( );
+	xLock &#x3D; xSemaphoreCreateMutex( );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行时序图如下图所示：</p>
+<ul>
+<li>A：HPTask执行<code>xSemaphoreTake(xLock, portMAX_DELAY);</code>，它的优先级被LPTask继承</li>
+<li>B：LPTask抢占MPTask，运行</li>
+<li>C：LPTask执行<code>xSemaphoreGive(xLock);</code>，它的优先级恢复为原来值</li>
+<li>D：HPTask得到互斥锁，开始运行</li>
+<li>互斥锁的”优先级继承”，可以减小”优先级反转”的影响</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/07_semaphore_priority_inversion_result2.png"></p>
+<h2 id="7-7-递归锁"><a href="#7-7-递归锁" class="headerlink" title="7.7 递归锁"></a>7.7 递归锁</h2><h3 id="7-7-1-死锁的概念"><a href="#7-7-1-死锁的概念" class="headerlink" title="7.7.1 死锁的概念"></a>7.7.1 死锁的概念</h3><p>日常生活的死锁：我们只招有工作经验的人！我没有工作经验怎么办？那你就去找工作啊！</p>
+<p>假设有2个互斥量M1、M2，2个任务A、B：</p>
+<ul>
+<li>A获得了互斥量M1</li>
+<li>B获得了互斥量M2</li>
+<li>A还要获得互斥量M2才能运行，结果A阻塞</li>
+<li>B还要获得互斥量M1才能运行，结果B阻塞</li>
+<li>A、B都阻塞，再无法释放它们持有的互斥量</li>
+<li>死锁发生！</li>
+</ul>
+<h3 id="7-7-2-自我死锁"><a href="#7-7-2-自我死锁" class="headerlink" title="7.7.2 自我死锁"></a>7.7.2 自我死锁</h3><p>假设这样的场景：</p>
+<ul>
+<li>任务A获得了互斥锁M</li>
+<li>它调用一个库函数</li>
+<li>库函数要去获取同一个互斥锁M，于是它阻塞：任务A休眠，等待任务A来释放互斥锁！</li>
+<li>死锁发生！</li>
+</ul>
+<h3 id="7-7-3-函数"><a href="#7-7-3-函数" class="headerlink" title="7.7.3 函数"></a>7.7.3 函数</h3><p>怎么解决这类问题？可以使用递归锁(Recursive Mutexes)，它的特性如下：</p>
+<ul>
+<li>任务A获得递归锁M后，它还可以多次去获得这个锁</li>
+<li>“take”了N次，要”give”N次，这个锁才会被释放</li>
+</ul>
+<p>递归锁的函数根一般互斥量的函数名不一样，参数类型一样，列表如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>递归锁</th>
+<th>一般互斥量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>创建</td>
+<td>xSemaphoreCreateRecursiveMutex</td>
+<td>xSemaphoreCreateMutex</td>
+</tr>
+<tr>
+<td>获得</td>
+<td>xSemaphoreTakeRecursive</td>
+<td>xSemaphoreTake</td>
+</tr>
+<tr>
+<td>释放</td>
+<td>xSemaphoreGiveRecursive</td>
+<td>xSemaphoreGive</td>
+</tr>
+</tbody></table>
+<p>函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 创建一个递归锁，返回它的句柄。
+ * 此函数内部会分配互斥量结构体 
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+SemaphoreHandle_t xSemaphoreCreateRecursiveMutex( void );
+
+
+&#x2F;* 释放 *&#x2F;
+BaseType_t xSemaphoreGiveRecursive( SemaphoreHandle_t xSemaphore );
+
+&#x2F;* 获得 *&#x2F;
+BaseType_t xSemaphoreTakeRecursive(
+                   SemaphoreHandle_t xSemaphore,
+                   TickType_t xTicksToWait
+               );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="7-7-4-示例19-递归锁"><a href="#7-7-4-示例19-递归锁" class="headerlink" title="7.7.4 示例19: 递归锁"></a>7.7.4 示例19: 递归锁</h3><p>本节代码为： <code>FreeRTOS_19_mutex_recursive</code> 。</p>
+<p>递归锁实现了：谁上锁就由谁解锁。</p>
+<p>本程序从<code>FreeRTOS_16_mutex_who_give</code>修改得来，它的main函数里创建了2个任务</p>
+<ul>
+<li>任务1：高优先级，一开始就获得递归锁，然后故意等待很长时间，让任务2运行</li>
+<li>任务2：低优先级，看看能否操作别人持有的锁</li>
+</ul>
+<p>main函数代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 递归锁句柄 *&#x2F;
+SemaphoreHandle_t xMutex;
+
+int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建递归锁 *&#x2F;
+    xMutex &#x3D; xSemaphoreCreateRecursiveMutex( );
+
+	if( xMutex !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建2个任务: 一个上锁, 另一个自己监守自盗(看看能否开别人的锁自己用)
+		 *&#x2F;
+		xTaskCreate( vTakeTask, &quot;Task1&quot;, 1000, NULL, 2, NULL );
+		xTaskCreate( vGiveAndTakeTask, &quot;Task2&quot;, 1000, NULL, 1, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建递归锁 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>两个任务经过精细设计，代码和运行流程如下图所示：</p>
+<ul>
+<li>A：任务1优先级最高，先运行，获得递归锁</li>
+<li>B：任务1阻塞，让任务2得以运行</li>
+<li>C：任务2运行，看看能否获得别人持有的递归锁：不能</li>
+<li>D：任务2故意执行”give”操作，看看能否释放别人持有的递归锁：不能</li>
+<li>E：任务2等待递归锁</li>
+<li>F：任务1阻塞时间到后继续运行，使用循环多次获得、释放递归锁</li>
+<li>递归锁在代码上实现了：谁持有递归锁，必须由谁释放。</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/08_recursive_mutex_code.png"></p>
+<p>程序运行结果如下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/09_recursive_mutex_result.png"></p>
+<h2 id="7-8-常见问题"><a href="#7-8-常见问题" class="headerlink" title="7.8 常见问题"></a>7.8 常见问题</h2><p>使用互斥量的两个任务是相同优先级时的注意事项。</p>
+<h1 id="8、事件组"><a href="#8、事件组" class="headerlink" title="8、事件组"></a>8、事件组</h1><h2 id="8-1-事件组概念与操作"><a href="#8-1-事件组概念与操作" class="headerlink" title="8.1 事件组概念与操作"></a>8.1 事件组概念与操作</h2><h3 id="8-1-1-事件组的概念"><a href="#8-1-1-事件组的概念" class="headerlink" title="8.1.1 事件组的概念"></a>8.1.1 事件组的概念</h3><p>事件组可以简单地认为就是一个整数：</p>
+<ul>
+<li>的每一位表示一个事件</li>
+<li>每一位事件的含义由程序员决定，比如：Bit0表示用来串口是否就绪，Bit1表示按键是否被按下</li>
+<li>这些位，值为1表示事件发生了，值为0表示事件没发生</li>
+<li>一个或多个任务、ISR都可以去写这些位；一个或多个任务、ISR都可以去读这些位</li>
+<li>可以等待某一位、某些位中的任意一个，也可以等待多位</li>
+</ul>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/01_event_group.png"></p>
+<p>事件组用一个整数来表示，其中的高8位留给内核使用，只能用其他的位来表示事件。那么这个整数是多少位的？</p>
+<ul>
+<li>如果configUSE_16_BIT_TICKS是1，那么这个整数就是16位的，低8位用来表示事件</li>
+<li>如果configUSE_16_BIT_TICKS是0，那么这个整数就是32位的，低24位用来表示事件</li>
+<li>configUSE_16_BIT_TICKS是用来表示Tick Count的，怎么会影响事件组？这只是基于效率来考虑<ul>
+<li>如果configUSE_16_BIT_TICKS是1，就表示该处理器使用16位更高效，所以事件组也使用16位</li>
+<li>如果configUSE_16_BIT_TICKS是0，就表示该处理器使用32位更高效，所以事件组也使用32位</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-1-2-事件组的操作"><a href="#8-1-2-事件组的操作" class="headerlink" title="8.1.2 事件组的操作"></a>8.1.2 事件组的操作</h3><p>事件组和队列、信号量等不太一样，主要集中在2个地方：</p>
+<ul>
+<li>唤醒谁？<ul>
+<li>队列、信号量：事件发生时，只会唤醒一个任务</li>
+<li>事件组：事件发生时，会唤醒所有符号条件的任务，简单地说它有”广播”的作用</li>
+</ul>
+</li>
+<li>是否清除事件？<ul>
+<li>队列、信号量：是消耗型的资源，队列的数据被读走就没了；信号量被获取后就减少了</li>
+<li>事件组：被唤醒的任务有两个选择，可以让事件保留不动，也可以清除事件</li>
+</ul>
+</li>
+</ul>
+<p>以上图为列，事件组的常规操作如下：</p>
+<ul>
+<li>先创建事件组</li>
+<li>任务C、D等待事件：<ul>
+<li>等待什么事件？可以等待某一位、某些位中的任意一个，也可以等待多位。简单地说就是”或”、”与”的关系。</li>
+<li>得到事件时，要不要清除？可选择清除、不清除。</li>
+</ul>
+</li>
+<li>任务A、B产生事件：设置事件组里的某一位、某些位</li>
+</ul>
+<h2 id="8-2-事件组函数"><a href="#8-2-事件组函数" class="headerlink" title="8.2 事件组函数"></a>8.2 事件组函数</h2><h3 id="8-2-1-创建"><a href="#8-2-1-创建" class="headerlink" title="8.2.1 创建"></a>8.2.1 创建</h3><p>使用事件组之前，要先创建，得到一个句柄；使用事件组时，要使用句柄来表明使用哪个事件组。</p>
+<p>有两种创建方法：动态分配内存、静态分配内存。函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 创建一个事件组，返回它的句柄。
+ * 此函数内部会分配事件组结构体 
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+EventGroupHandle_t xEventGroupCreate( void );
+
+&#x2F;* 创建一个事件组，返回它的句柄。
+ * 此函数无需动态分配内存，所以需要先有一个StaticEventGroup_t结构体，并传入它的指针
+ * 返回值: 返回句柄，非NULL表示成功
+ *&#x2F;
+EventGroupHandle_t xEventGroupCreateStatic( StaticEventGroup_t * pxEventGroupBuffer );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="8-2-2-删除"><a href="#8-2-2-删除" class="headerlink" title="8.2.2 删除"></a>8.2.2 删除</h3><p>对于动态创建的事件组，不再需要它们时，可以删除它们以回收内存。</p>
+<p>vEventGroupDelete可以用来删除事件组，函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;*
+ * xEventGroup: 事件组句柄，你要删除哪个事件组
+ *&#x2F;
+void vEventGroupDelete( EventGroupHandle_t xEventGroup )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="8-2-3-设置事件"><a href="#8-2-3-设置事件" class="headerlink" title="8.2.3 设置事件"></a>8.2.3 设置事件</h3><p>可以设置事件组的某个位、某些位，使用的函数有2个：</p>
+<ul>
+<li>在任务中使用<code>xEventGroupSetBits()</code></li>
+<li>在ISR中使用<code>xEventGroupSetBitsFromISR()</code></li>
+</ul>
+<p>有一个或多个任务在等待事件，如果这些事件符合这些任务的期望，那么任务还会被唤醒。</p>
+<p>函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 设置事件组中的位
+ * xEventGroup: 哪个事件组
+ * uxBitsToSet: 设置哪些位? 
+ *              如果uxBitsToSet的bitX, bitY为1, 那么事件组中的bitX, bitY被设置为1
+ *               可以用来设置多个位，比如 0x15 就表示设置bit4, bit2, bit0
+ * 返回值: 返回原来的事件值(没什么意义, 因为很可能已经被其他任务修改了)
+ *&#x2F;
+EventBits_t xEventGroupSetBits( EventGroupHandle_t xEventGroup,
+                                    const EventBits_t uxBitsToSet );
+
+
+&#x2F;* 设置事件组中的位
+ * xEventGroup: 哪个事件组
+ * uxBitsToSet: 设置哪些位? 
+ *              如果uxBitsToSet的bitX, bitY为1, 那么事件组中的bitX, bitY被设置为1
+ *               可以用来设置多个位，比如 0x15 就表示设置bit4, bit2, bit0
+ * pxHigherPriorityTaskWoken: 有没有导致更高优先级的任务进入就绪态? pdTRUE-有, pdFALSE-没有
+ * 返回值: pdPASS-成功, pdFALSE-失败
+ *&#x2F;
+BaseType_t xEventGroupSetBitsFromISR( EventGroupHandle_t xEventGroup,
+									  const EventBits_t uxBitsToSet,
+									  BaseType_t * pxHigherPriorityTaskWoken );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>值得注意的是，ISR中的函数，比如队列函数<code>xQueueSendToBackFromISR</code>、信号量函数<code>xSemaphoreGiveFromISR</code>，它们会唤醒某个任务，最多只会唤醒1个任务。</p>
+<p>但是设置事件组时，有可能导致多个任务被唤醒，这会带来很大的不确定性。所以<code>xEventGroupSetBitsFromISR</code>函数不是直接去设置事件组，而是给一个FreeRTOS后台任务(daemon task)发送队列数据，由这个任务来设置事件组。</p>
+<p>如果后台任务的优先级比当前被中断的任务优先级高，<code>xEventGroupSetBitsFromISR</code>会设置<code>*pxHigherPriorityTaskWoken</code>为pdTRUE。</p>
+<p>如果daemon task成功地把队列数据发送给了后台任务，那么<code>xEventGroupSetBitsFromISR</code>的返回值就是pdPASS。</p>
+<h3 id="8-2-4-等待事件"><a href="#8-2-4-等待事件" class="headerlink" title="8.2.4 等待事件"></a>8.2.4 等待事件</h3><p>使用<code>xEventGroupWaitBits</code>来等待事件，可以等待某一位、某些位中的任意一个，也可以等待多位；等到期望的事件后，还可以清除某些位。</p>
+<p>函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">EventBits_t xEventGroupWaitBits( EventGroupHandle_t xEventGroup,
+                                 const EventBits_t uxBitsToWaitFor,
+                                 const BaseType_t xClearOnExit,
+                                 const BaseType_t xWaitForAllBits,
+                                 TickType_t xTicksToWait );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>先引入一个概念：unblock condition。一个任务在等待事件发生时，它处于阻塞状态；当期望的时间发生时，这个状态就叫”unblock condition”，非阻塞条件，或称为”非阻塞条件成立”；当”非阻塞条件成立”后，该任务就可以变为就绪态。</p>
+<p>函数参数说明列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xEventGroup</td>
+<td>等待哪个事件组？</td>
+</tr>
+<tr>
+<td>uxBitsToWaitFor</td>
+<td>等待哪些位？哪些位要被测试？</td>
+</tr>
+<tr>
+<td>xWaitForAllBits</td>
+<td>怎么测试？是”AND”还是”OR”？ pdTRUE: 等待的位，全部为1; pdFALSE: 等待的位，某一个为1即可</td>
+</tr>
+<tr>
+<td>xClearOnExit</td>
+<td>函数提出前是否要清除事件？ pdTRUE: 清除uxBitsToWaitFor指定的位 pdFALSE: 不清除</td>
+</tr>
+<tr>
+<td>xTicksToWait</td>
+<td>如果期待的事件未发生，阻塞多久。 可以设置为0：判断后即刻返回； 可设置为portMAX_DELAY：一定等到成功才返回； 可以设置为期望的Tick Count，一般用<code>pdMS_TO_TICKS()</code>把ms转换为Tick Count</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>返回的是事件值， 如果期待的事件发生了，返回的是”非阻塞条件成立”时的事件值； 如果是超时退出，返回的是超时时刻的事件值。</td>
+</tr>
+</tbody></table>
+<p>举例如下：</p>
+<table>
+<thead>
+<tr>
+<th>事件组的值</th>
+<th>uxBitsToWaitFor</th>
+<th>xWaitForAllBits</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0100</td>
+<td>0101</td>
+<td>pdTRUE</td>
+<td>任务期望bit0,bit2都为1， 当前值只有bit2满足，任务进入阻塞态； 当事件组中bit0,bit2都为1时退出阻塞态</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>0110</td>
+<td>pdFALSE</td>
+<td>任务期望bit0,bit2某一个为1， 当前值满足，所以任务成功退出</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>0110</td>
+<td>pdTRUE</td>
+<td>任务期望bit1,bit2都为1， 当前值不满足，任务进入阻塞态； 当事件组中bit1,bit2都为1时退出阻塞态</td>
+</tr>
+</tbody></table>
+<p>你可以使用<code>xEventGroupWaitBits()</code>等待期望的事件，它发生之后再使用<code>xEventGroupClearBits()</code>来清除。但是这两个函数之间，有可能被其他任务或中断抢占，它们可能会修改事件组。</p>
+<p>可以使用设置<code>xClearOnExit</code>为pdTRUE，使得对事件组的测试、清零都在<code>xEventGroupWaitBits()</code>函数内部完成，这是一个原子操作。</p>
+<h3 id="8-2-5-同步点"><a href="#8-2-5-同步点" class="headerlink" title="8.2.5 同步点"></a>8.2.5 同步点</h3><p>有一个事情需要多个任务协同，比如：</p>
+<ul>
+<li>任务A：炒菜</li>
+<li>任务B：买酒</li>
+<li>任务C：摆台</li>
+<li>A、B、C做好自己的事后，还要等别人做完；大家一起做完，才可开饭</li>
+</ul>
+<p>使用<code>xEventGroupSync()</code>函数可以同步多个任务：</p>
+<ul>
+<li>可以设置某位、某些位，表示自己做了什么事</li>
+<li>可以等待某位、某些位，表示要等等其他任务</li>
+<li>期望的时间发生后，<code>xEventGroupSync()</code>才会成功返回。</li>
+<li><code>xEventGroupSync</code>成功返回后，会清除事件</li>
+</ul>
+<p><code>xEventGroupSync</code>函数原型如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">EventBits_t xEventGroupSync(    EventGroupHandle_t xEventGroup,
+                                const EventBits_t uxBitsToSet,
+                                const EventBits_t uxBitsToWaitFor,
+                                TickType_t xTicksToWait );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参数列表如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xEventGroup</td>
+<td>哪个事件组？</td>
+</tr>
+<tr>
+<td>uxBitsToSet</td>
+<td>要设置哪些事件？我完成了哪些事件？ 比如0x05(二进制为0101)会导致事件组的bit0,bit2被设置为1</td>
+</tr>
+<tr>
+<td>uxBitsToWaitFor</td>
+<td>等待那个位、哪些位？ 比如0x15(二级制10101)，表示要等待bit0,bit2,bit4都为1</td>
+</tr>
+<tr>
+<td>xTicksToWait</td>
+<td>如果期待的事件未发生，阻塞多久。 可以设置为0：判断后即刻返回； 可设置为portMAX_DELAY：一定等到成功才返回； 可以设置为期望的Tick Count，一般用<code>pdMS_TO_TICKS()</code>把ms转换为Tick Count</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>返回的是事件值， 如果期待的事件发生了，返回的是”非阻塞条件成立”时的事件值； 如果是超时退出，返回的是超时时刻的事件值。</td>
+</tr>
+</tbody></table>
+<h2 id="8-3-示例20-等待多个事件"><a href="#8-3-示例20-等待多个事件" class="headerlink" title="8.3 示例20: 等待多个事件"></a>8.3 示例20: 等待多个事件</h2><p>本节源码是<code>FreeRTOS_20_event_group_wait_multi_events</code>。</p>
+<p>要使用事件组，代码中要有如下操作：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 1. 工程中添加event_groups.c *&#x2F;
+
+&#x2F;* 2. 源码中包含头文件 *&#x2F;
+#include &quot;event_groups.h&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>假设大厨要等手下做完这些事才可以炒菜：洗菜、生火。</p>
+<p>本程序创建3个任务：</p>
+<ul>
+<li>任务1：洗菜</li>
+<li>任务2：生火</li>
+<li>任务3：炒菜。</li>
+</ul>
+<p>main函数代码如下，它创建了3个任务：</p>
+<pre class="line-numbers language-none"><code class="language-none">int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建递归锁 *&#x2F;
+    xEventGroup &#x3D; xEventGroupCreate( );
+
+	if( xEventGroup !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建3个任务: 洗菜&#x2F;生火&#x2F;炒菜
+		 *&#x2F;
+		xTaskCreate( vWashingTask, &quot;Task1&quot;, 1000, NULL, 1, NULL );
+		xTaskCreate( vFiringTask,  &quot;Task2&quot;, 1000, NULL, 2, NULL );
+		xTaskCreate( vCookingTask, &quot;Task3&quot;, 1000, NULL, 3, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建事件组 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这3个任务的代码和执行流程如下：</p>
+<ul>
+<li>A：”炒菜任务”优先级最高，先执行。它要等待的2个事件未发生：洗菜、生火，进入阻塞状态</li>
+<li>B：”生火任务”接着执行，它要等待的1个事件未发生：洗菜，进入阻塞状态</li>
+<li>C：”洗菜任务”接着执行，它洗好菜，发出事件：洗菜，然后调用F等待”炒菜”事件</li>
+<li>D：”生火任务”等待的事件满足了，从B处继续执行，开始生火、发出”生火”事件</li>
+<li>E：”炒菜任务”等待的事件满足了，从A出继续执行，开始炒菜、发出”炒菜”事件</li>
+<li>F：”洗菜任务”等待的事件满足了，退出F、继续执行C</li>
+</ul>
+<p>要注意的是，代码B处等待到”洗菜任务”后并不清除该事件，如果清除的话会导致”炒菜任务”无法执行。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/02_multi_events.png"></p>
+<p>运行结果如下图所示：</p>
+<p><img src="http://rtos.100ask.net/freeRTOS%E6%95%99%E7%A8%8B/_images/03_multi_events_result.png"></p>
+<h2 id="8-3-示例21-任务同步"><a href="#8-3-示例21-任务同步" class="headerlink" title="8.3 示例21: 任务同步"></a>8.3 示例21: 任务同步</h2><p>本节代码是<code>FreeRTOS_21_event_group_task_sync</code>。</p>
+<p>假设ABC三人要吃饭，各司其职：</p>
+<ul>
+<li>A：炒菜</li>
+<li>B：买酒</li>
+<li>C：摆台</li>
+</ul>
+<p>三人都做完后，才可以开饭。</p>
+<p>main函数代码如下，它创建了3个任务：</p>
+<pre class="line-numbers language-none"><code class="language-none">int main( void )
+&#123;
+	prvSetupHardware();
+	
+    &#x2F;* 创建递归锁 *&#x2F;
+    xEventGroup &#x3D; xEventGroupCreate( );
+
+	if( xEventGroup !&#x3D; NULL )
+	&#123;
+		&#x2F;* 创建3个任务: 洗菜&#x2F;生火&#x2F;炒菜
+		 *&#x2F;
+		xTaskCreate( vCookingTask, &quot;task1&quot;, 1000, &quot;A&quot;, 1, NULL );
+		xTaskCreate( vBuyingTask,  &quot;task2&quot;, 1000, &quot;B&quot;, 2, NULL );
+		xTaskCreate( vTableTask,   &quot;task3&quot;, 1000, &quot;C&quot;, 3, NULL );
+
+		&#x2F;* 启动调度器 *&#x2F;
+		vTaskStartScheduler();
+	&#125;
+	else
+	&#123;
+		&#x2F;* 无法创建事件组 *&#x2F;
+	&#125;
+
+	&#x2F;* 如果程序运行到了这里就表示出错了, 一般是内存不足 *&#x2F;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>被创建的3个任务，代码都很类似，以任务1为例：</p>
+<pre class="line-numbers language-none"><code class="language-none">static void vCookingTask( void *pvParameters )
+&#123;
+	const TickType_t xTicksToWait &#x3D; pdMS_TO_TICKS( 100UL );		
+	int i &#x3D; 0;
+	
+	&#x2F;* 无限循环 *&#x2F;
+	for( ;; )
+	&#123;
+        &#x2F;* 做自己的事 *&#x2F;
+		printf(&quot;%s is cooking %d time....\r\n&quot;, (char *)pvParameters, i);
+		
+		&#x2F;* 表示我做好了, 还要等别人都做好 *&#x2F;
+		xEventGroupSync(xEventGroup, COOKING, ALL, portMAX_DELAY);
+	
+		&#x2F;* 别人也做好了, 开饭 *&#x2F;
+		printf(&quot;%s is eating %d time....\r\n&quot;, (char *)pvParameters, i++);
+		vTaskDelay(xTicksToWait);
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>要点在于<code>xEventGroupSync</code>函数，它有3个功能：</p>
+<ul>
+<li>设置事件：表示自己完成了某个、某些事件</li>
+<li>等待事件：跟别的任务同步</li>
+<li>成功返回后，清除”等待的事件”</li>
+</ul>
 
                 
             </div>
@@ -1629,24 +3638,72 @@ void vTask2( void *pvParameters )
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/03/15/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/">
+                <a href="/2023/03/17/Learn/LeetCode/2023.3.17-LeetCode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Freertos">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="2023.3.17 LeetCode">
                         
-                        <span class="card-title">Freertos</span>
+                        <span class="card-title">2023.3.17 LeetCode</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            参考韦东山RTOS
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/15/Learn/LeetCode/2023.3.15-LeetCode/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="2023.3.15 LeetCode">
+                        
+                        <span class="card-title">2023.3.15 LeetCode</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1665,65 +3722,11 @@ void vTask2( void *pvParameters )
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
-                    </a>
-                    
-                    <a href="/tags/Freertos/">
-                        <span class="chip bg-color">Freertos</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/03/13/Learn/QT/QT_Chaprter2/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="QT_Chaprter2">
-                        
-                        <span class="card-title">QT_Chaprter2</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Learn/" class="post-category">
-                                    Learn
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/QT/">
-                        <span class="chip bg-color">QT</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1867,7 +3870,7 @@ void vTask2( void *pvParameters )
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">57k</span>
+                        class="white-color">74.7k</span>
             
             
             

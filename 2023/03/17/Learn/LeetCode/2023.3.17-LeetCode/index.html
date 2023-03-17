@@ -4,15 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2023.3.15 LeetCode, ZRong&#39;s Blog">
+    <meta name="keywords" content="2023.3.17 LeetCode, ZRong&#39;s Blog">
     <meta name="description" content="
 
-2023.3.151615.最大网络秩
-分析把每个点连接的节点个数算出来。
-Max(a,b)，如果a和b两点连在一起则相加之后要减去1，没有连在一起则直接相加。
-Codeclass Solution &amp;#123;
+2023.3.172389.和有限的最长子序列
+My Codeclass Solution &amp;#123;
 public:
-   ">
+    vector&amp;lt;int&amp;gt; answerQueries(vector&amp;lt;int&amp;gt;&amp;amp">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +22,7 @@ public:
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2023.3.15 LeetCode | ZRong&#39;s Blog</title>
+    <title>2023.3.17 LeetCode | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -268,12 +266,12 @@ public:
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2023.3.15 LeetCode</h1>
+                    <h1 class="description center-align post-title">2023.3.17 LeetCode</h1>
                 </div>
             </div>
         </div>
@@ -322,7 +320,7 @@ public:
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-12
+                    2023-03-17
                 </div>
                 
 
@@ -331,7 +329,7 @@ public:
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    205
+                    96
                 </div>
                 
 
@@ -358,36 +356,22 @@ public:
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="2023-3-15"><a href="#2023-3-15" class="headerlink" title="2023.3.15"></a>2023.3.15</h1><h2 id="1615-最大网络秩"><a href="#1615-最大网络秩" class="headerlink" title="1615.最大网络秩"></a>1615.最大网络秩</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230315215242998.png"></p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>把每个点连接的节点个数算出来。</p>
-<p>Max(a,b)，如果a和b两点连在一起则相加之后要减去1，没有连在一起则直接相加。</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+<h1 id="2023-3-17"><a href="#2023-3-17" class="headerlink" title="2023.3.17"></a>2023.3.17</h1><h2 id="2389-和有限的最长子序列"><a href="#2389-和有限的最长子序列" class="headerlink" title="2389.和有限的最长子序列"></a>2389.和有限的最长子序列</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230317130141012.png"></p>
+<h2 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
 public:
-    int maximalNetworkRank(int n, vector&lt;vector&lt;int&gt;&gt;&amp; roads) &#123;
-        vector&lt;vector&lt;bool&gt;&gt; connect(n, vector&lt;bool&gt;(n, false));
-        vector&lt;int&gt; degree(n, 0);
-        for (auto v : roads) &#123;
-            connect[v[0]][v[1]] &#x3D; true;
-            connect[v[1]][v[0]] &#x3D; true;
-            degree[v[0]]++;
-            degree[v[1]]++;
+    vector&lt;int&gt; answerQueries(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; queries) &#123;
+        sort(nums.begin(), nums.end());
+        for (int i &#x3D; 1; i &lt; nums.size(); i++) &#123;
+            nums[i] +&#x3D; nums[i - 1];
         &#125;
-
-        int maxRank &#x3D; 0;
-        for (int i &#x3D; 0; i &lt; n; i++) &#123;
-            for (int j &#x3D; i + 1; j &lt; n; j++) &#123;
-                int rank &#x3D; degree[i] + degree[j] - (connect[i][j] ? 1 : 0);
-                maxRank &#x3D; max(maxRank, rank);
-            &#125;
+        vector&lt;int&gt; ans;
+        for (auto&amp; q : queries) &#123;
+            ans.push_back(upper_bound(nums.begin(), nums.end(), q) - nums.begin());&#x2F;&#x2F;返回地址后减去首地址
         &#125;
-        return maxRank;
+        return ans;
     &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="Learn"><a href="#Learn" class="headerlink" title="Learn"></a>Learn</h3><ol>
-<li>关于遍历<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28087491/article/details/108171017">for(auto i : v)遍历容器元素_for auto 遍历_泠山的博客-CSDN博客</a></li>
-<li>二维容器的构建</li>
-</ol>
 
                 
             </div>
@@ -468,17 +452,18 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/12/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%204/">
+                <a href="/2023/03/17/Learn/LeetCode/2023.3.17-LeetCode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="操作系统Chapter 4">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="2023.3.17 LeetCode">
                         
-                        <span class="card-title">操作系统Chapter 4</span>
+                        <span class="card-title">2023.3.17 LeetCode</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -488,9 +473,59 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-12
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/15/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Freertos">
+                        
+                        <span class="card-title">Freertos</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            参考韦东山RTOS
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -510,53 +545,8 @@ public:
                         <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/03/12/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.12%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="2023.3.12 牛客题库">
-                        
-                        <span class="card-title">2023.3.12 牛客题库</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Learn/" class="post-category">
-                                    Learn
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%89%9B%E5%AE%A2Code/">
-                        <span class="chip bg-color">牛客Code</span>
+                    <a href="/tags/Freertos/">
+                        <span class="chip bg-color">Freertos</span>
                     </a>
                     
                 </div>
@@ -700,7 +690,7 @@ public:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">57k</span>
+                        class="white-color">74.7k</span>
             
             
             

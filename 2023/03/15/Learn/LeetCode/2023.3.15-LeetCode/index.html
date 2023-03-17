@@ -4,22 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="QT_Chaprter2, ZRong&#39;s Blog">
+    <meta name="keywords" content="2023.3.15 LeetCode, ZRong&#39;s Blog">
     <meta name="description" content="
 
-QT_Chaprter2QMainWindow菜单栏和工具栏菜单栏
-工具栏
-QMainWindow状态栏、铆接部件、核心部件状态栏
-铆接部件
-核心部件
-资源文件添加
-对话框模态和非模态对话框创建
-
-消息对话框
-
-其他标准对话框
-总结：
-">
+2023.3.151615.最大网络秩
+分析把每个点连接的节点个数算出来。
+Max(a,b)，如果a和b两点连在一起则相加之后要减去1，没有连在一起则直接相加。
+Codeclass Solution &amp;#123;
+public:
+   ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -31,7 +24,7 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>QT_Chaprter2 | ZRong&#39;s Blog</title>
+    <title>2023.3.15 LeetCode | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -275,12 +268,12 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">QT_Chaprter2</h1>
+                    <h1 class="description center-align post-title">2023.3.15 LeetCode</h1>
                 </div>
             </div>
         </div>
@@ -304,8 +297,8 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/QT/">
-                                <span class="chip bg-color">QT</span>
+                            <a href="/tags/LeetCode/">
+                                <span class="chip bg-color">LeetCode</span>
                             </a>
                         
                     </div>
@@ -329,7 +322,7 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-13
+                    2023-03-15
                 </div>
                 
 
@@ -338,7 +331,7 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    74
+                    205
                 </div>
                 
 
@@ -365,24 +358,36 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="QT-Chaprter2"><a href="#QT-Chaprter2" class="headerlink" title="QT_Chaprter2"></a>QT_Chaprter2</h1><h2 id="QMainWindow菜单栏和工具栏"><a href="#QMainWindow菜单栏和工具栏" class="headerlink" title="QMainWindow菜单栏和工具栏"></a>QMainWindow菜单栏和工具栏</h2><h3 id="菜单栏"><a href="#菜单栏" class="headerlink" title="菜单栏"></a>菜单栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313091013705.png"></p>
-<h3 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092049366.png"></p>
-<h2 id="QMainWindow状态栏、铆接部件、核心部件"><a href="#QMainWindow状态栏、铆接部件、核心部件" class="headerlink" title="QMainWindow状态栏、铆接部件、核心部件"></a>QMainWindow状态栏、铆接部件、核心部件</h2><h3 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092446434.png"></p>
-<h3 id="铆接部件"><a href="#铆接部件" class="headerlink" title="铆接部件"></a>铆接部件</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092848843.png"></p>
-<h3 id="核心部件"><a href="#核心部件" class="headerlink" title="核心部件"></a>核心部件</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092945226.png"></p>
-<h2 id="资源文件添加"><a href="#资源文件添加" class="headerlink" title="资源文件添加"></a>资源文件添加</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313095112338.png"></p>
-<h2 id="对话框"><a href="#对话框" class="headerlink" title="对话框"></a>对话框</h2><h3 id="模态和非模态对话框创建"><a href="#模态和非模态对话框创建" class="headerlink" title="模态和非模态对话框创建"></a>模态和非模态对话框创建</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313100609132.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313100642890.png"></p>
-<h3 id="消息对话框"><a href="#消息对话框" class="headerlink" title="消息对话框"></a>消息对话框</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313101611702.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313101638924.png"></p>
-<h3 id="其他标准对话框"><a href="#其他标准对话框" class="headerlink" title="其他标准对话框"></a>其他标准对话框</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313102228919.png"></p>
-<p>总结：</p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313102251507.png"></p>
-<h2 id="QListWidget"><a href="#QListWidget" class="headerlink" title="QListWidget"></a>QListWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193031062.png"></p>
-<h2 id="QTreeWidget"><a href="#QTreeWidget" class="headerlink" title="QTreeWidget"></a>QTreeWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193714411.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193735913.png"></p>
-<h2 id="QTableWidget"><a href="#QTableWidget" class="headerlink" title="QTableWidget"></a>QTableWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314194538844.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314194602425.png"></p>
+<h1 id="2023-3-15"><a href="#2023-3-15" class="headerlink" title="2023.3.15"></a>2023.3.15</h1><h2 id="1615-最大网络秩"><a href="#1615-最大网络秩" class="headerlink" title="1615.最大网络秩"></a>1615.最大网络秩</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230315215242998.png"></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>把每个点连接的节点个数算出来。</p>
+<p>Max(a,b)，如果a和b两点连在一起则相加之后要减去1，没有连在一起则直接相加。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int maximalNetworkRank(int n, vector&lt;vector&lt;int&gt;&gt;&amp; roads) &#123;
+        vector&lt;vector&lt;bool&gt;&gt; connect(n, vector&lt;bool&gt;(n, false));
+        vector&lt;int&gt; degree(n, 0);
+        for (auto v : roads) &#123;
+            connect[v[0]][v[1]] &#x3D; true;
+            connect[v[1]][v[0]] &#x3D; true;
+            degree[v[0]]++;
+            degree[v[1]]++;
+        &#125;
+
+        int maxRank &#x3D; 0;
+        for (int i &#x3D; 0; i &lt; n; i++) &#123;
+            for (int j &#x3D; i + 1; j &lt; n; j++) &#123;
+                int rank &#x3D; degree[i] + degree[j] - (connect[i][j] ? 1 : 0);
+                maxRank &#x3D; max(maxRank, rank);
+            &#125;
+        &#125;
+        return maxRank;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Learn"><a href="#Learn" class="headerlink" title="Learn"></a>Learn</h3><ol>
+<li>关于遍历<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28087491/article/details/108171017">for(auto i : v)遍历容器元素_for auto 遍历_泠山的博客-CSDN博客</a></li>
+<li>二维容器的构建</li>
+</ol>
 
                 
             </div>
@@ -397,8 +402,8 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/QT/">
-                                    <span class="chip bg-color">QT</span>
+                                <a href="/tags/LeetCode/">
+                                    <span class="chip bg-color">LeetCode</span>
                                 </a>
                             
                         </div>
@@ -467,19 +472,19 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/03/15/Learn/LeetCode/2023.3.15-LeetCode/">
+                <a href="/2023/03/15/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="2023.3.15 LeetCode">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Freertos">
                         
-                        <span class="card-title">2023.3.15 LeetCode</span>
+                        <span class="card-title">Freertos</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            参考韦东山RTOS
                         
                     </div>
                     <div class="publish-info">
@@ -501,8 +506,12 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
+                    </a>
+                    
+                    <a href="/tags/Freertos/">
+                        <span class="chip bg-color">Freertos</span>
                     </a>
                     
                 </div>
@@ -516,13 +525,13 @@ QMainWindow状态栏、铆接部件、核心部件状态栏
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/13/Learn/QT/QT_Chaprter3/">
+                <a href="/2023/03/13/Learn/QT/QT_Chaprter2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="QT_Chaprter3">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="QT_Chaprter2">
                         
-                        <span class="card-title">QT_Chaprter3</span>
+                        <span class="card-title">QT_Chaprter2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
