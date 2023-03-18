@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>2023.3.18 Note</title>
+      <link href="/2023/03/18/Note/2023.3.18%E8%AE%B0/"/>
+      <url>/2023/03/18/Note/2023.3.18%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>近期把Freertos、通信协议重新学习了一遍，收获颇多。</p><p>找个时间把几个通信协议总结归纳一下！</p><p>牛客有点简单，味道都差不多，换成每天一道LeetCode，分题型学！</p><p>看了雷殿生写的徒步中国，深深的震撼。</p><p>小飞机bug也解决了很多，能飞拍视频了。</p><p>心情很好，干劲十足，继续保持。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Diary </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2023.3.18 LeetCode</title>
       <link href="/2023/03/18/Learn/LeetCode/2023.3.18-LeetCode/"/>
       <url>/2023/03/18/Learn/LeetCode/2023.3.18-LeetCode/</url>
@@ -20,9 +39,28 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> Code </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>信念·十年徒步中国</title>
+      <link href="/2023/03/18/Books/%E4%BF%A1%E5%BF%B5%C2%B7%E5%8D%81%E5%B9%B4%E5%BE%92%E6%AD%A5%E4%B8%AD%E5%9B%BD/"/>
+      <url>/2023/03/18/Books/%E4%BF%A1%E5%BF%B5%C2%B7%E5%8D%81%E5%B9%B4%E5%BE%92%E6%AD%A5%E4%B8%AD%E5%9B%BD/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="信念·十年徒步中国"><a href="#信念·十年徒步中国" class="headerlink" title="信念·十年徒步中国"></a>信念·十年徒步中国</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> Book </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -45,7 +83,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -97,7 +135,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -122,7 +160,7 @@
       
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -247,7 +285,7 @@
       
         <tags>
             
-            <tag> 牛客Code </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -322,7 +360,7 @@
       
         <tags>
             
-            <tag> 牛客Code </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -360,7 +398,7 @@
       <link href="/2023/03/08/Note/2023.3.8%E8%AE%B0/"/>
       <url>/2023/03/08/Note/2023.3.8%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h2 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h2><p>最近开始对嵌入式基础知识进行了学习，了解了底层上的知识。</p><p>蛮有意思的，keep learning！！！</p><p>下一步把操作系统看一遍，之后把Freertos源码内核研究一下。</p><h2 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h2><p>代码能力上开始做了一周的牛客题，发现代码能力不够扎实。</p><p>每天继续完成5道题，开拓一下写代码的思路！！</p><p>下一阶段把C&#x2F;C++巩固学习一遍之后，分题型刷一下Leetcode.</p><h2 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h2><p>项目上，每天抽了一定时间在做。姿态估计数据有些异常，还没找到原因。</p><p>这周好好解决把，争取周末能完成现阶段任务。</p>]]></content>
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>最近开始对嵌入式基础知识进行了学习，了解了底层上的知识。</p><p>蛮有意思的，keep learning！！！</p><p>下一步把操作系统看一遍，之后把Freertos源码内核研究一下。</p><p>代码能力上开始做了一周的牛客题，发现代码能力不够扎实。</p><p>每天继续完成5道题，开拓一下写代码的思路！！</p><p>下一阶段把C&#x2F;C++巩固学习一遍之后，分题型刷一下Leetcode.</p><p>项目上，每天抽了一定时间在做。姿态估计数据有些异常，还没找到原因。</p><p>这周好好解决把，争取周末能完成现阶段任务。</p><p>Happy！</p>]]></content>
       
       
       <categories>
@@ -435,7 +473,7 @@
       
         <tags>
             
-            <tag> 牛客Code </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -460,9 +498,28 @@
       
         <tags>
             
-            <tag> 牛客Code </tag>
+            <tag> Code </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023.3.5 Note</title>
+      <link href="/2023/03/05/Note/2023.3.5%E8%AE%B0/"/>
+      <url>/2023/03/05/Note/2023.3.5%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>不得不铭记这一天。</p><p>今夕何夕，遇此良人。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Diary </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -485,7 +542,7 @@
       
         <tags>
             
-            <tag> 牛客Code </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -529,7 +586,7 @@
       
         <tags>
             
-            <tag> 牛客Code </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -573,7 +630,7 @@
       
         <tags>
             
-            <tag> 牛客Code </tag>
+            <tag> Code </tag>
             
         </tags>
       
@@ -1161,9 +1218,9 @@
       
         <tags>
             
-            <tag> UAV </tag>
-            
             <tag> 建模 </tag>
+            
+            <tag> UAV </tag>
             
         </tags>
       
