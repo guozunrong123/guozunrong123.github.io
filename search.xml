@@ -5,6 +5,31 @@
     
     <entry>
       <title>2023.3.17 LeetCode</title>
+      <link href="/2023/03/17/Learn/LeetCode/2023.3.18-LeetCode/"/>
+      <url>/2023/03/17/Learn/LeetCode/2023.3.18-LeetCode/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="2023-3-17"><a href="#2023-3-17" class="headerlink" title="2023.3.17"></a>2023.3.17</h1><h2 id="1616-分割两个字符串得到回文串"><a href="#1616-分割两个字符串得到回文串" class="headerlink" title="1616.分割两个字符串得到回文串"></a>1616.分割两个字符串得到回文串</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230318142727587.png" alt="image-20230318142727587"></p><h2 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h2><p>思路：我们可以使用双指针，其中一个指针 i 从字符串 a 的头部开始，另一个指针 j 从字符串 b的尾部开始，如果两个指针指向的字符相等，那么两个指针同时往中间移动，直到遇到不同的字符或两指针交叉。</p><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;public:    bool checkPalindromeFormation(string a, string b) &#123;        return check1(a, b) || check1(b, a);    &#125;private:    bool check1(string &amp;a, string &amp;b) &#123;        int i &#x3D; 0, j &#x3D; b.size() - 1;        while (i &lt; j &amp;&amp; a[i] &#x3D;&#x3D; b[j]) &#123;            ++i;            --j;        &#125;        return i &gt;&#x3D; j || check2(a, i, j) || check2(b, i, j);    &#125;    bool check2(string &amp;a, int i, int j) &#123;        while (i &lt;&#x3D; j &amp;&amp; a[i] &#x3D;&#x3D; a[j]) &#123;            ++i;            --j;        &#125;        return i &gt;&#x3D; j;    &#125;&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023.3.17 LeetCode</title>
       <link href="/2023/03/17/Learn/LeetCode/2023.3.17-LeetCode/"/>
       <url>/2023/03/17/Learn/LeetCode/2023.3.17-LeetCode/</url>
       
@@ -56,6 +81,31 @@
     
     
     <entry>
+      <title>2023.3.16 LeetCode</title>
+      <link href="/2023/03/16/Learn/LeetCode/2023.3.16-LeetCode/"/>
+      <url>/2023/03/16/Learn/LeetCode/2023.3.16-LeetCode/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="2023-3-16"><a href="#2023-3-16" class="headerlink" title="2023.3.16"></a>2023.3.16</h1><h2 id="560-和为K的子数组"><a href="#560-和为K的子数组" class="headerlink" title="560.和为K的子数组"></a>560.和为K的子数组</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230318155033545.png"></p><h2 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h2><p>参考题解</p><h3 id="前缀和-哈希表优化"><a href="#前缀和-哈希表优化" class="headerlink" title="前缀和 + 哈希表优化"></a>前缀和 + 哈希表优化</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;public:    int subarraySum(vector&lt;int&gt;&amp; nums, int k) &#123;        unordered_map&lt;int,int&gt; mp;        int sum&#x3D;0,count&#x3D;0;        mp[0]&#x3D;1;        for(auto&amp; i:nums)&#123;            sum +&#x3D; i;            if(mp.find(sum-k) !&#x3D; mp.end())&#123;                count+&#x3D;mp[sum-k];            &#125;            mp[sum]++;        &#125;        return count;    &#125;&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="2488-统计中位数为-K-的子数组"><a href="#2488-统计中位数为-K-的子数组" class="headerlink" title="2488.统计中位数为 K 的子数组"></a>2488.统计中位数为 K 的子数组</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230318154855914.png"></p><h2 id="My-Code-1"><a href="#My-Code-1" class="headerlink" title="My Code"></a>My Code</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;public:    int countSubarrays(vector&lt;int&gt;&amp; nums, int k) &#123;        int n &#x3D; nums.size();        int _k&#x3D;nums.size();        unordered_map&lt;int, int&gt; mp;        mp[0] &#x3D; 1;        int pre_sum &#x3D; 0, res &#x3D; 0;        for (int i &#x3D; 0; i &lt; n; ++i) &#123;            if (nums[i] &#x3D;&#x3D; k) &#123;                pre_sum +&#x3D; _k;            &#125;             else if (nums[i] &lt; k) &#123;                -- pre_sum;            &#125;             else &#123;                ++ pre_sum;            &#125;            if(mp.find(pre_sum-_k) !&#x3D; mp.end())&#123;                 res +&#x3D; mp[pre_sum-_k];             &#125;             if(mp.find(pre_sum-_k-1) !&#x3D; mp.end())&#123;                res +&#x3D; mp[pre_sum-_k-1];            &#125;             mp[pre_sum]++;          &#125;               return res;    &#125;&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2023.3.15 LeetCode</title>
       <link href="/2023/03/15/Learn/LeetCode/2023.3.15-LeetCode/"/>
       <url>/2023/03/15/Learn/LeetCode/2023.3.15-LeetCode/</url>
@@ -81,11 +131,11 @@
     
     
     <entry>
-      <title>QT_Chaprter3</title>
-      <link href="/2023/03/13/Learn/QT/QT_Chaprter3/"/>
-      <url>/2023/03/13/Learn/QT/QT_Chaprter3/</url>
+      <title>QT_Chaprter2</title>
+      <link href="/2023/03/13/Learn/QT/QT_Chaprter2/"/>
+      <url>/2023/03/13/Learn/QT/QT_Chaprter2/</url>
       
-        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="QT-Chaprter3"><a href="#QT-Chaprter3" class="headerlink" title="QT_Chaprter3"></a>QT_Chaprter3</h1><h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314205950310.png"></p><h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>第一种实现方法：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314214913128.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314215124968.png"></p><p>第二种实现方法：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314215009007.png"></p><h2 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230315153300284.png"></p>]]></content>
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="QT-Chaprter2"><a href="#QT-Chaprter2" class="headerlink" title="QT_Chaprter2"></a>QT_Chaprter2</h1><h2 id="QMainWindow菜单栏和工具栏"><a href="#QMainWindow菜单栏和工具栏" class="headerlink" title="QMainWindow菜单栏和工具栏"></a>QMainWindow菜单栏和工具栏</h2><h3 id="菜单栏"><a href="#菜单栏" class="headerlink" title="菜单栏"></a>菜单栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313091013705.png"></p><h3 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092049366.png"></p><h2 id="QMainWindow状态栏、铆接部件、核心部件"><a href="#QMainWindow状态栏、铆接部件、核心部件" class="headerlink" title="QMainWindow状态栏、铆接部件、核心部件"></a>QMainWindow状态栏、铆接部件、核心部件</h2><h3 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092446434.png"></p><h3 id="铆接部件"><a href="#铆接部件" class="headerlink" title="铆接部件"></a>铆接部件</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092848843.png"></p><h3 id="核心部件"><a href="#核心部件" class="headerlink" title="核心部件"></a>核心部件</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092945226.png"></p><h2 id="资源文件添加"><a href="#资源文件添加" class="headerlink" title="资源文件添加"></a>资源文件添加</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313095112338.png"></p><h2 id="对话框"><a href="#对话框" class="headerlink" title="对话框"></a>对话框</h2><h3 id="模态和非模态对话框创建"><a href="#模态和非模态对话框创建" class="headerlink" title="模态和非模态对话框创建"></a>模态和非模态对话框创建</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313100609132.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313100642890.png"></p><h3 id="消息对话框"><a href="#消息对话框" class="headerlink" title="消息对话框"></a>消息对话框</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313101611702.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313101638924.png"></p><h3 id="其他标准对话框"><a href="#其他标准对话框" class="headerlink" title="其他标准对话框"></a>其他标准对话框</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313102228919.png"></p><p>总结：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313102251507.png"></p><h2 id="QListWidget"><a href="#QListWidget" class="headerlink" title="QListWidget"></a>QListWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193031062.png"></p><h2 id="QTreeWidget"><a href="#QTreeWidget" class="headerlink" title="QTreeWidget"></a>QTreeWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193714411.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193735913.png"></p><h2 id="QTableWidget"><a href="#QTableWidget" class="headerlink" title="QTableWidget"></a>QTableWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314194538844.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314194602425.png"></p>]]></content>
       
       
       <categories>
@@ -106,11 +156,11 @@
     
     
     <entry>
-      <title>QT_Chaprter2</title>
-      <link href="/2023/03/13/Learn/QT/QT_Chaprter2/"/>
-      <url>/2023/03/13/Learn/QT/QT_Chaprter2/</url>
+      <title>QT_Chaprter3</title>
+      <link href="/2023/03/13/Learn/QT/QT_Chaprter3/"/>
+      <url>/2023/03/13/Learn/QT/QT_Chaprter3/</url>
       
-        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="QT-Chaprter2"><a href="#QT-Chaprter2" class="headerlink" title="QT_Chaprter2"></a>QT_Chaprter2</h1><h2 id="QMainWindow菜单栏和工具栏"><a href="#QMainWindow菜单栏和工具栏" class="headerlink" title="QMainWindow菜单栏和工具栏"></a>QMainWindow菜单栏和工具栏</h2><h3 id="菜单栏"><a href="#菜单栏" class="headerlink" title="菜单栏"></a>菜单栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313091013705.png"></p><h3 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092049366.png"></p><h2 id="QMainWindow状态栏、铆接部件、核心部件"><a href="#QMainWindow状态栏、铆接部件、核心部件" class="headerlink" title="QMainWindow状态栏、铆接部件、核心部件"></a>QMainWindow状态栏、铆接部件、核心部件</h2><h3 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092446434.png"></p><h3 id="铆接部件"><a href="#铆接部件" class="headerlink" title="铆接部件"></a>铆接部件</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092848843.png"></p><h3 id="核心部件"><a href="#核心部件" class="headerlink" title="核心部件"></a>核心部件</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313092945226.png"></p><h2 id="资源文件添加"><a href="#资源文件添加" class="headerlink" title="资源文件添加"></a>资源文件添加</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313095112338.png"></p><h2 id="对话框"><a href="#对话框" class="headerlink" title="对话框"></a>对话框</h2><h3 id="模态和非模态对话框创建"><a href="#模态和非模态对话框创建" class="headerlink" title="模态和非模态对话框创建"></a>模态和非模态对话框创建</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313100609132.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313100642890.png"></p><h3 id="消息对话框"><a href="#消息对话框" class="headerlink" title="消息对话框"></a>消息对话框</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313101611702.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313101638924.png"></p><h3 id="其他标准对话框"><a href="#其他标准对话框" class="headerlink" title="其他标准对话框"></a>其他标准对话框</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313102228919.png"></p><p>总结：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230313102251507.png"></p><h2 id="QListWidget"><a href="#QListWidget" class="headerlink" title="QListWidget"></a>QListWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193031062.png"></p><h2 id="QTreeWidget"><a href="#QTreeWidget" class="headerlink" title="QTreeWidget"></a>QTreeWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193714411.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314193735913.png"></p><h2 id="QTableWidget"><a href="#QTableWidget" class="headerlink" title="QTableWidget"></a>QTableWidget</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314194538844.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314194602425.png"></p>]]></content>
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="QT-Chaprter3"><a href="#QT-Chaprter3" class="headerlink" title="QT_Chaprter3"></a>QT_Chaprter3</h1><h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314205950310.png"></p><h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>第一种实现方法：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314214913128.png"></p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314215124968.png"></p><p>第二种实现方法：</p><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230314215009007.png"></p><h2 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230315153300284.png"></p>]]></content>
       
       
       <categories>
@@ -1111,9 +1161,9 @@
       
         <tags>
             
-            <tag> UAV </tag>
-            
             <tag> 建模 </tag>
+            
+            <tag> UAV </tag>
             
         </tags>
       
