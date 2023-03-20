@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2023.3.8 Note, ZRong&#39;s Blog">
-    <meta name="description" content="随笔">
+    <meta name="keywords" content="QT_TCP, ZRong&#39;s Blog">
+    <meta name="description" content="
+
+QT_TCP尝试使用QT做了一下TCP通信，挺有意思的。
+参考：(80条消息) Qt网络编程（1）：QTcpSocket和QTcpServer的基本使用_qt qtcpsocket_龚建波的博客-CSDN博客
+效果
+CodeServer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2023.3.8 Note | ZRong&#39;s Blog</title>
+    <title>QT_TCP | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -261,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2023.3.8 Note</h1>
+                    <h1 class="description center-align post-title">QT_TCP</h1>
                 </div>
             </div>
         </div>
@@ -288,9 +293,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/QT/">
+                                <span class="chip bg-color">QT</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -298,8 +307,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Diary/" class="post-category">
-                                Diary
+                            <a href="/categories/Learn/" class="post-category">
+                                Learn
                             </a>
                         
                     </div>
@@ -311,7 +320,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-08
+                    2023-03-20
                 </div>
                 
 
@@ -320,7 +329,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    172
+                    2k
                 </div>
                 
 
@@ -347,15 +356,371 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<p>最近开始对嵌入式基础知识进行了学习，了解了底层上的知识。</p>
-<p>蛮有意思的，keep learning！！！</p>
-<p>下一步把操作系统看一遍，之后把Freertos源码内核研究一下。</p>
-<p>代码能力上开始做了一周的牛客题，发现代码能力不够扎实。</p>
-<p>每天继续完成5道题，开拓一下写代码的思路！！</p>
-<p>下一阶段把C&#x2F;C++巩固学习一遍之后，分题型刷一下Leetcode.</p>
-<p>项目上，每天抽了一定时间在做。姿态估计数据有些异常，还没找到原因。</p>
-<p>这周好好解决把，争取周末能完成现阶段任务。</p>
-<p>Happy！</p>
+<h1 id="QT-TCP"><a href="#QT-TCP" class="headerlink" title="QT_TCP"></a>QT_TCP</h1><p>尝试使用QT做了一下TCP通信，挺有意思的。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/gongjianbo1992/article/details/107743780">(80条消息) Qt网络编程（1）：QTcpSocket和QTcpServer的基本使用_qt qtcpsocket_龚建波的博客-CSDN博客</a></p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230320221551107.png"></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><h3 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h3><h4 id="widget-cpp"><a href="#widget-cpp" class="headerlink" title="widget.cpp"></a>widget.cpp</h4><pre class="line-numbers language-none"><code class="language-none">#include &quot;widget.h&quot;
+#include &quot;ui_widget.h&quot;
+
+#include &lt;QHostAddress&gt;
+
+Widget::Widget(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::Widget)
+&#123;
+    ui-&gt;setupUi(this);
+    setWindowTitle(&quot;Server&quot;);
+
+    initServer();
+&#125;
+
+Widget::~Widget()
+&#123;
+    &#x2F;&#x2F;关闭server
+    closeServer();
+    delete ui;
+&#125;
+
+void Widget::initServer()
+&#123;
+    &#x2F;&#x2F;创建Server对象
+    server &#x3D; new QTcpServer(this);
+
+    &#x2F;&#x2F;点击监听按钮，开始监听
+    connect(ui-&gt;btnListen,&amp;QPushButton::clicked,[this]&#123;
+        &#x2F;&#x2F;判断当前是否已开启，是则close，否则listen
+        if(server-&gt;isListening())&#123;
+            &#x2F;&#x2F;server-&gt;close();
+            closeServer();
+            &#x2F;&#x2F;关闭server后恢复界面状态
+            ui-&gt;btnListen-&gt;setText(&quot;Listen&quot;);
+            ui-&gt;editAddress-&gt;setEnabled(true);
+            ui-&gt;editPort-&gt;setEnabled(true);
+        &#125;else&#123;
+            &#x2F;&#x2F;从界面上读取ip和端口
+            &#x2F;&#x2F;可以使用 QHostAddress::Any 监听所有地址的对应端口
+            const QString address_text&#x3D;ui-&gt;editAddress-&gt;text();
+            const QHostAddress address&#x3D;(address_text&#x3D;&#x3D;&quot;Any&quot;)
+                    ?QHostAddress::Any
+                   :QHostAddress(address_text);
+            const unsigned short port&#x3D;ui-&gt;editPort-&gt;text().toUShort();
+            &#x2F;&#x2F;开始监听，并判断是否成功
+            if(server-&gt;listen(address,port))&#123;
+                &#x2F;&#x2F;连接成功就修改界面按钮提示，以及地址栏不可编辑
+                ui-&gt;btnListen-&gt;setText(&quot;Close&quot;);
+                ui-&gt;editAddress-&gt;setEnabled(false);
+                ui-&gt;editPort-&gt;setEnabled(false);
+            &#125;
+        &#125;
+        updateState();
+    &#125;);
+
+    &#x2F;&#x2F;监听到新的客户端连接请求
+    connect(server,&amp;QTcpServer::newConnection,this,[this]&#123;
+        &#x2F;&#x2F;如果有新的连接就取出
+        while(server-&gt;hasPendingConnections())
+        &#123;
+            &#x2F;&#x2F;nextPendingConnection返回下一个挂起的连接作为已连接的QTcpSocket对象
+            &#x2F;&#x2F;套接字是作为服务器的子级创建的，这意味着销毁QTcpServer对象时会自动删除该套接字。
+            &#x2F;&#x2F;最好在完成处理后显式删除该对象，以避免浪费内存。
+            &#x2F;&#x2F;返回的QTcpSocket对象不能从另一个线程使用，如有需要可重写incomingConnection().
+            QTcpSocket *socket&#x3D;server-&gt;nextPendingConnection();
+            clientList.append(socket);
+            ui-&gt;textRecv-&gt;append(QString(&quot;[%1:%2] Soket Connected&quot;)
+                                 .arg(socket-&gt;peerAddress().toString())
+                                 .arg(socket-&gt;peerPort()));
+
+            &#x2F;&#x2F;关联相关操作的信号槽
+            &#x2F;&#x2F;收到数据，触发readyRead
+            connect(socket,&amp;QTcpSocket::readyRead,[this,socket]&#123;
+                &#x2F;&#x2F;没有可读的数据就返回
+                if(socket-&gt;bytesAvailable()&lt;&#x3D;0)
+                    return;
+                &#x2F;&#x2F;注意收发两端文本要使用对应的编解码
+                const QString recv_text&#x3D;QString::fromUtf8(socket-&gt;readAll());
+                ui-&gt;textRecv-&gt;append(QString(&quot;[%1:%2]&quot;)
+                                     .arg(socket-&gt;peerAddress().toString())
+                                     .arg(socket-&gt;peerPort()));
+                ui-&gt;textRecv-&gt;append(recv_text);
+            &#125;);
+
+            &#x2F;&#x2F;error信号在5.15换了名字
+#if QT_VERSION &lt; QT_VERSION_CHECK(5, 15, 0)
+            &#x2F;&#x2F;错误信息
+            connect(socket, static_cast&lt;void(QAbstractSocket::*)(QAbstractSocket::SocketError)&gt;(&amp;QAbstractSocket::error),
+                    [this,socket](QAbstractSocket::SocketError)&#123;
+                ui-&gt;textRecv-&gt;append(QString(&quot;[%1:%2] Soket Error:%3&quot;)
+                                     .arg(socket-&gt;peerAddress().toString())
+                                     .arg(socket-&gt;peerPort())
+                                     .arg(socket-&gt;errorString()));
+            &#125;);
+#else
+            &#x2F;&#x2F;错误信息
+            connect(socket,&amp;QAbstractSocket::errorOccurred,[this,socket](QAbstractSocket::SocketError)&#123;
+                ui-&gt;textRecv-&gt;append(QString(&quot;[%1:%2] Soket Error:%3&quot;)
+                                     .arg(socket-&gt;peerAddress().toString())
+                                     .arg(socket-&gt;peerPort())
+                                     .arg(socket-&gt;errorString()));
+            &#125;);
+#endif
+
+            &#x2F;&#x2F;连接断开，销毁socket对象，这是为了开关server时socket正确释放
+            connect(socket,&amp;QTcpSocket::disconnected,[this,socket]&#123;
+                socket-&gt;deleteLater();
+                clientList.removeOne(socket);
+                ui-&gt;textRecv-&gt;append(QString(&quot;[%1:%2] Soket Disonnected&quot;)
+                                     .arg(socket-&gt;peerAddress().toString())
+                                     .arg(socket-&gt;peerPort()));
+                updateState();
+            &#125;);
+        &#125;
+        updateState();
+    &#125;);
+
+    &#x2F;&#x2F;server向client发送内容
+    connect(ui-&gt;btnSend,&amp;QPushButton::clicked,[this]&#123;
+        &#x2F;&#x2F;判断是否开启了server
+        if(!server-&gt;isListening())
+            return;
+        &#x2F;&#x2F;将发送区文本发送给客户端
+        const QByteArray send_data&#x3D;ui-&gt;textSend-&gt;toPlainText().toUtf8();
+        &#x2F;&#x2F;数据为空就返回
+        if(send_data.isEmpty())
+            return;
+        for(QTcpSocket *socket:clientList)
+        &#123;
+            socket-&gt;write(send_data);
+            &#x2F;&#x2F;socket-&gt;waitForBytesWritten();
+        &#125;
+    &#125;);
+
+    &#x2F;&#x2F;server的错误信息
+    &#x2F;&#x2F;如果发生错误，则serverError()返回错误的类型，
+    &#x2F;&#x2F;并且可以调用errorString()以获取对所发生事件的易于理解的描述
+    connect(server,&amp;QTcpServer::acceptError,[this](QAbstractSocket::SocketError)&#123;
+        ui-&gt;textRecv-&gt;append(&quot;Server Error:&quot;+server-&gt;errorString());
+    &#125;);
+&#125;
+
+void Widget::closeServer()
+&#123;
+    &#x2F;&#x2F;停止服务
+    server-&gt;close();
+    for(QTcpSocket * socket:clientList)
+    &#123;
+        &#x2F;&#x2F;断开与客户端的连接
+        socket-&gt;disconnectFromHost();
+        if(socket-&gt;state()!&#x3D;QAbstractSocket::UnconnectedState)&#123;
+            socket-&gt;abort();
+        &#125;
+    &#125;
+&#125;
+
+void Widget::updateState()
+&#123;
+    &#x2F;&#x2F;将当前server地址和端口、客户端连接数写在标题栏
+    if(server-&gt;isListening())&#123;
+        setWindowTitle(QString(&quot;Server[%1:%2] connections:%3&quot;)
+                       .arg(server-&gt;serverAddress().toString())
+                       .arg(server-&gt;serverPort())
+                       .arg(clientList.count()));
+    &#125;else&#123;
+        setWindowTitle(&quot;Server&quot;);
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="widget-h"><a href="#widget-h" class="headerlink" title="widget.h"></a>widget.h</h4><pre class="line-numbers language-none"><code class="language-none">#ifndef WIDGET_H
+#define WIDGET_H
+
+#include &lt;QWidget&gt;
+#include &lt;QTcpServer&gt;
+#include &lt;QTcpSocket&gt;
+QT_BEGIN_NAMESPACE
+namespace Ui &#123; class Widget; &#125;
+QT_END_NAMESPACE
+
+class Widget : public QWidget
+&#123;
+    Q_OBJECT
+
+public:
+    Widget(QWidget *parent &#x3D; nullptr);
+    ~Widget();
+private:
+    &#x2F;&#x2F;初始化server操作
+    void initServer();
+    &#x2F;&#x2F;close server
+    void closeServer();
+    &#x2F;&#x2F;更新当前状态
+    void updateState();
+
+private:
+    Ui::Widget *ui;
+    &#x2F;&#x2F;server用于监听端口，获取新的tcp连接的描述符
+    QTcpServer *server;
+    &#x2F;&#x2F;存储已连接的socket对象
+    QList&lt;QTcpSocket*&gt; clientList;
+&#125;;
+#endif &#x2F;&#x2F; WIDGET_H
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h3><h4 id="widget-cpp-1"><a href="#widget-cpp-1" class="headerlink" title="widget.cpp"></a>widget.cpp</h4><pre class="line-numbers language-none"><code class="language-none">#include &quot;widget.h&quot;
+#include &quot;ui_widget.h&quot;
+
+#include &lt;QHostAddress&gt;
+
+Widget::Widget(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::Widget)
+&#123;
+    ui-&gt;setupUi(this);
+    setWindowTitle(&quot;Client&quot;);
+
+    initClient();
+&#125;
+
+Widget::~Widget()
+&#123;
+    &#x2F;&#x2F;析构关闭连接
+    &#x2F;&#x2F;client-&gt;disconnectFromHost();
+    &#x2F;&#x2F;if(client-&gt;state()!&#x3D;QAbstractSocket::UnconnectedState)&#123;
+    &#x2F;&#x2F;    client-&gt;waitForDisconnected();
+    &#x2F;&#x2F;&#125;
+    &#x2F;&#x2F;关闭套接字的I&#x2F;O设备，并调用disconnectFromHost()关闭套接字的连接。
+    &#x2F;&#x2F;client-&gt;close();
+    &#x2F;&#x2F;中止当前连接并重置套接字。与disconnectFromHost()不同，
+    &#x2F;&#x2F;此函数立即关闭套接字，并丢弃写缓冲区中的所有待处理数据。
+    client-&gt;abort();
+    delete ui;
+&#125;
+
+void Widget::initClient()
+&#123;
+    &#x2F;&#x2F;创建client对象
+    client &#x3D; new QTcpSocket(this);
+
+    &#x2F;&#x2F;点击连接，根据ui设置的服务器地址进行连接
+    connect(ui-&gt;btnConnect,&amp;QPushButton::clicked,[this]&#123;
+        &#x2F;&#x2F;判断当前是否已连接，连接了就断开
+        if(client-&gt;state()&#x3D;&#x3D;QAbstractSocket::ConnectedState)&#123;
+            &#x2F;&#x2F;如果使用disconnectFromHost()不会重置套接字，isValid还是会为true
+            client-&gt;abort();
+        &#125;else if(client-&gt;state()&#x3D;&#x3D;QAbstractSocket::UnconnectedState)&#123;
+            &#x2F;&#x2F;从界面上读取ip和端口
+            const QHostAddress address&#x3D;QHostAddress(ui-&gt;editAddress-&gt;text());
+            const unsigned short port&#x3D;ui-&gt;editPort-&gt;text().toUShort();
+            &#x2F;&#x2F;连接服务器
+            client-&gt;connectToHost(address,port);
+        &#125;else&#123;
+            ui-&gt;textRecv-&gt;append(&quot;It is not ConnectedState or UnconnectedState&quot;);
+        &#125;
+    &#125;);
+
+    &#x2F;&#x2F;连接状态
+    connect(client,&amp;QTcpSocket::connected,[this]&#123;
+        &#x2F;&#x2F;已连接就设置为不可编辑
+        ui-&gt;btnConnect-&gt;setText(&quot;Disconnect&quot;);
+        ui-&gt;editAddress-&gt;setEnabled(false);
+        ui-&gt;editPort-&gt;setEnabled(false);
+        updateState();
+    &#125;);
+    connect(client,&amp;QTcpSocket::disconnected,[this]&#123;
+        &#x2F;&#x2F;断开连接还原状态
+        ui-&gt;btnConnect-&gt;setText(&quot;Connect&quot;);
+        ui-&gt;editAddress-&gt;setEnabled(true);
+        ui-&gt;editPort-&gt;setEnabled(true);
+        updateState();
+    &#125;);
+
+    &#x2F;&#x2F;发送数据
+    connect(ui-&gt;btnSend,&amp;QPushButton::clicked,[this]&#123;
+        &#x2F;&#x2F;判断是可操作，isValid表示准备好读写
+        if(!client-&gt;isValid())
+            return;
+        &#x2F;&#x2F;将发送区文本发送给客户端
+        const QByteArray send_data&#x3D;ui-&gt;textSend-&gt;toPlainText().toUtf8();
+        &#x2F;&#x2F;数据为空就返回
+        if(send_data.isEmpty())
+            return;
+        client-&gt;write(send_data);
+        &#x2F;&#x2F;client-&gt;waitForBytesWritten();
+    &#125;);
+
+    &#x2F;&#x2F;收到数据，触发readyRead
+    connect(client,&amp;QTcpSocket::readyRead,[this]&#123;
+        &#x2F;&#x2F;没有可读的数据就返回
+        if(client-&gt;bytesAvailable()&lt;&#x3D;0)
+            return;
+        &#x2F;&#x2F;注意收发两端文本要使用对应的编解码
+        const QString recv_text&#x3D;QString::fromUtf8(client-&gt;readAll());
+        ui-&gt;textRecv-&gt;append(QString(&quot;[%1:%2]&quot;)
+                             .arg(client-&gt;peerAddress().toString())
+                             .arg(client-&gt;peerPort()));
+        ui-&gt;textRecv-&gt;append(recv_text);
+    &#125;);
+
+    &#x2F;&#x2F;error信号在5.15换了名字
+#if QT_VERSION &lt; QT_VERSION_CHECK(5, 15, 0)
+    &#x2F;&#x2F;错误信息
+    connect(client, static_cast&lt;void(QAbstractSocket::*)(QAbstractSocket::SocketError)&gt;(&amp;QAbstractSocket::error),
+            [this](QAbstractSocket::SocketError)&#123;
+        ui-&gt;textRecv-&gt;append(&quot;Socket Error:&quot;+client-&gt;errorString());
+    &#125;);
+#else
+    &#x2F;&#x2F;错误信息
+    connect(client,&amp;QAbstractSocket::errorOccurred,[this](QAbstractSocket::SocketError)&#123;
+        ui-&gt;textRecv-&gt;append(&quot;Socket Error:&quot;+client-&gt;errorString());
+    &#125;);
+#endif
+&#125;
+
+void Widget::updateState()
+&#123;
+    &#x2F;&#x2F;将当前client地址和端口写在标题栏
+    if(client-&gt;state()&#x3D;&#x3D;QAbstractSocket::ConnectedState)&#123;
+        setWindowTitle(QString(&quot;Client[%1:%2]&quot;)
+                       .arg(client-&gt;localAddress().toString())
+                       .arg(client-&gt;localPort()));
+    &#125;else&#123;
+        setWindowTitle(&quot;Client&quot;);
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="widget-h-1"><a href="#widget-h-1" class="headerlink" title="widget.h"></a>widget.h</h4><pre class="line-numbers language-none"><code class="language-none">#ifndef WIDGET_H
+#define WIDGET_H
+
+#include &lt;QWidget&gt;
+#include &lt;QTcpSocket&gt;
+
+QT_BEGIN_NAMESPACE
+namespace Ui &#123; class Widget; &#125;
+QT_END_NAMESPACE
+
+&#x2F;&#x2F;simple Tcp 客户端
+class Widget : public QWidget
+&#123;
+    Q_OBJECT
+
+public:
+    Widget(QWidget *parent &#x3D; nullptr);
+    ~Widget();
+
+private:
+    &#x2F;&#x2F;初始化client操作
+    void initClient();
+    &#x2F;&#x2F;更新当前状态
+    void updateState();
+
+private:
+    Ui::Widget *ui;
+    &#x2F;&#x2F;socket对象
+    QTcpSocket *client;
+&#125;;
+#endif &#x2F;&#x2F; WIDGET_H
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -369,7 +734,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/QT/">
+                                    <span class="chip bg-color">QT</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -432,17 +801,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/09/Learn/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Chapter%201/">
+                <a href="/2023/03/20/Learn/QT/QT_TCP/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="操作系统Chapter 1">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="QT_TCP">
                         
-                        <span class="card-title">操作系统Chapter 1</span>
+                        <span class="card-title">QT_TCP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -452,9 +822,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-09
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/QT/">
+                        <span class="chip bg-color">QT</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/20/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E9%93%BE%E8%A1%A8/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="代码随想录_链表">
+                        
+                        <span class="card-title">代码随想录_链表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            链表专项练习
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -470,57 +890,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/03/08/Summary/ahrs%20%E8%88%AA%E5%A7%BF%E5%8F%82%E8%80%83%E7%B3%BB%E7%BB%9F/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="ahrs 航姿参考系统">
-                        
-                        <span class="card-title">ahrs 航姿参考系统</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            姿态估计
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-08
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Summary/" class="post-category">
-                                    Summary
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/ahrs/">
-                        <span class="chip bg-color">ahrs</span>
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
                     </a>
                     
                 </div>
