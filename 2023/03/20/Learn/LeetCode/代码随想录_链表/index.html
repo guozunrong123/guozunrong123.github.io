@@ -4,15 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2023.3.6 牛客题库, ZRong&#39;s Blog">
-    <meta name="description" content="
-
-2023.3.6动态规划dp背包问题【动态规划】背包问题_哔哩哔哩_bilibili
-
-
-void Dynamic()&amp;#123;
-	for(int i&amp;#x3D;1; i&amp;lt;5; i++)&amp;#123;
-		for(int j&amp;#x">
+    <meta name="keywords" content="代码随想录_链表, ZRong&#39;s Blog">
+    <meta name="description" content="链表专项练习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +17,7 @@ void Dynamic()&amp;#123;
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2023.3.6 牛客题库 | ZRong&#39;s Blog</title>
+    <title>代码随想录_链表 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -268,12 +261,12 @@ void Dynamic()&amp;#123;
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2023.3.6 牛客题库</h1>
+                    <h1 class="description center-align post-title">代码随想录_链表</h1>
                 </div>
             </div>
         </div>
@@ -322,7 +315,7 @@ void Dynamic()&amp;#123;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-06
+                    2023-03-20
                 </div>
                 
 
@@ -331,7 +324,7 @@ void Dynamic()&amp;#123;
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.2k
                 </div>
                 
 
@@ -358,202 +351,253 @@ void Dynamic()&amp;#123;
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="2023-3-6"><a href="#2023-3-6" class="headerlink" title="2023.3.6"></a>2023.3.6</h1><h2 id="动态规划dp背包问题"><a href="#动态规划dp背包问题" class="headerlink" title="动态规划dp背包问题"></a>动态规划dp背包问题</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1K4411X766/?spm_id_from=333.337.search-card.all.click&vd_source=dc5a7d7190173a321a8ae3df82a10d84">【动态规划】背包问题_哔哩哔哩_bilibili</a></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306092044679.png"></p>
-<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306092944982.png"></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void Dynamic()&#123;
-	for(int i&#x3D;1; i&lt;5; i++)&#123;
-		for(int j&#x3D;1; j&lt;9; j++)&#123;
-			if(weight[i]&gt;j)&#123;
-				dp[i][j]&#x3D;dp[i-1][j]
-			&#125;
-			else&#123;
-				dp[i][j]&#x3D;max&#123;dp[i-1][j],dp[i-1][j-weight[i]]+value[i]&#125;;
-			&#125;
-		&#125;
-	
-	&#125;
-
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="1、购物单"><a href="#1、购物单" class="headerlink" title="1、购物单"></a>1、购物单</h2><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306094453901.png"  />
-
-<p>这题有点类似于背包问题，不同之处在于他有附件。</p>
-<h3 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;&#x2F;&#x2F;化为0&#x2F;1背包问题，主件和它的附件们可以看为一个物品
-using namespace std;
-int main()&#123;
-    int N;
-    int m;
-    while(cin&gt;&gt;N&gt;&gt;m)&#123;
-        int dp[61][3201]&#x3D;&#123;0&#125;;&#x2F;&#x2F;用来dp的矩阵
-        int weight[61][3]&#x3D;&#123;0&#125;;&#x2F;&#x2F;存放v
-        int value[61][3]&#x3D;&#123;0&#125;;&#x2F;&#x2F;存放v*p
-        int v,p,q;
-        N&#x2F;&#x3D;10;
-        for(int i&#x3D;1;i&lt;&#x3D;m;i++)&#123;&#x2F;&#x2F;输入处理
-            cin&gt;&gt;v&gt;&gt;p&gt;&gt;q;
-            p*&#x3D;v;&#x2F;&#x2F;重量，我们要使这个p总和最大
-            v&#x2F;&#x3D;10;&#x2F;&#x2F;价格
-            if(!q)&#123;&#x2F;&#x2F;这个东西是主件，q&#x3D;&#x3D;0
-                weight[i][q]&#x3D;v;&#x2F;&#x2F;重量就是价格v
-                value[i][q]&#x3D;p;&#x2F;&#x2F;价值就是p&#x3D;&#x3D;p*v
-            &#125;else if(!weight[q][1])&#123;&#x2F;&#x2F;这个东西是第q件物品的第一个附件
-                weight[q][1]&#x3D;v;
-                value[q][1]&#x3D;p;
-            &#125;else&#123;&#x2F;&#x2F;这个东西是第q件物品的第二个附件
-                weight[q][2]&#x3D;v;
-                value[q][2]&#x3D;p;
-            &#125;
-        &#125;
-        &#x2F;* dp[i][j]表示有j块钱买第i个商品的最大满意度 *&#x2F;
-        for(int i&#x3D;1;i&lt;&#x3D;m;i++)&#123;&#x2F;&#x2F;开始dp
-            for(int j&#x3D;1;j&lt;&#x3D;N;j++)&#123;
-                dp[i][j]&#x3D;dp[i-1][j];&#x2F;&#x2F;默认不装任何物品
-                if(weight[i][0]&lt;&#x3D;j)&#x2F;&#x2F;可以装入一个主件
-                    dp[i][j]&#x3D;max(dp[i][j],dp[i-1][j-weight[i][0]]+value[i][0]);
-                if(weight[i][0]+weight[i][1]&lt;&#x3D;j)&#x2F;&#x2F;可以装入一个主件和第一个附件
-                    dp[i][j]&#x3D;max(dp[i][j],dp[i-1][j-weight[i][0]-weight[i][1]]+value[i][0]+value[i][1]);
-                if(weight[i][0]+weight[i][2]&lt;&#x3D;j)&#x2F;&#x2F;可以装入一个主件和第二个附件
-                    dp[i][j]&#x3D;max(dp[i][j],dp[i-1][j-weight[i][0]-weight[i][2]]+value[i][0]+value[i][2]);
-                if(weight[i][0]+weight[i][1]+weight[i][2]&lt;&#x3D;j)&#x2F;&#x2F;可以装入一个主件和第一、二个附件
-                    dp[i][j]&#x3D;max(dp[i][j],dp[i-1][j-weight[i][0]-weight[i][1]-weight[i][2]]+value[i][0]+value[i][1]+value[i][2]);
-            &#125;
-        &#125;
-        cout&lt;&lt;dp[m][N]&lt;&lt;endl;
-    &#125;
-   return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Learn"><a href="#Learn" class="headerlink" title="Learn"></a>Learn</h3><p>见背包问题</p>
-<h2 id="2、坐标移动"><a href="#2、坐标移动" class="headerlink" title="2、坐标移动"></a>2、坐标移动</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306094952889.png"></p>
-<h3 id="My-Code-1"><a href="#My-Code-1" class="headerlink" title="My Code"></a>My Code</h3><p>做的太复杂了。情况太多一一考虑，不好。</p>
-<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
-#include &lt;string&gt;
-using namespace std;
-
-bool if_use(char a)&#123;
-    if(a &gt;&#x3D; &#39;0&#39; &amp;&amp; a&lt;&#x3D;&#39;9&#39;)&#123;
-        return true;
-    &#125;
-    return false;
-&#125;
-int main() &#123;
-    string str;
-    getline(cin,str);
-    int pos_1 &#x3D; 0;
-    int sum_x &#x3D; 0;
-    int sum_y &#x3D; 0;
-    int last_count &#x3D; 0;
-    if(str[str.length()-3 &#x3D;&#x3D; &#39;;&#39;])&#123;
-        last_count &#x3D; 2;
-    &#125;
-    else&#123;
-        last_count &#x3D; 3;
-    &#125;
-    for(int i&#x3D;0;i&lt;str.length()-last_count;i++)&#123;
-        if(str[i] &#x3D;&#x3D; &#39; &#39;)&#123;
-            pos_1++;
-        &#125;
-        if(str[pos_1+3] &#x3D;&#x3D; &#39;;&#39; &amp;&amp; if_use(str[pos_1+1])&#x3D;&#x3D;true &amp;&amp; if_use(str[pos_1+2])&#x3D;&#x3D;true &amp;&amp; pos_1 !&#x3D; -1)&#123;
-            if(str[pos_1] &#x3D;&#x3D; &#39;A&#39;)&#123;
-                sum_x -&#x3D; (str[pos_1+1]-&#39;0&#39;)*10 + str[pos_1+2]-&#39;0&#39;;
-            &#125;
-            else if(str[pos_1] &#x3D;&#x3D; &#39;D&#39;)&#123;
-                sum_x +&#x3D; (str[pos_1+1]-&#39;0&#39;)*10 + str[pos_1+2]-&#39;0&#39;;
-            &#125;
-            else if(str[pos_1] &#x3D;&#x3D; &#39;W&#39;)&#123;
-                sum_y +&#x3D; (str[pos_1+1]-&#39;0&#39;)*10 + str[pos_1+2]-&#39;0&#39;;
-            &#125;
-            else if(str[pos_1] &#x3D;&#x3D; &#39;S&#39;)&#123;
-                sum_y -&#x3D; (str[pos_1+1]-&#39;0&#39;)*10 + str[pos_1+2]-&#39;0&#39;;
-            &#125;
-            pos_1 &#x3D; -1;
-        &#125;
-        if(str[pos_1+2] &#x3D;&#x3D; &#39;;&#39; &amp;&amp; if_use(str[pos_1+1])&#x3D;&#x3D;true &amp;&amp; pos_1 !&#x3D; -1)&#123;
-            if(str[pos_1] &#x3D;&#x3D; &#39;A&#39;)&#123;
-                sum_x -&#x3D; str[pos_1+1]-&#39;0&#39;;
-            &#125;
-            else if(str[pos_1] &#x3D;&#x3D; &#39;D&#39;)&#123;
-                sum_x +&#x3D; str[pos_1+1]-&#39;0&#39;;
-            &#125;
-            else if(str[pos_1] &#x3D;&#x3D; &#39;W&#39;)&#123;
-                sum_y +&#x3D; str[pos_1+1]-&#39;0&#39;;
-            &#125;
-            else if(str[pos_1] &#x3D;&#x3D; &#39;S&#39;)&#123;
-                sum_y -&#x3D; str[pos_1+1]-&#39;0&#39;;
-            &#125;            
-            pos_1 &#x3D; -1;
-        &#125;
-        if(str[i] &#x3D;&#x3D; &#39;;&#39;)&#123;
-            pos_1 &#x3D; i+1;
-        &#125;
-    &#125;
-     cout &lt;&lt; sum_x &lt;&lt; &#39;,&#39; &lt;&lt; sum_y &lt;&lt; &#39; &#39;;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Learn-1"><a href="#Learn-1" class="headerlink" title="Learn"></a>Learn</h3><p>没有看到很好的解。都挺复杂的。</p>
-<h2 id="3、识别有效的IP地址和掩码并进行分类统计"><a href="#3、识别有效的IP地址和掩码并进行分类统计" class="headerlink" title="3、识别有效的IP地址和掩码并进行分类统计"></a>3、识别有效的IP地址和掩码并进行分类统计</h2><h2 id="4、简单错误记录"><a href="#4、简单错误记录" class="headerlink" title="4、简单错误记录"></a>4、简单错误记录</h2><h2 id="5、密码验证合格程序"><a href="#5、密码验证合格程序" class="headerlink" title="5、密码验证合格程序"></a>5、密码验证合格程序</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230306163151014.png" alt="image-20230306163151014"></p>
-<h3 id="My-Code-2"><a href="#My-Code-2" class="headerlink" title="My Code"></a>My Code</h3><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
-#include &lt;string&gt;
-using namespace std;
-
-int main() &#123;
-    string str;  
-    bool PasswordOk &#x3D; true;
-    bool PasswordNum &#x3D; true;
-    bool PasswordA &#x3D; true;
-    bool Passworda &#x3D; true;
-    bool Passwordelse &#x3D; true;
-    while(getline(cin,str))
-    &#123;
-
-        PasswordOk &#x3D; true;
-        PasswordNum &#x3D; false;
-        Passworda &#x3D; false;
-        PasswordA &#x3D; false;
-        Passwordelse &#x3D; false;
-        for(int i&#x3D;0;i&lt;str.length();i++)&#123;
-
-            if(str[i] &lt;&#x3D; &#39;9&#39; &amp;&amp; str[i] &gt;&#x3D; &#39;0&#39;)&#123;
-                PasswordNum &#x3D; true;
-            &#125;
-            else if(str[i] &gt;&#x3D; &#39;a&#39; &amp;&amp; str[i] &lt;&#x3D; &#39;z&#39;)&#123;
-                Passworda &#x3D; true;
-            &#125;
-            else if(str[i] &gt;&#x3D; &#39;A&#39; &amp;&amp; str[i] &lt;&#x3D; &#39;Z&#39;)&#123;
-                PasswordA &#x3D; true;
+<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="移除链表元素"><a href="#移除链表元素" class="headerlink" title="移除链表元素"></a>移除链表元素</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230320085706838.png"></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>创建一个虚拟头节点，之后头节点跟其他节点处理方式一样。最后再把虚拟头节点删除。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    ListNode* removeElements(ListNode* head, int val) &#123;
+        ListNode* dummyHead &#x3D; new ListNode(0);&#x2F;&#x2F;设置一个虚拟头节点
+        dummyHead-&gt;next &#x3D; head;&#x2F;&#x2F;头节点为虚拟节点下一个
+        ListNode* cur &#x3D; dummyHead;
+        while(cur-&gt;next !&#x3D; nullptr)&#123;
+            if(cur-&gt;next-&gt;val &#x3D;&#x3D; val)&#123;
+                ListNode* tmp &#x3D; cur-&gt;next;
+                cur-&gt;next &#x3D; cur-&gt;next-&gt;next;
+                delete tmp;&#x2F;&#x2F;删除节点，释放内存
             &#125;
             else&#123;
-                Passwordelse &#x3D; true;
-            &#125;
-
-            for(int j&#x3D;i+3;j&lt;str.length()-3;j++)&#123;
-                if(str[i]&#x3D;&#x3D;str[j] &amp;&amp; str[i+1]&#x3D;&#x3D;str[j+1] &amp;&amp; str[i+2]&#x3D;&#x3D;str[j+2])
-                &#123;
-                    PasswordOk &#x3D; false;
-                &#125;
+                cur &#x3D; cur-&gt;next;
             &#125;
         &#125;
-        if(str.length() &lt;&#x3D;8)&#123;
-           PasswordOk &#x3D; false;
-        &#125;
-        if(PasswordA + Passworda + Passwordelse + PasswordNum &gt;&#x3D;3)&#123;
-
-        &#125;
-        else&#123;
-            PasswordOk &#x3D; false;
-        &#125;
-
-        if(PasswordOk &#x3D;&#x3D; true)&#123;
-            cout &lt;&lt; &quot;OK&quot; &lt;&lt;endl;
-        &#125;
-        else&#123;
-            cout &lt;&lt; &quot;NG&quot; &lt;&lt;endl;
-        &#125;
+        head &#x3D; dummyHead-&gt;next;
+        delete dummyHead;
+        return head;
     &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="Learn-2"><a href="#Learn-2" class="headerlink" title="Learn"></a>Learn</h3><p>好像都差不多。</p>
+<h2 id="设计链表"><a href="#设计链表" class="headerlink" title="设计链表"></a>设计链表</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230320131817279.png"></p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>设置一个虚拟头节点再进行操作。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class MyLinkedList &#123;
+public:
+    struct LinkedNode&#123;
+        int val;
+        LinkedNode* next;
+        LinkedNode(int val):val(val),next(nullptr)&#123;&#125;
+    &#125;;
+
+    MyLinkedList() &#123;
+        dummynode &#x3D; new LinkedNode(0);
+        dummynode-&gt;next &#x3D; nullptr;
+        _size &#x3D; 0;
+    &#125;
+    
+    int get(int index) &#123;
+        if(index&gt;(_size-1) || index&lt;0)&#123;
+            return -1;
+        &#125;
+        LinkedNode* cur &#x3D; dummynode-&gt;next;
+        while(index)&#123;
+            cur &#x3D; cur-&gt;next;
+            index--;
+        &#125;
+        return cur-&gt;val;
+    &#125;
+    
+    void addAtHead(int val) &#123;
+        LinkedNode* newNode &#x3D; new LinkedNode(val);
+        newNode-&gt;next &#x3D; dummynode-&gt;next;
+        dummynode-&gt;next &#x3D; newNode;
+        _size++;
+    &#125;
+    
+    void addAtTail(int val) &#123;
+        LinkedNode* newNode &#x3D; new LinkedNode(val);
+        LinkedNode* cur &#x3D; dummynode;
+        while(cur-&gt;next!&#x3D;nullptr)&#123;
+            cur &#x3D; cur-&gt;next;
+        &#125;
+        cur-&gt;next &#x3D; newNode;
+        _size++;
+    &#125;
+    
+    void addAtIndex(int index, int val) &#123;
+        if(index&gt;_size)&#123;return;&#125;
+        if(index&lt;0)&#123;index&#x3D;0;&#125;
+        LinkedNode* newNode &#x3D; new LinkedNode(val);
+        LinkedNode* cur &#x3D; dummynode;
+        while(index)&#123;
+            cur &#x3D; cur-&gt;next;
+            index--;
+        &#125;
+        newNode-&gt;next&#x3D;cur -&gt; next;
+        cur-&gt;next &#x3D; newNode;
+        _size++;
+    &#125;
+    
+    void deleteAtIndex(int index) &#123;
+        if(index&gt;&#x3D;_size || index&lt;0)&#123;
+            return;
+        &#125;
+        LinkedNode* cur &#x3D; dummynode;
+        while(index)&#123;
+            cur &#x3D; cur-&gt;next;
+            index--;
+        &#125;
+        cur-&gt;next &#x3D; cur-&gt;next-&gt;next;
+        _size--;        
+    &#125;
+private:
+    int _size &#x3D; 0;
+    LinkedNode* dummynode;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="翻转链表"><a href="#翻转链表" class="headerlink" title="翻转链表"></a>翻转链表</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230320131831889.png"></p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>双指针法和递归法</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><h4 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h4><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    ListNode* reverseList(ListNode* head) &#123;
+        ListNode* cur &#x3D; head;
+        ListNode* pre &#x3D; nullptr;
+        ListNode* tmp &#x3D; nullptr;
+        while(cur !&#x3D; nullptr)&#123;
+            tmp &#x3D; cur-&gt;next;
+            cur-&gt;next &#x3D; pre;
+            pre &#x3D; cur;
+            cur &#x3D; tmp;
+        &#125;
+        return pre;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><pre class="line-numbers language-none"><code class="language-none">lass Solution &#123;
+public:
+    ListNode* reverse(ListNode* pre,ListNode* cur)&#123;
+        if(cur &#x3D;&#x3D; NULL) return pre;
+        ListNode* temp &#x3D; cur-&gt;next;
+        cur-&gt;next &#x3D; pre;
+        &#x2F;&#x2F; 可以和双指针法的代码进行对比，如下递归的写法，其实就是做了这两步
+        &#x2F;&#x2F; pre &#x3D; cur;
+        &#x2F;&#x2F; cur &#x3D; temp;
+        return reverse(cur,temp);
+    &#125;
+    ListNode* reverseList(ListNode* head) &#123;
+        &#x2F;&#x2F; 和双指针法初始化是一样的逻辑
+        &#x2F;&#x2F; ListNode* cur &#x3D; head;
+        &#x2F;&#x2F; ListNode* pre &#x3D; NULL;
+        return reverse(NULL, head);
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230320131846848.png"></p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230320133635175.png"></p>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    ListNode* swapPairs(ListNode* head) &#123;
+        ListNode* dummyNode &#x3D; new ListNode(0);
+        ListNode* cur &#x3D; head;
+        ListNode* tmp;
+        ListNode* pre;
+        dummyNode-&gt;next &#x3D; cur;
+        pre &#x3D; dummyNode;
+        while( pre-&gt;next !&#x3D; nullptr &amp;&amp; pre-&gt;next-&gt;next !&#x3D; nullptr)&#123;
+            tmp &#x3D; pre-&gt;next-&gt;next-&gt;next;
+            pre-&gt;next &#x3D; cur-&gt;next;
+            pre &#x3D; cur;
+            cur-&gt;next-&gt;next &#x3D; cur;
+            cur-&gt;next &#x3D; tmp;
+            cur &#x3D; tmp;
+        &#125;
+        return dummyNode-&gt;next;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="删除链表的倒数第N个节点"><a href="#删除链表的倒数第N个节点" class="headerlink" title="删除链表的倒数第N个节点"></a>删除链表的倒数第N个节点</h2><h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>双指针的经典应用，如果要删除倒数第n个节点，让fast移动n步，然后让fast和slow同时移动，直到fast指向链表末尾。删掉slow所指向的节点就可以了。</p>
+<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) &#123;
+        ListNode* dummyNode &#x3D; new ListNode(0);
+        ListNode* fast &#x3D; dummyNode;
+        ListNode* slow &#x3D; dummyNode;
+        dummyNode-&gt;next &#x3D; head;
+        while(n--)&#123;
+            fast &#x3D; fast-&gt;next;
+        &#125;
+        fast &#x3D; fast-&gt;next;&#x2F;&#x2F;多走一步，便于slow删除
+        while(fast!&#x3D;nullptr)&#123;
+            fast &#x3D; fast-&gt;next;
+            slow &#x3D; slow-&gt;next;
+        &#125;
+        slow-&gt;next &#x3D; slow-&gt;next-&gt;next;
+        return dummyNode-&gt;next;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="链表相交"><a href="#链表相交" class="headerlink" title="链表相交"></a>链表相交</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230320141329764.png"></p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>交点不是数值相等，而是指针相等。</p>
+<h3 id="Code-5"><a href="#Code-5" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) &#123;
+        ListNode* curA &#x3D; headA;
+        ListNode* curB &#x3D; headB;
+        int lenA &#x3D; 0, lenB &#x3D; 0;
+        while (curA !&#x3D; NULL) &#123; &#x2F;&#x2F; 求链表A的长度
+            lenA++;
+            curA &#x3D; curA-&gt;next;
+        &#125;
+        while (curB !&#x3D; NULL) &#123; &#x2F;&#x2F; 求链表B的长度
+            lenB++;
+            curB &#x3D; curB-&gt;next;
+        &#125;
+        curA &#x3D; headA;
+        curB &#x3D; headB;
+        &#x2F;&#x2F; 让curA为最长链表的头，lenA为其长度
+        if (lenB &gt; lenA) &#123;
+            swap (lenA, lenB);
+            swap (curA, curB);
+        &#125;
+        &#x2F;&#x2F; 求长度差
+        int gap &#x3D; lenA - lenB;
+        &#x2F;&#x2F; 让curA和curB在同一起点上（末尾位置对齐）
+        while (gap--) &#123;
+            curA &#x3D; curA-&gt;next;
+        &#125;
+        &#x2F;&#x2F; 遍历curA 和 curB，遇到相同则直接返回
+        while (curA !&#x3D; NULL) &#123;
+            if (curA &#x3D;&#x3D; curB) &#123;
+                return curA;
+            &#125;
+            curA &#x3D; curA-&gt;next;
+            curB &#x3D; curB-&gt;next;
+        &#125;
+        return NULL;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="环形链表II"><a href="#环形链表II" class="headerlink" title="环形链表II"></a>环形链表II</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230320150646135.png"></p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>！！很有意思的一个题目</p>
+<p><a target="_blank" rel="noopener" href="https://www.programmercarl.com/0142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.html#%E6%80%9D%E8%B7%AF">代码随想录 (programmercarl.com)</a></p>
+<h3 id="Code-6"><a href="#Code-6" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode <span class="token operator">*</span><span class="token function">detectCycle</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        ListNode<span class="token operator">*</span> fast <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> slow <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>fast <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> fast<span class="token operator">-></span>next <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            slow <span class="token operator">=</span> slow<span class="token operator">-></span>next<span class="token punctuation">;</span>
+            fast <span class="token operator">=</span> fast<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span>
+            <span class="token comment">// 快慢指针相遇，此时从head 和 相遇点，同时查找直至相遇</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>slow <span class="token operator">==</span> fast<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                ListNode<span class="token operator">*</span> index1 <span class="token operator">=</span> fast<span class="token punctuation">;</span>
+                ListNode<span class="token operator">*</span> index2 <span class="token operator">=</span> head<span class="token punctuation">;</span>
+                <span class="token keyword">while</span> <span class="token punctuation">(</span>index1 <span class="token operator">!=</span> index2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    index1 <span class="token operator">=</span> index1<span class="token operator">-></span>next<span class="token punctuation">;</span>
+                    index2 <span class="token operator">=</span> index2<span class="token operator">-></span>next<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                <span class="token keyword">return</span> index2<span class="token punctuation">;</span> <span class="token comment">// 返回环的入口</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -634,29 +678,80 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/07/Learn/%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/2023.3.7%20%E7%89%9B%E5%AE%A2%E9%A2%98%E5%BA%93/">
+                <a href="/2023/03/20/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E9%93%BE%E8%A1%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="2023.3.7 牛客题库">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="代码随想录_链表">
                         
-                        <span class="card-title">2023.3.7 牛客题库</span>
+                        <span class="card-title">代码随想录_链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            链表专项练习
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/19/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E6%95%B0%E7%BB%84/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="代码随想录_数组">
+                        
+                        <span class="card-title">代码随想录_数组</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数组专项练习
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -676,47 +771,6 @@ int main() &#123;
                         <span class="chip bg-color">Code</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/03/05/Note/2023.3.5%E8%AE%B0/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="2023.3.5 Note">
-                        
-                        <span class="card-title">2023.3.5 Note</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Very very important
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Diary/" class="post-category">
-                                    Diary
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
