@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2023.3.17 LeetCode, ZRong&#39;s Blog">
-    <meta name="description" content="2389.和有限的最长子序列">
+    <meta name="keywords" content="代码随想录_栈与队列, ZRong&#39;s Blog">
+    <meta name="description" content="栈与队列专项练习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2023.3.17 LeetCode | ZRong&#39;s Blog</title>
+    <title>代码随想录_栈与队列 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -261,12 +261,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2023.3.17 LeetCode</h1>
+                    <h1 class="description center-align post-title">代码随想录_栈与队列</h1>
                 </div>
             </div>
         </div>
@@ -315,7 +315,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-17
+                    2023-03-22
                 </div>
                 
 
@@ -324,7 +324,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    96
+                    1.8k
                 </div>
                 
 
@@ -351,21 +351,270 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="2023-3-17"><a href="#2023-3-17" class="headerlink" title="2023.3.17"></a>2023.3.17</h1><h2 id="2389-和有限的最长子序列"><a href="#2389-和有限的最长子序列" class="headerlink" title="2389.和有限的最长子序列"></a>2389.和有限的最长子序列</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230317130141012.png"></p>
-<h2 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+<h1 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h1><h2 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230322152512657.png"></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>在push数据的时候，只要数据放进输入栈就好，<strong>但在pop的时候，操作就复杂一些，输出栈如果为空，就把进栈数据全部导入进来（注意是全部导入）</strong>，再从出栈弹出数据，如果输出栈不为空，则直接从出栈弹出数据就可以了。</p>
+<p>最后如何判断队列为空呢？<strong>如果进栈和出栈都为空的话，说明模拟的队列为空了。</strong></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class MyQueue &#123;
 public:
-    vector&lt;int&gt; answerQueries(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; queries) &#123;
-        sort(nums.begin(), nums.end());
-        for (int i &#x3D; 1; i &lt; nums.size(); i++) &#123;
-            nums[i] +&#x3D; nums[i - 1];
+    stack&lt;int&gt; stIn;
+    stack&lt;int&gt; stOut;
+    MyQueue() &#123;
+
+    &#125;
+    
+    void push(int x) &#123;
+        stIn.push(x);
+    &#125;
+    
+    int pop() &#123;
+        if(stOut.empty())&#123;
+            while(!stIn.empty())&#123;
+                stOut.push(stIn.top());
+                stIn.pop();
+            &#125;
         &#125;
-        vector&lt;int&gt; ans;
-        for (auto&amp; q : queries) &#123;
-            ans.push_back(upper_bound(nums.begin(), nums.end(), q) - nums.begin());&#x2F;&#x2F;返回地址后减去首地址
+        int result &#x3D; stOut.top();
+        stOut.pop();
+        return result;
+    &#125;
+    
+    int peek() &#123;
+        int res &#x3D; this-&gt;pop();
+        stOut.push(res);
+        return res;
+    &#125;
+    
+    bool empty() &#123;
+        return stIn.empty() &amp;&amp; stOut.empty();
+    &#125;
+&#125;;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230322152701852.png"></p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p><strong>用两个队列que1和que2实现队列的功能，que2其实完全就是一个备份的作用</strong>，把que1最后面的元素以外的元素都备份到que2，然后弹出最后面的元素，再把其他元素从que2导回que1。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class MyStack &#123;
+public:
+    queue&lt;int&gt; que1;
+    queue&lt;int&gt; que2;
+    MyStack() &#123;
+
+    &#125;
+    
+    void push(int x) &#123;
+        que1.push(x);
+    &#125;
+    
+    int pop() &#123;
+        int size &#x3D; que1.size();
+        size--;
+        while(size--)&#123;
+            que2.push(que1.front());
+            que1.pop();
+        &#125;
+        int result &#x3D; que1.front();
+        que1.pop();
+        que1 &#x3D; que2;
+        while(!que2.empty())&#123;
+            que2.pop();
+        &#125;
+        return result;
+    &#125;
+    
+    int top() &#123;
+        return que1.back();
+    &#125;
+    
+    bool empty() &#123;
+        return que1.empty();
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>只是用一个队列</p>
+<pre class="line-numbers language-none"><code class="language-none">class MyStack &#123;
+public:
+    queue&lt;int&gt; que;
+    &#x2F;** Initialize your data structure here. *&#x2F;
+    MyStack() &#123;
+
+    &#125;
+    &#x2F;** Push element x onto stack. *&#x2F;
+    void push(int x) &#123;
+        que.push(x);
+    &#125;
+    &#x2F;** Removes the element on top of the stack and returns that element. *&#x2F;
+    int pop() &#123;
+        int size &#x3D; que.size();
+        size--;
+        while (size--) &#123; &#x2F;&#x2F; 将队列头部的元素（除了最后一个元素外） 重新添加到队列尾部
+            que.push(que.front());
+            que.pop();
+        &#125;
+        int result &#x3D; que.front(); &#x2F;&#x2F; 此时弹出的元素顺序就是栈的顺序了
+        que.pop();
+        return result;
+    &#125;
+
+    &#x2F;** Get the top element. *&#x2F;
+    int top() &#123;
+        return que.back();
+    &#125;
+
+    &#x2F;** Returns whether the stack is empty. *&#x2F;
+    bool empty() &#123;
+        return que.empty();
+    &#125;
+&#125;;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a>有效的括号</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230322160335345.png"></p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>第一种情况：已经遍历完了字符串，但是栈不为空，说明有相应的左括号没有右括号来匹配，所以return false</p>
+<p>第二种情况：遍历字符串匹配的过程中，发现栈里没有要匹配的字符。所以return false</p>
+<p>第三种情况：遍历字符串匹配的过程中，栈已经为空了，没有匹配的字符了，说明右括号没有找到对应的左括号return false</p>
+<p>那么什么时候说明左括号和右括号全都匹配了呢，就是字符串遍历完之后，栈是空的，就说明全都匹配了。</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    bool isValid(string s) &#123;
+        if (s.size() % 2 !&#x3D; 0) return false; &#x2F;&#x2F; 如果s的长度为奇数，一定不符合要求
+        stack&lt;char&gt; st;
+        for (int i &#x3D; 0; i &lt; s.size(); i++) &#123;
+            if (s[i] &#x3D;&#x3D; &#39;(&#39;) st.push(&#39;)&#39;);
+            else if (s[i] &#x3D;&#x3D; &#39;&#123;&#39;) st.push(&#39;&#125;&#39;);
+            else if (s[i] &#x3D;&#x3D; &#39;[&#39;) st.push(&#39;]&#39;);
+            &#x2F;&#x2F; 第三种情况：遍历字符串匹配的过程中，栈已经为空了，没有匹配的字符了，说明右括号没有找到对应的左括号 return false
+            &#x2F;&#x2F; 第二种情况：遍历字符串匹配的过程中，发现栈里没有我们要匹配的字符。所以return false
+            else if (st.empty() || st.top() !&#x3D; s[i]) return false;
+            else st.pop(); &#x2F;&#x2F; st.top() 与 s[i]相等，栈弹出元素
+        &#125;
+        &#x2F;&#x2F; 第一种情况：此时我们已经遍历完了字符串，但是栈不为空，说明有相应的左括号没有右括号来匹配，所以return false，否则就return true
+        return st.empty();
+    &#125;
+&#125;;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="删除字符串中的所有相邻重复项"><a href="#删除字符串中的所有相邻重复项" class="headerlink" title="删除字符串中的所有相邻重复项"></a>删除字符串中的所有相邻重复项</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230322162132433.png"></p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>用栈解决</p>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><p>此处我犯了一个错误，把st.empty() || s[i] !&#x3D; st.top()颠倒过来写了，编译器报错。因为栈为空的情况下去找top值是异常的。</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    string removeDuplicates(string s) &#123;
+        stack&lt;char&gt; st;
+        for(int i&#x3D;0;i&lt;s.size();i++)&#123;
+            if(st.empty() || s[i] !&#x3D; st.top())&#123;
+                st.push(s[i]);
+            &#125;
+            else&#123;
+                st.pop();
+            &#125;
+        &#125;
+        string ans &#x3D; &quot;&quot;;
+        while(!st.empty())&#123;
+            ans +&#x3D; st.top();
+            st.pop();
+        &#125;
+        reverse(ans.begin() , ans.end());
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="逆波兰表达式求值"><a href="#逆波兰表达式求值" class="headerlink" title="逆波兰表达式求值"></a>逆波兰表达式求值</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230322164109975.png"></p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>相信看完动画大家应该知道，这和删除字符串中的所有相邻重复项是差不错的，只不过本题不要相邻元素做消除了，而是做运算。</p>
+<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int evalRPN(vector&lt;string&gt;&amp; tokens) &#123;
+        &#x2F;&#x2F; 力扣修改了后台测试数据，需要用longlong
+        stack&lt;long long&gt; st; 
+        for (int i &#x3D; 0; i &lt; tokens.size(); i++) &#123;
+            if (tokens[i] &#x3D;&#x3D; &quot;+&quot; || tokens[i] &#x3D;&#x3D; &quot;-&quot; || tokens[i] &#x3D;&#x3D; &quot;*&quot; || tokens[i] &#x3D;&#x3D; &quot;&#x2F;&quot;) &#123;
+                long long num1 &#x3D; st.top();
+                st.pop();
+                long long num2 &#x3D; st.top();
+                st.pop();
+                if (tokens[i] &#x3D;&#x3D; &quot;+&quot;) st.push(num2 + num1);
+                if (tokens[i] &#x3D;&#x3D; &quot;-&quot;) st.push(num2 - num1);
+                if (tokens[i] &#x3D;&#x3D; &quot;*&quot;) st.push(num2 * num1);
+                if (tokens[i] &#x3D;&#x3D; &quot;&#x2F;&quot;) st.push(num2 &#x2F; num1);
+            &#125; else &#123;
+                st.push(stoll(tokens[i]));
+            &#125;
+        &#125;
+
+        int result &#x3D; st.top();
+        st.pop(); &#x2F;&#x2F; 把栈里最后一个元素弹出（其实不弹出也没事）
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="滑动窗口最大值"><a href="#滑动窗口最大值" class="headerlink" title="滑动窗口最大值"></a>滑动窗口最大值</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230322165724171.png"></p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>单调队列</p>
+<h3 id="Code-5"><a href="#Code-5" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) &#123;
+        int n &#x3D; nums.size();
+        deque&lt;int&gt; q;
+        for (int i &#x3D; 0; i &lt; k; ++i) &#123;
+            while (!q.empty() &amp;&amp; nums[i] &gt;&#x3D; nums[q.back()]) &#123;
+                q.pop_back();
+            &#125;
+            q.push_back(i);
+        &#125;
+
+        vector&lt;int&gt; ans &#x3D; &#123;nums[q.front()]&#125;;
+        for (int i &#x3D; k; i &lt; n; ++i) &#123;
+            while (!q.empty() &amp;&amp; nums[i] &gt;&#x3D; nums[q.back()]) &#123;
+                q.pop_back();
+            &#125;
+            q.push_back(i);
+            while (q.front() &lt;&#x3D; i - k) &#123;
+                q.pop_front();
+            &#125;
+            ans.push_back(nums[q.front()]);
         &#125;
         return ans;
     &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;;、<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="前K个高频元素"><a href="#前K个高频元素" class="headerlink" title="前K个高频元素"></a>前K个高频元素</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230322173057450.png"></p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>用小顶堆，因为要统计最大前k个元素，只有小顶堆每次将最小的元素弹出，最后小顶堆里积累的才是前k个最大元素。</p>
+<h3 id="Code-6"><a href="#Code-6" class="headerlink" title="Code"></a>Code</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 时间复杂度：O(nlogk)
+&#x2F;&#x2F; 空间复杂度：O(n)
+class Solution &#123;
+public:
+    &#x2F;&#x2F; 小顶堆
+    class mycomparison &#123;
+    public:
+        bool operator()(const pair&lt;int, int&gt;&amp; lhs, const pair&lt;int, int&gt;&amp; rhs) &#123;
+            return lhs.second &gt; rhs.second;
+        &#125;
+    &#125;;
+    vector&lt;int&gt; topKFrequent(vector&lt;int&gt;&amp; nums, int k) &#123;
+        &#x2F;&#x2F; 要统计元素出现频率
+        unordered_map&lt;int, int&gt; map; &#x2F;&#x2F; map&lt;nums[i],对应出现的次数&gt;
+        for (int i &#x3D; 0; i &lt; nums.size(); i++) &#123;
+            map[nums[i]]++;
+        &#125;
+
+        &#x2F;&#x2F; 对频率排序
+        &#x2F;&#x2F; 定义一个小顶堆，大小为k
+        priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, mycomparison&gt; pri_que;
+
+        &#x2F;&#x2F; 用固定大小为k的小顶堆，扫面所有频率的数值
+        for (unordered_map&lt;int, int&gt;::iterator it &#x3D; map.begin(); it !&#x3D; map.end(); it++) &#123;
+            pri_que.push(*it);
+            if (pri_que.size() &gt; k) &#123; &#x2F;&#x2F; 如果堆的大小大于了K，则队列弹出，保证堆的大小一直为k
+                pri_que.pop();
+            &#125;
+        &#125;
+
+        &#x2F;&#x2F; 找出前K个高频元素，因为小顶堆先弹出的是最小的，所以倒序来输出到数组
+        vector&lt;int&gt; result(k);
+        for (int i &#x3D; k - 1; i &gt;&#x3D; 0; i--) &#123;
+            result[i] &#x3D; pri_que.top().first;
+            pri_que.pop();
+        &#125;
+        return result;
+
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -451,36 +700,44 @@ public:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/03/18/Books/%E4%BF%A1%E5%BF%B5%C2%B7%E5%8D%81%E5%B9%B4%E5%BE%92%E6%AD%A5%E4%B8%AD%E5%9B%BD/">
+                <a href="/2023/03/22/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E4%BA%8C%E5%8F%89%E6%A0%91/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="信念·十年徒步中国">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="代码随想录_二叉树">
                         
-                        <span class="card-title">信念·十年徒步中国</span>
+                        <span class="card-title">代码随想录_二叉树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            From 3.10-3.17
+                            二叉树专项练习
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Book/" class="post-category">
-                                    Book
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -492,24 +749,24 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/16/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/">
+                <a href="/2023/03/21/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Freertos">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="代码随想录_字符串">
                         
-                        <span class="card-title">Freertos</span>
+                        <span class="card-title">代码随想录_字符串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            参考韦东山RTOS
+                            字符串专项练习
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-21
                             </span>
                         <span class="publish-author">
                             
@@ -526,12 +783,8 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
-                    </a>
-                    
-                    <a href="/tags/Freertos/">
-                        <span class="chip bg-color">Freertos</span>
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
                     </a>
                     
                 </div>

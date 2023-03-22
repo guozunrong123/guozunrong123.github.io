@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2023.3.17 LeetCode, ZRong&#39;s Blog">
-    <meta name="description" content="2389.和有限的最长子序列">
+    <meta name="keywords" content="代码随想录_二叉树, ZRong&#39;s Blog">
+    <meta name="description" content="二叉树专项练习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2023.3.17 LeetCode | ZRong&#39;s Blog</title>
+    <title>代码随想录_二叉树 | ZRong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/16favicon.png">
     
 
@@ -261,12 +261,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2023.3.17 LeetCode</h1>
+                    <h1 class="description center-align post-title">代码随想录_二叉树</h1>
                 </div>
             </div>
         </div>
@@ -315,7 +315,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-17
+                    2023-03-22
                 </div>
                 
 
@@ -324,7 +324,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    96
+                    1.9k
                 </div>
                 
 
@@ -351,23 +351,356 @@
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer" />
 
-<h1 id="2023-3-17"><a href="#2023-3-17" class="headerlink" title="2023.3.17"></a>2023.3.17</h1><h2 id="2389-和有限的最长子序列"><a href="#2389-和有限的最长子序列" class="headerlink" title="2389.和有限的最长子序列"></a>2389.和有限的最长子序列</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230317130141012.png"></p>
-<h2 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="二叉树的递归遍历"><a href="#二叉树的递归遍历" class="headerlink" title="二叉树的递归遍历"></a>二叉树的递归遍历</h2><h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
 public:
-    vector&lt;int&gt; answerQueries(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; queries) &#123;
-        sort(nums.begin(), nums.end());
-        for (int i &#x3D; 1; i &lt; nums.size(); i++) &#123;
-            nums[i] +&#x3D; nums[i - 1];
+    void Traversal(TreeNode* cur, vector&lt;int&gt; &amp;num)&#123;
+        if(cur &#x3D;&#x3D; nullptr)&#123;
+            return;
         &#125;
-        vector&lt;int&gt; ans;
-        for (auto&amp; q : queries) &#123;
-            ans.push_back(upper_bound(nums.begin(), nums.end(), q) - nums.begin());&#x2F;&#x2F;返回地址后减去首地址
-        &#125;
-        return ans;
+        num.push_back(cur-&gt;val);
+        Traversal(cur-&gt;left, num);
+        Traversal(cur-&gt;right, num);
     &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;
+        vector&lt;int&gt; res;
+        Traversal(root,res);
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    void Traversal(TreeNode* cur, vector&lt;int&gt; &amp;num)&#123;
+        if(cur &#x3D;&#x3D; nullptr)&#123;
+            return;
+        &#125;
+        Traversal(cur-&gt;left,num);
+        num.push_back(cur-&gt;val);
+        Traversal(cur-&gt;right,num);
+    &#125;
+    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;
+        vector&lt;int&gt; res;
+        Traversal(root,res);
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    void Traversal(TreeNode* cur, vector&lt;int&gt; &amp;num)&#123;
+        if(cur &#x3D;&#x3D; nullptr)&#123;
+            return;
+        &#125;
+        Traversal(cur-&gt;left,num);
+        Traversal(cur-&gt;right,num);
+        num.push_back(cur-&gt;val);
+    &#125;
+    vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123;
+        vector&lt;int&gt; res;
+        Traversal(root,res);
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉树的迭代遍历"><a href="#二叉树的迭代遍历" class="headerlink" title="二叉树的迭代遍历"></a>二叉树的迭代遍历</h2><h3 id="前序遍历-1"><a href="#前序遍历-1" class="headerlink" title="前序遍历"></a>前序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;
+        stack&lt;TreeNode*&gt; st;
+        vector&lt;int&gt; result;
+        if (root &#x3D;&#x3D; NULL) return result;
+        st.push(root);
+        while (!st.empty()) &#123;
+            TreeNode* node &#x3D; st.top();                       &#x2F;&#x2F; 中
+            st.pop();
+            result.push_back(node-&gt;val);
+            if (node-&gt;right) st.push(node-&gt;right);           &#x2F;&#x2F; 右（空节点不入栈）
+            if (node-&gt;left) st.push(node-&gt;left);             &#x2F;&#x2F; 左（空节点不入栈）
+        &#125;
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="中序遍历-1"><a href="#中序遍历-1" class="headerlink" title="中序遍历"></a>中序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;
+        vector&lt;int&gt; result;
+        stack&lt;TreeNode*&gt; st;
+        TreeNode* cur &#x3D; root;
+        while (cur !&#x3D; NULL || !st.empty()) &#123;
+            if (cur !&#x3D; NULL) &#123; &#x2F;&#x2F; 指针来访问节点，访问到最底层
+                st.push(cur); &#x2F;&#x2F; 将访问的节点放进栈
+                cur &#x3D; cur-&gt;left;                &#x2F;&#x2F; 左
+            &#125; else &#123;
+                cur &#x3D; st.top(); &#x2F;&#x2F; 从栈里弹出的数据，就是要处理的数据（放进result数组里的数据）
+                st.pop();
+                result.push_back(cur-&gt;val);     &#x2F;&#x2F; 中
+                cur &#x3D; cur-&gt;right;               &#x2F;&#x2F; 右
+            &#125;
+        &#125;
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="后序遍历-1"><a href="#后序遍历-1" class="headerlink" title="后序遍历"></a>后序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123;
+        stack&lt;TreeNode*&gt; st;
+        vector&lt;int&gt; result;
+        if (root &#x3D;&#x3D; NULL) return result;
+        st.push(root);
+        while (!st.empty()) &#123;
+            TreeNode* node &#x3D; st.top();
+            st.pop();
+            result.push_back(node-&gt;val);
+            if (node-&gt;left) st.push(node-&gt;left); &#x2F;&#x2F; 相对于前序遍历，这更改一下入栈顺序 （空节点不入栈）
+            if (node-&gt;right) st.push(node-&gt;right); &#x2F;&#x2F; 空节点不入栈
+        &#125;
+        reverse(result.begin(), result.end()); &#x2F;&#x2F; 将结果反转之后就是左右中的顺序了
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉树的统一迭代法"><a href="#二叉树的统一迭代法" class="headerlink" title="二叉树的统一迭代法"></a>二叉树的统一迭代法</h2><h3 id="前序遍历-2"><a href="#前序遍历-2" class="headerlink" title="前序遍历"></a>前序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;
+        vector&lt;int&gt; result;
+        stack&lt;TreeNode*&gt; st;
+        if (root !&#x3D; NULL) st.push(root);
+        while (!st.empty()) &#123;
+            TreeNode* node &#x3D; st.top();
+            if (node !&#x3D; NULL) &#123;
+                st.pop();
+                if (node-&gt;right) st.push(node-&gt;right);  &#x2F;&#x2F; 右
+                if (node-&gt;left) st.push(node-&gt;left);    &#x2F;&#x2F; 左
+                st.push(node);                          &#x2F;&#x2F; 中
+                st.push(NULL);
+            &#125; else &#123;
+                st.pop();
+                node &#x3D; st.top();
+                st.pop();
+                result.push_back(node-&gt;val);
+            &#125;
+        &#125;
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="中序遍历-2"><a href="#中序遍历-2" class="headerlink" title="中序遍历"></a>中序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;
+        vector&lt;int&gt; result;
+        stack&lt;TreeNode*&gt; st;
+        if (root !&#x3D; NULL) st.push(root);
+        while (!st.empty()) &#123;
+            TreeNode* node &#x3D; st.top();
+            if (node !&#x3D; NULL) &#123;
+                st.pop(); &#x2F;&#x2F; 将该节点弹出，避免重复操作，下面再将右中左节点添加到栈中
+                if (node-&gt;right) st.push(node-&gt;right);  &#x2F;&#x2F; 添加右节点（空节点不入栈）
+
+                st.push(node);                          &#x2F;&#x2F; 添加中节点
+                st.push(NULL); &#x2F;&#x2F; 中节点访问过，但是还没有处理，加入空节点做为标记。
+
+                if (node-&gt;left) st.push(node-&gt;left);    &#x2F;&#x2F; 添加左节点（空节点不入栈）
+            &#125; else &#123; &#x2F;&#x2F; 只有遇到空节点的时候，才将下一个节点放进结果集
+                st.pop();           &#x2F;&#x2F; 将空节点弹出
+                node &#x3D; st.top();    &#x2F;&#x2F; 重新取出栈中元素
+                st.pop();
+                result.push_back(node-&gt;val); &#x2F;&#x2F; 加入到结果集
+            &#125;
+        &#125;
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="后序遍历-2"><a href="#后序遍历-2" class="headerlink" title="后序遍历"></a>后序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123;
+        vector&lt;int&gt; result;
+        stack&lt;TreeNode*&gt; st;
+        if (root !&#x3D; NULL) st.push(root);
+        while (!st.empty()) &#123;
+            TreeNode* node &#x3D; st.top();
+            if (node !&#x3D; NULL) &#123;
+                st.pop();
+                st.push(node);                          &#x2F;&#x2F; 中
+                st.push(NULL);
+
+                if (node-&gt;right) st.push(node-&gt;right);  &#x2F;&#x2F; 右
+                if (node-&gt;left) st.push(node-&gt;left);    &#x2F;&#x2F; 左
+
+            &#125; else &#123;
+                st.pop();
+                node &#x3D; st.top();
+                st.pop();
+                result.push_back(node-&gt;val);
+            &#125;
+        &#125;
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉树的层序遍历"><a href="#二叉树的层序遍历" class="headerlink" title="二叉树的层序遍历"></a>二叉树的层序遍历</h2><h3 id="层序遍历模板"><a href="#层序遍历模板" class="headerlink" title="层序遍历模板"></a>层序遍历模板</h3><p>队列</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+        if (root !&#x3D; NULL) que.push(root);
+        vector&lt;vector&lt;int&gt;&gt; result;
+        while (!que.empty()) &#123;
+            int size &#x3D; que.size();
+            vector&lt;int&gt; vec;
+            &#x2F;&#x2F; 这里一定要使用固定大小size，不要使用que.size()，因为que.size是不断变化的
+            for (int i &#x3D; 0; i &lt; size; i++) &#123;
+                TreeNode* node &#x3D; que.front();
+                que.pop();
+                vec.push_back(node-&gt;val);
+                if (node-&gt;left) que.push(node-&gt;left);
+                if (node-&gt;right) que.push(node-&gt;right);
+            &#125;
+            result.push_back(vec);
+        &#125;
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> 递归法</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    void order(TreeNode* cur, vector&lt;vector&lt;int&gt;&gt;&amp; result, int depth)
+    &#123;
+        if (cur &#x3D;&#x3D; nullptr) return;
+        if (result.size() &#x3D;&#x3D; depth) result.push_back(vector&lt;int&gt;());
+        result[depth].push_back(cur-&gt;val);
+        order(cur-&gt;left, result, depth + 1);
+        order(cur-&gt;right, result, depth + 1);
+    &#125;
+    vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) &#123;
+        vector&lt;vector&lt;int&gt;&gt; result;
+        int depth &#x3D; 0;
+        order(root, result, depth);
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="102-二叉树的层序遍历"><a href="#102-二叉树的层序遍历" class="headerlink" title="102.二叉树的层序遍历"></a>102.二叉树的层序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+        que.push(root);
+        vector&lt;vector&lt;int&gt;&gt; res;
+        if(root &#x3D;&#x3D; nullptr)&#123;return res;&#125;
+        while(!que.empty())&#123;
+            int _size &#x3D; que.size();
+            vector&lt;int&gt; level;
+            for(int i&#x3D;0;i&lt;_size;i++)&#123;
+                level.push_back(que.front()-&gt;val);
+                if(que.front()-&gt;left)&#123;que.push(que.front()-&gt;left);&#125;
+                if(que.front()-&gt;right)&#123;que.push(que.front()-&gt;right);&#125;
+                que.pop();
+            &#125;
+            res.push_back(level);
+        &#125;
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="107-二叉树的层次遍历II"><a href="#107-二叉树的层次遍历II" class="headerlink" title="107.二叉树的层次遍历II"></a>107.二叉树的层次遍历II</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;vector&lt;int&gt;&gt; levelOrderBottom(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+         if(root !&#x3D; nullptr)que.push(root);
+        vector&lt;vector&lt;int&gt;&gt; res;
+        while(!que.empty())&#123;
+            int _size &#x3D; que.size();
+            vector&lt;int&gt; level;
+            for(int i&#x3D;0;i&lt;_size;i++)&#123;
+                level.push_back(que.front()-&gt;val);
+                if(que.front()-&gt;left)&#123;que.push(que.front()-&gt;left);&#125;
+                if(que.front()-&gt;right)&#123;que.push(que.front()-&gt;right);&#125;
+                que.pop();
+            &#125;
+            res.push_back(level);
+        &#125;
+        reverse(res.begin(),res.end());
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="199-二叉树的右视图"><a href="#199-二叉树的右视图" class="headerlink" title="199.二叉树的右视图"></a>199.二叉树的右视图</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; rightSideView(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+         if(root !&#x3D; nullptr)que.push(root);
+        vector&lt;int&gt; res;
+        while(!que.empty())&#123;
+            int _size &#x3D; que.size();
+            vector&lt;int&gt; level;
+            for(int i&#x3D;0;i&lt;_size;i++)&#123;
+                level.push_back(que.front()-&gt;val);
+                if(que.front()-&gt;left)&#123;que.push(que.front()-&gt;left);&#125;
+                if(que.front()-&gt;right)&#123;que.push(que.front()-&gt;right);&#125;
+                que.pop();
+            &#125;
+            res.push_back(level[level.size()-1]);
+        &#125;
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="637-二叉树的层平均值"><a href="#637-二叉树的层平均值" class="headerlink" title="637.二叉树的层平均值"></a>637.二叉树的层平均值</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;double&gt; averageOfLevels(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+        vector&lt;double&gt; res;
+        if(root!&#x3D;nullptr)&#123;que.push(root);&#125;
+        while(!que.empty())&#123;
+            int _size &#x3D; que.size();
+            vector&lt;int&gt; tmp;
+            for(int i&#x3D;0;i&lt;_size;i++)&#123;
+                tmp.push_back(que.front()-&gt;val);
+                if(que.front()-&gt;left)&#123;
+                    que.push(que.front()-&gt;left);
+                &#125;
+                if(que.front()-&gt;right)&#123;
+                    que.push(que.front()-&gt;right);                    
+                &#125;
+                que.pop();
+            &#125;
+            double sum &#x3D; 0;
+            for(auto i:tmp)&#123;
+                sum +&#x3D; i;
+            &#125;
+            double aver &#x3D; sum&#x2F;_size;
+            res.push_back(aver);
+        &#125;
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="429-N叉树的层序遍历"><a href="#429-N叉树的层序遍历" class="headerlink" title="429.N叉树的层序遍历"></a>429.N叉树的层序遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;vector&lt;int&gt;&gt; levelOrder(Node* root) &#123;
+        queue&lt;Node*&gt; que;
+        vector&lt;vector&lt;int&gt;&gt; res;
+        if(root !&#x3D; nullptr)que.push(root);
+        while(!que.empty())&#123;
+            int size&#x3D;que.size();
+            vector&lt;int&gt; tmp;
+            for(int i&#x3D;0;i&lt;size;i++)&#123;
+                tmp.push_back(que.front()-&gt;val);
+                for(auto c:que.front()-&gt;children)&#123;
+                        que.push(c);
+                    &#125;
+                que.pop();
+                &#125;
+                res.push_back(tmp);
+            &#125;
+            return res;
+        &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="515-在每个树行中找最大值"><a href="#515-在每个树行中找最大值" class="headerlink" title="515.在每个树行中找最大值"></a>515.在每个树行中找最大值</h3><h3 id="116-填充每个节点的下一个右侧节点指针"><a href="#116-填充每个节点的下一个右侧节点指针" class="headerlink" title="116.填充每个节点的下一个右侧节点指针"></a>116.填充每个节点的下一个右侧节点指针</h3><h3 id="117-填充每个节点的下一个右侧节点指针II"><a href="#117-填充每个节点的下一个右侧节点指针II" class="headerlink" title="117.填充每个节点的下一个右侧节点指针II"></a>117.填充每个节点的下一个右侧节点指针II</h3><h3 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="104.二叉树的最大深度"></a>104.二叉树的最大深度</h3><h3 id="111-二叉树的最小深度"><a href="#111-二叉树的最小深度" class="headerlink" title="111.二叉树的最小深度"></a>111.二叉树的最小深度</h3>
                 
             </div>
             <hr/>
@@ -447,40 +780,50 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/18/Books/%E4%BF%A1%E5%BF%B5%C2%B7%E5%8D%81%E5%B9%B4%E5%BE%92%E6%AD%A5%E4%B8%AD%E5%9B%BD/">
+                <a href="/2023/03/22/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E4%BA%8C%E5%8F%89%E6%A0%91/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="信念·十年徒步中国">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="代码随想录_二叉树">
                         
-                        <span class="card-title">信念·十年徒步中国</span>
+                        <span class="card-title">代码随想录_二叉树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            From 3.10-3.17
+                            二叉树专项练习
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Book/" class="post-category">
-                                    Book
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -492,24 +835,24 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/16/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/">
+                <a href="/2023/03/22/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Freertos">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="代码随想录_栈与队列">
                         
-                        <span class="card-title">Freertos</span>
+                        <span class="card-title">代码随想录_栈与队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            参考韦东山RTOS
+                            栈与队列专项练习
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-22
                             </span>
                         <span class="publish-author">
                             
@@ -526,12 +869,8 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
-                    </a>
-                    
-                    <a href="/tags/Freertos/">
-                        <span class="chip bg-color">Freertos</span>
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
                     </a>
                     
                 </div>
