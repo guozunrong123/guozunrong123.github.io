@@ -315,7 +315,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-22
+                    2023-03-23
                 </div>
                 
 
@@ -324,7 +324,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    5.2k
                 </div>
                 
 
@@ -700,7 +700,651 @@ public:
         &#125;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="515-在每个树行中找最大值"><a href="#515-在每个树行中找最大值" class="headerlink" title="515.在每个树行中找最大值"></a>515.在每个树行中找最大值</h3><h3 id="116-填充每个节点的下一个右侧节点指针"><a href="#116-填充每个节点的下一个右侧节点指针" class="headerlink" title="116.填充每个节点的下一个右侧节点指针"></a>116.填充每个节点的下一个右侧节点指针</h3><h3 id="117-填充每个节点的下一个右侧节点指针II"><a href="#117-填充每个节点的下一个右侧节点指针II" class="headerlink" title="117.填充每个节点的下一个右侧节点指针II"></a>117.填充每个节点的下一个右侧节点指针II</h3><h3 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="104.二叉树的最大深度"></a>104.二叉树的最大深度</h3><h3 id="111-二叉树的最小深度"><a href="#111-二叉树的最小深度" class="headerlink" title="111.二叉树的最小深度"></a>111.二叉树的最小深度</h3>
+<h3 id="515-在每个树行中找最大值"><a href="#515-在每个树行中找最大值" class="headerlink" title="515.在每个树行中找最大值"></a>515.在每个树行中找最大值</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    vector&lt;int&gt; largestValues(TreeNode* root) &#123;
+        vector&lt;int&gt; res;
+        queue&lt;TreeNode*&gt; que;
+        if(root!&#x3D;nullptr)que.push(root);
+        while(!que.empty())&#123;
+            int size&#x3D;que.size();
+            int lar &#x3D; que.front()-&gt;val;
+            for(int i&#x3D;0;i&lt;size;i++)&#123;
+                lar &#x3D; max(lar,que.front()-&gt;val);
+                if(que.front()-&gt;left)&#123;
+                    que.push(que.front()-&gt;left);
+                &#125;
+                if(que.front()-&gt;right)&#123;
+                    que.push(que.front()-&gt;right);
+                &#125;
+                que.pop();
+            &#125;
+            res.push_back(lar);
+        &#125;
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="116-填充每个节点的下一个右侧节点指针"><a href="#116-填充每个节点的下一个右侧节点指针" class="headerlink" title="116.填充每个节点的下一个右侧节点指针"></a>116.填充每个节点的下一个右侧节点指针</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    Node* connect(Node* root) &#123;
+        queue&lt;Node*&gt; que;
+        vector&lt;Node*&gt; vec;
+        if(root!&#x3D;nullptr)que.push(root);
+        while(!que.empty())&#123;
+            int size&#x3D;que.size();
+            for(int i&#x3D;0;i&lt;size;i++)&#123;
+                Node* node &#x3D; que.front();
+                if(que.front()-&gt;left)&#123;
+                    que.push(que.front()-&gt;left);
+                &#125;
+                if(que.front()-&gt;right)&#123;
+                    que.push(que.front()-&gt;right);
+                &#125;
+                que.pop();
+                if(i&lt;size-1)node-&gt;next &#x3D; que.front();
+            &#125;
+        &#125;
+        return root;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="117-填充每个节点的下一个右侧节点指针II"><a href="#117-填充每个节点的下一个右侧节点指针II" class="headerlink" title="117.填充每个节点的下一个右侧节点指针II"></a>117.填充每个节点的下一个右侧节点指针II</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    Node* connect(Node* root) &#123;
+        queue&lt;Node*&gt; que;
+        vector&lt;Node*&gt; vec;
+        if(root!&#x3D;nullptr)que.push(root);
+        while(!que.empty())&#123;
+            int size&#x3D;que.size();
+            for(int i&#x3D;0;i&lt;size;i++)&#123;
+                Node* node &#x3D; que.front();
+                if(que.front()-&gt;left)&#123;
+                    que.push(que.front()-&gt;left);
+                &#125;
+                if(que.front()-&gt;right)&#123;
+                    que.push(que.front()-&gt;right);
+                &#125;
+                que.pop();
+                if(i&lt;size-1)node-&gt;next &#x3D; que.front();
+            &#125;
+        &#125;
+        return root;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="104.二叉树的最大深度"></a>104.二叉树的最大深度</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int maxDepth(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+        if(root!&#x3D;nullptr)que.push(root);
+        int k&#x3D;0;
+        while(!que.empty())&#123;
+            int size&#x3D;que.size();
+            for(int i&#x3D;0;i&lt;size;i++)&#123;
+                if(que.front()-&gt;left)&#123;
+                    que.push(que.front()-&gt;left);
+                &#125;
+                if(que.front()-&gt;right)&#123;
+                    que.push(que.front()-&gt;right);
+                &#125;
+                que.pop();
+            &#125;
+            k++;
+        &#125;
+        return k;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>后续遍历求高度</p>
+<pre class="line-numbers language-none"><code class="language-none">class solution &#123;
+public:
+    int getdepth(treenode* node) &#123;
+        if (node &#x3D;&#x3D; NULL) return 0;
+        int leftdepth &#x3D; getdepth(node-&gt;left);       &#x2F;&#x2F; 左
+        int rightdepth &#x3D; getdepth(node-&gt;right);     &#x2F;&#x2F; 右
+        int depth &#x3D; 1 + max(leftdepth, rightdepth); &#x2F;&#x2F; 中
+        return depth;
+    &#125;
+    int maxdepth(treenode* root) &#123;
+        return getdepth(root);
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="111-二叉树的最小深度"><a href="#111-二叉树的最小深度" class="headerlink" title="111.二叉树的最小深度"></a>111.二叉树的最小深度</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int minDepth(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+        long long res &#x3D; 0;
+        if(root!&#x3D;nullptr)que.push(root);
+        while(!que.empty())&#123;
+            int size&#x3D;que.size();
+            for(int i&#x3D;0;i&lt;size;i++)&#123;
+                if(!que.front()-&gt;left &amp;&amp; !que.front()-&gt;right)&#123;
+                    return res+1;
+                &#125;
+                if(que.front()-&gt;left)&#123;
+                    que.push(que.front()-&gt;left);
+                &#125;
+                if(que.front()-&gt;right)&#123;
+                    que.push(que.front()-&gt;right);
+                &#125;
+                que.pop();
+            &#125;
+            res++;
+        &#125;
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="翻转二叉树"><a href="#翻转二叉树" class="headerlink" title="翻转二叉树"></a>翻转二叉树</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230323092644112.png"></p>
+<p>递归法</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    TreeNode* invertTree(TreeNode* root) &#123;
+        if (root &#x3D;&#x3D; NULL) return root;
+        swap(root-&gt;left, root-&gt;right);  &#x2F;&#x2F; 中
+        invertTree(root-&gt;left);         &#x2F;&#x2F; 左
+        invertTree(root-&gt;right);        &#x2F;&#x2F; 右
+        return root;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>迭代法</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    TreeNode* invertTree(TreeNode* root) &#123;
+        if (root &#x3D;&#x3D; NULL) return root;
+        stack&lt;TreeNode*&gt; st;
+        st.push(root);
+        while(!st.empty()) &#123;
+            TreeNode* node &#x3D; st.top();              &#x2F;&#x2F; 中
+            st.pop();
+            swap(node-&gt;left, node-&gt;right);
+            if(node-&gt;right) st.push(node-&gt;right);   &#x2F;&#x2F; 右
+            if(node-&gt;left) st.push(node-&gt;left);     &#x2F;&#x2F; 左
+        &#125;
+        return root;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="对称二叉树"><a href="#对称二叉树" class="headerlink" title="对称二叉树"></a>对称二叉树</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230323092710551.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    bool compare(TreeNode* left,TreeNode* right)&#123;
+        if(left&#x3D;&#x3D;nullptr &amp;&amp; right&#x3D;&#x3D;nullptr)return true;
+        else if(left&#x3D;&#x3D;nullptr &amp;&amp; right!&#x3D;nullptr)return false;
+        else if(left!&#x3D;nullptr &amp;&amp; right&#x3D;&#x3D;nullptr)return false;
+        else if(left-&gt;val!&#x3D;right-&gt;val)return false;
+        else&#123;
+            return compare(left-&gt;left,right-&gt;right)&amp;&amp;compare(left-&gt;right,right-&gt;left);
+        &#125;
+    &#125;
+
+    bool isSymmetric(TreeNode* root) &#123;
+        if(root &#x3D;&#x3D; nullptr)return true;
+        return compare(root-&gt;left,root-&gt;right);
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="100-相同的树"><a href="#100-相同的树" class="headerlink" title="100.相同的树"></a>100.相同的树</h3><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    bool compare(TreeNode* p, TreeNode* q)&#123;
+        if(p&#x3D;&#x3D;nullptr &amp;&amp; q&#x3D;&#x3D;nullptr)return true;
+        else if(p!&#x3D;nullptr &amp;&amp; q&#x3D;&#x3D;nullptr)return false;
+        else if(p&#x3D;&#x3D;nullptr &amp;&amp; q!&#x3D;nullptr)return false;
+        else if(p-&gt;val !&#x3D; q-&gt;val)return false;
+        else&#123;
+            return compare(p-&gt;left,q-&gt;left)&amp;&amp;compare(p-&gt;right,q-&gt;right);
+        &#125;
+    &#125;
+
+    bool isSameTree(TreeNode* p, TreeNode* q) &#123;
+        return compare(p, q);
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="572-另一棵树的子树"><a href="#572-另一棵树的子树" class="headerlink" title="572.另一棵树的子树"></a>572.另一棵树的子树</h3><p>双递归，一递归判断是否相同，另一递归取左子树和右子树</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    bool compare(TreeNode* p, TreeNode* q)&#123;
+        if(p&#x3D;&#x3D;nullptr &amp;&amp; q&#x3D;&#x3D;nullptr)return true;
+        else if(p!&#x3D;nullptr &amp;&amp; q&#x3D;&#x3D;nullptr)return false;
+        else if(p&#x3D;&#x3D;nullptr &amp;&amp; q!&#x3D;nullptr)return false;
+        else if(p-&gt;val !&#x3D; q-&gt;val)return false;
+        else&#123;
+            return compare(p-&gt;left,q-&gt;left)&amp;&amp;compare(p-&gt;right,q-&gt;right);
+        &#125;
+    &#125;
+
+    bool isSubtree(TreeNode* root, TreeNode* subRoot) &#123;
+        if(root&#x3D;&#x3D;nullptr &amp;&amp; subRoot&#x3D;&#x3D;nullptr)return true;
+        else if(root!&#x3D;nullptr &amp;&amp; subRoot&#x3D;&#x3D;nullptr)return false;
+        else if(root&#x3D;&#x3D;nullptr &amp;&amp; subRoot!&#x3D;nullptr)return false;
+        return compare(root,subRoot)||isSubtree(root-&gt;left,subRoot)||isSubtree(root-&gt;right,subRoot);
+    
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="完美二叉树的节点个数"><a href="#完美二叉树的节点个数" class="headerlink" title="完美二叉树的节点个数"></a>完美二叉树的节点个数</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230323103318926.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int countNodes(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+        int res &#x3D; 0;
+        if(root&#x3D;&#x3D;nullptr)return res;
+        que.push(root);
+        while(!que.empty())&#123;
+            int size &#x3D; que.size();
+            for(int i&#x3D;0;i&lt;size;i++)&#123;
+                if(que.front()-&gt;left)que.push(que.front()-&gt;left);
+                if(que.front()-&gt;right)que.push(que.front()-&gt;right);
+                que.pop();
+                res++;
+            &#125;
+        &#125;
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230323110924812.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    &#x2F;&#x2F; 返回以该节点为根节点的二叉树的高度，如果不是平衡二叉树了则返回-1
+    int getHeight(TreeNode* node) &#123;
+        if (node &#x3D;&#x3D; NULL) &#123;
+            return 0;
+        &#125;
+        int leftHeight &#x3D; getHeight(node-&gt;left);
+        if (leftHeight &#x3D;&#x3D; -1) return -1;
+        int rightHeight &#x3D; getHeight(node-&gt;right);
+        if (rightHeight &#x3D;&#x3D; -1) return -1;
+        return abs(leftHeight - rightHeight) &gt; 1 ? -1 : 1 + max(leftHeight, rightHeight);
+    &#125;
+    bool isBalanced(TreeNode* root) &#123;
+        return getHeight(root) &#x3D;&#x3D; -1 ? false : true;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉树的所有路径"><a href="#二叉树的所有路径" class="headerlink" title="二叉树的所有路径"></a>二叉树的所有路径</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230323113704725.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+private:
+
+    void traversal(TreeNode* cur, vector&lt;int&gt;&amp; path, vector&lt;string&gt;&amp; result) &#123;
+        path.push_back(cur-&gt;val); &#x2F;&#x2F; 中，中为什么写在这里，因为最后一个节点也要加入到path中 
+        &#x2F;&#x2F; 这才到了叶子节点
+        if (cur-&gt;left &#x3D;&#x3D; NULL &amp;&amp; cur-&gt;right &#x3D;&#x3D; NULL) &#123;
+            string sPath;
+            for (int i &#x3D; 0; i &lt; path.size() - 1; i++) &#123;
+                sPath +&#x3D; to_string(path[i]);
+                sPath +&#x3D; &quot;-&gt;&quot;;
+            &#125;
+            sPath +&#x3D; to_string(path[path.size() - 1]);
+            result.push_back(sPath);
+            return;
+        &#125;
+        if (cur-&gt;left) &#123; &#x2F;&#x2F; 左 
+            traversal(cur-&gt;left, path, result);
+            path.pop_back(); &#x2F;&#x2F; 回溯
+        &#125;
+        if (cur-&gt;right) &#123; &#x2F;&#x2F; 右
+            traversal(cur-&gt;right, path, result);
+            path.pop_back(); &#x2F;&#x2F; 回溯
+        &#125;
+    &#125;
+
+public:
+    vector&lt;string&gt; binaryTreePaths(TreeNode* root) &#123;
+        vector&lt;string&gt; result;
+        vector&lt;int&gt; path;
+        if (root &#x3D;&#x3D; NULL) return result;
+        traversal(root, path, result);
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="左子叶之和"><a href="#左子叶之和" class="headerlink" title="左子叶之和"></a>左子叶之和</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">sumOfLeftLeaves</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">==</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">sumOfLeftLeaves</span><span class="token punctuation">(</span>root<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">-></span>left <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>root<span class="token operator">-></span>left<span class="token operator">-></span>left <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>root<span class="token operator">-></span>left<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            sum<span class="token operator">+=</span>root<span class="token operator">-></span>left<span class="token operator">-></span>val<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">sumOfLeftLeaves</span><span class="token punctuation">(</span>root<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="找树最左边的值"><a href="#找树最左边的值" class="headerlink" title="找树最左边的值"></a>找树最左边的值</h2><p>递归法</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int maxDepth &#x3D; INT_MIN;
+    int result;
+    void traversal(TreeNode* root, int depth) &#123;
+        if (root-&gt;left &#x3D;&#x3D; NULL &amp;&amp; root-&gt;right &#x3D;&#x3D; NULL) &#123;
+            if (depth &gt; maxDepth) &#123;
+                maxDepth &#x3D; depth;
+                result &#x3D; root-&gt;val;
+            &#125;
+            return;
+        &#125;
+        if (root-&gt;left) &#123;
+            depth++;
+            traversal(root-&gt;left, depth);
+            depth--; &#x2F;&#x2F; 回溯
+        &#125;
+        if (root-&gt;right) &#123;
+            depth++;
+            traversal(root-&gt;right, depth);
+            depth--; &#x2F;&#x2F; 回溯
+        &#125;
+        return;
+    &#125;
+    int findBottomLeftValue(TreeNode* root) &#123;
+        traversal(root, 0);
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>迭代法</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    int findBottomLeftValue(TreeNode* root) &#123;
+        queue&lt;TreeNode*&gt; que;
+        if (root !&#x3D; NULL) que.push(root);
+        int result &#x3D; 0;
+        while (!que.empty()) &#123;
+            int size &#x3D; que.size();
+            for (int i &#x3D; 0; i &lt; size; i++) &#123;
+                TreeNode* node &#x3D; que.front();
+                que.pop();
+                if (i &#x3D;&#x3D; 0) result &#x3D; node-&gt;val; &#x2F;&#x2F; 记录最后一行第一个元素
+                if (node-&gt;left) que.push(node-&gt;left);
+                if (node-&gt;right) que.push(node-&gt;right);
+            &#125;
+        &#125;
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="路径总和"><a href="#路径总和" class="headerlink" title="路径总和"></a>路径总和</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230324143621222.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    bool hasPathSum(TreeNode* root, int sum) &#123;
+        if (root&#x3D;&#x3D;nullptr) return false;
+        if (!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; sum &#x3D;&#x3D; root-&gt;val) &#123;
+            return true;
+        &#125;
+        return hasPathSum(root-&gt;left, sum - root-&gt;val) || hasPathSum(root-&gt;right, sum - root-&gt;val);
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="路径总和II"><a href="#路径总和II" class="headerlink" title="路径总和II"></a>路径总和II</h2><p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230324144315974.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+private:
+    vector&lt;vector&lt;int&gt;&gt; result;
+    vector&lt;int&gt; path;
+    &#x2F;&#x2F; 递归函数不需要返回值，因为我们要遍历整个树
+    void traversal(TreeNode* cur, int count) &#123;
+        if (!cur-&gt;left &amp;&amp; !cur-&gt;right &amp;&amp; count &#x3D;&#x3D; 0) &#123; &#x2F;&#x2F; 遇到了叶子节点且找到了和为sum的路径
+            result.push_back(path);
+            return;
+        &#125;
+
+        if (!cur-&gt;left &amp;&amp; !cur-&gt;right) return ; &#x2F;&#x2F; 遇到叶子节点而没有找到合适的边，直接返回
+
+        if (cur-&gt;left) &#123; &#x2F;&#x2F; 左 （空节点不遍历）
+            path.push_back(cur-&gt;left-&gt;val);
+            traversal(cur-&gt;left, count-cur-&gt;left-&gt;val);    &#x2F;&#x2F; 递归
+            path.pop_back();                &#x2F;&#x2F; 回溯
+        &#125;
+        if (cur-&gt;right) &#123; &#x2F;&#x2F; 右 （空节点不遍历）
+            path.push_back(cur-&gt;right-&gt;val);
+            traversal(cur-&gt;right, count-cur-&gt;right-&gt;val);   &#x2F;&#x2F; 递归
+            path.pop_back();                &#x2F;&#x2F; 回溯
+        &#125;
+        return ;
+    &#125;
+
+public:
+    vector&lt;vector&lt;int&gt;&gt; pathSum(TreeNode* root, int sum) &#123;
+        if (root &#x3D;&#x3D; nullptr) return result;
+        path.push_back(root-&gt;val); &#x2F;&#x2F; 把根节点放进路径
+        traversal(root, sum - root-&gt;val);
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="从中序与后序遍历序列构造二叉树"><a href="#从中序与后序遍历序列构造二叉树" class="headerlink" title="从中序与后序遍历序列构造二叉树"></a>从中序与后序遍历序列构造二叉树</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+private:
+    TreeNode* traversal (vector&lt;int&gt;&amp; inorder, vector&lt;int&gt;&amp; postorder) &#123;
+        if (postorder.size() &#x3D;&#x3D; 0) return NULL;
+
+        &#x2F;&#x2F; 后序遍历数组最后一个元素，就是当前的中间节点
+        int rootValue &#x3D; postorder[postorder.size() - 1];
+        TreeNode* root &#x3D; new TreeNode(rootValue);
+
+        &#x2F;&#x2F; 叶子节点
+        if (postorder.size() &#x3D;&#x3D; 1) return root;
+
+        &#x2F;&#x2F; 找到中序遍历的切割点
+        int delimiterIndex;
+        for (delimiterIndex &#x3D; 0; delimiterIndex &lt; inorder.size(); delimiterIndex++) &#123;
+            if (inorder[delimiterIndex] &#x3D;&#x3D; rootValue) break;
+        &#125;
+
+        &#x2F;&#x2F; 切割中序数组
+        &#x2F;&#x2F; 左闭右开区间：[0, delimiterIndex)
+        vector&lt;int&gt; leftInorder(inorder.begin(), inorder.begin() + delimiterIndex);
+        &#x2F;&#x2F; [delimiterIndex + 1, end)
+        vector&lt;int&gt; rightInorder(inorder.begin() + delimiterIndex + 1, inorder.end() );
+
+        &#x2F;&#x2F; postorder 舍弃末尾元素
+        postorder.resize(postorder.size() - 1);
+
+        &#x2F;&#x2F; 切割后序数组
+        &#x2F;&#x2F; 依然左闭右开，注意这里使用了左中序数组大小作为切割点
+        &#x2F;&#x2F; [0, leftInorder.size)
+        vector&lt;int&gt; leftPostorder(postorder.begin(), postorder.begin() + leftInorder.size());
+        &#x2F;&#x2F; [leftInorder.size(), end)
+        vector&lt;int&gt; rightPostorder(postorder.begin() + leftInorder.size(), postorder.end());
+
+        root-&gt;left &#x3D; traversal(leftInorder, leftPostorder);
+        root-&gt;right &#x3D; traversal(rightInorder, rightPostorder);
+
+        return root;
+    &#125;
+public:
+    TreeNode* buildTree(vector&lt;int&gt;&amp; inorder, vector&lt;int&gt;&amp; postorder) &#123;
+        if (inorder.size() &#x3D;&#x3D; 0 || postorder.size() &#x3D;&#x3D; 0) return NULL;
+        return traversal(inorder, postorder);
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="最大二叉树"><a href="#最大二叉树" class="headerlink" title="最大二叉树"></a>最大二叉树</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+private:
+    &#x2F;&#x2F; 在左闭右开区间[left, right)，构造二叉树
+    TreeNode* traversal(vector&lt;int&gt;&amp; nums, int left, int right) &#123;
+        if (left &gt;&#x3D; right) return nullptr;
+
+        &#x2F;&#x2F; 分割点下标：maxValueIndex
+        int maxValueIndex &#x3D; left;
+        for (int i &#x3D; left + 1; i &lt; right; ++i) &#123;
+            if (nums[i] &gt; nums[maxValueIndex]) maxValueIndex &#x3D; i;
+        &#125;
+
+        TreeNode* root &#x3D; new TreeNode(nums[maxValueIndex]);
+
+        &#x2F;&#x2F; 左闭右开：[left, maxValueIndex)
+        root-&gt;left &#x3D; traversal(nums, left, maxValueIndex);
+
+        &#x2F;&#x2F; 左闭右开：[maxValueIndex + 1, right)
+        root-&gt;right &#x3D; traversal(nums, maxValueIndex + 1, right);
+
+        return root;
+    &#125;
+public:
+    TreeNode* constructMaximumBinaryTree(vector&lt;int&gt;&amp; nums) &#123;
+        return traversal(nums, 0, nums.size());
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="合并二叉树"><a href="#合并二叉树" class="headerlink" title="合并二叉树"></a>合并二叉树</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2) &#123;
+        if (t1 &#x3D;&#x3D; NULL) return t2;
+        if (t2 &#x3D;&#x3D; NULL) return t1;
+        &#x2F;&#x2F; 重新定义新的节点，不修改原有两个树的结构
+        TreeNode* root &#x3D; new TreeNode(0);
+        root-&gt;val &#x3D; t1-&gt;val + t2-&gt;val;
+        root-&gt;left &#x3D; mergeTrees(t1-&gt;left, t2-&gt;left);
+        root-&gt;right &#x3D; mergeTrees(t1-&gt;right, t2-&gt;right);
+        return root;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我的shitmountain</p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+
+    TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) &#123;
+        if(!root1 &amp;&amp; !root2)return nullptr;
+        if(root1&#x3D;&#x3D;nullptr)root1&#x3D;node;
+        if(root2&#x3D;&#x3D;nullptr)root2&#x3D;node;
+
+        TreeNode* root &#x3D; new TreeNode(root1-&gt;val+root2-&gt;val); 
+
+        if(root1-&gt;left &amp;&amp; root2-&gt;left)&#123;
+            root-&gt;left&#x3D;mergeTrees(root1-&gt;left,root2-&gt;left);
+            &#125;
+        if(root1-&gt;left  &amp;&amp; !root2-&gt;left)&#123;
+            root-&gt;left&#x3D;mergeTrees(root1-&gt;left,node);
+        &#125;
+        if(!root1-&gt;left  &amp;&amp; root2-&gt;left)&#123;
+            root-&gt;left&#x3D;mergeTrees(node,root2-&gt;left);
+        &#125;
+        if(root1-&gt;right &amp;&amp; root2-&gt;right)&#123;
+            root-&gt;right&#x3D;mergeTrees(root1-&gt;right,root2-&gt;right);
+        &#125;
+        if(root1-&gt;right  &amp;&amp; !root2-&gt;right)&#123;
+            root-&gt;right&#x3D;mergeTrees(root1-&gt;right,node);
+        &#125;
+        if(!root1-&gt;right  &amp;&amp; root2-&gt;right)&#123;
+            root-&gt;right&#x3D;mergeTrees(node,root2-&gt;right);
+        &#125;
+        return root;
+    &#125;
+private:
+    TreeNode* node &#x3D; new TreeNode(0);
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉搜索树中的搜索"><a href="#二叉搜索树中的搜索" class="headerlink" title="二叉搜索树中的搜索"></a>二叉搜索树中的搜索</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    TreeNode* searchBST(TreeNode* root, int val) &#123;
+        if (root &#x3D;&#x3D; NULL || root-&gt;val &#x3D;&#x3D; val) return root;
+        cout&lt;&lt;root-&gt;val&lt;&lt;&#39; &#39;;
+        TreeNode* result &#x3D; NULL;
+        if (root-&gt;val &gt; val) result &#x3D; searchBST(root-&gt;left, val);
+        if (root-&gt;val &lt; val) result &#x3D; searchBST(root-&gt;right, val);
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="验证二叉搜索树"><a href="#验证二叉搜索树" class="headerlink" title="验证二叉搜索树"></a>验证二叉搜索树</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+private:
+    vector&lt;int&gt; vec;
+    void traversal(TreeNode* root) &#123;
+        if (root &#x3D;&#x3D; NULL) return;
+        traversal(root-&gt;left);
+        vec.push_back(root-&gt;val); &#x2F;&#x2F; 将二叉搜索树转换为有序数组
+        traversal(root-&gt;right);
+    &#125;
+public:
+    bool isValidBST(TreeNode* root) &#123;
+        vec.clear(); &#x2F;&#x2F; 不加这句在leetcode上也可以过，但最好加上
+        traversal(root);
+        for (int i &#x3D; 1; i &lt; vec.size(); i++) &#123;
+            &#x2F;&#x2F; 注意要小于等于，搜索树里不能有相同元素
+            if (vec[i] &lt;&#x3D; vec[i - 1]) return false;
+        &#125;
+        return true;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉搜索树的最小绝对差"><a href="#二叉搜索树的最小绝对差" class="headerlink" title="二叉搜索树的最小绝对差"></a>二叉搜索树的最小绝对差</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+private:
+vector&lt;int&gt; vec;
+void traversal(TreeNode* root) &#123;
+    if (root &#x3D;&#x3D; NULL) return;
+    traversal(root-&gt;left);
+    vec.push_back(root-&gt;val); &#x2F;&#x2F; 将二叉搜索树转换为有序数组
+    traversal(root-&gt;right);
+&#125;
+public:
+    int getMinimumDifference(TreeNode* root) &#123;
+        vec.clear();
+        traversal(root);
+        if (vec.size() &lt; 2) return 0;
+        int result &#x3D; INT_MAX;
+        for (int i &#x3D; 1; i &lt; vec.size(); i++) &#123; &#x2F;&#x2F; 统计有序数组的最小差值
+            result &#x3D; min(result, vec[i] - vec[i-1]);
+        &#125;
+        return result;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉搜索树中的众数"><a href="#二叉搜索树中的众数" class="headerlink" title="二叉搜索树中的众数"></a>二叉搜索树中的众数</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    void traversal(TreeNode* root)&#123;
+        if(root)&#123;
+            traversal(root-&gt;left);
+            vec.push_back(root-&gt;val);
+            traversal(root-&gt;right);
+        &#125;
+    &#125;
+    vector&lt;int&gt; findMode(TreeNode* root) &#123;
+        if(root&#x3D;&#x3D;nullptr)return res;
+        traversal(root);
+        unordered_map&lt;int,int&gt; mp;
+        for(auto v:vec)&#123;
+            mp[v]++;
+        &#125;
+        for(auto [key,value]:mp)&#123;
+            maxRes &#x3D; max(maxRes,value);
+        &#125;
+        for(auto [key,value]:mp)&#123;
+            if(value&#x3D;&#x3D;maxRes)res.push_back(key);
+        &#125;        
+        return res;
+    &#125;
+private:
+    vector&lt;int&gt; vec;
+    vector&lt;int&gt; res;
+    int maxRes;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉树的最近公共祖先"><a href="#二叉树的最近公共祖先" class="headerlink" title="二叉树的最近公共祖先"></a>二叉树的最近公共祖先</h2><pre class="line-numbers language-none"><code class="language-none">class Solution &#123;
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) &#123;
+        if (root &#x3D;&#x3D; q || root &#x3D;&#x3D; p || root &#x3D;&#x3D; NULL) return root;
+        TreeNode* left &#x3D; lowestCommonAncestor(root-&gt;left, p, q);
+        TreeNode* right &#x3D; lowestCommonAncestor(root-&gt;right, p, q);
+        if (left !&#x3D; NULL &amp;&amp; right !&#x3D; NULL) return root;
+
+        if (left &#x3D;&#x3D; NULL &amp;&amp; right !&#x3D; NULL) return right;
+        else if (left !&#x3D; NULL &amp;&amp; right &#x3D;&#x3D; NULL) return left;
+        else  &#123; &#x2F;&#x2F;  (left &#x3D;&#x3D; NULL &amp;&amp; right &#x3D;&#x3D; NULL)
+            return NULL;
+        &#125;
+
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -785,7 +1429,7 @@ public:
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2023/03/22/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                <a href="/2023/03/23/Learn/LeetCode/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95_%E4%BA%8C%E5%8F%89%E6%A0%91/">
                     <div class="card-image">
                         
                         
@@ -802,7 +1446,7 @@ public:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-23
                             </span>
                         <span class="publish-author">
                             
@@ -1014,7 +1658,7 @@ public:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">87.6k</span>
+                        class="white-color">90.9k</span>
             
             
             
