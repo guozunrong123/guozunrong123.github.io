@@ -6,7 +6,7 @@
   <link href="https://guozunrong123.github.io/atom.xml" rel="self"/>
   
   <link href="https://guozunrong123.github.io/"/>
-  <updated>2023-03-31T13:44:51.611Z</updated>
+  <updated>2023-04-01T13:45:01.238Z</updated>
   <id>https://guozunrong123.github.io/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux文件与目录管理</title>
+    <link href="https://guozunrong123.github.io/2023/04/01/Learn/Linux/Linux%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/"/>
+    <id>https://guozunrong123.github.io/2023/04/01/Learn/Linux/Linux%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/</id>
+    <published>2023-04-01T11:49:40.000Z</published>
+    <updated>2023-04-01T13:45:01.238Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Linux-文件与目录管理&quot;&gt;&lt;a href=&quot;#Linux-文件与目录管理&quot; class=&quot;headerlink&quot; title=&quot;Linux</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="Linux" scheme="https://guozunrong123.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux文件权限与目录配置</title>
+    <link href="https://guozunrong123.github.io/2023/04/01/Learn/Linux/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE/"/>
+    <id>https://guozunrong123.github.io/2023/04/01/Learn/Linux/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE/</id>
+    <published>2023-04-01T09:49:40.000Z</published>
+    <updated>2023-04-01T11:43:56.404Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Linux文件权限与目录配置&quot;&gt;&lt;a href=&quot;#Linux文件权限与目录配置&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="Linux" scheme="https://guozunrong123.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络通信</title>
+    <link href="https://guozunrong123.github.io/2023/04/01/Learn/Linux/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    <id>https://guozunrong123.github.io/2023/04/01/Learn/Linux/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</id>
+    <published>2023-04-01T03:49:40.000Z</published>
+    <updated>2023-04-01T08:52:45.462Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;网络通信&quot;&gt;&lt;a href=&quot;#网络通信&quot; class=&quot;headerlink&quot; title=&quot;网络通信&quot;&gt;&lt;/a&gt;网络通信&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
+    
+    
+    <category term="Linux" scheme="https://guozunrong123.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Makefile的使用</title>
@@ -468,89 +549,6 @@
     
     <category term="Book" scheme="https://guozunrong123.github.io/categories/Book/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>2023.3.17 LeetCode</title>
-    <link href="https://guozunrong123.github.io/2023/03/17/Learn/LeetCode/2023.3.17-LeetCode/"/>
-    <id>https://guozunrong123.github.io/2023/03/17/Learn/LeetCode/2023.3.17-LeetCode/</id>
-    <published>2023-03-17T08:49:40.000Z</published>
-    <updated>2023-03-18T08:50:05.339Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;2023-3-17&quot;&gt;&lt;a href=&quot;#2023-3-17&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="Code" scheme="https://guozunrong123.github.io/tags/Code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Freertos</title>
-    <link href="https://guozunrong123.github.io/2023/03/16/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/"/>
-    <id>https://guozunrong123.github.io/2023/03/16/Learn/Freertos/FreeRTOS%E7%B3%BB%E7%BB%9F%E5%AD%A6/</id>
-    <published>2023-03-16T12:46:40.000Z</published>
-    <updated>2023-03-18T05:34:43.930Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="操作系统" scheme="https://guozunrong123.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="Freertos" scheme="https://guozunrong123.github.io/tags/Freertos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2023.3.16 LeetCode</title>
-    <link href="https://guozunrong123.github.io/2023/03/16/Learn/LeetCode/2023.3.16-LeetCode/"/>
-    <id>https://guozunrong123.github.io/2023/03/16/Learn/LeetCode/2023.3.16-LeetCode/</id>
-    <published>2023-03-16T08:49:40.000Z</published>
-    <updated>2023-03-18T08:50:01.065Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;2023-3-16&quot;&gt;&lt;a href=&quot;#2023-3-16&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learn" scheme="https://guozunrong123.github.io/categories/Learn/"/>
-    
-    
-    <category term="Code" scheme="https://guozunrong123.github.io/tags/Code/"/>
     
   </entry>
   

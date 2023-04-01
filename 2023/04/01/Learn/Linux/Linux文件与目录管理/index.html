@@ -1,0 +1,1251 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Linux文件与目录管理, ZRong&#39;s Blog">
+    <meta name="description" content="鸟哥Linux私房菜第六章">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Linux文件与目录管理 | ZRong&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/16favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="ZRong's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/16favicon.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">ZRong&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/16favicon.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">ZRong&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            There is no royal road to learning.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Linux文件与目录管理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Learn/" class="post-category">
+                                Learn
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-04-01
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.7k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <meta name="referrer" content="no-referrer" />
+
+<h1 id="Linux-文件与目录管理"><a href="#Linux-文件与目录管理" class="headerlink" title="Linux 文件与目录管理"></a>Linux 文件与目录管理</h1><p>在前一章我们认识了Linux系统下的文件权限概念以及目录的配置说明。 在这个章节当中，我们就直接来进一步的操作与管理文件及目录吧！包括在不同的目录间变换、 创建与删除目录、创建与删除文件，还有寻找文件、查阅文件内容等等。</p>
+<h2 id="目录与路径"><a href="#目录与路径" class="headerlink" title="目录与路径"></a>目录与路径</h2><h3 id="相对路径与绝对路径"><a href="#相对路径与绝对路径" class="headerlink" title="相对路径与绝对路径"></a>相对路径与绝对路径</h3><ul>
+<li>绝对路径：路径的写法“一定由根目录 &#x2F; 写起”，例如： &#x2F;usr&#x2F;share&#x2F;doc 这个目录。 </li>
+<li>相对路径：路径的写法“不是由 &#x2F; 写起”，例如由 &#x2F;usr&#x2F;share&#x2F;doc 要到 &#x2F;usr&#x2F;share&#x2F;man 下面 时，可以写成： “cd ..&#x2F;man”这就是相对路径的写法啦！相对路径意指“相对于目前工作目录的路径！”</li>
+</ul>
+<h3 id="目录的相关操作"><a href="#目录的相关操作" class="headerlink" title="目录的相关操作"></a>目录的相关操作</h3><p>变换目录的指令是cd</p>
+<pre class="line-numbers language-none"><code class="language-none">. 代表此层目录
+.. 代表上一层目录
+- 代表前一个工作目录
+~ 代表“目前使用者身份”所在的主文件夹
+~account 代表 account 这个使用者的主文件夹（account是个帐号名称）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>例题：请问在Linux下面，根目录下有没有上层目录（..）存在？答：若使用“ ls -al &#x2F; ”去查询， 可以看到根目录下确实存在 . 与 .. 两个目录，再仔细的查阅， 可发现这两个目录的属性与权 限完全一致，这代表根目录的上一层（..）与根目录自己（.）是同一个目录。</p>
+<p>几个常见的处理目录的指令：</p>
+<ul>
+<li>cd：变换目录						&#x2F;&#x2F;Change Directory</li>
+<li>pwd：显示目前的目录         &#x2F;&#x2F;Print Working Directory</li>
+<li>mkdir：创建一个新的目录  &#x2F;&#x2F;Make Directory</li>
+<li>rmdir：删除一个空的目录  &#x2F;&#x2F;Remove Directory<ul>
+<li>目录需要一层一层的删除才行！而且被删除的目录里面必定不能存在其他 的目录或文件！ 这也是所谓的空的目录（empty directory）的意思啊！那如果要将所有目录 下的东西都杀掉呢？！ 这个时候就必须使用“ rm -r test ”！不过，还是使用 rmdir 比较不危险！你也可以尝试以 -p 的选项加入，来删除上层的目录喔！</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[dmtsai@study ~]$ su - # 先切换身份成为 root 看看！
+[root@study ~]# cd [相对路径或绝对路径]
+# 最重要的就是目录的绝对路径与相对路径，还有一些特殊目录的符号啰！
+[root@study ~]# cd ~dmtsai
+# 代表去到 dmtsai 这个使用者的主文件夹，亦即 &#x2F;home&#x2F;dmtsai
+[root@study dmtsai]# cd ~
+# 表示回到自己的主文件夹，亦即是 &#x2F;root 这个目录
+[root@study ~]# cd
+# 没有加上任何路径，也还是代表回到自己主文件夹的意思喔！
+[root@study ~]# cd ..
+# 表示去到目前的上层目录，亦即是 &#x2F;root 的上层目录的意思；
+[root@study &#x2F;]# cd -
+# 表示回到刚刚的那个目录，也就是 &#x2F;root 啰～
+[root@study ~]# cd &#x2F;var&#x2F;spool&#x2F;mail
+# 这个就是绝对路径的写法！直接指定要去的完整路径名称！
+[root@study mail]# cd ..&#x2F;postfix
+# 这个是相对路径的写法，我们由&#x2F;var&#x2F;spool&#x2F;mail 去到&#x2F;var&#x2F;spool&#x2F;postfix 就这样写！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="关于可执行文件路径的变量：-PATH"><a href="#关于可执行文件路径的变量：-PATH" class="headerlink" title="关于可执行文件路径的变量： $PATH"></a>关于可执行文件路径的变量： $PATH</h3><p>我们知道查阅文件属性的指令ls完整文件名为：&#x2F;bin&#x2F;ls（这是绝对 路径）， 那你会不会觉得很奇怪：“为什么我可以在任何地方执行&#x2F;bin&#x2F;ls这个指令呢？ ” 为什 么我在任何目录下输入 ls 就一定可以显示出一些讯息而不会说找不到该 &#x2F;bin&#x2F;ls 指令呢？ 这是因为环境变量 PATH 的帮助所致呀！</p>
+<p>如果将ls移动到root，想要让root在任何目录均可执行&#x2F;root下面的ls，那么就将&#x2F;root加入PATH当中即可。</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# PATH&#x3D;&quot;$&#123;PATH&#125;:&#x2F;root&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="文件与目录管理"><a href="#文件与目录管理" class="headerlink" title="文件与目录管理"></a>文件与目录管理</h2><h3 id="文件与目录的检视：-ls"><a href="#文件与目录的检视：-ls" class="headerlink" title="文件与目录的检视： ls"></a>文件与目录的检视： ls</h3><pre class="line-numbers language-none"><code class="language-none">[root@study ~]# ls [-aAdfFhilnrRSt] 文件名或目录名称..
+[root@study ~]# ls [--color&#x3D;&#123;never,auto,always&#125;] 文件名或目录名称..
+[root@study ~]# ls [--full-time] 文件名或目录名称..
+选项与参数：
+-a ：全部的文件，连同隐藏文件（ 开头为 . 的文件） 一起列出来（常用）
+-A ：全部的文件，连同隐藏文件，但不包括 . 与 .. 这两个目录
+-d ：仅列出目录本身，而不是列出目录内的文件数据（常用）
+-f ：直接列出结果，而不进行排序 （ls 默认会以文件名排序！）
+-F ：根据文件、目录等信息，给予附加数据结构，例如：
+*:代表可可执行文件； &#x2F;:代表目录； &#x3D;:代表 socket 文件； &amp;#124;:代表 FIFO 文件；
+-h ：将文件大小以人类较易读的方式（例如 GB, KB 等等）列出来；
+-i ：列出 inode 号码，inode 的意义下一章将会介绍；
+-l ：长数据串行出，包含文件的属性与权限等等数据；（常用）
+-n ：列出 UID 与 GID 而非使用者与群组的名称 （UID与GID会在帐号管理提到！）
+-r ：将排序结果反向输出，例如：原本文件名由小到大，反向则为由大到小；
+-R ：连同子目录内容一起列出来，等于该目录下的所有文件都会显示出来；
+-S ：以文件大小大小排序，而不是用文件名排序；
+-t ：依时间排序，而不是用文件名。
+--color&#x3D;never ：不要依据文件特性给予颜色显示；
+--color&#x3D;always ：显示颜色
+--color&#x3D;auto ：让系统自行依据设置来判断是否给予颜色
+--full-time ：以完整时间模式 （包含年、月、日、时、分） 输出
+--time&#x3D;&#123;atime,ctime&#125; ：输出 access 时间或改变权限属性时间 （ctime）
+					   而非内容变更时间 （modification time）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="复制、删除与移动：-cp-rm-mv"><a href="#复制、删除与移动：-cp-rm-mv" class="headerlink" title="复制、删除与移动： cp, rm, mv"></a>复制、删除与移动： cp, rm, mv</h3><ul>
+<li>cp</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# cp [-adfilprsu] 来源文件（source） 目标文件（destination）
+[root@study ~]# cp [options] source1 source2 source3 .... directory
+选项与参数：
+-a ：相当于 -dr --preserve&#x3D;all 的意思，至于 dr 请参考下列说明；（常用）
+-d ：若来源文件为链接文件的属性（link file），则复制链接文件属性而非文件本身；
+-f ：为强制（force）的意思，若目标文件已经存在且无法打开，则移除后再尝试一次；
+-i ：若目标文件（destination）已经存在时，在覆盖时会先询问动作的进行（常用）
+-l ：进行硬式链接（hard link）的链接文件创建，而非复制文件本身；
+-p ：连同文件的属性（权限、用户、时间）一起复制过去，而非使用默认属性（备份常用）；
+-r ：递回持续复制，用于目录的复制行为；（常用）
+-s ：复制成为符号链接文件 （symbolic link），亦即“捷径”文件；
+-u ：destination 比 source 旧才更新 destination，或 destination 不存在的情况下才复制。
+--preserve&#x3D;all ：除了 -p 的权限相关参数外，还加入 SELinux 的属性, links, xattr 等也复制了。
+最后需要注意的，如果来源文件有两个以上，则最后一个目的文件一定要是“目录”才行！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>rm</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# rm [-fir] 文件或目录
+选项与参数：
+-f ：就是 force 的意思，忽略不存在的文件，不会出现警告讯息；
+-i ：互动模式，在删除前会询问使用者是否动作
+-r ：递回删除啊！最常用在目录的删除了！这是非常危险的选项！！！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>mv</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# mv [-fiu] source destination
+[root@study ~]# mv [options] source1 source2 source3 .... directory
+选项与参数：
+-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；
+-i ：若目标文件 （destination） 已经存在时，就会询问是否覆盖！
+-u ：若目标文件已经存在，且 source 比较新，才会更新 （update）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="文件内容查阅"><a href="#文件内容查阅" class="headerlink" title="文件内容查阅"></a>文件内容查阅</h2><pre class="line-numbers language-none"><code class="language-none">cat 由第一行开始显示文件内容
+tac 从最后一行开始显示，可以看出 tac 是 cat 的倒着写！
+nl 显示的时候，顺道输出行号！
+more 一页一页的显示文件内容
+less 与 more 类似，但是比 more 更好的是，他可以往前翻页！
+head 只看头几行
+tail 只看尾巴几行
+od 以二进制的方式读取文件内容！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="直接检视文件内容"><a href="#直接检视文件内容" class="headerlink" title="直接检视文件内容"></a>直接检视文件内容</h3><ul>
+<li>cat （concatenate）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# cat [-AbEnTv]
+选项与参数：
+-A ：相当于 -vET 的整合选项，可列出一些特殊字符而不是空白而已；
+-b ：列出行号，仅针对非空白行做行号显示，空白行不标行号！
+-E ：将结尾的断行字符 $ 显示出来；
+-n ：打印出行号，连同空白行也会有行号，与 -b 的选项不同；
+-T ：将 [tab] 按键以 ^I 显示出来；
+-v ：列出一些看不出来的特殊字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="可翻页检视"><a href="#可翻页检视" class="headerlink" title="可翻页检视"></a>可翻页检视</h3><ul>
+<li><p>more（一页一页翻动）</p>
+</li>
+<li><p>less （一页一页翻动）</p>
+</li>
+</ul>
+<h3 id="数据撷取"><a href="#数据撷取" class="headerlink" title="数据撷取"></a>数据撷取</h3><p>我们可以将输出的数据作一个最简单的撷取，那就是取出文件前面几行 （head） 或取出后面 几行 （tail） 文字的功能。 不过，要注意的是， head 与 tail 都是以“行”为单位来进行数据撷取的喔！</p>
+<ul>
+<li>head （取出前面几行）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# head [-n number] 文件
+选项与参数：
+-n ：后面接数字，代表显示几行的意思
+[root@study ~]# head &#x2F;etc&#x2F;man_db.conf
+# 默认的情况中，显示前面十行！若要显示前 20 行，就得要这样：
+[root@study ~]# head -n 20 &#x2F;etc&#x2F;man_db.conf
+范例：如果后面100行的数据都不打印，只打印&#x2F;etc&#x2F;man_db.conf的前面几行，该如何是好？
+[root@study ~]# head -n -100 &#x2F;etc&#x2F;man_db.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="修改文件时间或创建新文件：-touch"><a href="#修改文件时间或创建新文件：-touch" class="headerlink" title="修改文件时间或创建新文件： touch"></a>修改文件时间或创建新文件： touch</h3><pre class="line-numbers language-none"><code class="language-none">[root@study ~]# touch [-acdmt] 文件
+选项与参数：
+-a ：仅修订 access time；
+-c ：仅修改文件的时间，若该文件不存在则不创建新文件；
+-d ：后面可以接欲修订的日期而不用目前的日期，也可以使用 --date&#x3D;&quot;日期或时间&quot;
+-m ：仅修改 mtime ；
+-t ：后面可以接欲修订的时间而不用目前的时间，格式为[YYYYMMDDhhmm]
+范例一：新建一个空的文件并观察时间
+[dmtsai@study ~]# cd &#x2F;tmp
+[dmtsai@study tmp]# touch testtouch
+[dmtsai@study tmp]# ls -l testtouch
+-rw-rw-r--. 1 dmtsai dmtsai 0 Jun 16 00:45 testtouch
+# 注意到，这个文件的大小是 0 呢！在默认的状态下，如果 touch 后面有接文件，
+# 则该文件的三个时间 （atime&#x2F;ctime&#x2F;mtime） 都会更新为目前的时间。若该文件不存在，
+# 则会主动的创建一个新的空的文件喔！例如上面这个例子！
+范例二：将 ~&#x2F;.bashrc 复制成为 bashrc，假设复制完全的属性，检查其日期
+[dmtsai@study tmp]# cp -a ~&#x2F;.bashrc bashrc
+[dmtsai@study tmp]# date; ll bashrc; ll --time&#x3D;atime bashrc; ll --time&#x3D;ctime bashrc
+Tue Jun 16 00:49:24 CST 2015 &lt;&#x3D;&#x3D;这是目前的时间
+-rw-r--r--. 1 dmtsai dmtsai 231 Mar 6 06:06 bashrc &lt;&#x3D;&#x3D;这是 mtime
+-rw-r--r--. 1 dmtsai dmtsai 231 Jun 15 23:44 bashrc &lt;&#x3D;&#x3D;这是 atime
+-rw-r--r--. 1 dmtsai dmtsai 231 Jun 16 00:47 bashrc &lt;&#x3D;&#x3D;这是 ctime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="文件与目录的默认权限与隐藏权限"><a href="#文件与目录的默认权限与隐藏权限" class="headerlink" title="文件与目录的默认权限与隐藏权限"></a>文件与目录的默认权限与隐藏权限</h2><h3 id="文件默认权限：umask"><a href="#文件默认权限：umask" class="headerlink" title="文件默认权限：umask"></a>文件默认权限：umask</h3><p>umask 就是指定 “目前使用者在创建文件或目录时候的权限默认值”</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# umask
+0022 &lt;&#x3D;&#x3D;与一般权限有关的是后面三个数字！
+[root@study ~]# umask -S
+u&#x3D;rwx,g&#x3D;rx,o&#x3D;rx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文件隐藏属性"><a href="#文件隐藏属性" class="headerlink" title="文件隐藏属性"></a>文件隐藏属性</h3><ul>
+<li>chattr （设置文件隐藏属性）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# chattr [+-&#x3D;][ASacdistu] 文件或目录名称
+选项与参数：
++ ：增加某一个特殊参数，其他原本存在参数则不动。
+- ：移除某一个特殊参数，其他原本存在参数则不动。
+&#x3D; ：设置一定，且仅有后面接的参数
+A ：当设置了 A 这个属性时，若你有存取此文件（或目录）时，他的存取时间 atime 将不会被修改，
+可避免 I&#x2F;O 较慢的机器过度的存取磁盘。（目前建议使用文件系统挂载参数处理这个项目）
+S ：一般文件是非同步写入磁盘的（原理请参考[前一章sync](..&#x2F;Text&#x2F;index.html#sync)的说明），如果加上 S 这个属性时，
+当你进行任何文件的修改，该更动会“同步”写入磁盘中。
+a ：当设置 a 之后，这个文件将只能增加数据，而不能删除也不能修改数据，只有root 才能设置这属性
+c ：这个属性设置之后，将会自动的将此文件“压缩”，在读取的时候将会自动解压缩，
+但是在储存的时候，将会先进行压缩后再储存（看来对于大文件似乎蛮有用的！）
+d ：当 dump 程序被执行的时候，设置 d 属性将可使该文件（或目录）不会被 dump 备份
+i ：这个 i 可就很厉害了！他可以让一个文件“不能被删除、改名、设置链接也无法写入或新增数据！”
+对于系统安全性有相当大的助益！只有 root 能设置此属性
+s ：当文件设置了 s 属性时，如果这个文件被删除，他将会被完全的移除出这个硬盘空间，
+所以如果误删了，完全无法救回来了喔！
+u ：与 s 相反的，当使用 u 来设置文件时，如果该文件被删除了，则数据内容其实还存在磁盘中，
+可以使用来救援该文件喔！
+注意1：属性设置常见的是 a 与 i 的设置值，而且很多设置值必须要身为 root 才能设置
+注意2：xfs 文件系统仅支持 AadiS 而已<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这个指令是很重要的，尤其是在系统的数据安全上面！</p>
+<ul>
+<li>lsattr （显示文件隐藏属性）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# lsattr [-adR] 文件或目录
+选项与参数：
+-a ：将隐藏文件的属性也秀出来；
+-d ：如果接的是目录，仅列出目录本身的属性而非目录内的文件名；
+-R ：连同子目录的数据也一并列出来！
+[root@study tmp]# chattr +aiS attrtest
+[root@study tmp]# lsattr attrtest
+--S-ia---------- attrtest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用 chattr 设置后，可以利用 lsattr 来查阅隐藏的属性。不过， 这两个指令在使用上必须要 特别小心，否则会造成很大的困扰。</p>
+<h3 id="文件特殊权限：SUID-SGID-SBIT"><a href="#文件特殊权限：SUID-SGID-SBIT" class="headerlink" title="文件特殊权限：SUID, SGID, SBIT"></a>文件特殊权限：SUID, SGID, SBIT</h3><h4 id="Set-UID"><a href="#Set-UID" class="headerlink" title="Set UID"></a>Set UID</h4><ul>
+<li>SUID 权限仅对二进制程序（binary program）有效； </li>
+<li>执行者对于该程序需要具有 x 的可执行权限； </li>
+<li>本权限仅在执行该程序的过程中有效 （run-time）； </li>
+<li>执行者将具有该程序拥有者 （owner） 的权限。</li>
+</ul>
+<p>我们的 Linux 系统中，所有帐号的密码都记录在 &#x2F;etc&#x2F;shadow 这个文件里面，这个文件的权限为：“———- 1 root root”，意思是这个文件仅有root可读且仅有root可以强制写入而已。 既然这个文件仅有 root 可以修改，那么鸟哥的 dmtsai 这个一般帐号使用者能否自行修改自己的密码呢？ 你可以使用你自己的帐号输入“passwd”这个指令来看看，嘿嘿！一般使用者当然可以修改自己的密码了！ 唔！有没有冲突啊！明明 &#x2F;etc&#x2F;shadow 就不能让 dmtsai 这个一般帐户去存取的，为什么 dmtsai 还能够修改这个文件内的密码呢？ 这就是 SUID 的功能啦！</p>
+<p>但如果 dmtsai 使用 cat 去读取 &#x2F;etc&#x2F;shadow 时，他能够读取吗？因为 cat 不具有 SUID 的权 限，所以 dmtsai 执行 “cat &#x2F;etc&#x2F;shadow” 时，是不能读取 &#x2F;etc&#x2F;shadow 的。</p>
+<p><img src="https://gitee.com/guozunrong123/pic-bed/raw/master/img/image-20230401213159402.png" alt="SUID程序执行"></p>
+<h4 id="Set-GID"><a href="#Set-GID" class="headerlink" title="Set GID"></a>Set GID</h4><p>与 SUID 不同的是，SGID 可以针对文件或目录来设置！如果是对文件来说， SGID 有如下的功能：</p>
+<ul>
+<li>SGID 对二进制程序有用；</li>
+<li>程序执行者对于该程序来说，需具备 x 的权限； </li>
+<li>执行者在执行的过程中将会获得该程序群组的支持！</li>
+</ul>
+<h4 id="Sticky-Bit"><a href="#Sticky-Bit" class="headerlink" title="Sticky Bit"></a>Sticky Bit</h4><p>这个 Sticky Bit, SBIT 目前只针对目录有效，对于文件已经没有效果了。SBIT 对于目录的作用是：</p>
+<ul>
+<li>当使用者对于此目录具有 w, x 权限，亦即具有写入的权限时； </li>
+<li>当使用者在该目录下创建文件或目录时，仅有自己与 root 才有权力删除该文件</li>
+</ul>
+<h3 id="观察文件类型：file"><a href="#观察文件类型：file" class="headerlink" title="观察文件类型：file"></a>观察文件类型：file</h3><p>如果你想要知道某个文件的基本数据，例如是属于 ASCII 或者是 data 文件，或者是 binary ， 且其中有没有使用到动态函数库 （share library） 等等的信息，就可以利用 file 这个指令来检阅。</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# file ~&#x2F;.bashrc
+&#x2F;root&#x2F;.bashrc: ASCII text &lt;&#x3D;&#x3D;告诉我们是 ASCII 的纯文本文件啊！
+[root@study ~]# file &#x2F;usr&#x2F;bin&#x2F;passwd
+&#x2F;usr&#x2F;bin&#x2F;passwd: setuid ELF 64-bit LSB shared object, x86-64, version 1 （SYSV）, dynamically
+linked （uses shared libs）, for GNU&#x2F;Linux 2.6.32,
+BuildID[sha1]&#x3D;0xbf35571e607e317bf107b9bcf65199988d0ed5ab, stripped
+# 可执行文件的数据可就多的不得了！包括这个文件的 suid 权限、相容于 Intel x86-64 等级的硬件平台
+# 使用的是 Linux 核心 2.6.32 的动态函数库链接等等。
+[root@study ~]# file &#x2F;var&#x2F;lib&#x2F;mlocate&#x2F;mlocate.db
+&#x2F;var&#x2F;lib&#x2F;mlocate&#x2F;mlocate.db: data &lt;&#x3D;&#x3D; 这是 data 文件！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="指令与文件的搜寻"><a href="#指令与文件的搜寻" class="headerlink" title="指令与文件的搜寻"></a>指令与文件的搜寻</h2><h3 id="指令文件名的搜寻"><a href="#指令文件名的搜寻" class="headerlink" title="指令文件名的搜寻"></a>指令文件名的搜寻</h3><ul>
+<li>which （寻找“可执行文件”）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# which [-a] command
+选项或参数：
+-a ：将所有由 PATH 目录中可以找到的指令均列出，而不止第一个被找到的指令名称
+范例一：搜寻 ifconfig 这个指令的完整文件名
+[root@study ~]# which ifconfig
+&#x2F;sbin&#x2F;ifconfig
+范例二：用 which 去找出 which 的文件名为何？
+[root@study ~]# which which
+alias which&#x3D;&#39;alias &amp;#124; &#x2F;usr&#x2F;bin&#x2F;which --tty-only --read-alias --show-dot --show-tilde&#39;
+&#x2F;bin&#x2F;alias
+&#x2F;usr&#x2F;bin&#x2F;which
+# 竟然会有两个 which ，其中一个是 alias 这玩意儿呢！那是啥？
+# 那就是所谓的“命令别名”，意思是输入 which 会等于后面接的那串指令啦！
+# 更多的数据我们会在 bash 章节中再来谈的！
+范例三：请找出 history 这个指令的完整文件名
+[root@study ~]# which history
+&#x2F;usr&#x2F;bin&#x2F;which: no history in （&#x2F;usr&#x2F;local&#x2F;sbin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;sbin:&#x2F;bin:
+&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;root&#x2F;bin）
+[root@study ~]# history --help
+-bash: history: --: invalid option
+history: usage: history [-c] [-d offset] [n] or history -anrw [filename] or history -ps arg
+# 瞎密？怎么可能没有 history ，我明明就能够用 root 执行 history 的啊！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文件文件名的搜寻"><a href="#文件文件名的搜寻" class="headerlink" title="文件文件名的搜寻"></a>文件文件名的搜寻</h3><h4 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h4><p>（由一些特定的目录中寻找文件文件名）</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@study ~]# whereis [-bmsu] 文件或目录名
+选项与参数：
+-l :可以列出 whereis 会去查询的几个主要目录而已
+-b :只找 binary 格式的文件
+-m :只找在说明文档 manual 路径下的文件
+-s :只找 source 来源文件
+-u :搜寻不在上述三个项目当中的其他特殊文件
+范例一：请找出 ifconfig 这个文件名
+[root@study ~]# whereis ifconfig
+ifconfig: &#x2F;sbin&#x2F;ifconfig &#x2F;usr&#x2F;share&#x2F;man&#x2F;man8&#x2F;ifconfig.8.gz
+范例二：只找出跟 passwd 有关的“说明文档”文件名（man page）
+[root@study ~]# whereis passwd # 全部的文件名通通列出来！
+passwd: &#x2F;usr&#x2F;bin&#x2F;passwd &#x2F;etc&#x2F;passwd &#x2F;usr&#x2F;share&#x2F;man&#x2F;man1&#x2F;passwd.1.gz &#x2F;usr&#x2F;share&#x2F;man&#x2F;man5&#x2F;passwd.5.gz
+[root@study ~]# whereis -m passwd # 只有在 man 里面的文件名才抓出来！
+passwd: &#x2F;usr&#x2F;share&#x2F;man&#x2F;man1&#x2F;passwd.1.gz &#x2F;usr&#x2F;share&#x2F;man&#x2F;man5&#x2F;passwd.5.g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>whereis 主要是针对 &#x2F;bin &#x2F;sbin 下面的可执行文件， 以及 &#x2F;usr&#x2F;share&#x2F;man 下面的 man page 文 件，跟几个比较特定的目录来处理而已。</p>
+<h4 id="locate-x2F-updatedb"><a href="#locate-x2F-updatedb" class="headerlink" title="locate &#x2F; updatedb"></a>locate &#x2F; updatedb</h4><pre class="line-numbers language-none"><code class="language-none">[root@study ~]# locate [-ir] keyword
+选项与参数：
+-i ：忽略大小写的差异；
+-c ：不输出文件名，仅计算找到的文件数量
+-l ：仅输出几行的意思，例如输出五行则是 -l 5
+-S ：输出 locate 所使用的数据库文件的相关信息，包括该数据库纪录的文件&#x2F;目录数量等
+-r ：后面可接正则表达式的显示方式
+范例一：找出系统中所有与 passwd 相关的文件名，且只列出 5 个
+[root@study ~]# locate -l 5 passwd
+&#x2F;etc&#x2F;passwd
+&#x2F;etc&#x2F;passwd-
+&#x2F;etc&#x2F;pam.d&#x2F;passwd
+&#x2F;etc&#x2F;security&#x2F;opasswd
+&#x2F;usr&#x2F;bin&#x2F;gpasswd
+范例二：列出 locate 查询所使用的数据库文件之文件名与各数据数量
+[root@study ~]# locate -S
+Database &#x2F;var&#x2F;lib&#x2F;mlocate&#x2F;mlocate.db:
+    8,086 directories # 总纪录目录数
+    109,605 files # 总纪录文件数
+    5,190,295 Bytes in file names
+    2,349,150 Bytes used to store database<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这个 locate 的使用更简单，直接在后面输入“文件的部分名称”后，就能够得到结果。 举上面 的例子来说，我输入 locate passwd ，那么在完整文件名 （包含路径名称） 当中，只要有 passwd 在其中， 就会被显示出来的！这也是个很方便好用的指令，如果你忘记某个文件的完整文件名时。</p>
+<p> locate 寻找的数据是由“已创建的数据库 &#x2F;var&#x2F;lib&#x2F;mlocate&#x2F;” 里面的数据所搜寻到的，刚创建的没录入，要手动更新。更新 locate 数据库的方法非常简单，直接输入“ updatedb ”就可以了。</p>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><pre class="line-numbers language-none"><code class="language-none">[root@study ~]# find [PATH] [option] [action]
+选项与参数：
+1\. 与时间有关的选项：共有 -atime, -ctime 与 -mtime ，以 -mtime 说明
+-mtime n ：n 为数字，意义为在 n 天之前的“一天之内”被更动过内容的文件；
+-mtime +n ：列出在 n 天之前（不含 n 天本身）被更动过内容的文件文件名；
+-mtime -n ：列出在 n 天之内（含 n 天本身）被更动过内容的文件文件名。
+-newer file ：file 为一个存在的文件，列出比 file 还要新的文件文件名
+范例一：将过去系统上面 24 小时内有更动过内容 （mtime） 的文件列出
+[root@study ~]# find &#x2F; -mtime 0
+# 那个 0 是重点！0 代表目前的时间，所以，从现在开始到 24 小时前，
+# 有变动过内容的文件都会被列出来！那如果是三天前的 24 小时内？
+# find &#x2F; -mtime 3 有变动过的文件都被列出的意思！
+范例二：寻找 &#x2F;etc 下面的文件，如果文件日期比 &#x2F;etc&#x2F;passwd 新就列出
+[root@study ~]# find &#x2F;etc -newer &#x2F;etc&#x2F;passwd
+# -newer 用在分辨两个文件之间的新旧关系是很有用的！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NzkxMS8zNDM3NA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/04/01/Learn/Linux/Linux%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Linux文件与目录管理">
+                        
+                        <span class="card-title">Linux文件与目录管理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            鸟哥Linux私房菜第六章
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/04/01/Learn/Linux/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Linux文件权限与目录配置">
+                        
+                        <span class="card-title">Linux文件权限与目录配置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            鸟哥Linux私房菜第五章
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learn/" class="post-category">
+                                    Learn
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <a href="/about" target="_blank">Gzr</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">115.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/guozunrong123" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1650224714@qq.com" class="tooltipped" target="_blank" data-tooltip="邮箱联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope"></i>
+    </a>
+
+
+
+
+    <a href="https://m.weibo.cn/profile/2529234370" class="tooltipped" target="_blank" data-tooltip="微博联系我" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+    <a href="tencent://message/?uin=1650224714&amp;Site=&amp;Menu=yes" class="tooltipped" target="_blank" data-tooltip="QQ联系我:1650224714" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
